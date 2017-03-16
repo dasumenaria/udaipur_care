@@ -41,7 +41,7 @@ ini_set('max_execution_time', 100000);
           </h1>
               </section>
 	  <section class="content">
-	<div class="row">
+	<div class="row" style="background:white;">
 	
    <?php
                 $sql="select * from master_services where flag=0";
@@ -60,7 +60,7 @@ ini_set('max_execution_time', 100000);
             <div class="info-box-content" style="min-height:230px !important;">
 			 <span class="info-box-number" style="margin-top:10px;"><?php echo $result['service_name']; ?></span>
 			 <hr/>
-              <span class="info-box-text" ><?php echo $result['discription']; ?></span>
+              <span class="info-box-text" style="line-height: 24px;" ><?php echo $result['discription']; ?></span>
 			  
 			<a  href="service.php?id=<?php echo $id;?>" class="btn btn-block btn-social btn-bitbucket ">
                 <i class="fa fa-arrow-circle-right"></i> For More Services
