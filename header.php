@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,16 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assest/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="assest/dist/css/skins/_all-skins.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="assest/plugins/datatables/dataTables.bootstrap.css"> 
+   <![endif]-->
   <style>
 		 .cn_header{
     background: url("images/divider-bg.jpg");
@@ -92,15 +82,15 @@ vertical-align:middle;
 					$service_name=$fetch['service_name'];
 				
 			?>
-                <li><a href="#"><?php echo $service_name; ?></a></li>
+                <li><a href="#services"><?php echo $service_name; ?></a></li>
 				<li class="divider"></li>
 				
 				<?php } ?>  
               </ul>
             </li>
-			<li><a href="#about">REGISTER NOW</a></li>
+			<li><a href="registration.php">REGISTER NOW</a></li>
 			<li><a href="partners.php">PARTNERS</a></li>
-			<li><a href="#about">CONTACT US</a></li>
+			<li><a href="#contact">CONTACT US</a></li>
 			<li><a href="login.php">LOGIN</a></li>
 			</ul>
           <!--<form class="navbar-form navbar-left" role="search">

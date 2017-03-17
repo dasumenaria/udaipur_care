@@ -24,5 +24,20 @@
 <script src=" assest/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src=" assest/dist/js/demo.js"></script>
+<script src="assest/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="assest/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>

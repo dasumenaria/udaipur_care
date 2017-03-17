@@ -19,10 +19,10 @@ ini_set('max_execution_time', 100000);
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                    <img src="images/slider/1.jpg" alt="First slide"  >
+                    <img src="images/slider/1.JPG" alt="First slide"  >
 					</div>
                   <div class="item">
-                    <img src="images/slider/2.jpg" alt="Second slide"  >
+                    <img src="images/slider/2.JPG" alt="Second slide"  >
 					 
 
                      
@@ -40,7 +40,7 @@ ini_set('max_execution_time', 100000);
          SERVICES
           </h1>
               </section>
-	  <section class="content">
+	  <section class="content" id='services'>
 	<div class="row" style="background:white;">
 	
    <?php
@@ -75,7 +75,7 @@ ini_set('max_execution_time', 100000);
 	</div>
          </section>
 		 
-		<div class="cn_header">
+		<div class="cn_header" id="about">
 		<div class="row">
 		 
 		<div class="col-md-12 col-sm-8">
@@ -139,7 +139,7 @@ ini_set('max_execution_time', 100000);
 		</div>
 	</br> 
 		
-		<div class="cn_header" style="background:url('images/s.jpg.');">
+		<div class="cn_header" style="background:url('images/s.jpg');" id="contact">
 		
 		 <div id="row">			
 			<div class="col-md-2">
@@ -160,7 +160,7 @@ ini_set('max_execution_time', 100000);
 							<p><i class="fa fa-phone too-icon"style="color:#3C8DBC"></i> &nbsp;0294-2490491, 2490492 <i class="fa fa-envelope-o too-icon" style="color:#3C8DBC"></i> &nbsp; helpline@udaipurcare.com</p>
 			 </div>
  		</div
-			<!-----form ---->
+			><!-----form ---->
 			<div class="col-md-8">
 			</br></br>
 			 <form class="form-horizontal" >
