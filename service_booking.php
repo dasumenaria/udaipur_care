@@ -6,6 +6,22 @@ date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 @$session_id=$_SESSION['id']; 
   
+ if(isset($_POST['submit']))
+{
+	$full_name=$_POST['full_name'];
+	$email=$_POST['email'];
+  	$message=$_POST['message'];
+	$mobile_no=$_POST['mobile_no'];
+  	$timestamp=date("Y-m-d");
+   	mysql_query("insert into `contact_us` set `name`='$full_name',`message`='$message',`mobile_no`='$mobile_no',`email`='$email',`timestamp`='$timestamp'");
+	
+}
+else
+	{
+		echo mysql_error();
+	}
+  
+   
 ?>
 <style>
 .box.box-primary {
@@ -51,7 +67,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="post">
               <div class="box-body" style="margin-left:12px;">
 				<div class="form-group">
                   <label for="exampleInputUdCare_no">Udaipur Care No.</label>
@@ -67,7 +83,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmailAddress">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address">
+                  <input type="email" name="email"class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address">
                 </div>
 				<div class="form-group">
                   <label for="exampleInputEmailAddress">Address</label>
@@ -76,22 +92,24 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPicUpTime">Pic Up Time</label>
-                  <input type="time" class="form-control">
+                  <input type="time" name="time" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPicUpTime">Pic Up Date</label>
-				<input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+				<input type="date" name="name" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
 				<div class="form-group">
                   <label for="exampleInputFile">Other Information</label>
                    <textarea name="other_info" class="form-control">
+				   
 				</textarea>
                  
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+			  <input name="submit" type="submit" class="btn btn-primary form-control" id="submit" value="Send">
+ 
               </div>
             </form>
           </div>
