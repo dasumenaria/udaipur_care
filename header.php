@@ -99,7 +99,7 @@ vertical-align:middle;
               </ul>
             </li>
 			<li><a href="#about">REGISTER NOW</a></li>
-			<li><a href="#about">PARTNERS</a></li>
+			<li><a href="partners.php">PARTNERS</a></li>
 			<li><a href="#about">CONTACT US</a></li>
 			<li><a href="login.php">LOGIN</a></li>
 			</ul>
