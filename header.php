@@ -64,10 +64,10 @@ vertical-align:middle;
 <div class="wrapper">
 
    <header class="main-header">
-    <nav class="navbar navbar-static-top" style="background-color:#f8f8f8 !important">
+    <nav class="navbar navbar-static-top" style="background-color:#f8f8f8 !important;padding-top: 0px !important;">
       <div class="container">
         <div class="navbar-header">
-           <img src="images/logos.png" style="margin-top:5%;" align="left" width="180px;">
+           <img src="images/logos.png" style="margin-top:0%;" align="left" width="180px;">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>

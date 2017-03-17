@@ -80,7 +80,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPicUpTime">Pic Up Date</label>
-				<input type="date" class="form-control" >
+				<input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
 				<div class="form-group">
                   <label for="exampleInputFile">Other Information</label>
