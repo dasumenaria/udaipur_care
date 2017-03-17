@@ -1,3 +1,30 @@
+<?php
+session_start();
+include("database.php");
+date_default_timezone_set('Asia/Calcutta');
+ini_set('max_execution_time', 100000);
+$message="";
+
+ if(isset($_POST['submit'])) {
+	
+	$result=mysql_query("select `id`,`username` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	if(mysql_num_rows($result)>0)
+	{
+		$row= mysql_fetch_array($result);
+		$_SESSION['id']=$row['id'];
+		$_SESSION['username']=$row['username'];
+		ob_start();
+		echo "<meta http-equiv='refresh' content='0;url=vendor_dashboard.php'/>";
+		ob_flush();
+	} 
+	else 
+	{
+		$message = "Invalid Username or Password!";
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +43,7 @@
   <link rel="stylesheet" href="assest/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="assest/plugins/iCheck/square/blue.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+ 
   <style>
   .login-page, .register-page {
     background:url('images/slider/t.jpg');
@@ -42,7 +63,7 @@
 <body class="hold-transition login-page">
 <div class="login-box"  >
   <div class="login-logo">
-		<a href="assest/index2.html" ><b>U</b>daipur <b>C</b>are </a>
+		 
   </div>
        
   <!-- /.login-logo -->
@@ -50,36 +71,38 @@
 <center><img src="images/logos.png"   width="180px;"></center>
 
 </br>
-    <form action="assest/index2.html" method="post">
+    <form method="post">
       <div class="form-group has-feedback">
-         <input type="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+         <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+         <span class="fa fa-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+	  <div class="form-group">
+		<?php if(!empty($message)){ ?>
+		<code><?php echo $message; ?></code>
+		<?php }?>
+	  </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
+		<div class="col-xs-8">
+			<a href="#">Forgot Password</a>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" name="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
+	  <div class="form-group">
+	  <span>Don't have an account? <a href="registration.php" class="text-center"> Register now</a></span>
+	  </div>
     </form>
 
      
     <!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

@@ -47,20 +47,22 @@ $status=$_GET['s'];
                           <th>Name</th>
                           <th>Email</th>
                           <th>Mobile No</th>
+						  <th>Service Type</th>
+						  <th>Sub Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                          <td>Trident</td>
-						  <td>Trident</td>
-                          <td>Internet
-                            Explorer 4.0
-                          </td>
-                          <td>Win 95+</td>
-                          <td> 4</td>
-                          <td>X</td>
+                          <td>2017/18BKN0001</td>
+						  <td>Dashrath Menaria</td>
+                          <td>Dasumenria@gmail.com </td>
+						  <td>Madical Service</td>
+						  <td>Docert @ home service</td>
+                          <td>9680747166</td>
+                          <td>20-03-2017</td>
+                          <td>02:00 PM</td>
                         </tr>
                        
                         </tbody>
