@@ -1,16 +1,31 @@
 <?php 
-	include("header.php");
 	include("database.php");
+	include("header.php");
+	
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 @$session_id=$_SESSION['id']; 
   
 ?>
- <div class="content-wrapper">
+<style>
+.box.box-primary {
+    border-top-color: #3c8dbc;
+}
+.box {
+position: relative;
+border-radius: 3px;
+background: #ffffff;
+border-top: 3px solid #d2d6de;
+margin-bottom: 20px;
+width: 100%;
+box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+</style>
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        For Seviceing
+        Servicing
    </h1>
      </section>
 
@@ -18,194 +33,68 @@ ini_set('max_execution_time', 100000);
     <section class="content">
       <div class="row">
         <div class="col-md-6">
- 
-
-          <div class="box box-solid">
-             swsdsj
-           sfklsdfhkjdhkj  
+ <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">About Service</h3>
+            </div>
+              
+				
           </div>
-          <!-- /. box -->
            
-          <!-- /.box -->
         </div>
+	 
         <!-- /.col -->
         <div class="col-md-6">
-          <div class="box box-primary">
-              <div class="page-content">
-			
-			
-			
-			<div class="portlet box blue">
-									<div class="portlet-title">
-										<div class="caption">
-											<h3>For Book</h3>
-										</div>
-									 
-									</div>
-									<div class="portlet-body form">
-									<div>
-	  
-	
- 
-</div>
-</div> 
-	<hr>
-										<!-- BEGIN FORM-->
-										<form method="post" id="form_sample_2">
-											<div class="form-body">
-											 
- 
-											
-												
-										<div class="col-md-6">
-											<div class="form-group">
-											<label class="control-label">First Name</label>
-											
-											<div class="input-icon right">
-											<i class="fa"></i>
-											<input class="form-control" required name="first_name" type="text">
-											</div>
-											<span class="help-block">
-											Provide your First Name</span>
-											</div>
-										</div>
+            <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Service Booking </h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body" style="margin-left:12px;">
+				<div class="form-group">
+                  <label for="exampleInputUdCare_no">Udaipur Care No.</label>
+                  <input  type="text" name="udcare_no" class="form-control" placeholder="Enter Udaipur Care No.">
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputCode">6 Digit Code </label>
+                  <input type="text" name="code" class="form-control"  placeholder="Enter 6 Digit Code">
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputName">Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmailAddress">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address">
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputEmailAddress">Address</label>
+				  <textarea name="address" class="form-control">
+				 </textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPicUpTime">Pic Up Time</label>
+                  <input type="time" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPicUpTime">Pic Up Date</label>
+				<input type="date" class="form-control" >
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputFile">Other Information</label>
+                   <textarea name="other_info" class="form-control">
+				</textarea>
+                 
+              </div>
+              <!-- /.box-body -->
 
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Last Name</label>
-												<div class="input-icon right">
-												  <i class="fa"></i>
-													<input class="form-control" required name="last_name" type="text">
-												</div>
-											<span class="help-block">
-											Provide your Last Name</span>
-										</div>
-									</div>
-
-													
-													
-													<!--<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label">Gender</label>
-															<div class="radio-list">
-																<label class="radio-inline">
-																<div id="uniform-optionsRadios1" class="radio"><span class=""><input name="optionsRadios" id="optionsRadios1" value="Male" checked="" type="radio"></span></div> Male </label>
-																<label class="radio-inline">
-																<div id="uniform-optionsRadios2" class="radio"><span class="checked"><input name="optionsRadios" id="optionsRadios2" value="Female" type="radio"></span></div> Female </label>
-															</div>
-														</div>
-													</div>
-												 
-												 	<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label">Gender</label>
-															<div class="radio-list">
-																<label class="radio-inline">
-																<div id="uniform-optionsRadios1" class="radio"><span class=""><input name="gender" id="optionsRadios1" value="Male" checked="" type="radio"></span></div> Male </label>
-																<label class="radio-inline">
-																<div id="uniform-optionsRadios2" class="radio"><span class="checked"><input name="gender" id="optionsRadios2" value="Female" type="radio"></span></div> Female </label>
-															</div>
-														</div>
-													</div>-->
-												 
-												 
-												 
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Father's Name</label>
-												<div class="input-icon right">
-												  <i class="fa"></i>
-													<input class="form-control" required name="father" type="text">
-												</div>
-											<span class="help-block">
-											Provide your Father's Name</span>
-										</div>
-									</div>
-
-									
-									
-									
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Mother's Name</label>
-												<div class="input-icon right">
-												  <i class="fa"></i>
-													<input class="form-control" required name="mother" type="text">
-												</div>
-											<span class="help-block">
-											Provide your Mother's Name</span>
-										</div>
-									</div>
-									
-									
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Scholor Number</label>
-												<div class="input-icon right">
-												  <i class="fa"></i>
-													<input class="form-control" required name="scholor_no" type="text">
-												</div>
-											<span class="help-block">
-											Provide Scholor</span>
-										</div>
-									</div>
-
-
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Roll Number</label>
-												<div class="input-icon right">
-												  <i class="fa"></i>
-													<input class="form-control" required name="roll_no" type="text">
-												</div>
-											<span class="help-block">
-											Provide Roll No.</span>
-										</div>
-									</div>
-
-												 
-					 
-					 		<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">D-O-B</label>
-												<div class="input-icon right">
-												  <input class="form-control form-control-inline input-large date-picker" required data-date-format="dd-mm-yyyy" size="16" value="" type="text" name="dob" >
-											<span class="help-block">
-											Select Date Of Birth </span>
-												</div> 
-										</div>
-									</div>
-									
-									
-									<div class="col-md-6">
-										<div class="form-group">
-										  <label class="control-label">Address</label>
-												<div class="input-icon">
-												  <i class="fa"></i>
-													<textarea class="form-control" required name="address" rows="3"></textarea>
-												</div>
-											<span class="help-block">
-											Provide Address </span>
-										</div>
-									</div>
-												 
-								  
-												 
-												</div> 
-											</div>
-
-											<div class="form-actions right" style="margin-left:40%">
-											<button type="submit" name="sub" class="btn blue"><i class="fa fa-check"></i> Save</button>
-											<button type="reset" class="btn default">Cancel</button>
-												
-											</div>
-											<br>
-										</form>
-										<!-- END FORM-->
-									</div>
-				
-             
-           </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
            
         </div>
          
@@ -215,4 +104,5 @@ ini_set('max_execution_time', 100000);
     <!-- /.content -->
   </div>		 
 
+  
 <?php include("footer.php"); ?>
