@@ -5,7 +5,7 @@ Template 2081 Solution
 http://www.tooplate.com/view/2081-solution
 
 */
-
+`
 body
 	{
 		background: #ffffff;
@@ -94,6 +94,7 @@ p
   background-color: #371604;
   overflow: hidden;
   margin: 0;
+  height: 575px;
 }
 .flexslider .slides {
   padding: 0;

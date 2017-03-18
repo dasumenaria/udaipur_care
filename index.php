@@ -8,13 +8,16 @@ include('header.php');
 		    <div class="flexslider" >
 		      <ul class="slides">
 		         <li>
-		        	<img src="images/slider/3.jpg"  alt="Slide 1">
+		        	<img src="images/slider/slider1.jpg"  alt="Slide 1">
  		        </li> 
 		     	 <li>
-		        	<img src="images/slider/FDS_6836.jpg" alt="Slide 2">
+		        	<img src="images/slider/slider2.jpg" alt="Slide 2">
  		        </li>
                  <li>
-		        	<img src="images/slider/FDS_7064.jpg" alt="Slide 3">
+		        	<img src="images/slider/slider3.jpg" alt="Slide 3">
+ 		        </li>
+                 <li>
+		        	<img src="images/slider/slider4.jpg" alt="Slide 3">
  		        </li>
                  
 		      </ul>
