@@ -33,15 +33,16 @@ $name=$_POST['name'];
   $r=mysql_query($sql);
  	$ids=mysql_insert_id();
 
-	$photo=" ".$ids.".jpg";
+	$photo="identity_proof".$ids.".jpg";
 
 
 // move photo in  floder//
+	 
 
 	move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
+
 	if($r)
 	{
-
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
  
 	 }
@@ -99,7 +100,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <section class="content">
 	
 		<div class="box box-primary" >
-           <form method="post"  id="contact-form" role="form">
+           <form method="post"  id="contact-form" role="form" enctype="multipart/form-data">
          <div class="box-body" style="margin-left:40px;margin-right:40px;">
 		 </br>
 		 <div class="row">
