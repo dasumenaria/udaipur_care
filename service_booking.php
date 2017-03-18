@@ -1,18 +1,33 @@
 <?php 
 include("config.php");
 include("header.php");
-	
-date_default_timezone_set('Asia/Calcutta');
-ini_set('max_execution_time', 100000);
-@$session_id=$_SESSION['id']; 
+$s_id=$_GET['s_id']; 
   
-?>
+if(isset($_POST['submit']))
+{
+ 	$udcare_no=$_POST['udcare_no'];
+	$code=$_POST['code'];
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+  	$mobile_no=$_POST['mobile_no'];
+	$address=$_POST['address'];
+	$time=$_POST['time'];
+	$date=$_POST['date'];
+	$other_info=$_POST['other_info'];
+	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date',`other_info`='$other_info'");
+ 
+ }
+else
+	{
+		echo mysql_error();
+	}
+  ?>
 <style>
 .box.box-primary {
     border-top-color: #3c8dbc;
 }
 .box {
-position: relative;
+ 
 border-radius: 3px;
 background: #ffffff;
 border-top: 3px solid #d2d6de;
@@ -33,26 +48,42 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <section class="content">
       <div class="row">
         <div class="col-md-6">
- <div class="box box-primary">
+		<div class="box box-primary" style="margin-left:12px; margin-right:12px;">
             <div class="box-header with-border">
-              <h3 class="box-title">About Service</h3>
+			<?php
+ 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$s_id'");
+		 $fetch=mysql_fetch_array($query);
+				{
+					 
+					$sub_services_name=$fetch['sub_services_name'];
+					$sub_services_discription=$fetch['sub_services_discription'];
+				}		 
+			?>
+ 
+            <center><h4 class="box-title"><?php echo $sub_services_name; ?></h4></center>
+			<hr>
             </div>
-              
-				
-          </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <div class="box-body" style="margin-left:12px;margin-right:12px;">
+				<p><?php echo $sub_services_discription; ?></p>
+			</div>
+           
+        </div>
            
         </div>
 	 
         <!-- /.col -->
         <div class="col-md-6">
-            <div class="box box-primary">
+            <div class="box box-primary" style="margin-left:12px; margin-right:12px;">
             <div class="box-header with-border">
-              <h3 class="box-title">Service Booking </h3>
+            <center><h4 class="box-title">Book Now </h4></center>
+			<hr>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
-              <div class="box-body" style="margin-left:12px;">
+             <form role="form" method="post">
+              <div class="box-body" style="margin-left:12px;margin-right:12px;">
 				<div class="form-group">
                   <label for="exampleInputUdCare_no">Udaipur Care No.</label>
                   <input  type="text" name="udcare_no" class="form-control" placeholder="Enter Udaipur Care No.">
@@ -67,7 +98,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmailAddress">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address">
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address">
+                </div>
+				 <div class="form-group">
+                  <label for="exampleInputEmailAddress">Mobile No.</label>
+                  <input type="text" name="mobile_no" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Your Mobile No">
                 </div>
 				<div class="form-group">
                   <label for="exampleInputEmailAddress">Address</label>
@@ -75,12 +110,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				 </textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPicUpTime">Pic Up Time</label>
-                  <input type="time" class="form-control">
+                  <label for="exampleInputPicUpTime">Pick Up Time</label>
+                  <input type="time" name="time" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPicUpTime">Pic Up Date</label>
-				<input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <label for="exampleInputPicUpTime">Pick Up Date</label>
+				<input type="date"  name="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
 				<div class="form-group">
                   <label for="exampleInputFile">Other Information</label>
@@ -91,7 +126,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+				<input name="submit" type="submit" class="btn btn-primary form-control" id="submit" value="Send">
               </div>
             </form>
           </div>
@@ -99,10 +134,10 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         </div>
          
       </div>
- 
+   </div>
     </section>
     <!-- /.content -->
-  </div>		 
+		 
 
   
 <?php include("footer.php"); ?>
