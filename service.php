@@ -1,12 +1,7 @@
 <?php 
 include("config.php");
 include("header.php");
- date_default_timezone_set('Asia/Calcutta');
-ini_set('max_execution_time', 100000);
-@$session_id=$_SESSION['id']; 
-
- $id=$_GET['id'];
- 
+$service_id=$_GET['id'];
  
 ?>
 <style>
@@ -26,20 +21,30 @@ ini_set('max_execution_time', 100000);
 
 .box .space { height: 30px; }
 a {
- 	outline: none;
-    text-decoration: none;
-    color: #72afd2;
-	    color: #23527c;
-    text-decoration: none;	
+	outline: none;
+	text-decoration: none;
+ 	color: #23527c;
+	text-decoration: none;	
 }
 </style>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="padding-top:70px; min-height:580px">
+    <!-- Content Header (Page header) -->
+       <center>
+      	<h2 class="wow bounce" style="color:#707568"> <strong> 
+        <?php 
+	  	$querys=mysql_query("select `service_name` from `master_services` where `id`='$service_id'");
+		$ftc=mysql_fetch_array($querys);
+		echo $ftc['service_name'].' Services';
+		
+		?>
+       </strong></h2>
+       </center>
+ 
     <!-- Main content -->
-    <section class="content" >
-       	 <div class="row" >
+    <section class="content" >         
  		 <?php
- 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$id'");
+ 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id'");
 				while($fetch=mysql_fetch_array($query))
 				{
 					$id=$fetch['id'];
@@ -47,34 +52,27 @@ a {
 					$sub_services_name=$fetch['sub_services_name'];
 					$icon=$fetch['icon'];
 					$sub_services_discription=$fetch['sub_services_discription'];
-			?>
- <div class="col-sm-3">
-			<div class="box" >							
-				<div class="icon">
-					<div class="image" style=""><i class="<?php echo $icon; ?>"></i></div>
-					<div class="info" style="background-color:white;">
-						<h4 class="title"><?php echo $sub_services_name; ?> </h4>
-  					<p >
-						 <?php echo $sub_services_discription; ?>
-						</p>
-						<div class="more">
-							<a href="service_booking.php?s_id=<?php echo $id;?>" title="Title Link" style="font-size:10pt;font-weight:bold;">
-							Booking <i class="fa fa-arrow-circle-o-right "></i>
-							</a>
-							 </div>
-					</div>
-				</div>
- 
-			</div> 
-		</div> 
+				?>
+                 <div class="col-sm-3">
+                    <div class="box" >							
+                        <div class="icon">
+                            <div class="image" style=""><i class="<?php echo $icon; ?>"></i></div>
+                            <div class="info" style="background-color:white;">
+                                <h4 class="title"><?php echo $sub_services_name; ?> </h4>
+                                <p >
+                             <?php echo $sub_services_discription; ?>
+                                </p>
+                                <div class="more">
+                                    <a href="service_booking.php?s_id=<?php echo $id;?>" title="Title Link" style="font-size:10pt;font-weight:bold;">
+                                    Book Now <i class="fa fa-arrow-circle-o-right "></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+         
+                    </div> 
+                 </div> 
         
          <?php  } ?>
-        
- 
-	</div>
 		</div>
-
-
-
-
 <?php include("footer.php");?>

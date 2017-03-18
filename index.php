@@ -38,7 +38,7 @@ include('header.php');
                 <div class="col-md-1 col-sm-1"></div>
  					<div class="col-md-12 col-sm-12">
 						<h2 class="wow bounce"> <strong>About us</strong></h2>
- 						<p> Udaipur Care"is a mission initiated by District Administration Udaipur and supported by various organizations mainly Rotary Udaipur Mewar Service Trust, PHP Poets IT Solutions Pvt. Ltd and Fusion Business Solutions Pvt. Ltd. We established a "Senior Citizen Helpline" in Udaipur for welfare of senior citizens of Udaipur. This helpline enables senior citizens to reach out for help & assistance for making their day-to day lives safe & comfortable.</p>
+ 						<p style="font-size:16px"> Udaipur Care"is a mission initiated by District Administration Udaipur and supported by various organizations mainly Rotary Udaipur Mewar Service Trust, PHP Poets IT Solutions Pvt. Ltd and Fusion Business Solutions Pvt. Ltd. We established a "Senior Citizen Helpline" in Udaipur for welfare of senior citizens of Udaipur. This helpline enables senior citizens to reach out for help & assistance for making their day-to day lives safe & comfortable.</p>
 		<p  style="font-size:12pt;">'Udaipur Care" provides various medical and non-medical personal care services to senior citizens at their door step on discounted/subsidized rates in reasonable time. Our aim is to ensure that senior citizens remain safe with comfort. We are committed to serve them through trusted information and reliable services so that they can feel safe, confident, valued and can live with dignity.</p> 
 					</div>
 					<div class="col-md-2 col-sm-2"></div>
@@ -56,7 +56,7 @@ include('header.php');
                             <h2 class="wow bounce">Initiated By</h2>
                         </div>
                         <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/collector_logo.png" style="height:120px !important"  class="img-responsive" alt="team img">
+                            <img src="images/logo/6.png" style="height:120px !important"  class="img-responsive" alt="team img">
                         </div>
                          
                      </div>
@@ -65,10 +65,11 @@ include('header.php');
                             <h2 class="wow bounce">Supported By</h2>
                         </div>
                         <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                            <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:120px !important"  class="img-responsive" alt="team img"></a>
+                           <a target="_blank" href="http://www.rotaryclubmewar.org/"><img src="images/logo/logo.png" style="height:120px !important" class="img-responsive" alt="team img"></a>  
                         </div>
                         <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
-                            <a target="_blank" href="http://www.rotaryclubmewar.org/"><img src="images/logo/logo.png" style="height:120px !important" class="img-responsive" alt="team img"></a>
+                           
+                            <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:120px !important"  class="img-responsive" alt="team img"></a>
                         </div>
                         <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
                             <a target="_blank" href="http://phppoets.com/"><img src="images/logo/phppoetslogo.png"  style="margin-top:15px" class="img-responsive" alt="team img"></a>
