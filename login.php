@@ -60,7 +60,7 @@ unset($_SESSION['SESSION_USERNAME']);
  
   <style>
   .login-page, .register-page {
-    background:url('images/logn.png');
+    background:url('images/login.jpg');
 	 background-repeat: no-repeat;
 
 	.login-box-body, .register-box-body {

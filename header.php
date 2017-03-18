@@ -36,9 +36,9 @@
                     	<li><a href="index.php" class="smoothScroll">HOME</a></li>
                         <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li>
  						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
-						
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
 						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
+                        <li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
                         <li><a href="login.php" class="smoothScroll">LOGIN</a></li>
 					</ul>
 				</div>

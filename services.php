@@ -8,7 +8,7 @@ include('config.php');
     text-decoration: none;
     color: #fff;
     padding: 1px 1px;
-    background-color: #006887;
+    background-color: #1BBC9B;
 }
 .aclass:hover {
 	color: #fff !important;
@@ -46,7 +46,7 @@ include('config.php');
                         <div align="center" class="col-md-12">
                         	<div style="width:45%">
                             <a href="service.php?id=<?php echo $id;?>" class="btn btn-block btn-social btn-bitbucket aclass ">
-                                <i class="fa fa-arrow-circle-right"></i> For More Services
+                                <i class="fa fa-arrow-circle-right"></i> More Services
                             </a>
                             </div>
                         </div>
