@@ -1,20 +1,34 @@
 <?php
 session_start();
-include("database.php");
+include("config.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 $message="";
 
+unset($_SESSION['SESSION_ID']);
+unset($_SESSION['SESSION_USERTYPE']);
+unset($_SESSION['SESSION_USERNAME']);
  if(isset($_POST['submit'])) {
 	
-	$result=mysql_query("select `id`,`username` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	$result=mysql_query("select `id`,`username`,`user_type` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
-		$_SESSION['id']=$row['id'];
-		$_SESSION['username']=$row['username'];
+		$_SESSION['SESSION_ID']=$row['id'];
+		$_SESSION['SESSION_USERNAME']=$row['username'];
+		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
+		$usertype=$row['user_type']; 
 		ob_start();
-		echo "<meta http-equiv='refresh' content='0;url=vendor_dashboard.php'/>";
+		if($usertype==0){
+			echo "<meta http-equiv='refresh' content='0;url=app/user_dashboard.php'/>";
+		}
+		else if($usertype==1){
+			echo "<meta http-equiv='refresh' content='0;url=app/admin_dashboard.php'/>";
+		}
+		else if($usertype==2){
+			echo "<meta http-equiv='refresh' content='0;url=app/vendor_dashboard.php'/>";
+		}
+	
 		ob_flush();
 	} 
 	else 
@@ -46,7 +60,7 @@ $message="";
  
   <style>
   .login-page, .register-page {
-    background:url('images/slider/t.jpg');
+    background:url('images/logn.png');
 	 background-repeat: no-repeat;
 
 	.login-box-body, .register-box-body {

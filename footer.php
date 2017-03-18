@@ -1,43 +1,34 @@
-  <footer class="main-footer">
-    <div class="container">
-      <div class="pull-right hidden-xs">
- 
-      </div>
-      <strong>
-	Copyright © 2017 Udaipur Care
+<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-7">
+						<p>Copyright &copy; 2017 Udaipur Care</p>
+					</div>
+					<div class="col-md-4 col-sm-5">
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
 
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="assest/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="assest/bootstrap/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="assest/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src=" assest/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src=" assest/dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src=" assest/dist/js/demo.js"></script>
-<script src="assest/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="assest/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
-</body>
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- bootstrap -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- isotope -->
+		<script src="js/isotope.js"></script>
+		<!-- images loaded -->
+   		<script src="js/imagesloaded.min.js"></script>
+   		<!-- wow -->
+		<script src="js/wow.min.js"></script>
+		<!-- smoothScroll -->
+		<script src="js/smoothscroll.js"></script>
+		<!-- jquery flexslider -->
+		<script src="js/jquery.flexslider.js"></script>
+		<!-- custom -->
+		<script src="js/custom.js"></script>
+        
+        </body>
 </html>

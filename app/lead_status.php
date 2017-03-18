@@ -1,5 +1,6 @@
 <?php 
-include("database.php");
+include('auth.php'); 
+include("../config.php");
 include("header.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);

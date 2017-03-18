@@ -1,108 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>UDAIPUR CARE</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="assest/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="assest/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="assest/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="assest/plugins/datatables/dataTables.bootstrap.css"> 
-   <![endif]-->
-  <style>
-		 .cn_header{
-    background: url("images/divider-bg.jpg");
-    height: 400px;
-    line-height: 24px;
-    padding: 5px;
-    color:white;
-
-}
-
-.print{
-    background: url(http://mcgrefer.com/images/search.png);
-    display: inline-block;
-    height: 24px;
-    width: 400px;
-   
-vertical-align:middle;
-}
-
-.info-box-icon
-{
-	 background-color:white;
-}
-
-.skin-black .main-header .navbar .navbar-nav > li > a {
-    border-right: none;
-	color:#807e7e;
-  	font-size:11pt;
-}
-
-		 </style>
-</head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-black layout-top-nav">
-<div class="wrapper">
-
-   <header class="main-header">
-    <nav class="navbar navbar-static-top" style="background-color:#f8f8f8 !important;padding-top: 0px !important;">
-      <div class="container">
-        <div class="navbar-header">
-           <img src="images/logos.png" style="margin-top:0%;" align="left" width="180px;">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
-            <ul class="nav navbar-nav" >
-            <li class="active"><a href="index.php">HOME<span class="sr-only">(current)</span></a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li class="dropdown">
-			
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
-			  
-			  
-              <ul class="dropdown-menu" role="menu">
-			  <?php
- 				$query=mysql_query("select * from `master_services` order by id ASC");
-				 while($fetch=mysql_fetch_array($query))
-				{
-					$id=$fetch['id'];
-					$service_name=$fetch['service_name'];
-				
-			?>
-                <li><a href="#services"><?php echo $service_name; ?></a></li>
-				<li class="divider"></li>
-				
-				<?php } ?>  
-              </ul>
-            </li>
-			<li><a href="registration.php">REGISTER NOW</a></li>
-			<li><a href="partners.php">PARTNERS</a></li>
-			<li><a href="#contact">CONTACT US</a></li>
-			<li><a href="login.php">LOGIN</a></li>
-			</ul>
-          <!--<form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-            </div>
-          </form>-->
-        </div>
-       
-        
-       
-      </div>
-       
-    </nav>
-  </header>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Udaipur Care</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+ 		<!-- animate -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- custom -->
+		<link rel="stylesheet" href="css/style.css">
+ 	</head>
+	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+		<!-- start navigation -->
+		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+					</button>
+					<a href="#home" class="navbar-brand smoothScroll"><img src="images/logos.png" style="height:62px !important" class="img-responsive" alt="logo"></a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+                    	<li><a href="index.php" class="smoothScroll">HOME</a></li>
+                        <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li>
+ 						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
+						
+ 						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
+						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
+                        <li><a href="login.php" class="smoothScroll">LOGIN</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end navigation -->
