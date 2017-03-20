@@ -44,7 +44,7 @@ a {
     <!-- Main content -->
     <section class="content" >         
  		 <?php
- 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id' and flag=0");
+ 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id' and flag=0 ");
 				while($fetch=mysql_fetch_array($query))
 				{
 					$id=$fetch['id'];
