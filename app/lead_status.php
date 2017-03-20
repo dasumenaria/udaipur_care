@@ -48,24 +48,34 @@ $status=$_GET['s'];
                           <th>Name</th>
                           <th>Email</th>
                           <th>Mobile No</th>
-						  <th>Service Type</th>
-						  <th>Sub Service Type</th>
+ 						  <th>Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $leadNew="SELECT * from `booking` where `master_status` = '$status'";
+						$Newlead=mysql_query($leadNew);
+						while($lead_new=mysql_fetch_array($Newlead)){
+						$date=$lead_new['date'];
+						if($date='0000-00-00' || $date='1970-01-01'){ $dateforview='00-00-0000';}	
+						else { $dateforview=date('d-m-y',$date);}
+						
+						$sub_service=$lead_new['master_sub_service_id'];
+						$sql=mysql_query("select `sub_services_name` from `master_sub_services` where `id`='$sub_service'");
+						$ftc=mysql_fetch_array($sql);
+						?>
                         <tr>
-                          <td>2017/18BKN0001</td>
-						  <td>Dashrath Menaria</td>
-                          <td>Dasumenria@gmail.com </td>
-						  <td>Madical Service</td>
-						  <td>Docert @ home service</td>
-                          <td>9680747166</td>
-                          <td>20-03-2017</td>
-                          <td>02:00 PM</td>
-                        </tr>
-                       
+                          <td><?php echo $lead_new['udcare_no']; ?></td>
+						  <td><?php echo $lead_new['name']; ?></td>
+                          <td><?php echo $lead_new['email']; ?></td>
+						  <td><?php echo $lead_new['mobile_no']; ?></td>
+						  <td><?php echo $ftc['sub_services_name']; ?></td>
+                          <td><?php echo $dateforview; ?></td>
+                          <td><?php echo $lead_new['time']; ?></td>
+                         </tr>
+                       <?php } ?>
                         </tbody>
                       </table>
                     </div>

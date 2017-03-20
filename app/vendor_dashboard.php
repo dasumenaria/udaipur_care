@@ -22,10 +22,7 @@ $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
 
 
-  
- echo  date('Ymdhist');
  
-
 ?>
  
  <div class="content-wrapper">
