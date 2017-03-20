@@ -44,7 +44,7 @@ a {
     <!-- Main content -->
     <section class="content" >         
  		 <?php
- 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id'");
+ 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id' and flag=0");
 				while($fetch=mysql_fetch_array($query))
 				{
 					$id=$fetch['id'];
@@ -53,7 +53,7 @@ a {
 					$icon=$fetch['icon'];
 					$sub_services_discription=$fetch['sub_services_discription'];
 				?>
-                 <div class="col-sm-3">
+                 <div class="col-sm-4">
                     <div class="box" >							
                         <div class="icon">
                             <div class="image" style=""><i class="<?php echo $icon; ?>"></i></div>
