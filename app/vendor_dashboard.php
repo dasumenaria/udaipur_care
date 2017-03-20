@@ -22,9 +22,10 @@ $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
 
 
- //date('Ymd');
- //echo date('hmsttt')
-//2016 06 23 13 23 59 958
+  
+ echo  date('Ymdhist');
+ 
+
 ?>
  
  <div class="content-wrapper">
