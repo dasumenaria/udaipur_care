@@ -21,7 +21,7 @@ unset($_SESSION['SESSION_USERNAME']);
 		$usertype=$row['user_type']; 
 		ob_start();
 		if($usertype==0){
-			echo "<meta http-equiv='refresh' content='0;url=app/user_dashboard.php'/>";
+			echo "<meta http-equiv='refresh' content='0;url=services.php'/>";
 		}
 		else if($usertype==1){
 			echo "<meta http-equiv='refresh' content='0;url=app/admin_dashboard.php'/>";

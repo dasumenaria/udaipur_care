@@ -2,10 +2,7 @@
 include("config.php");
 include("header.php");
 include("app/auth.php");
- 
 
-
-$s_id=$_GET['s_id']; 
   
 if(isset($_POST['submit']))
 {
@@ -55,6 +52,9 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="box box-primary" style="margin-left:12px; margin-right:12px;">
             <div class="box-header with-border">
 			<?php
+					$s_id=$_GET['s_id']; 
+
+
  				$query=mysql_query("select * from `master_sub_services` where `services_id`='$s_id'");
 		 $fetch=mysql_fetch_array($query);
 				{

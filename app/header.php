@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
-   <![endif]-->
+   
   <style>
 		 
 
@@ -64,7 +64,7 @@
         <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav" >
             
-			<li><a href="../login.php">LOGOUT</a></li>
+			<li><a href="login.php">LOGOUT</a></li>
 			</ul>
           <!--<form class="navbar-form navbar-left" role="search">
             <div class="form-group">

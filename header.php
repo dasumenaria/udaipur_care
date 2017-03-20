@@ -1,3 +1,16 @@
+<?php
+  @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; //$seccion_usertype = $_SESSION['SESSION_USERTYPE']; exit;
+  if($SESSION_USERTYPE==0){
+	  $dashboard='user_dashboard.php';
+  }
+  if($SESSION_USERTYPE==1){
+	  $dashboard='admin_dashboard.php';
+  }
+  if($SESSION_USERTYPE==2){
+	  $dashboard='vendor_dashboard.php';
+  }
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -39,7 +52,7 @@
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
 						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
                         <li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
-                        <li><a href="login.php" class="smoothScroll">LOGIN</a></li>
+						<li><a href="login.php" >LOGOUT</a></li>
 					</ul>
 				</div>
 			</div>
