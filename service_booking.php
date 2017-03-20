@@ -1,6 +1,10 @@
 <?php 
 include("config.php");
 include("header.php");
+include("app/auth.php");
+ 
+
+
 $s_id=$_GET['s_id']; 
   
 if(isset($_POST['submit']))
