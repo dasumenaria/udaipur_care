@@ -10,13 +10,14 @@ unset($_SESSION['SESSION_USERTYPE']);
 unset($_SESSION['SESSION_USERNAME']);
  if(isset($_POST['submit'])) {
 	
-	$result=mysql_query("select `id`,`username`,`user_type` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
 		$_SESSION['SESSION_ID']=$row['id'];
 		$_SESSION['SESSION_USERNAME']=$row['username'];
 		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
+		$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
 		$usertype=$row['user_type']; 
 		ob_start();
 		if($usertype==0){
