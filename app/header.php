@@ -28,28 +28,22 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
-   
-  <style>
-		 
-
-.info-box-icon
-{
-	 background-color:white;
-}
-
-.skin-black .main-header .navbar .navbar-nav > li > a {
-    border-right: none;
-	color:#807e7e;
-  	font-size:11pt;
-}
-
-		 </style>
+  <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css">    
+<style>
+	.info-box-icon
+	{
+		 background-color:white;
+	}
+	.skin-black .main-header .navbar .navbar-nav > li > a {
+		border-right: none;
+		color:#807e7e;
+		font-size:11pt;
+	}
+</style>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-black layout-top-nav">
 <div class="wrapper">
-
    <header class="main-header">
     <nav class="navbar navbar-static-top" style="background-color:#f8f8f8 !important;padding-top: 0px !important;">
       <div class="container">
@@ -59,12 +53,10 @@
             <i class="fa fa-bars"></i>
           </button>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav" >
-            
-			<li><a href="../logout.php">LOGOUT</a></li>
+				<li><a href="../logout.php">LOGOUT</a></li>
 			</ul>
           <!--<form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -72,10 +64,6 @@
             </div>
           </form>-->
         </div>
-       
-        
-       
       </div>
-       
     </nav>
   </header>

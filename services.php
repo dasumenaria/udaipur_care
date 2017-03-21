@@ -43,7 +43,7 @@ include('config.php');
 								<p><?php echo $discription; ?></p>
 							</div>
 						</div>
-                        <div align="center" class="col-md-12">
+                        <div align="center" class="col-md-12" data-wow-delay="0.1s">
                         	<div style="width:45%">
                             <a href="service.php?id=<?php echo $id;?>" class="btn btn-block btn-social btn-bitbucket aclass ">
                                 <i class="fa fa-arrow-circle-right"></i> More Services
