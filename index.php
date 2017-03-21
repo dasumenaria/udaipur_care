@@ -5,7 +5,14 @@ unset($_SESSION['SESSION_USERTYPE']);
 unset($_SESSION['SESSION_USERNAME']);
 unset($_SESSION['SESSION_SUBSERVICE']);
 ?>
-
+<style>
+#team img {
+    border:none !important;
+    display: inline-block;
+    padding: 5px !important; 
+    transition: all 0.4s ease-in;
+}
+</style>
 		<!-- start home -->
 		<section id="home" style="text-align:right">
 		  <div class="templatemo_headerimage">
@@ -58,51 +65,42 @@ unset($_SESSION['SESSION_SUBSERVICE']);
 		<div id="team">
 			<div class="container">
 				<div class="row">
-                	<div class="col-md-12">
-                        <div class="col-md-12">
-                            <h2 class="wow bounce">Initiated By</h2>
-                        </div>
-                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/6.png" style="height:120px !important"  class="img-responsive" alt="team img">
-                        </div>
-						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/logo.png" style="height:120px !important"  class="img-responsive" alt="team img">
+ 
+                            <h2 class="wow bounce">Initiated & Supported By </h2>
+							 
                         </div>
 						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
                             <img src="images/logo/9.png" style="height:120px !important"  class="img-responsive" alt="team img">
+						 
                         </div>
-                         <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/1.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
+                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/6.png" style="height:120px !important"  class="img-responsive" alt="team img">
+							 
+                        </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/7.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
+						 
                         </div>
 						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/3.png" style="height:120px !important"  class="img-responsive" alt="team img">
+                            <img src="images/logo/4.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
+						 
                         </div> 
-						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/2.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
+						 
+                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.6s">
+						&nbsp;
+                            <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:80px !important" class="img-responsive" alt="team img"></a>
+						 
                         </div>
-						
+						 
+                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
+						&nbsp;
+                            <a target="_blank" href="http://phppoets.com/"><img src="images/logo/phppoetslogo.png" style="height:80px !important" class="img-responsive" alt="team img"></a>
+						 
+                        </div>
                          
 						 
-                     </div>
-					 </div>
-					 
-					 <div class="row">
-                     <div class="col-md-12" align="center">
-                     	<div class="col-md-12">
-                            <h2 class="wow bounce">Supported By</h2>
-                        </div>
-                         <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/2.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
-                        </div>
-                        <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.6s">
-                            <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:120px !important" class="img-responsive" alt="team img"></a>
-                        </div>
-						 
-                        <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-                            <a target="_blank" href="http://phppoets.com/"><img src="images/logo/phppoetslogo.png" style="height:120px !important" class="img-responsive" alt="team img"></a>
-                        </div>
-                     </div>
-				</div>
+  
+					   
 			</div>
 		</div>
 		<!-- end team -->
