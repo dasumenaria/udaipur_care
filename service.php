@@ -40,7 +40,7 @@ a {
 		?>
        </strong></h2>
        </center>
- 
+ <br/><br/>
     <!-- Main content -->
     <section class="content" >         
  		 <?php
@@ -51,28 +51,29 @@ a {
 					$service_id=$fetch['services_id'];
 					$sub_services_name=$fetch['sub_services_name'];
 					$icon=$fetch['icon'];
+					 $service_images=$fetch['service_images'];
 					$sub_services_discription=$fetch['sub_services_discription'];
 				?>
-                 <div class="col-sm-4">
-                    <div class="box" >							
+                 <div class="col-sm-4" style="width:25%;">
+                    <div class="box">							
                         <div class="icon">
-                            <div class="image" style=""><i class="<?php echo $icon; ?>"></i></div>
-                            <div class="info" style="background-color:white;">
+                             <div class="info" style="background-color:white;">
+							  <div style=""><img src="images/service_images/<?php echo $service_images;?>" width="90%" height="180px"></div>
                                 <h4 class="title"><?php echo $sub_services_name; ?> </h4>
-                                <p >
-                             <?php echo $sub_services_discription; ?>
-                                </p>
+ 
                                 <div class="more">
                                     <a href="service_booking.php?s_id=<?php echo $id;?>" title="Title Link" style="font-size:10pt;font-weight:bold;">
                                     Book Now <i class="fa fa-arrow-circle-o-right "></i>
                                     </a>
                                 </div>
+								</br>
                             </div>
                         </div>
          
                     </div> 
                  </div> 
-        
+         
          <?php  } ?>
 		</div>
+		</section>
 <?php include("footer.php");?>
