@@ -7,18 +7,19 @@ include('header.php');
 		  <div class="templatemo_headerimage">
 		    <div class="flexslider" >
 		      <ul class="slides">
-		         <li>
-		        	<img src="images/slider/slider1.jpg"  alt="Slide 1">
+              	<li>
+		        	<img src="images/slider/b.jpg" alt="Slide 1">
+ 		        </li>
+		        <li>
+		        	<img src="images/slider/c.jpg"  alt="Slide 1">
  		        </li> 
-		     	 <li>
-		        	<img src="images/slider/slider2.jpg" alt="Slide 2">
+		     	<li>
+		        	<img src="images/slider/d.jpg" alt="Slide 2">
  		        </li>
-                 <li>
-		        	<img src="images/slider/slider3.jpg" alt="Slide 3">
+                <li>
+		        	<img src="images/slider/e.jpg" alt="Slide 2">
  		        </li>
-                 <li>
-		        	<img src="images/slider/slider4.jpg" alt="Slide 3">
- 		        </li>
+                 
 		      </ul>
 		    </div>
 		  </div>				
@@ -26,7 +27,7 @@ include('header.php');
 		<!-- end home -->
         <div id="teams" style="padding-top:30px; padding-bottom:30px">
 			<div class="container text-center">
-				<div class="row">
+				<div class="row col-md-12">
                 <h3>"WE BELIVE THAT IT IS OUR MORAL OBLIGATION TO LOOK AFTER OUR ELDERS & IT IS OUR DUTY TO PROVIDE THEM BEST CARE POSSIBLE." </h3>
                 </div>
             </div>

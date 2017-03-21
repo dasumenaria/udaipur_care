@@ -1,16 +1,13 @@
 <?php
-//include('app/auth.php');
-/*echo   @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; //$seccion_usertype = $_SESSION['SESSION_USERTYPE']; exit;
-  if($SESSION_USERTYPE==0){
-	  $dashboard='user_dashboard.php';
-  }
-  if($SESSION_USERTYPE==1){
-	  $dashboard='admin_dashboard.php';
-  }
-  if($SESSION_USERTYPE==2){
-	  $dashboard='vendor_dashboard.php';
-  }
-  */
+include('authForWeb.php');
+ @$SESSION_ID=$_SESSION['SESSION_ID'];
+if($SESSION_ID){
+	$log_path='<a href="login.php" >LOGOUT</a>';
+}
+else
+{
+	$log_path='<a href="login.php" >LOGIN</a>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +50,7 @@
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
 						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
                         <li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
-						<li><a href="login.php" >LOGIN</a></li>
+						<li><?php echo $log_path; ?></li>
 					</ul>
 				</div>
 			</div>
