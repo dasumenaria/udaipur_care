@@ -64,7 +64,7 @@
         <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav" >
             
-			<li><a href="login.php">LOGOUT</a></li>
+			<li><a href="../logout.php">LOGOUT</a></li>
 			</ul>
           <!--<form class="navbar-form navbar-left" role="search">
             <div class="form-group">

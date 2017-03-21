@@ -2,7 +2,7 @@
 include('authForWeb.php');
  @$SESSION_ID=$_SESSION['SESSION_ID'];
 if($SESSION_ID){
-	$log_path='<a href="login.php" >LOGOUT</a>';
+	$log_path='<a href="logout.php" >LOGOUT</a>';
 }
 else
 {

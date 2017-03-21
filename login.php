@@ -8,6 +8,7 @@ $message="";
 unset($_SESSION['SESSION_ID']);
 unset($_SESSION['SESSION_USERTYPE']);
 unset($_SESSION['SESSION_USERNAME']);
+unset($_SESSION['SESSION_SUBSERVICE']);
  if(isset($_POST['submit'])) {
 	
 	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
