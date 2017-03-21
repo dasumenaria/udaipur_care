@@ -86,12 +86,14 @@ include('header.php');
                      	<div class="col-md-12">
                             <h2 class="wow bounce">Supported By</h2>
                         </div>
-                         
-                        <div class="col-md-6 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
+                         <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/2.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
+                        </div>
+                        <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.6s">
                             <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:120px !important" class="img-responsive" alt="team img"></a>
                         </div>
 						 
-                        <div class="col-md-6 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
+                        <div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
                             <a target="_blank" href="http://phppoets.com/"><img src="images/logo/phppoetslogo.png" style="height:120px !important" class="img-responsive" alt="team img"></a>
                         </div>
                      </div>
