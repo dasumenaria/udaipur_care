@@ -14,9 +14,11 @@ if(isset($_POST['submit']))
 	$address=$_POST['address'];
 	$time=$_POST['time'];
 	$date=$_POST['date'];
+	$curnt_date=date('Y-m-d');
+	$times=date('h:i:s A');
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
-	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info'");
+	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currt_time`='$times',`currt_date`='$curnt_date',");
  
  }
 else
