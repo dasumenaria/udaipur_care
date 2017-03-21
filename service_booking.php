@@ -136,4 +136,17 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
   
 <?php include("footer.php"); ?>
+<script>
+$('.allLetter').keyup(function(){
+		var inputtxt=  $(this).val();
+		var numbers =  /^[0-9]*\.?[0-9]*$/;
+		if(inputtxt.match(numbers))  
+		{} 
+		else  
+		{  
+			$(this).val('');
+			return false;  
+		}
+	});
+</script>
 
