@@ -99,7 +99,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
 				 <div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Mobile No.</label>
-                  <input type="text" name="mobile_no" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Your Mobile No" required>
+                  <input type="text" name="mobile_no" class="form-control allLetter" maxlength="10" minlength="10" id="exampleInputEmail1" placeholder="Enter Your Your Mobile No" required>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Address</label>
@@ -136,3 +136,4 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
   
 <?php include("footer.php"); ?>
+
