@@ -62,7 +62,7 @@ unset($_SESSION['SESSION_SUBSERVICE']);
  
   <style>
   .login-page, .register-page {
-    background:url('images/login.jpg');
+    background:url('images/login.png');
 	 background-repeat: no-repeat;
 
 	.login-box-body, .register-box-body {
