@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     $from_name='Udaipur Care';    
     $subject='abcd';
     $body='Your Registration is Successfully';    
-	  if(!empty($to))
+	 if(!empty($to))
     {
 /*smtpmailer($to, $from, $from_name, $subject, $body); */
      }
@@ -172,7 +172,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 
                 
               </div> 
-		</div>	  
+	   
               <!-- /.box-body -->
 		</form>
           </div>
