@@ -1,9 +1,6 @@
 <?php
 include('header.php');
-unset($_SESSION['SESSION_ID']);
-unset($_SESSION['SESSION_USERTYPE']);
-unset($_SESSION['SESSION_USERNAME']);
-unset($_SESSION['SESSION_SUBSERVICE']);
+ 
 ?>
 <style>
 #team img {
