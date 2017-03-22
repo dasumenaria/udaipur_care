@@ -20,10 +20,7 @@ $lead_reject=mysql_num_rows($Openreject);
 $leadconmpleted="SELECT `id` from `booking` where `master_sub_service_id` = '$SESSION_SUBSERVIDE' && `master_status` = '3'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
-
-
- 
-?>
+ ?>
  
  <div class="content-wrapper">
  <section class="content">
