@@ -14,6 +14,31 @@ include('config.php');
 	color: #fff !important;
 }
 </style>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+	padding:1px 22px;
+	border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ 
+.button4 {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+ 
+</style>
 		<!-- start service -->
 		<div id="service">
 			<div class="container">
@@ -45,8 +70,8 @@ include('config.php');
 						</div>
                         <div align="center" class="col-md-12" data-wow-delay="0.1s">
                         	<div style="width:45%">
-                            <a href="service.php?id=<?php echo $id;?>" class="btn btn-block btn-social btn-bitbucket aclass ">
-                                <i class="fa fa-arrow-circle-right"></i> More Services
+                            <a href="service.php?id=<?php echo $id;?>" class="button button4" style="text-decoration:none;">
+							More Service
                             </a>
                             </div>
                         </div>

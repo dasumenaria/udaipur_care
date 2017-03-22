@@ -1,9 +1,6 @@
 <?php
 include('header.php');
-unset($_SESSION['SESSION_ID']);
-unset($_SESSION['SESSION_USERTYPE']);
-unset($_SESSION['SESSION_USERNAME']);
-unset($_SESSION['SESSION_SUBSERVICE']);
+ 
 ?>
 <style>
 #team img {
@@ -22,7 +19,7 @@ unset($_SESSION['SESSION_SUBSERVICE']);
 		        	<img src="images/slider/b.jpg" alt="Slide 1">
  		        </li>
 		        <li>
-		        	<img src="images/slider/c.jpg"  alt="Slide 1">
+		        	<img src="images/slider/3.jpg"  alt="Slide 1">
  		        </li> 
 		     	<li>
 		        	<img src="images/slider/d.jpg" alt="Slide 2">
