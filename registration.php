@@ -88,6 +88,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <!-- Main content -->
     <section class="content">
 		<div class="box box-primary" >
+		<center>
+		<h4>Registration Form</h4>
+		<hr>
+		 </center>
+		
            <form method="post"  id="contact-form" role="form" enctype="multipart/form-data">
          <div class="box-body" style="margin-left:40px;margin-right:40px;">
 		 </br>
@@ -153,7 +158,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-12">		
              <div class="box-footer" style="float:right">
-                  <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" >  
+                 <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" > 
              </div>
 		</div>
 	</div>		
