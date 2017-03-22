@@ -3,9 +3,7 @@ include("config.php");
 include("header.php");
 
 $service_id=$_GET['id'];
- 
- 
- 
+
 ?>
 <style>
  

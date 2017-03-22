@@ -1,4 +1,4 @@
 <?php
-session_start();
+@session_start();
 @$SESSION_ID=$_SESSION['SESSION_ID']; 
 ?>

@@ -1,9 +1,33 @@
 <?php 
+include("authForWeb.php");
 include("config.php");
 include("header.php");
-include("app/auth.php");
 $sub_serivice_id=$_GET['s_id'];
-  
+@$SESSION_ID=$_SESSION['SESSION_ID'];
+
+if(isset($_POST['login'])){
+	  $sub_serivice_id=$_POST['sub_serivice_id'];  
+	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	//echo "select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'"; exit;
+	if(mysql_num_rows($result)>0)
+	{
+		$row= mysql_fetch_array($result);
+		$_SESSION['SESSION_ID']=$row['id'];
+		$_SESSION['SESSION_USERNAME']=$row['username'];
+		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
+		$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
+		$usertype=$row['user_type']; 
+		ob_start();
+			echo "<meta http-equiv='refresh' content='0;url=service_booking.php?s_id=".$sub_serivice_id."'/>";
+		ob_flush();
+	} 
+	else 
+	{
+		$message = "Invalid Username or Password!";
+	}
+	
+}
+
 if(isset($_POST['submit']))
 {
  	$udcare_no=$_POST['udcare_no'];
@@ -132,11 +156,61 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
    </div>
     </section>
     <!-- /.content -->
-		 
+ 
+<div style="display:none;margin-top:20px" id="new_app_login" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="false">
+<div  class="modal-backdrop fade in" style="z-index:0 !important"></div>
+    <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+           
+            <div class="modal-body" style="min-height:300px">
+            	<div class="brand" align="center">
+                  <img src="images/logos.png"   width="180px;">  
+                </div><br />
 
-  
+            <form method="post">
+                  <div class="form-group has-feedback">
+                     <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+                     <span class="fa fa-user form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                  </div>
+                  <div class="form-group">
+                    <?php if(!empty($message)){ ?>
+                    <code><?php echo $message; ?></code>
+                    <?php }?>
+                  </div><br />
+
+                  <div class="row">
+                    <div class="col-xs-8">
+                        <a href="#">Forgot Password</a>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                      <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                  <div class="form-group">
+                  <span>Don't have an account? <a href="registration.php" class="text-center"> Register now</a></span>
+                  <input type="hidden" name="sub_serivice_id" value="<?php echo $sub_serivice_id; ?>" />
+                  </div>
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 <?php include("footer.php"); ?>
+
+
 <script>
+<?php if(empty($SESSION_ID)){?>
+ 		$('#new_app_login').show();
+		<?php } ?>
+ 
 $('.allLetter').keyup(function(){
 		var inputtxt=  $(this).val();
 		var numbers =  /^[0-9]*\.?[0-9]*$/;
