@@ -61,7 +61,7 @@ include('header.php');
 				<div class="row">
 						<h2 class="wow bounce" >Initiated & Supported By </h2>
 						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/9.png" style="height:120px !important"  class="img-responsive" alt="team img">
+                            <img src="images/logo/ww.png" style="height:150px !important;margin-top:-44px; "  class="img-responsive" alt="team img">
 						 
                         </div>
                         <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
