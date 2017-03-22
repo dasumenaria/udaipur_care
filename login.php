@@ -9,9 +9,11 @@ unset($_SESSION['SESSION_ID']);
 unset($_SESSION['SESSION_USERTYPE']);
 unset($_SESSION['SESSION_USERNAME']);
 unset($_SESSION['SESSION_SUBSERVICE']);
+unset($_SESSION['SESSION_REGISTERID']);
+
  if(isset($_POST['submit'])) {
 	
-	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
@@ -19,6 +21,7 @@ unset($_SESSION['SESSION_SUBSERVICE']);
 		$_SESSION['SESSION_USERNAME']=$row['username'];
 		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
 		$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
+		$_SESSION['SESSION_REGISTERID']=$row['register_id'];
 		$usertype=$row['user_type']; 
 		ob_start();
 		if($usertype==0){
@@ -89,7 +92,7 @@ unset($_SESSION['SESSION_SUBSERVICE']);
 </br>
     <form method="post">
       <div class="form-group has-feedback">
-         <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+         <input type="text" name="username" class="form-control" placeholder="Mobile No " required="required">
          <span class="fa fa-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">

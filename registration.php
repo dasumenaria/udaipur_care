@@ -4,48 +4,50 @@ include("config.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000); 
 $message="";
+$image_path="";
   
 if(isset($_POST['submit']))
 {
 	$name=$_POST['name'];
 	$mobile_no=$_POST['mobile_no'];
-	$dob1=$_POST['dob'];
-	if(!empty($dob1)) { $dob=date('Y-m-d', strtotime($dob1));}
-	else { $dob='0000-00-00'; }
-	$age=$_POST['age'];
-	$email_id=$_POST['email_id'];
-	$gender=$_POST['gender'];
-	$address=$_POST['address'];
-	$other_info=$_POST['other_info'];
-	$to=$_POST['email_id'];
-	$date=date('Y-m-d');
-	$time=date('h:i:s A');
-	
-	$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
-	$string = '';
-	for ($i = 0; $i < 6; $i++) {
-		$string .= $chars[rand(0, strlen($chars) - 1)];
-	}  
-	$charss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	$udcare = '';
-	for ($i = 0; $i < 8; $i++) {
-		$udcare .= $charss[rand(0, strlen($charss) - 1)];
-	}   
-	 
-	$sql="insert into `register` set  `name`='$name',`age`='$age',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
-	 
-	$r=mysql_query($sql);
-	$message = "Registration Successfully.";
-	$ids=mysql_insert_id();
-	$md4_password=md5($string);
-	mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$ids' , `date`='$date', `time`='$time' ");
-	
-	$photo="identity_proof".$ids.".jpg";
-	// move photo in  floder//
-	move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
-	
-	if($r)
+	$check=mysql_query("select `id` from `register` where `mobile_no`='$mobile_no ");
+	$count=mysql_num_rows($check);
+	if($count==0)
 	{
+		$dob1=$_POST['dob'];
+		if(!empty($dob1)) { $dob=date('Y-m-d', strtotime($dob1));}
+		else { $dob='0000-00-00'; }
+		$email_id=$_POST['email_id'];
+		$gender=$_POST['gender'];
+		$address=$_POST['address'];
+		$other_info=$_POST['other_info'];
+		$to=$_POST['email_id'];
+		$date=date('Y-m-d');
+		$time=date('h:i:s A');
+		
+		$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		$string = '';
+		for ($i = 0; $i < 6; $i++) {
+			$string .= $chars[rand(0, strlen($chars) - 1)];
+		}  
+		$charss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		$udcare = '';
+		for ($i = 0; $i < 8; $i++) {
+			$udcare .= $charss[rand(0, strlen($charss) - 1)];
+		}   
+		 
+		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
+		 
+		$r=mysql_query($sql);
+		
+		$ids=mysql_insert_id();
+		$md4_password=md5($string);
+		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$ids' , `date`='$date', `time`='$time' ");
+		
+		$photo="identity_proof".$ids.".jpg";
+		// move photo in  floder//
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
+	
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
 		
 		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
@@ -53,13 +55,15 @@ if(isset($_POST['submit']))
 		$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
 		
 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
-		
+		$message = "Congratulations you are successfully registr in udaipur care portal";
+		$image_path='<img src="images/success.svg" width="60px">';
 	}
 	else
 	{
-		echo mysql_error();
+		$message = "Mobile no already registered.";
+		$image_path='<img src="images/error.png" width="85px">';
 	}
-		
+ 		
 }
 ?>
 
@@ -110,12 +114,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                   <input type="date" name="dob" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Date Of Birth">
                 </div>
 		</div>
-		<div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputage">Age</label>
-                  <input type="text" name="age" class="form-control" id="exampleInputAge" placeholder="Enter Your Age">
-                </div>
-		</div>
+		 
 		 
 		<div class="col-md-6">	
 				<div class="form-group">
@@ -123,17 +122,16 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                   <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
                 </div>
 		</div>	
-		 <div class="col-md-6">		
+		 <div class="col-md-6">	
+         <label for="exampleInputDob">Gender &nbsp;</label>	
 			<div class="form-group">
-			</br> 
-				  <label for="exampleInputDob">Gender &nbsp;</label>
-					<input type="radio"  name="gender" class="minimal" value="male" checked> &nbsp; Male 
-					<input type="radio"   name="gender" class="minimal" value="female"> &nbsp; Female
-			</div>
+                 <input type="radio"  name="gender" class="minimal" value="male" checked> &nbsp; Male 
+                <input type="radio"   name="gender" class="minimal" value="female"> &nbsp; Female
+            </div>
 		</div>
-		<div class="col-md-12">		
+		<div class="col-md-6">		
 			<div class="form-group">
-				</br> 
+				 
 				  <label for="exampleInputDob">Address</label>
 				 <textarea name="address" class="form-control"></textarea>
 			</div>
@@ -151,8 +149,8 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
               <input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine problem you face">
              </div>
 		</div>
-		<div class="col-md-12">		
-             <div class="box-footer" style="float:right">
+		<div class="col-md-12" align="center">		
+             <div class="box-footer">
                   <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" >  
              </div>
 		</div>
@@ -162,10 +160,34 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 </div>
 </section>
     <!-- /.content -->
-  </div>		 
+  </div>
+<div style="display:none;margin-top:20px" id="new_app_login" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="false">
+    <div  class="modal-backdrop fade in" style="z-index:0 !important"></div>
+        <div class="modal-dialog" style="width:400px">
+            <div class="modal-content" align="center">
+               
+                <div class="modal-body" style="min-height:250px">
+                    
+                    <div  style="width:100%; padding-top:20px; font-size:25px" id="congrates"><?php echo $image_path; ?></div>
+                    <div class="modal-body" id="success_mag" style="padding:20px"><strong><?php echo $message; ?></strong> </div>
+                    <div  style="padding-top: 0px !important; padding-bottom:10px">
+                    
+                         <a style="background-color:#195683; color:#FFF; margin-right:0px !important" href="login.php" class="btn blue"> Okay </a>
+                     
+                    </div>
+                     
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+		 
 
 <?php include("footer.php"); ?>
 <script>
+<?php if(!empty($message)){?>
+	$('#new_app_login').show();
+<?php } ?>
 $('.allLetter').keyup(function(){
 		var inputtxt=  $(this).val();
 		var numbers =  /^[0-9]*\.?[0-9]*$/;

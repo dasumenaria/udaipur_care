@@ -4,11 +4,11 @@ include("config.php");
 include("header.php");
 $sub_serivice_id=$_GET['s_id'];
 @$SESSION_ID=$_SESSION['SESSION_ID'];
+@$SESSION_REGISTERID=$_SESSION['SESSION_REGISTERID'];  
 
 if(isset($_POST['login'])){
 	  $sub_serivice_id=$_POST['sub_serivice_id'];  
-	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
-	//echo "select `id`,`username`,`user_type`,`master_sub_services` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'"; exit;
+	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
@@ -16,9 +16,10 @@ if(isset($_POST['login'])){
 		$_SESSION['SESSION_USERNAME']=$row['username'];
 		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
 		$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
+		$_SESSION['SESSION_REGISTERID']=$row['register_id'];
 		$usertype=$row['user_type']; 
 		ob_start();
-			echo "<meta http-equiv='refresh' content='0;url=service_booking.php?s_id=".$sub_serivice_id."'/>";
+ 			header("location:service_booking.php?s_id=".$sub_serivice_id."");
 		ob_flush();
 	} 
 	else 
@@ -45,10 +46,17 @@ if(isset($_POST['submit']))
 	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currt_time`='$times',`currt_date`='$curnt_date',");
  
  }
-else
-	{
-		echo mysql_error();
-	}
+ if(!empty($SESSION_REGISTERID))
+ {
+	$ftc_data=mysql_query("select `udcare_no`,`unique_code` from `register` where `id`='$SESSION_REGISTERID'"); 
+	$ftx_array=mysql_fetch_array($ftc_data);
+	$udcare_no=$ftx_array['udcare_no'];
+	$unique_code=$ftx_array['unique_code'];
+ }
+ else
+ {
+	$udcare_no='';$unique_code=''; 
+ }
   ?>
 <style>
 .box.box-primary {
@@ -107,11 +115,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
               <div class="box-body" style="margin-left:12px;margin-right:12px;">
 				<div class="form-group col-md-6">
                   <label for="exampleInputUdCare_no">Udaipur Care No.</label>
-                  <input  type="text" name="udcare_no" class="form-control" placeholder="Enter Udaipur Care No." required>
+                  <input  type="text" name="udcare_no" class="form-control" value="<?php echo $udcare_no; ?>" placeholder="Enter Udaipur Care No." required>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputCode">6 Digit Code </label>
-                  <input type="text" name="code" class="form-control"  placeholder="Enter 6 Digit Code" required>
+                  <input type="text" name="code" class="form-control" value="<?php echo $unique_code; ?>" placeholder="Enter 6 Digit Code" required>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputName">Name</label>
@@ -132,11 +140,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputPicUpTime">Pick Up Time</label>
-                  <input type="time" name="time" class="form-control" required>
+                  <input type="time" name="time" class="form-control" required >
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputPicUpTime">Pick Up Date</label>
-				<input type="date"  name="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required>
+				<input type="text"  name="date" class="form-control" required id="datepicker">
                 </div>
 				<div class="form-group col-md-12">
                   <label for="exampleInputFile">Other Information</label>
@@ -169,7 +177,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
             <form method="post">
                   <div class="form-group has-feedback">
-                     <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+                     <input type="text" name="username" class="form-control" placeholder="Mobile No" required="required">
                      <span class="fa fa-user form-control-feedback"></span>
                   </div>
                   <div class="form-group has-feedback">
@@ -222,5 +230,8 @@ $('.allLetter').keyup(function(){
 			return false;  
 		}
 	});
+	$('#datepicker').datepicker({
+      autoclose: true
+    });
 </script>
 
