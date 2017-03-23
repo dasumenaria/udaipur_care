@@ -1,4 +1,5 @@
 <?php 
+
 include("header.php");
 include("config.php");
 date_default_timezone_set('Asia/Calcutta');
@@ -66,7 +67,7 @@ if(isset($_POST['submit']))
  		
 }
 ?>
-
+<!-- bootstrap datepicker -->
 <style>
 .box.box-primary {
     border-top-color: #3c8dbc;
@@ -110,13 +111,13 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputmobile_no">Mobile No.</label>
-                  <input type="text" name="mobile_no" class="form-control allLetter" id="exampleInputmobile_no" maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
+                  <input type="text" name="mobile_no" class="form-control allLetter checkMobile" id="exampleInputmobile_no" maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
                 </div>
 		</div>		
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputDob">Date Of Birth</label>
-                  <input type="date" name="dob" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Date Of Birth">
+                  <input type="text" name="dob" class="form-control datepicker" placeholder="Enter Your Date Of Birth">
                 </div>
 		</div>
 		 
@@ -195,15 +196,30 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 <?php if(!empty($message)){?>
 	$('#new_app_login').show();
 <?php } ?>
-$('.allLetter').keyup(function(){
-		var inputtxt=  $(this).val();
-		var numbers =  /^[0-9]*\.?[0-9]*$/;
-		if(inputtxt.match(numbers))  
-		{} 
-		else  
-		{  
-			$(this).val('');
-			return false;  
-		}
+
+	$('.allLetter').keyup(function(){
+			var inputtxt=  $(this).val();
+			var numbers =  /^[0-9]*\.?[0-9]*$/;
+			if(inputtxt.match(numbers))  
+			{} 
+			else  
+			{  
+				$(this).val('');
+				return false;  
+			}
+	});
+	$('.checkMobile').on('keyup', function(){
+		var mobile = $(this).val();
+		$.ajax({
+			url: "ajax_page.php?function_name=mobileNo_check&mobile="+mobile,
+			type: "POST",
+			success: function(data)
+			{ 
+				 if(data>0){
+					 $('.checkMobile').val('');
+					 alert('Mobile no already registered');
+				 }
+			}
+		});
 	});
 </script>

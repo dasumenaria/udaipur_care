@@ -29,6 +29,9 @@ else
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
 		<link rel="stylesheet" href="css/style.css">
+        <!-- Date picker -->
+        <link rel="stylesheet" href="assest/plugins/datepicker/datepicker3.css">
+
  	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 		<!-- start navigation -->

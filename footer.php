@@ -29,6 +29,13 @@
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
 		<script src="js/custom.js"></script>
-        
+        <!--	Date Picker -->
+        <script src="assest/plugins/datepicker/bootstrap-datepicker.js"></script>
+        <script>
+		$('.datepicker').datepicker({
+			  autoclose: true
+		});
+		</script>
+
         </body>
 </html>
