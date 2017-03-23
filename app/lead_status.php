@@ -7,6 +7,25 @@ ini_set('max_execution_time', 100000);
 $status=$_GET['s'];
 @$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
+
+if(isset($_POST['completed'])){
+	$reason_for_complete=$_POST['reason_for_complete'];
+	$update_id=$_POST['update_id'];
+	mysql_query("update `booking` set `reason_for_complete`='$reason_for_complete',`master_status`='3' where `id`='$update_id' ");
+}
+if(isset($_POST['rejected'])){
+	$reason_for_rejection=$_POST['reason_for_rejection'];
+	$update_id=$_POST['update_id'];
+	mysql_query("update `booking` set `reason_for_rejection`='$reason_for_rejection',`master_status`='2' where `id`='$update_id' ");
+	
+}
+if(isset($_POST['transfered'])){
+	$reason_for_transfer=$_POST['reason_for_transfer'];
+	$update_id=$_POST['update_id'];
+	mysql_query("update `booking` set `reason_for_transfer`='$reason_for_transfer',`master_status`='1' where `id`='$update_id' ");
+
+	
+}
 ?>
 
 <div class="content-wrapper">
@@ -102,14 +121,23 @@ $status=$_GET['s'];
                                 <div class="modal fade" id="complete<?php echo $lead_new['udcare_no']; ?>" role="dialog">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
+                                      <form method="post">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                                           <h4 class="modal-title">Do you want to complete this lead </h4>
                                         </div>
-                                        
+                                        <div class="modal-body"  style="min-height:100px">
+                                         	<div class="form-group col-md-12">
+                                             <label class="">Remarks(any)</label>
+                                             <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
+                                             <textarea name="reason_for_complete" class="form-control" cols="70" style="resize:none;" ></textarea>
+                                            </div>
+                                        </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" name="completed" class="btn btn-info">Complete</button>
                                         </div>
+                                      </form>
                                       </div>
                                     </div>
                                   </div>
@@ -117,28 +145,47 @@ $status=$_GET['s'];
                                   <div class="modal fade" id="transfer<?php echo $lead_new['udcare_no']; ?>" role="dialog">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
+                                      <form method="post">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h4 class="modal-title">Do you want to transfer this lead </h4>
+                                          <h4 class="modal-title"><strong>Do you want to transfer this lead </strong></h4>
                                         </div>
-                                        
+                                         <div class="modal-body"  style="min-height:100px">
+                                         	<div class="form-group col-md-12">
+                                             <label class="">Reason for Transfer</label>
+                                             <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
+                                             <textarea name="reason_for_transfer" class="form-control" cols="70" style="resize:none;" required></textarea>
+                                            </div>
+                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" name="transfered" class="btn btn-info">Transfer</button>
                                         </div>
+                                      </form>
                                       </div>
                                     </div>
                                   </div>
+                                  
                                   <div class="modal fade" id="reject<?php echo $lead_new['udcare_no']; ?>" role="dialog">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
+                                      <form method="post">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                                           <h4 class="modal-title">Do you want to reject this lead </h4>
                                         </div>
-                                        
+                                        <div class="modal-body"  style="min-height:100px">
+                                         	<div class="form-group col-md-12">
+                                             <label class="">Reason for Rejection</label>
+                                             <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
+                                             <textarea name="reason_for_rejection" class="form-control" cols="70" style="resize:none;" required></textarea>
+                                            </div>
+                                        </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" name="rejected" class="btn btn-info">Reject</button>
                                         </div>
+                                      </form>
                                       </div>
                                     </div>
                                   </div>
