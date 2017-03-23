@@ -70,7 +70,7 @@ include('config.php');
 						</div>
                         <div align="center" class="col-md-12" data-wow-delay="0.1s">
                         	<div style="width:45%">
-                            <a href="service.php?id=<?php echo $id;?>" class="button button4" style="text-decoration:none;">
+                            <a href="service.php?id=<?php echo $id;?>" class="button button4" style="text-decoration:none; padding: 10px;">
 							More Service
                             </a>
                             </div>

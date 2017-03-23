@@ -43,7 +43,10 @@ if(isset($_POST['submit']))
 	$times=date('h:i:s A');
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
-	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currt_time`='$times',`currt_date`='$curnt_date',");
+	 
+	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+	 
+	 header('location:service_booking.php');
  
  }
  if(!empty($SESSION_REGISTERID))

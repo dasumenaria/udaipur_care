@@ -5,7 +5,7 @@ $SESSION_ID=$_SESSION['SESSION_ID'];
 if(empty($SESSION_ID))
 {
  
-	header("location: login.php");
+	header("location: ../login.php");
 }
 else
 {

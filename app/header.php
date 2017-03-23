@@ -39,6 +39,9 @@
 		color:#807e7e;
 		font-size:11pt;
 	}
+	a {
+	cursor:pointer !important;	
+	}
 </style>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->

@@ -5,6 +5,8 @@ include("header.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 $status=$_GET['s'];
+@$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
+@$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
 ?>
 
 <div class="content-wrapper">
@@ -44,18 +46,25 @@ $status=$_GET['s'];
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-						  <th>Booking No</th>
+						  <th>Udaipur Care No</th>
                           <th>Name</th>
                           <th>Email</th>
                           <th>Mobile No</th>
  						  <th>Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
+                          <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        $leadNew="SELECT * from `booking` where `master_status` = '$status'";
+						if($SESSION_USERTYPE==1){
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status'";
+						}
+						else
+						{
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `master_sub_service_id` = '$SESSION_SUBSERVIDE'";
+						}
 						$Newlead=mysql_query($leadNew);
 						while($lead_new=mysql_fetch_array($Newlead)){
 						$date=$lead_new['date'];
@@ -74,6 +83,67 @@ $status=$_GET['s'];
 						  <td><?php echo $ftc['sub_services_name']; ?></td>
                           <td><?php echo $dateforview; ?></td>
                           <td><?php echo $lead_new['time']; ?></td>
+                          <td>
+                          	 
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-success">Action</button>
+                                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu">
+                                    <li><a data-toggle="modal" data-target="#reject<?php echo $lead_new['udcare_no']; ?>">Reject</a></li>
+                                    <li class="divider"></li>
+                                    <li><a data-toggle="modal" data-target="#transfer<?php echo $lead_new['udcare_no']; ?>">Transfer</a></li>
+                                    <li class="divider"></li>
+                                    <li><a data-toggle="modal" data-target="#complete<?php echo $lead_new['udcare_no']; ?>">Complete</a></li>
+                                  </ul>
+                                </div>
+                                <div class="modal fade" id="complete<?php echo $lead_new['udcare_no']; ?>" role="dialog">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Do you want to complete this lead </h4>
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="modal fade" id="transfer<?php echo $lead_new['udcare_no']; ?>" role="dialog">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Do you want to transfer this lead </h4>
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal fade" id="reject<?php echo $lead_new['udcare_no']; ?>" role="dialog">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Do you want to reject this lead </h4>
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              
+                          </td>
                          </tr>
                        <?php } ?>
                         </tbody>
