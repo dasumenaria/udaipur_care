@@ -114,6 +114,18 @@
               <center><img src="images/partner/26.png" ></center>
               </div>
 			  </div>
+			  <div class="col-md-3">
+				 <div class="form-group">
+				 
+              <center><img src="images/partner/28.jpg" height="100px;" ></center>
+              </div>
+			  </div>
+			  <div class="col-md-3">
+				 <div class="form-group">
+				 
+              <center><img src="images/partner/29.jpg"  height="100px;"></center>
+              </div>
+			  </div>
 			  
 			  
 			 
