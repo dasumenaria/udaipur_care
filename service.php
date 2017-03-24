@@ -33,7 +33,7 @@ a {
     <!-- Content Header (Page header) -->
 	<section class="content-header">
        <center>
-      	<h2 class="wow bounce" style="color:#707568"> <strong> 
+      	<h2 class="wow bounce" style=" padding-top:70px; color:#707568"> <strong> 
         <?php 
 	  	$querys=mysql_query("select `service_name` from `master_services` where `id`='$service_id'");
 		$ftc=mysql_fetch_array($querys);
@@ -46,7 +46,7 @@ a {
 	   </section>
  <br/><br/>
     <!-- Main content -->
-<div class="content-wrapper" style="padding-top:70px; min-height:580px">            
+<div class="content-wrapper" style="min-height:580px">            
  		 <?php
 				$count=0;
 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id' and flag=0 ");

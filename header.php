@@ -50,7 +50,18 @@ else
 					<ul class="nav navbar-nav navbar-right">
                     	<li><a href="index.php" class="smoothScroll">HOME</a></li>
                        <!-- <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li>-->
- 						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
+ 					   <li class="dropdown">
+						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+							 <li><a href="services.php" style="line-height: 21px !important;" > Door To Door</a></li>
+							<li class="divider"></li>
+							<li><a href="services.php" style="line-height: 21px !important;" >Discount</a></li>
+							</ul>
+						</li>
+
+ 
+						
+						
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
 						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
                         <li><a href="registration.php" class="smoothScroll">REGISTER</a></li>

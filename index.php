@@ -1,6 +1,24 @@
 <?php
 include('header.php');
- 
+include('config.php');
+
+
+ if(isset($_POST['submit']))
+{
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+  	$message=$_POST['message'];
+	$mobile_no=$_POST['mobile_no'];
+  	$timestamp=date("Y-m-d");
+	 
+   	mysql_query("insert into `contact_us` set `name`='$name',`message`='$message',`mobile_no`='$mobile_no',`email`='$email',`timestamp`='$timestamp'");
+	
+}
+else
+	{
+		echo mysql_error();
+	}
+
 ?>
 <style>
 #team img {
@@ -117,7 +135,7 @@ include('header.php');
 							<p><i class="fa fa-envelope-o too-icon"></i> &nbsp; helpline@udaipurcare.com</p>
 						</address>
 					</div>
-					<form action="register.php" method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
+					<form method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
 							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 								<input name="name" type="text" class="form-control" id="name" placeholder="Name" required="required">
 							</div>
@@ -131,7 +149,7 @@ include('header.php');
 								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
 							</div>
 							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input name="contact_submit" type="submit" class="form-control" id="submit" value="Send">
+								<input name="submit" type="submit" class="form-control" id="submit" value="Send">
 							</div>
 					</form>
 				</div>
