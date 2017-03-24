@@ -6,19 +6,20 @@ date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000); 
 $message="";
 $image_path="";
-  
+ 
 if(isset($_POST['submit']))
-{
+{ 
+	include('app/function.php');
 	$name=$_POST['name'];
 	$mobile_no=$_POST['mobile_no'];
-	$check=mysql_query("select `id` from `register` where `mobile_no`='$mobile_no ");
+ 	$check=mysql_query("select `id` from `register` where `mobile_no`='$mobile_no'");
 	$count=mysql_num_rows($check);
 	if($count==0)
 	{
 		$dob1=$_POST['dob'];
 		if(!empty($dob1)) { $dob=date('Y-m-d', strtotime($dob1));}
 		else { $dob='0000-00-00'; }
-		$email_id=$_POST['email_id'];
+ 		$email_id=$_POST['email_id'];
 		$gender=$_POST['gender'];
 		$address=$_POST['address'];
 		$other_info=$_POST['other_info'];
@@ -37,7 +38,14 @@ if(isset($_POST['submit']))
 			$udcare .= $charss[rand(0, strlen($charss) - 1)];
 		}   
 		 
-		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
+		 $name=encode($name,'UDRENCODE');
+		 $email_id=encode($email_id,'UDRENCODE');
+		 $mobile_no=encode($mobile_no,'UDRENCODE');
+		 $gender=encode($gender,'UDRENCODE');
+		 $address=encode($address,'UDRENCODE');
+		 $other_info=encode($other_info,'UDRENCODE');
+		  
+ 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
 		 
 		$r=mysql_query($sql);
 		
@@ -54,7 +62,7 @@ if(isset($_POST['submit']))
 		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
 		$sms_sender='UDCARE';
 		$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
-		
+		$mobile_no=decode($mobile_no,'UDRENCODE');
 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
 		$message = "Congratulations you are successfully registr in udaipur care portal";
 		$image_path='<img src="images/success.svg" width="60px">';
@@ -107,21 +115,33 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputFullName">Full Name</label>
                   <div class="input-group">
-                  <input type="text" name="name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
+                  	<input type="text" name="name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
+                    <div class="input-group-addon">
+                          <i class="fa fa-user"></i>
+                      </div>
+                  </div>
                 </div>
 		</div>
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputmobile_no">Mobile No.</label>
                   <div class="input-group">
-                  <input type="text" name="mobile_no" class="form-control allLetter checkMobile" id="exampleInputmobile_no" maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
+                  	<input type="text" name="mobile_no" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
+                    <div class="input-group-addon">
+                          <i class="fa fa-mobile"></i>
+                      </div>
+                  </div>
                 </div>
 		</div>		
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputDob">Date Of Birth</label>
                   <div class="input-group">
-                  <input type="text" name="dob" class="form-control datepicker" placeholder="Enter Your Date Of Birth">
+                  	<input type="text" name="dob" class="form-control datepicker" placeholder="Enter Your Date Of Birth">
+                    <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                      </div>
+                  </div>
                 </div>
 		</div>
 		 
@@ -130,7 +150,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <div class="input-group">
-                  <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
+                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
+                    <div class="input-group-addon">
+                          <i class="fa fa-envelope"></i>
+                      </div>
+                  </div>
                 </div>
 		</div>	
 		 <div class="col-md-6">	
@@ -150,8 +174,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			<div class="form-group">
                   <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
                   <div class="input-group">
-                  <input type="file" class="form-control" id="exampleInputFile" name="identity_proof">
-			</div>
+                  	<input type="file" class="form-control" id="exampleInputFile" name="identity_proof">
+                    <div class="input-group-addon">
+                          <i class="fa fa-upload"></i>
+                      </div>
+                  </div>
+ 		     </div>
 		</div>		
 		
 		 <div class="col-md-6">		
@@ -220,16 +248,18 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	});
 	$('.checkMobile').on('keyup', function(){
 		var mobile = $(this).val();
-		$.ajax({
-			url: "ajax_page.php?function_name=mobileNo_check&mobile="+mobile,
-			type: "POST",
-			success: function(data)
-			{ 
-				 if(data>0){
-					 $('.checkMobile').val('');
-					 alert('Mobile no already registered');
-				 }
-			}
-		});
+		if(mobile.length > 0 ){
+			$.ajax({
+				url: "ajax_page.php?function_name=mobileNo_check&mobile="+mobile,
+				type: "POST",
+				success: function(data)
+				{  
+					 if(data>0){
+						 $('.checkMobile').val('');
+						 alert('Mobile no already registered');
+					 }
+				}
+			});
+		}
 	});
 </script>
