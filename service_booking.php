@@ -131,51 +131,76 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
               <div class="box-body" style="margin-left:12px;margin-right:12px;">
 				<div class="form-group col-md-6">
                   <label for="exampleInputUdCare_no">Udaipur Care No.</label>
-                  <input  type="text" name="udcare_no" class="form-control" value="<?php echo $udcare_no; ?>" placeholder="Enter Udaipur Care No." required>
+                  <div class="input-group">
+                      <input  type="text" name="udcare_no" class="form-control" value="<?php echo $udcare_no; ?>" placeholder="Enter Udaipur Care No." required>
+                      <div class="input-group-addon">
+                          <i class="fa fa-book"></i>
+                      </div>
+                  </div>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputCode">6 Digit Code </label>
-                  <input type="text" name="code" class="form-control" value="<?php echo $unique_code; ?>" placeholder="Enter 6 Digit Code" required>
+                  <div class="input-group">
+                      <input type="text" name="code" class="form-control" value="<?php echo $unique_code; ?>" placeholder="Enter 6 Digit Code" required>
+                      <div class="input-group-addon">
+                          <i class="fa fa-book"></i>
+                      </div>
+                  </div>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputName">Name</label>
-                  <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required>
+                  <div class="input-group">
+                  	  <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required>
+                  	  <div class="input-group-addon">
+                          <i class="fa fa-user"></i>
+                      </div>
+                  </div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Email address</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your email Address" required>
+                  <div class="input-group">
+                  	  <input type="email" name="email" class="form-control" placeholder="Enter Your email Address" >
+                  	  <div class="input-group-addon">
+                          <i class="fa fa-envelope"></i>
+                      </div>
+                  </div>
                 </div>
 				 <div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Mobile No.</label>
-                  <input type="text" name="mobile_no" class="form-control allLetter" maxlength="10" minlength="10" id="exampleInputEmail1" placeholder="Enter Your Your Mobile No" required>
+                  <div class="input-group">
+                      <input type="text" name="mobile_no" class="form-control allLetter" maxlength="10" minlength="10"  placeholder="Enter Your Your Mobile No" required>
+                      <div class="input-group-addon">
+                          <i class="fa fa-mobile"></i>
+                      </div>
+                  </div>
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Address</label>
-				  <textarea name="address" class="form-control" required></textarea>
-                </div>
-                <div class="form-group col-md-6 ">
-				<div class="bootstrap-timepicker">
-                <div class="form-group">
-                  <label>Pick Up Time </label>
-
-                  <div class="input-group">
-                    <input type="text" name="time" class="form-control timepicker">
-
-                    <div class="input-group-addon">
-                      <i class="fa fa-clock-o"></i>
-                    </div>
-                  </div>
-                  <!-- /.input group -->
-                </div>
-                <!-- /.form group -->
-              </div>
-				 
-                   
+				  <textarea name="address" class="form-control" style="resize:none;" required></textarea>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputPicUpTime">Pick Up Date</label>
-				<input type="text"  name="date" class="form-control datepicker" required id="">
+                  <div class="input-group">
+                      <input type="text"  name="date" class="form-control datepicker" required id="">
+                      <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                      </div>
+                  </div>
                 </div>
+                <div class="form-group col-md-6 ">
+                    <div class="bootstrap-timepicker">
+                        <div class="form-group">
+                          <label>Pick Up Time </label>
+                            <div class="input-group">
+                                <input type="text" name="time" class="form-control timepicker">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                            </div>
+                         </div>
+                   </div>
+                </div>
+                
 				<div class="form-group col-md-12">
                   <label for="exampleInputFile">Other Information</label>
                    <textarea name="other_info" class="form-control"></textarea>

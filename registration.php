@@ -105,18 +105,21 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-6">
 				<div class="form-group">
                   <label for="exampleInputFullName">Full Name</label>
+                  <div class="input-group">
                   <input type="text" name="name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
                 </div>
 		</div>
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputmobile_no">Mobile No.</label>
+                  <div class="input-group">
                   <input type="text" name="mobile_no" class="form-control allLetter checkMobile" id="exampleInputmobile_no" maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
                 </div>
 		</div>		
 		<div class="col-md-6">		
                 <div class="form-group">
                   <label for="exampleInputDob">Date Of Birth</label>
+                  <div class="input-group">
                   <input type="text" name="dob" class="form-control datepicker" placeholder="Enter Your Date Of Birth">
                 </div>
 		</div>
@@ -125,6 +128,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">	
 				<div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
+                  <div class="input-group">
                   <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
                 </div>
 		</div>	
@@ -137,14 +141,14 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
-				 
-				  <label for="exampleInputDob">Address</label>
+				 <label for="exampleInputDob">Address</label>
 				 <textarea name="address" class="form-control"></textarea>
 			</div>
 		</div>	
 		<div class="col-md-6">
 			<div class="form-group">
                   <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
+                  <div class="input-group">
                   <input type="file" class="form-control" id="exampleInputFile" name="identity_proof">
 			</div>
 		</div>		
@@ -152,7 +156,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-6">		
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Other Details (if any):</label>
-              <input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine problem you face">
+              <div class="input-group">
+              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine problem you face">
+                    <div class="input-group-addon">
+                          <i class="fa fa-book"></i>
+                      </div>
+                  </div>
              </div>
 		</div>
  
