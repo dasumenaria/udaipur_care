@@ -102,6 +102,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
          <div class="box-body" style="margin-left:40px;margin-right:40px;">
 		 </br>
 		 <div class="row">
+		 
 		 <div class="col-md-6">
 				<div class="form-group">
                   <label for="exampleInputFullName">Full Name</label>
