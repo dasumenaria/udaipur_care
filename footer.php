@@ -31,9 +31,13 @@
 		<script src="js/custom.js"></script>
         <!--	Date Picker -->
         <script src="assest/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script src="assest/plugins/timepicker/bootstrap-timepicker.min.js"></script>
         <script>
 		$('.datepicker').datepicker({
 			  autoclose: true
+		});
+		$(".timepicker").timepicker({
+		  showInputs: false
 		});
 		</script>
 

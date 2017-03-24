@@ -31,6 +31,7 @@ else
 		<link rel="stylesheet" href="css/style.css">
         <!-- Date picker -->
         <link rel="stylesheet" href="assest/plugins/datepicker/datepicker3.css">
+		<link rel="stylesheet" href="assest/plugins/timepicker/bootstrap-timepicker.min.css">
 
  	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">

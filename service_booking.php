@@ -86,7 +86,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 </style>
 
-<link rel="stylesheet" href="assest/plugins/timepicker/bootstrap-timepicker.min.css">
+
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -156,7 +156,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 <div class="form-group col-md-6 ">
 				<div class="bootstrap-timepicker">
                 <div class="form-group">
-                  <label>Time picker:</label>
+                  <label>Pick Up Time </label>
 
                   <div class="input-group">
                     <input type="text" name="time" class="form-control timepicker">
@@ -268,7 +268,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 <?php include("footer.php"); ?>
 
 
-<script src="assest/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+
 <script>
 <?php if(empty($SESSION_ID)){?>
  		$('#new_app_login').show();
@@ -293,13 +293,5 @@ $('.allLetter').keyup(function(){
 	});
 	 
 </script>
-<script>
-  
-     //Timepicker
-    $(".timepicker").timepicker({
-		
-      showInputs: false
-    });
-  
-</script>
+ 
 
