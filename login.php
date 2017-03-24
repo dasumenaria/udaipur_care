@@ -17,21 +17,41 @@ unset($_SESSION['SESSION_REGISTERID']);
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
-		$_SESSION['SESSION_ID']=$row['id'];
-		$_SESSION['SESSION_USERNAME']=$row['username'];
-		$_SESSION['SESSION_USERTYPE']=$row['user_type'];
-		$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
-		$_SESSION['SESSION_REGISTERID']=$row['register_id'];
+		$id=$row['id'];
+		
 		$usertype=$row['user_type']; 
-		ob_start();
+		//--- SMS
+		if($usertype != 0)
+		{
+			$charss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			$udcare = '';
+			for ($i = 0; $i < 8; $i++) {
+				$udcare .= $charss[rand(0, strlen($charss) - 1)];
+			}   
+			$_SESSION['SESSION_ID']=$row['id'];
+			$working_key='A7a76ea72525fc05bbe9963267b48dd96';
+			$sms_sender='UDCARE';
+			$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$udcare);
+			$mobile_no=$row['username'];
+			//file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
+				mysql_query("update `login` set `code`='$udcare' where `id`='$id'");
+			ob_start();
+		}
+ 		$_SESSION['UNUSES']=$id;
 		if($usertype==0){
+			$_SESSION['SESSION_ID']=$row['id'];
+			$_SESSION['SESSION_USERNAME']=$row['username'];
+			$_SESSION['SESSION_USERTYPE']=$row['user_type'];
+			$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
+			$_SESSION['SESSION_REGISTERID']=$row['register_id'];
+			
 			echo "<meta http-equiv='refresh' content='0;url=services.php'/>";
 		}
 		else if($usertype==1){
-			echo "<meta http-equiv='refresh' content='0;url=app/admin_dashboard.php'/>";
+			echo "<meta http-equiv='refresh' content='0;url=app/veification.php'/>"; //admin_dashboard
 		}
 		else if($usertype==2){
-			echo "<meta http-equiv='refresh' content='0;url=app/vendor_dashboard.php'/>";
+			echo "<meta http-equiv='refresh' content='0;url=app/veification.php'/>"; //vendor_dashboard
 		}
 	
 		ob_flush();
