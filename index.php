@@ -78,31 +78,11 @@ else
 			 
 				<div class="row">
 						<h2 class="wow bounce" >Initiated & Supported By </h2>
-						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/ww.png" style="height:150px !important;margin-top:-44px; "  class="img-responsive" alt="team img">
+						<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/44.png"    class="img-responsive" alt="team img">
 						 
                         </div>
-                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/6.png" style="height:120px !important"  class="img-responsive" alt="team img">
-							 
-                        </div>
-						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/7.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
-						 
-                        </div>
-						<div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/4.jpg" style="height:120px !important"  class="img-responsive" alt="team img">
-						 
-                        </div> 
-						
-                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.6s">
-						    <a target="_blank" href="http://www.fusionoutsourcing.com/"><img src="images/logo/logo-fusion.png" style="height:80px !important" class="img-responsive" alt="team img"></a>
-						   </div>
-						 
-                        <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-						    <a target="_blank" href="http://phppoets.com/"><img src="images/logo/phppoetslogo.png" style="height:80px !important" class="img-responsive" alt="team img"></a>
-						  </div>
-                         
+                        
 						 
   
 					   </br>

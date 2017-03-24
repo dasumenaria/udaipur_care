@@ -73,6 +73,7 @@ if(isset($_POST['transfered'])){
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
                           <th>Action</th>
+						  <th>Assign</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -191,6 +192,43 @@ if(isset($_POST['transfered'])){
                                   </div>
                               
                           </td>
+						   <td>
+                          	 
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-warning"  data-toggle="modal" data-target="#reject">Assign</button>
+                                  <button type="button" class="btn btn-warning dropdown-toggle">
+                                    <span class="fa fa-group"></span>
+                                    </button>
+                                   
+                                </div>
+                                   <div class="modal fade" id="reject" role="dialog">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                      <form method="post">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Do you want to transfer this lead </h4>
+                                        </div>
+                                        <div class="modal-body"  style="min-height:100px">
+                                         	<div class="form-group col-md-12">
+                                             <label class="">Please Select Vendor </label>
+                                              <select>
+											  <option value="">a</option>
+											  <option value="">b</option>
+											  </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" name="rejected" class="btn btn-info">Reject</button>
+                                        </div>
+                                      </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                              
+                          </td>
+						  
                          </tr>
                        <?php } ?>
                         </tbody>

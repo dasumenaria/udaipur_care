@@ -240,7 +240,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 					  <div class="input-group">
 							 <input name="hobbies" type="text" class="form-control" placeholder="Hobbies">
 						  <div class="input-group-addon">
-						  <i class="fa fa-user"></i>
+						  <i class="fa fa-star-half-o"></i>
 						  </div>
 					  </div>
 			 </div>
@@ -258,7 +258,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 					  <div class="input-group">
 							 <input name="area_of_specialization" type="text" class="form-control" id="name" required="required" placeholder="Area of Specialization">
 						  <div class="input-group-addon">
-						  <i class="fa fa-child"></i>
+						  <i class="fa fa-briefcase"></i>
 						  </div>
 					  </div>
 			 </div>
