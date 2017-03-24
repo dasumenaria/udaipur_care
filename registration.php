@@ -51,6 +51,7 @@ if(isset($_POST['submit']))
 		
 		$ids=mysql_insert_id();
 		$md4_password=md5($string);
+		$mobile_no=decode($mobile_no,'UDRENCODE');
 		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$ids' , `date`='$date', `time`='$time' ");
 		
 		$photo="identity_proof".$ids.".jpg";
