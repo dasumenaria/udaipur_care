@@ -6,6 +6,9 @@ $sub_serivice_id=$_GET['s_id'];
 @$SESSION_ID=$_SESSION['SESSION_ID'];
 @$SESSION_REGISTERID=$_SESSION['SESSION_REGISTERID'];  
 
+$message="";
+$image_path="";
+
 if(isset($_POST['login'])){
 	  $sub_serivice_id=$_POST['sub_serivice_id'];  
 	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
@@ -21,11 +24,14 @@ if(isset($_POST['login'])){
 		ob_start();
  			header("location:service_booking.php?s_id=".$sub_serivice_id."");
 		ob_flush();
+
 	} 
 	else 
 	{
 		$message = "Invalid Username or Password!";
 	}
+	
+	
 	
 }
 
@@ -46,9 +52,13 @@ if(isset($_POST['submit']))
 	 
 	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
-	 header('location:service_booking.php');
- 
- }
+	// header('location:service_booking.php');
+// file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
+		$message = "Congratulations your booking successfully";
+		$image_path='<img src="images/success.svg" width="60px">';
+	}
+	
+ 	
  if(!empty($SESSION_REGISTERID))
  {
 	$ftc_data=mysql_query("select `udcare_no`,`unique_code` from `register` where `id`='$SESSION_REGISTERID'"); 
@@ -75,6 +85,9 @@ width: 100%;
 box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 </style>
+
+<link rel="stylesheet" href="assest/plugins/timepicker/bootstrap-timepicker.min.css">
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -138,21 +151,34 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 </div>
 				<div class="form-group col-md-6">
                   <label for="exampleInputEmailAddress">Address</label>
-				  <textarea name="address" class="form-control" required>
-				 </textarea>
+				  <textarea name="address" class="form-control" required></textarea>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="exampleInputPicUpTime">Pick Up Time</label>
-                  <input type="time" name="time" class="form-control" required >
+                <div class="form-group col-md-6 ">
+				<div class="bootstrap-timepicker">
+                <div class="form-group">
+                  <label>Time picker:</label>
+
+                  <div class="input-group">
+                    <input type="text" name="time" class="form-control timepicker">
+
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+              </div>
+				 
+                   
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputPicUpTime">Pick Up Date</label>
-				<input type="text"  name="date" class="form-control" required id="datepicker">
+				<input type="text"  name="date" class="form-control datepicker" required id="">
                 </div>
 				<div class="form-group col-md-12">
                   <label for="exampleInputFile">Other Information</label>
-                   <textarea name="other_info" class="form-control">
-				</textarea>
+                   <textarea name="other_info" class="form-control"></textarea>
               </div>
               <!-- /.box-body -->
               <div class="col-md-12" align="center">
@@ -160,6 +186,10 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                     <input name="submit" type="submit" class="btn btn-primary form-control" id="submit" value="Book Now">
                   </div>
               </div>
+			  <!------->
+			   
+             
+			 
             </form>
           </div>
         </div>
@@ -213,14 +243,42 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         </div>
     </div>
 
+	<!--------pop up------->
+<div style="display:none;margin-top:20px" id="success_messge" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="false">
+    <div  class="modal-backdrop fade in" style="z-index:0 !important"></div>
+        <div class="modal-dialog" style="width:400px">
+            <div class="modal-content" align="center">
+               
+                <div class="modal-body" style="min-height:250px">
+                    
+                    <div  style="width:100%; padding-top:20px; font-size:25px" id="congrates"><?php echo $image_path; ?></div>
+                    <div class="modal-body" id="success_mag" style="padding:20px"><strong><?php echo $message; ?></strong> </div>
+                    <div  style="padding-top: 0px !important; padding-bottom:10px">
+                    
+                         <a style="background-color:#195683; color:#FFF; margin-right:0px !important" href="index.php" class="btn blue">Okay </a>
+                     
+                    </div>
+                     
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
 <?php include("footer.php"); ?>
 
 
+<script src="assest/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <script>
 <?php if(empty($SESSION_ID)){?>
  		$('#new_app_login').show();
-		<?php } ?>
+		<?php }
+
+if(!empty ($message))
+{?>
+	$('#success_messge').show();
+<?php }
+		?>
  
 $('.allLetter').keyup(function(){
 		var inputtxt=  $(this).val();
@@ -233,8 +291,15 @@ $('.allLetter').keyup(function(){
 			return false;  
 		}
 	});
-	$('#datepicker').datepicker({
-      autoclose: true
+	 
+</script>
+<script>
+  
+     //Timepicker
+    $(".timepicker").timepicker({
+		
+      showInputs: false
     });
+  
 </script>
 
