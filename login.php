@@ -48,10 +48,10 @@ unset($_SESSION['SESSION_REGISTERID']);
 			echo "<meta http-equiv='refresh' content='0;url=services.php'/>";
 		}
 		else if($usertype==1){
-			echo "<meta http-equiv='refresh' content='0;url=app/veification.php'/>"; //admin_dashboard
+			echo "<meta http-equiv='refresh' content='0;url=app/verification.php'/>"; //admin_dashboard
 		}
 		else if($usertype==2){
-			echo "<meta http-equiv='refresh' content='0;url=app/veification.php'/>"; //vendor_dashboard
+			echo "<meta http-equiv='refresh' content='0;url=app/verification.php'/>"; //vendor_dashboard
 		}
 	
 		ob_flush();
