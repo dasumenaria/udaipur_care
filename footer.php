@@ -2,7 +2,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-7">
-						<p>Copyright &copy; 2017 Udaipur Care</p>
+						<p>Maintain and Developed by PHP Poets IT Solutions Pvt. Ltd. </p>
 					</div>
 					<div class="col-md-4 col-sm-5">
 						

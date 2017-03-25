@@ -78,16 +78,36 @@ else
 			 
 				<div class="row">
 						<h2 class="wow bounce" >Initiated & Supported By </h2>
-						<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/44.png" class="img-responsive" alt="team img">
-						 
-                        </div>
-                        
-						 
-  
-					   </br>
-					    </br>
-			 </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/a.png"class="img-responsive" alt="team img" height="50px !important"> 
+							<label><a href=" " style="color: #007787;text-decoration: none;"><p>Rotary Udaipur Mewar Service Trust Udaipur</p></a></label>  							
+                          </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+                            <img src="images/logo/b.png"class="img-responsive" alt="team img" height="50px !important"> 
+							<label><a href=" ">District Administration,Udaipur</a></label>
+                          </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
+                            <img src="images/logo/c.png"class="img-responsive" alt="team img" height="50px !important"> 
+							<label><a href=" ">Rajasthan Police</a></label>
+                          </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
+                            <img src="images/logo/d.png"class="img-responsive" alt="team img" height="150px !important"> 
+							 <label><a href=" ">Smart City</a></label>
+                          </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
+                            <img src="images/logo/e.png"class="img-responsive" alt="team img" height="150px !important"> 
+							<label><a href=" ">Fusion Business Solutions Pvt. Ltd.</a></label>
+                          </div>
+						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
+                            <img src="images/logo/f.png"class="img-responsive" alt="team img" height="150px !important"> 
+							<label><a href=" ">PHP Poets IT Solutions Pvt. Ltd.</a></label>
+                          </div>
+						   
+  			 </div>
 		</div>
 		<!-- end team -->
 
