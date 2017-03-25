@@ -79,7 +79,7 @@ else
 				<div class="row">
 						<h2 class="wow bounce" >Initiated & Supported By </h2>
 						<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-                            <img src="images/logo/44.png"    class="img-responsive" alt="team img">
+                            <img src="images/logo/44.png" class="img-responsive" alt="team img">
 						 
                         </div>
                         
