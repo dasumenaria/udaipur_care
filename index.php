@@ -79,32 +79,34 @@ else
 				<div class="row">
 						<h2 class="wow bounce" >Initiated & Supported By </h2>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
                             <img src="images/logo/a.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" " style="color: #007787;text-decoration: none;"><p>Rotary Udaipur Mewar Service Trust Udaipur</p></a></label>  							
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important; font-weight:bold !important;">Rotary Udaipur Mewar Service Trust Udaipur</a></label>  							
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						  </br>
                             <img src="images/logo/b.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" ">District Administration,Udaipur</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">&nbsp; &nbsp; &nbsp; &nbsp; District Administration, &nbsp; &nbsp;Udaipur</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/c.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" ">Rajasthan Police</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Rajasthan Police</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/d.png"class="img-responsive" alt="team img" height="150px !important"> 
-							 <label><a href=" ">Smart City</a></label>
+							 <label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Smart City Mission</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/e.png"class="img-responsive" alt="team img" height="150px !important"> 
-							<label><a href=" ">Fusion Business Solutions Pvt. Ltd.</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Fusion Business Solutions Pvt. Ltd.</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/f.png"class="img-responsive" alt="team img" height="150px !important"> 
-							<label><a href=" ">PHP Poets IT Solutions Pvt. Ltd.</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">PHP Poets IT Solutions Pvt. Ltd.</a></label>
                           </div>
 						   
   			 </div>

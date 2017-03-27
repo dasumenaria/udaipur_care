@@ -78,7 +78,8 @@ include('config.php');
 					</div>
 				 
                <?php
- 				if($count==3){ echo '</div>';  $count=0;}	
+ 				 $count==4;
+ echo "<br/>";
 					}
 				?>
 				</div>

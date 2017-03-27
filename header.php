@@ -44,7 +44,7 @@ else
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="#home" class="navbar-brand smoothScroll"><img src="images/logos.png" style="height:62px !important" class="img-responsive" alt="logo"></a>
+					<a href="index.php" class="navbar-brand smoothScroll"><img src="images/logos.png" style="height:62px !important" class="img-responsive" alt="logo"></a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -55,7 +55,7 @@ else
 							<ul class="dropdown-menu" role="menu">
 							 <li><a href="services.php" style="line-height: 21px !important;" > Door To Door</a></li>
 							<li class="divider"></li>
-							<li><a href="services.php" style="line-height: 21px !important;" >Discount</a></li>
+							<li><a href="discount.php" style="line-height: 21px !important;" >Discount</a></li>
 							</ul>
 						</li>
 
