@@ -22,9 +22,6 @@ if(isset($_POST['submit'])){
 	$discount=$_POST['discount'];
 	$offer=$_POST['offer'];
 	$service_price=$_POST['service_price'];
-	   
-	  
-  
  
    $sql="insert into `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`email_id`='$email_id',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`service_price`='$service_price'";
  
@@ -62,8 +59,8 @@ if(isset($_POST['submit'])){
  
   
 
- <section class="content">
-      <div class="row">
+	 <section class="content">
+		  <div class="row">
          
         <!-- /.col -->
         <div class="col-md-12">

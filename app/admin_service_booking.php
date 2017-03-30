@@ -2,9 +2,31 @@
 include("auth.php");
 include("../config.php");
 include("header.php");
+if(isset($_POST['submit'])){
+	 
+	 	$udcare_no=$_POST['udcare_no'];
+	$code=$_POST['code'];
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+  	$mobile_no=$_POST['mobile_no'];
+	$address=$_POST['address'];
+	$time=$_POST['time'];
+	$date=$_POST['date'];
+	$curnt_date=date('Y-m-d');
+	$times=date('h:i:s A');
+	$date_chne=date('Y-m-d', strtotime($date));
+	$other_info=$_POST['other_info'];
+echo "insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'";	
+ mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+	 
+	 }
+else
+	{
+		echo mysql_error();
+		}
+		
   ?>
- 
-   <!-- Main content -->
+  <!-- Main content -->
     <section class="content">
       <div class="row">
 		<div class="box box-primary" style="background-color:white;margin-left:12px; margin-right:12px;">
@@ -87,8 +109,40 @@ include("header.php");
                          </div>
                    </div>
                 </div>
-                
-				<div class="form-group col-md-12">
+				 
+				<div class="form-group col-md-6">
+                  <label for="exampleInputPicUpTime">Select Service</label>
+                  <div class="input-group">
+                       <select name="" class="form-control" style="width:520px;">
+					   <?php
+			  $r1=mysql_query("select * from master_services  where flag=0 order by id Desc ");							
+					$i=0;
+					while($row1=mysql_fetch_array($r1))
+					{
+						$i++;
+					$id=$row1['id'];
+					$service_name=$row1['service_name'];
+					 
+					 
+					
+					
+					?>
+					 <option value="<?php echo $id;?>"><?php echo $service_name;?></option>
+					<?php } ?>
+					 </select>
+						
+                  </div>
+                </div>
+				<div class="form-group col-md-6">
+                  <label for="exampleInputPicUpTime">Select Sub Service</label>
+                  <div class="input-group">
+                     <select name="" class="form-control select2" style="width:520px;">
+					 <option value="">Select Service</option>
+					 </select>
+                        
+                  </div>
+                </div>
+                 <div class="form-group col-md-12">
                   <label for="exampleInputFile">Other Information</label>
                    <textarea name="other_info" class="form-control"></textarea>
               </div>
@@ -98,17 +152,22 @@ include("header.php");
                     <input name="submit" type="submit" class="btn btn-primary form-control" id="submit" value="Book Now">
                   </div>
               </div>
+			  <div class="col-md-12" align="center">
+                  <div >
+                   &nbsp;
+                  </div>
+              </div>
+			  
 			  <!------->
 			   
-             </br>
+            
 			 
             </form>
           </div>
         </div>
 	  </div>
 	  </section>
-    <!-- /.content -->
- 
+    <!-- /.content --> 
 <div style="display:none;margin-top:20px" id="new_app_login" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="false">
 <div  class="modal-backdrop fade in" style="z-index:0 !important"></div>
     <div class="modal-dialog" style="width:400px">
@@ -153,7 +212,6 @@ include("header.php");
             </div>
         </div>
     </div>
-
 	<!--------pop up------->
 <div style="display:none;margin-top:20px" id="success_messge" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="false">
     <div  class="modal-backdrop fade in" style="z-index:0 !important"></div>
@@ -167,19 +225,12 @@ include("header.php");
                     <div  style="padding-top: 0px !important; padding-bottom:10px">
                     
                          <a style="background-color:#195683; color:#FFF; margin-right:0px !important" href="index.php" class="btn blue">Okay </a>
-                     
+                     </div>
                     </div>
-                     
-                    
-                </div>
             </div>
         </div>
     </div>
-    
 <?php include("footer.php"); ?>
-
-
-
 <script>
 <?php if(empty($SESSION_ID)){?>
  		$('#new_app_login').show();
