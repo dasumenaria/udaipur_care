@@ -51,7 +51,7 @@ include("header.php");
 
                 <tbody>
 				<?php
-			  $r1=mysql_query("select * from register  order by id Desc ");							
+			  $r1=mysql_query("select * from vendor  order by id Desc ");							
 					$i=0;
 					while($row1=mysql_fetch_array($r1))
 					{
