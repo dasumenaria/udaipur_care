@@ -6,6 +6,22 @@ include("../config.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
   $message="";
+ if(isset($_POST['add_service']))
+ {
+	$service_name=$_POST['service_name'];
+	$discription=$_POST['discription'];
+	$sql="insert into `master_services` set `service_name`='$service_name', `discription`='$discription'";
+ 	mysql_query($sql);
+ }
+ 
+ if(isset($_POST['add_sub_service']))
+ {
+	$services_id=$_POST['company_service'];
+	$sub_services_name=$_POST['sub_service_name'];
+	$discription=$_POST['discription'];
+	$sql="insert into `master_sub_services` set `sub_services_name`='$sub_services_name' , `services_id`='$services_id' , `discription`='$discription'";
+	mysql_query($sql);
+}
   
 if(isset($_POST['submit'])){
 	 
@@ -22,7 +38,6 @@ if(isset($_POST['submit'])){
 	$discount=$_POST['discount'];
 	$offer=$_POST['offer'];
 	$service_price=$_POST['service_price'];
- 
    $sql="insert into `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`email_id`='$email_id',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`service_price`='$service_price'";
  
   $r=mysql_query($sql);
@@ -59,58 +74,50 @@ if(isset($_POST['submit'])){
  
   
 
-	 <section class="content">
-		  <div class="row">
-         
-        <!-- /.col -->
+ 
+ <section class="content">
+      <div class="row">
+ 
         <div class="col-md-12">
          <div class="box box-primary">
             <div class="box-footer no-padding">
               <div class="mailbox-controls">
-			   
-				 
-		<center>
-		<h3>Vendor Registration Form</h3>
-		<hr>
-		 </center>
-		
+ 				<h3>Vendor Registration </h3><hr>
            <form method="post"  id="contact-form" role="form" enctype="multipart/form-data">
          <div class="box-body" style="margin-left:40px;margin-right:40px;">
-		 </br>
-		 <div class="row">
-		 
-		 <div class="col-md-6">
-				<div class="form-group">
-                  <label for="exampleInputFullName">Full Name</label>
-                  <div class="input-group">
-                  	<input type="text" name="full_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
-                    <div class="input-group-addon">
-                          <i class="fa fa-user"></i>
-                      </div>
+ 		 <div class="row">
+ 		 <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputFullName">Full Name</label>
+              <div class="input-group">
+                <input type="text" name="full_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
+                <div class="input-group-addon">
+                      <i class="fa fa-user"></i>
                   </div>
-                </div>
+              </div>
+            </div>
 		</div>
 		<div class="col-md-6">		
-                <div class="form-group">
-                  <label for="exampleInputmobile_no">Mobile No.</label>
-                  <div class="input-group">
-                  	<input type="text" name="mobile_no" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
-                    <div class="input-group-addon">
-                          <i class="fa fa-mobile"></i>
-                      </div>
+            <div class="form-group">
+              <label for="exampleInputmobile_no">Mobile No.</label>
+              <div class="input-group">
+                <input type="text" name="mobile_no" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
+                <div class="input-group-addon">
+                      <i class="fa fa-mobile"></i>
                   </div>
-                </div>
+              </div>
+            </div>
 		</div>		
 		<div class="col-md-6">	
-				<div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <div class="input-group">
-                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
-                    <div class="input-group-addon">
-                          <i class="fa fa-envelope"></i>
-                      </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <div class="input-group">
+                <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
+                <div class="input-group-addon">
+                      <i class="fa fa-envelope"></i>
                   </div>
-                </div>
+              </div>
+            </div>
 		</div>
 		 
 		<div class="col-md-6">	
@@ -151,11 +158,22 @@ if(isset($_POST['submit'])){
 		</div>		
 		<div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Company Service</label>
+              <label for="exampleInputAnyMedicalTreatment">Service Category</label>
               <div class="input-group">
-              		<input name="company_service" type="text" class="form-control" id="name" placeholder=" Enter Company Service">
-                    <div class="input-group-addon">
-                          <i class="fa fa-book"></i>
+              	<select name="company_service" class="form-control suv_category">
+                <option value="">Select...</option>
+                <?php
+					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+					while($ftc_data=mysql_fetch_array($ftx_servide))
+					{
+						echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
+					}
+                ?>
+                </select>
+              
+              		
+                    <div class="input-group-addon" style="background-color:#c7c6c6; cursor:pointer" data-toggle="modal" data-target="#service_dailog">
+                          <i class="fa fa-plus"></i>
                       </div>
                   </div>
              </div>
@@ -164,9 +182,11 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Sub Service</label>
               <div class="input-group">
-              		<input name="company_sub_service" type="text" class="form-control" id="name" placeholder="Enter Company Sub Service">
-                    <div class="input-group-addon">
-                          <i class="fa fa-book"></i>
+                     <select name="company_sub_service" class="form-control" id="suv_category_result">
+                		<option value="">Select...</option>
+                    </select>
+                    <div class="input-group-addon" style="background-color:#c7c6c6; cursor:pointer" data-toggle="modal" data-target="#sub_service_dailog">
+                          <i class="fa fa-plus"></i>
                       </div>
                   </div>
              </div>
@@ -245,8 +265,96 @@ if(isset($_POST['submit'])){
 	</div>		
 </div> 
 </form>
- 
-				 
+ <div class="modal fade" id="service_dailog" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form method="post">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New Service Category  </h4>
+                </div>
+                <div class="modal-body"  style="min-height:180px">
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+                          <div class=" ">
+                            <input type="text" name="service_name" class="form-control" placeholder="Provide Service Category" />                                
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Discription</label>
+                          <div class="">
+                          	<input type="text" name="discription" class="form-control" placeholder="Discription" />       
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" name="add_service" class="btn btn-info">Submit</button>
+                </div>
+              </form>
+              </div>
+    	</div>
+      </div>	
+	<div class="modal fade" id="sub_service_dailog" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form method="post">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New Sub Service </h4>
+                </div>
+                <div class="modal-body"  style="min-height:230px">
+                     
+                  <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+                          <div class="">
+                            <select name="company_service" class="form-control suv_category">
+                            <option value="">Select...</option>
+                            <?php
+                                $ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+                                while($ftc_data=mysql_fetch_array($ftx_servide))
+                                {
+                                    echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
+                                }
+                            ?>
+                            </select>
+                             </div>
+                        </div>
+                    </div>  
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Sub Service Name</label>
+                          <div class="">
+                          	<input type="text" name="sub_service_name" class="form-control" placeholder="Provide Sub Service Name" />       
+                          </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Discription</label>
+                          <div class="">
+                          	<input type="text" name="discription" class="form-control" placeholder="Discription" />       
+                          </div>
+                        </div>
+                    </div> 
+                      
+                     
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" name="add_sub_service" class="btn btn-info">Submit</button>
+                </div>
+              </form>
+              </div>
+    	</div>
+      </div>	
+      	 
 
               </div>
             </div>
@@ -261,3 +369,16 @@ if(isset($_POST['submit'])){
  <?php 
 include("footer.php");
   ?>
+  <script>
+  $('.suv_category').on('change', function(){
+	var service = $(this).val();  
+	$.ajax({
+			url: "../ajax_page.php?function_name=fetch_service_list&id="+service,
+			type: "POST",
+			success: function(data)
+			{   
+				  $('#suv_category_result').html(data);
+			}
+		});
+   });
+  </script>
