@@ -22,20 +22,12 @@ $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
  ?>
  
- <div class="content-wrapper">
+ 
 
  <section class="content">
       <div class="row">
-        <div class="col-md-2" >
-          <?php include('menu.php');?> 
-
-          
-          <!-- /. box -->
-           
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-10">
+        
+        <div class="col-md-12">
          <div class="box box-primary">
             <div class="box-footer no-padding">
               <div class="mailbox-controls" style="min-height: 470px;">
@@ -110,7 +102,7 @@ $lead_complete=mysql_num_rows($donelead);
       </div>
       <!-- /.row -->
     </section>
- </div>
+ 
  <?php 
 include("footer.php");
   ?>

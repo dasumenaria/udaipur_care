@@ -16,7 +16,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>UDAIPUR CARE</title>
+  <title>AdminLTE 2 | Buttons</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -28,36 +28,28 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css">    
-<style>
-	.info-box-icon
-	{
-		 background-color:white;
-	}
-	.skin-black .main-header .navbar .navbar-nav > li > a {
-		border-right: none;
-		color:#807e7e;
-		font-size:11pt;
-	}
-	a {
-	cursor:pointer !important;	
-	}
-</style>
+  <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
+ 
 </head>
-<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-black layout-top-nav">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-   <header class="main-header">
-    <nav class="navbar navbar-static-top" style="background-color:#f8f8f8 !important;padding-top: 0px !important;">
-      <div class="container">
-        <div class="navbar-header">
-        <a href="<?php echo $dashboard; ?>" class=""><img src="../images/logos.png" width="180px;"  class="img-responsive" alt="logo"></a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="<?php echo $dashboard; ?>" class="logo">
+       <img src="../images/logos.png" width="180px;" height="49px"    alt="logo">
+       
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav" >
 				<li><a href="../logout.php">LOGOUT</a></li>
 			</ul>
@@ -67,6 +59,58 @@
             </div>
           </form>-->
         </div>
+       <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+           <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+               <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+       
+       <ul class="sidebar-menu">
+         
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../assest/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../assest/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          </ul>
+        </li>
+         <li><a href="../assest/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+       </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content -->
+   
