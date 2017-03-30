@@ -1,8 +1,5 @@
-
-	<?php 
-	//include('auth.php'); 
+<?php 
 include("../config.php");
-//session_start();
   
 	
 $SESSION_ID=$_SESSION['SESSION_ID']; 
@@ -38,7 +35,7 @@ $SESSION_ID=$_SESSION['SESSION_ID'];
 							$user_type=$user_type;
 							
 			 
-			 $selecto7=mysql_query("select * from `user_management` where `user_type`=user_type'$'");
+			 $selecto7=mysql_query("select * from `user_management` where `user_type`='$user_type'");
 			        while($reco7=mysql_fetch_array($selecto7))
 			       {
 					   $mng_mdul_id[]=$reco7['module_id'];
