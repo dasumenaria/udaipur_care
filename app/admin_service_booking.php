@@ -2,6 +2,25 @@
 include("auth.php");
 include("../config.php");
 include("header.php");
+
+if(isset($_POST['add_service']))
+ {
+	$service_name=$_POST['service_name'];
+	$discription=$_POST['discription'];
+	$sql="insert into `master_services` set `service_name`='$service_name', `discription`='$discription'";
+ 	mysql_query($sql);
+ }
+ 
+ if(isset($_POST['add_sub_service']))
+ {
+	$services_id=$_POST['company_service'];
+	$sub_services_name=$_POST['sub_service_name'];
+	$discription=$_POST['discription'];
+	$sql="insert into `master_sub_services` set `sub_services_name`='$sub_services_name' , `services_id`='$services_id' , `discription`='$discription'";
+	mysql_query($sql);
+}
+  
+  
 if(isset($_POST['submit'])){
 	 
 	 	$udcare_no=$_POST['udcare_no'];
@@ -10,14 +29,16 @@ if(isset($_POST['submit'])){
 	$email=$_POST['email'];
   	$mobile_no=$_POST['mobile_no'];
 	$address=$_POST['address'];
-	$time=$_POST['time'];
+	$admin_book_service=$_POST['admin_book_service'];
+	$admin_book_sub_service=$_POST['admin_book_sub_service'];
+	$time=$_POST['time']; 
 	$date=$_POST['date'];
 	$curnt_date=date('Y-m-d');
 	$times=date('h:i:s A');
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
-echo "insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'";	
- mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+ 
+ mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$admin_book_sub_service',`master_service_id	`='$admin_book_service',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
 	 }
 else
@@ -31,7 +52,7 @@ else
       <div class="row">
 		<div class="box box-primary" style="background-color:white;margin-left:12px; margin-right:12px;">
             <div class="box-header with-border">
-            <center><h3 class="box-title">Book Now </h3></center>
+            <center><h3 class="box-title" style="font-weigght:bold;"> Book Now</h3></center>
 			 </div>
 			 </br>
             <!-- /.box-header -->
@@ -110,38 +131,41 @@ else
                    </div>
                 </div>
 				 
-				<div class="form-group col-md-6">
-                  <label for="exampleInputPicUpTime">Select Service</label>
-                  <div class="input-group">
-                       <select name="" class="form-control" style="width:520px;">
-					   <?php
-			  $r1=mysql_query("select * from master_services  where flag=0 order by id Desc ");							
-					$i=0;
-					while($row1=mysql_fetch_array($r1))
+				<div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+              <div class="input-group">
+              	<select name="admin_book_service" class="form-control suv_category">
+                <option value="">Select...</option>
+                <?php
+					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+					while($ftc_data=mysql_fetch_array($ftx_servide))
 					{
-						$i++;
-					$id=$row1['id'];
-					$service_name=$row1['service_name'];
-					 
-					 
-					
-					
-					?>
-					 <option value="<?php echo $id;?>"><?php echo $service_name;?></option>
-					<?php } ?>
-					 </select>
-						
+						echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
+					}
+                ?>
+                </select>
+              
+              		
+                    <div class="input-group-addon" style="background-color:#c7c6c6; cursor:pointer" data-toggle="modal" data-target="#service_dailog">
+                          <i class="fa fa-plus"></i>
+                      </div>
                   </div>
-                </div>
-				<div class="form-group col-md-6">
-                  <label for="exampleInputPicUpTime">Select Sub Service</label>
-                  <div class="input-group">
-                     <select name="" class="form-control select2" style="width:520px;">
-					 <option value="">Select Service</option>
-					 </select>
-                        
+             </div>
+		</div>
+		<div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Sub Service</label>
+              <div class="input-group">
+                     <select name="admin_book_sub_service" class="form-control" id="suv_category_result">
+                		<option value="">Select...</option>
+                    </select>
+                    <div class="input-group-addon" style="background-color:#c7c6c6; cursor:pointer" data-toggle="modal" data-target="#sub_service_dailog">
+                          <i class="fa fa-plus"></i>
+                      </div>
                   </div>
-                </div>
+             </div>
+		</div>
                  <div class="form-group col-md-12">
                   <label for="exampleInputFile">Other Information</label>
                    <textarea name="other_info" class="form-control"></textarea>
@@ -230,6 +254,96 @@ else
             </div>
         </div>
     </div>
+	<div class="modal fade" id="service_dailog" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form method="post">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New Service Category  </h4>
+                </div>
+                <div class="modal-body"  style="min-height:180px">
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+                          <div class=" ">
+                            <input type="text" name="service_name" class="form-control" placeholder="Provide Service Category" />                                
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Discription</label>
+                          <div class="">
+                          	<input type="text" name="discription" class="form-control" placeholder="Discription" />       
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" name="add_service" class="btn btn-info">Submit</button>
+                </div>
+              </form>
+              </div>
+    	</div>
+      </div>	
+	<div class="modal fade" id="sub_service_dailog" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form method="post">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New Sub Service </h4>
+                </div>
+                <div class="modal-body"  style="min-height:230px">
+                     
+                  <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+                          <div class="">
+                            <select name="company_service" class="form-control suv_category">
+                            <option value="">Select...</option>
+                            <?php
+                                $ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+                                while($ftc_data=mysql_fetch_array($ftx_servide))
+                                {
+                                    echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
+                                }
+                            ?>
+                            </select>
+                             </div>
+                        </div>
+                    </div>  
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Sub Service Name</label>
+                          <div class="">
+                          	<input type="text" name="sub_service_name" class="form-control" placeholder="Provide Sub Service Name" />       
+                          </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">		
+                         <div class="form-group">
+                          <label for="exampleInputAnyMedicalTreatment">Discription</label>
+                          <div class="">
+                          	<input type="text" name="discription" class="form-control" placeholder="Discription" />       
+                          </div>
+                        </div>
+                    </div> 
+                      
+                     
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" name="add_sub_service" class="btn btn-info">Submit</button>
+                </div>
+              </form>
+              </div>
+    	</div>
+      </div>	
+      	 
 <?php include("footer.php"); ?>
 <script>
 <?php if(empty($SESSION_ID)){?>
@@ -256,4 +370,19 @@ $('.allLetter').keyup(function(){
 	 
 </script>
  
-
+<?php 
+include("footer.php");
+  ?>
+  <script>
+  $('.suv_category').on('change', function(){
+	var service = $(this).val();  
+	$.ajax({
+			url: "../ajax_page.php?function_name=fetch_service_list&id="+service,
+			type: "POST",
+			success: function(data)
+			{   
+				  $('#suv_category_result').html(data);
+			}
+		});
+   });
+  </script>
