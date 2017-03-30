@@ -38,12 +38,11 @@ include("header.php");
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-					<th>S/No.</th>
-					<th>Name</th>
-					<th>Date Of Birth</th>
-					<th>Email Address</th>
-					<th>Mobile No.</th>
-					 
+					 <th>S/no.</th>
+                  <th>Name</th>
+                  <th>Company Name</th>
+				  <th>Email Address</th>
+                  <th>Mobile No.</th>
                 </tr>
                 </thead>
 
@@ -57,8 +56,8 @@ include("header.php");
 					{
 						$i++;
 					$id=$row1['id'];
-					$name=$row1['name'];
-					$dob=$row1['dob'];
+					$full_name=$row1['full_name'];
+					$company_name=$row1['company_name'];
 					$email_id=$row1['email_id'];
 					$mobile_no=$row1['mobile_no'];
 					 
@@ -67,8 +66,8 @@ include("header.php");
 
                 <tr>
 				<td><?php echo $i;?></td>
-                  <td><?php echo $name;?></td>
-                  <td><?php echo $dob;?>
+                  <td><?php echo $full_name;?></td>
+                  <td><?php echo $company_name;?>
                      
                   </td>
                   <td><?php echo $email_id;?></td>
@@ -82,7 +81,7 @@ include("header.php");
                 <tr>
                   <th>S/no.</th>
                   <th>Name</th>
-                  <th>Date Of Birth</th>
+                  <th>Company Name</th>
 				  <th>Email Address</th>
                   <th>Mobile No.</th>
                   
