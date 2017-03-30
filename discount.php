@@ -26,7 +26,7 @@ Pricing table
 }
 
 .pricing:hover {
-  border: 3px solid #007787;
+  border: 2px solid #007787;
 }
 
 .pricing:hover h4 {
@@ -63,7 +63,7 @@ Pricing table
 .pricing-head h4 {
   color: #bac39f;
   padding: 5px 0;
-  font-size: 54px;
+  font-size: 32px;
   font-weight: 300;
   background: #fbfef2;
   border-bottom: solid 1px #f5f9e7;
@@ -74,8 +74,8 @@ Pricing table
 }
 
 .pricing-head h4 i {
-  top: -8px;
-  font-size: 28px;
+  top: -6px;
+  font-size: 18px;
   font-style: normal;
   position: relative;
 }
@@ -99,7 +99,7 @@ Pricing table
 .pricing-footer {
   color: #777;
   font-size: 11px;
-  line-height: 17px;
+ 
   text-align: center;
   padding: 0 20px 19px;
 }
@@ -148,97 +148,8 @@ Pricing table
 	   </section>
  
    	<div id="service" style="padding: 22px 61px;">
-		<div class="container" >
-			<div class="row">
-					 <div class="col-md-3">
-						<div class="box box-widget widget-user" style="box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);">
-						    <div class="widget-user-header bg-black" style="background: url('assest/dist/img/photo1.png') center center;">
-							  <h3 class="widget-user-username">Elizabeth Pierce</h3>
-							  <h5 class="widget-user-desc">Web Designer</h5>
-							</div>
-							<div class="widget-user-image" style="margin-left: 33px !important;">
-							   <img class="img-circle" src="images/free.png" alt="User Avatar">
-							</div>
-							<div class="box-footer">
-								  <div class="row">
-									<div class="col-sm-12 ">
-									  <div class="description-block">
-									  <p>SALESdfdfdsfsdfds dds  zxfdsf
-									   SALESdfdfdsfsdfds dds</p>
-									  </div>									  
-									</div>								    
-								  </div>							   
-							</div>
-						  </div>
-					  	</div>
-						<div class="col-md-3">
-						<div class="box box-widget widget-user" style="box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);">
-						    <div class="widget-user-header bg-black" style="background: url('assest/dist/img/photo1.png') center center;">
-							  <h3 class="widget-user-username">Elizabeth Pierce</h3>
-							  <h5 class="widget-user-desc">Web Designer</h5>
-							</div>
-							<div class="widget-user-image" style="margin-left: 33px !important;">
-							   <img class="img-circle" src="images/free.png" alt="User Avatar">
-							</div>
-							<div class="box-footer">
-								  <div class="row">
-									<div class="col-sm-12 ">
-									  <div class="description-block">
-									  <p>SALESdfdfdsfsdfds dds  zxfdsf
-									   SALESdfdfdsfsdfds dds</p>
-									  </div>									  
-									</div>								    
-								  </div>							   
-							</div>
-						  </div>
-					  	</div>
-						<div class="col-md-3">
-						<div class="box box-widget widget-user" style="box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);">
-						    <div class="widget-user-header bg-black" style="background: url('assest/dist/img/photo1.png') center center;">
-							  <h3 class="widget-user-username">Elizabeth Pierce</h3>
-							  <h5 class="widget-user-desc">Web Designer</h5>
-							</div>
-							<div class="widget-user-image" style="margin-left: 33px !important;">
-							  <img class="img-circle" src="images/free.png" alt="User Avatar">
-							</div>
-							<div class="box-footer">
-								  <div class="row">
-									<div class="col-sm-12 ">
-									  <div class="description-block">
-									  <p>SALESdfdfdsfsdfds dds  zxfdsf
-									   SALESdfdfdsfsdfds dds</p>
-									  </div>									  
-									</div>								    
-								  </div>							   
-							</div>
-						  </div>
-					  	</div>
-						<div class="col-md-3">
-						<div class="box box-widget widget-user" style="box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);">
-						    <div class="widget-user-header bg-black" style="background: url('assest/dist/img/photo1.png') center center;">
-							  <h3 class="widget-user-username">Elizabeth Pierce</h3>
-							  <h5 class="widget-user-desc">Web Designer</h5>
-							</div>
-							<div class="widget-user-image" style="margin-left: 33px !important;">
-							  <img class="img-circle" src="images/free.png" alt="User Avatar">
-							</div>
-							<div class="box-footer">
-								  <div class="row">
-									<div class="col-sm-12 ">
-									  <div class="description-block">
-									  <p>SALESdfdfdsfsdfds dds  zxfdsf
-									   SALESdfdfdsfsdfds dds</p>
-									  </div>									  
-									</div>								    
-								  </div>							   
-							</div>
-						  </div>
-					  	</div>
-
-            </div>
-			</br>
-		 </div>
-			</div>
+		 
+		 
  <div class="container content">
 	<div class="row">
 		<!-- Pricing -->
@@ -273,11 +184,10 @@ Pricing table
 					Per Month </span>
 					</h4>
 				</div>
-				 
+				 </br>
 				<div class="pricing-footer">
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
-					</p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
+					</br>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Sign Up
 					</a>
@@ -314,8 +224,7 @@ Pricing table
 					Per Month </span>
 					</h4>
 				</div>
-				 
-				<div class="pricing-footer">
+				 <div class="pricing-footer">
 					<p>
 						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
 					</p>
@@ -327,6 +236,7 @@ Pricing table
 		</div>
 		<!--//End Pricing -->
 	</div>
+</div>
 </div>
      
 		 
