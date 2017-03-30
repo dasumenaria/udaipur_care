@@ -6,20 +6,13 @@ include("header.php");
   
  ?>
  
- <div class="content-wrapper">
+  
 
  <section class="content">
       <div class="row">
-        <div class="col-md-2" >
-          <?php include('menu.php');?> 
-
-          
-          <!-- /. box -->
-           
-          <!-- /.box -->
-        </div>
+        
         <!-- /.col -->
-        <div class="col-md-10">
+        <div class="col-md-12">
           
                  
                <!------		Button 	----->

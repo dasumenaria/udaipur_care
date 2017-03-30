@@ -1,4 +1,5 @@
  <?php 
+ include("auth.php");
 include("header.php");
 include("../config.php");
 //include("mail.php");
@@ -59,20 +60,13 @@ if(isset($_POST['submit'])){
 
 ?>
  
- <div class="content-wrapper">
+  
 
  <section class="content">
       <div class="row">
-        <div class="col-md-2" >
-          <?php include('menu.php');?> 
-
-          
-          <!-- /. box -->
-           
-          <!-- /.box -->
-        </div>
+         
         <!-- /.col -->
-        <div class="col-md-10">
+        <div class="col-md-12">
          <div class="box box-primary">
             <div class="box-footer no-padding">
               <div class="mailbox-controls">
@@ -266,7 +260,7 @@ if(isset($_POST['submit'])){
       </div>
       <!-- /.row -->
     </section>
- </div>
+  
  <?php 
 include("footer.php");
   ?>
