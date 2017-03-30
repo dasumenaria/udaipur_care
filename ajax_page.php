@@ -10,7 +10,11 @@ if($function_name=='mobileNo_check')
 	$ftc_date=mysql_query("select `mobile_no` from `register` where `mobile_no`= '$mobile_no'");
 	echo  $count= mysql_num_rows($ftc_date); 
 } 
-
+if($function_name=='fetch_servicw_vendor_list')
+{
+	$service_id=$_GET['id'];
+ 	$ftc_date=mysql_query("select `mobile_no` from `register` where `mobile_no`= '$mobile_no'");	
+}
 
 
  ?>

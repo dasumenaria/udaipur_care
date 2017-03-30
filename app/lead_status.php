@@ -250,7 +250,7 @@ include("footer.php");
 	$(".assign_data").on('click',function(){
 		var service = $(this).attr('service');	
 		$.ajax({
-			url: "ajax_page.php?function_name=edit_appointment&id="+id,
+			url: "../ajax_page.php?function_name=fetch_servicw_vendor_list&id="+service,
 			type: "POST",
 			success: function(data)
 			{   
