@@ -1,5 +1,6 @@
 <?php
   @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; //$seccion_usertype = $_SESSION['SESSION_USERTYPE']; exit;
+  @$user_name=$_SESSION['SESSION_USERNAME'];
   if($SESSION_USERTYPE==0){
 	  $dashboard='user_dashboard.php';
   }
@@ -9,7 +10,10 @@
   if($SESSION_USERTYPE==2){
 	  $dashboard='vendor_dashboard.php';
   }
-  
+ 
+include("../config.php"); 
+$user_type=$_SESSION['SESSION_USERTYPE']; 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,12 +33,22 @@
   <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
- 
+ <style>
+ .active_color
+ {
+	background-color:#e02222 !important;
+	color:#FFF !important; 
+ }
+ .sidebar-menu >li > a
+ {
+	 color:#FFF !important;
+ }
+ </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" >
 
-  <header class="main-header">
+  <header class="main-header" style="background-color:#FFF !important">
     <!-- Logo -->
     <a href="<?php echo $dashboard; ?>" class="logo">
        <img src="../images/logos.png" width="180px;" height="49px"    alt="logo">
@@ -49,22 +63,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
-            <ul class="nav navbar-nav" >
-				<li><a href="../logout.php">LOGOUT</a></li>
-			</ul>
-          <!--<form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-            </div>
-          </form>-->
-        </div>
+       
        <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
            <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <span class="hidden-xs">Alexander Pierce</span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#000 !important">
+               <span class="hidden-xs"><?php echo $user_name; ?></span>
             </a>
             <ul class="dropdown-menu">
                <li class="user-footer">
@@ -72,27 +77,23 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
+         </ul>
       </div>
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" style="background-color:#3d3d3d !important; color:fff; margin-top:1px" >
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-       
        <ul class="sidebar-menu">
-         
-        <li class="treeview">
+       
+       
+      <!--  <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -104,10 +105,88 @@
             <li><a href="../assest/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-         <li><a href="../assest/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="../assest/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+       -->  
+         
+       <?php  $page_name_from_url=basename($_SERVER['PHP_SELF']);
+			 
+			 
+							//@$fac_id=$_SESSION['id'];
+							$user_type=$user_type;
+							
+			$selecto7=mysql_query("select * from `user_management` where `user_type`='$user_type'");
+			while($reco7=mysql_fetch_array($selecto7))
+			   {
+				   $mng_mdul_id[]=$reco7['module_id'];
+			   }
+				    
+				 $sel_module2=mysql_query("select `main_menu` from `modules` where `page_name_url`='".$page_name_from_url."'");
+				$arr_module2=mysql_fetch_array($sel_module2);
+				 $main_menu_active=$arr_module2['main_menu'];			
+				
+					$selecto3=mysql_query("select * FROM `modules` ORDER BY id");
+                      while($data=mysql_fetch_array($selecto3))
+					  {
+                      $main_menu_arr[]='';
+                     if(in_array($data['id'],$mng_mdul_id))
+					 {
+                        if(empty($data['main_menu']) && empty($data['sub_menu']))
+                        {
+                             ?>
+                            <li class="<?php if($page_name_from_url==$data['page_name_url']){ echo 'active_color'; } ?>">
+  <a href="<?php echo $data['page_name_url']; ?>"><i class="<?php echo $data['icon_class_name']; ?>"></i><?php echo $data['name']; if($page_name_from_url==$data['page_name_url']){ echo '<span class="selected"></span>'; } ?></a>
+                            </li>
+                            <?php
+                        }
+                      
+                        if(!empty($data['main_menu']) && empty($data['sub_menu']))
+                        {
+                            if(in_array($data['main_menu'], $main_menu_arr))
+                            {
+                               
+                            }
+                            else
+                            {
+                                $main_menu_arr[]=$data['main_menu'];
+                                  ?>
+                                <li class="treeview <?php if($main_menu_active==$data['main_menu']){ echo 'active'; } ?>">
+                                    <a href="javascript:;"<?php if($main_menu_active==$data['main_menu']){ echo 'class="active_color"'; } ?> >
+                                    <i class="<?php echo $data['main_menu_icon']; ?>"></i>
+                                    <?php echo $data['main_menu']; ?>  
+                                    <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                     </a>
+                                    <ul  class="treeview-menu">
+                                    <?php
+									$selecto4=mysql_query("select * FROM `modules` where `main_menu`='".$data['main_menu']."'");
+									while($data_value=mysql_fetch_array($selecto4))
+									{
+										if(in_array($data_value['id'],$mng_mdul_id))
+										{			
+                                         ?>
+											<li class="<?php if($page_name_from_url==$data_value['page_name_url']){ echo 'active'; } ?>">
+												<a href="<?php echo $data_value['page_name_url']; ?>"> <i class="<?php echo $data_value['icon_class_name']; ?>"></i><?php echo $data_value['name']; ?></a>
+											</li>
+										<?php
+										}
+                                    }
+                                    ?>
+                                    </ul>
+                                </li>
+                                <?php
+                            }
+                        }
+					 }
+					  }
+					  
+					  ?>   
+         
+         
+         
+         
        </ul>
     </section>
-    <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->

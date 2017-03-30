@@ -28,8 +28,7 @@ if(isset($_POST['transfered'])){
 }
 ?>
 
-<div class="content-wrapper">
-    <div class="row">
+     <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
                 <div class="box-header with-border">
@@ -65,10 +64,9 @@ if(isset($_POST['transfered'])){
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-						  <th>Udaipur Care No</th>
+						  <th>UdCare No</th>
                           <th>Name</th>
-                          <th>Email</th>
-                          <th>Mobile No</th>
+                           <th>Mobile No</th>
  						  <th>Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
@@ -98,8 +96,7 @@ if(isset($_POST['transfered'])){
                         <tr>
                           <td><?php echo $lead_new['udcare_no']; ?></td>
 						  <td><?php echo $lead_new['name']; ?></td>
-                          <td><?php echo $lead_new['email']; ?></td>
-						  <td><?php echo $lead_new['mobile_no']; ?></td>
+ 						  <td><?php echo $lead_new['mobile_no']; ?></td>
 						  <td><?php echo $ftc['sub_services_name']; ?></td>
                           <td><?php echo $dateforview; ?></td>
                           <td><?php echo $lead_new['time']; ?></td>
@@ -193,46 +190,41 @@ if(isset($_POST['transfered'])){
                               
                           </td>
 						   <td>
-                          	 
                                 <div class="btn-group">
-                                  <button type="button" class="btn btn-warning"  data-toggle="modal" data-target="#reject">Assign</button>
-                                  <button type="button" class="btn btn-warning dropdown-toggle">
-                                    <span class="fa fa-group"></span>
-                                    </button>
-                                   
+                                  <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog"><i class="fa fa-thumbs-up"></i> Assign To</button>
                                 </div>
-                                   <div class="modal fade" id="reject" role="dialog">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                      <form method="post">
-                                        <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h4 class="modal-title">Do you want to transfer this lead </h4>
-                                        </div>
-                                        <div class="modal-body"  style="min-height:100px">
-                                         	<div class="form-group col-md-12">
-                                             <label class="">Please Select Vendor </label>
-                                              <select>
-											  <option value="">a</option>
-											  <option value="">b</option>
-											  </select>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                          <button type="submit" name="rejected" class="btn btn-info">Reject</button>
-                                        </div>
-                                      </form>
-                                      </div>
-                                    </div>
-                                  </div>
-                              
-                          </td>
+                           </td>
 						  
                          </tr>
                        <?php } ?>
                         </tbody>
                       </table>
+                      <div class="modal fade" id="assign_dailog" role="dialog">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                              <form method="post">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Assign Lead  </h4>
+                                </div>
+                                <div class="modal-body"  style="min-height:100px">
+                                    <div class="form-group col-md-12">
+                                     <label class="">Please Select Vendor </label>
+                                      <select>
+                                      <option value="">a</option>
+                                      <option value="">b</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="submit" name="rejected" class="btn btn-info">Reject</button>
+                                </div>
+                              </form>
+                              </div>
+                            </div>
+                          </div>
+                      
                     </div>
                     <!-- /.box-body -->
                   </div>
@@ -249,9 +241,23 @@ if(isset($_POST['transfered'])){
             </div>
         </div>
     </div>
-</div>
- 
+  
  
 <?php 
 include("footer.php");
 ?>
+<script>
+	$(".assign_data").on('click',function(){
+		var service = $(this).attr('service');	
+		$.ajax({
+			url: "ajax_page.php?function_name=edit_appointment&id="+id,
+			type: "POST",
+			success: function(data)
+			{   
+				  $('.replace_data').html(data);
+				  $('.date-picker').datepicker();
+				  $('.timepicker').timepicker();
+			}
+		});
+	});
+</script>
