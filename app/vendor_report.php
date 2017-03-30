@@ -5,8 +5,7 @@ include("header.php");
   
   
  ?>
- 
- <div class="content-wrapper">
+   
 
  <section class="content">
       <div class="row">
@@ -97,10 +96,10 @@ include("header.php");
                   <!-- /.box -->
                  
         <!-- /.col -->
-      </div>
+      
       <!-- /.row -->
     </section>
- </div>
+  
  <?php 
 include("footer.php");
   ?>
