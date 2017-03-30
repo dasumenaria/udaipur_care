@@ -43,6 +43,10 @@ $user_type=$_SESSION['SESSION_USERTYPE'];
  {
 	 color:#FFF !important;
  }
+ .sidebar-menu >li >ul >li > a
+ {
+	 color:#FFF !important;
+ }
  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
