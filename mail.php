@@ -13,8 +13,8 @@ function smtpmailer($to, $from, $from_name, $subject, $body, $is_gmail = true)
 		$mail->SMTPSecure = 'ssl'; 
 		$mail->Host = 'smtp.googlemail.com';
 		$mail->Port = 465;  
-		$mail->Username = 'ankit.sisodiya@spsu.ac.in';  
-		$mail->Password = '!QAZSPSU@WSX';   
+		$mail->Username = 'helpline.udaipurcare@gmail.com';  
+		$mail->Password = '!QAZ@WSX';   
 	}						
 	else 
 	{
