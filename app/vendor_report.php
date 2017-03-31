@@ -69,16 +69,7 @@ include("header.php");
                 
 								<?php } ?>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>S/no.</th>
-                  <th>Name</th>
-                  <th>Company Name</th>
-				  <th>Email Address</th>
-                  <th>Mobile No.</th>
-                  
-                </tr>
-                </tfoot>
+                 
               </table>
             </div>
             <!-- /.box-body -->

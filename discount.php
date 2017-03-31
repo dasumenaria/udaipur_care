@@ -138,7 +138,7 @@ Pricing table
     background-color: #cfa500;
 }
 </style>
-  <link rel="stylesheet" href="assest/dist/css/AdminLTE.min.css">
+ 
 <section class="content-header">
        <center>
       	<h2 class="wow bounce" style=" padding-top:70px; color:#707568"> <strong> 

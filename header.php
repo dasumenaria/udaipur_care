@@ -34,7 +34,7 @@ else
 		<link rel="stylesheet" href="assest/plugins/timepicker/bootstrap-timepicker.min.css">
 
  	</head>
-	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse" style="overflow-x:hidden;">
 		<!-- start navigation -->
 		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
 			<div class="container">
@@ -49,6 +49,7 @@ else
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
                     	<li><a href="index.php" class="smoothScroll">HOME</a></li>
+						<li><a href="app/user_dashboard.php" class="smoothScroll">Dashboard</a></li>
                        <!-- <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li>-->
  					   <li class="dropdown">
 						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
@@ -63,8 +64,8 @@ else
 						
 						
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
+						<li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
 						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
-                        <li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
 						<li><?php echo $log_path; ?></li>
 					</ul>
 				</div>

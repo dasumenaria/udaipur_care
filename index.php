@@ -12,7 +12,7 @@ include('config.php');
   	$timestamp=date("Y-m-d");
 	 
    	mysql_query("insert into `contact_us` set `name`='$name',`message`='$message',`mobile_no`='$mobile_no',`email`='$email',`timestamp`='$timestamp'");
-	echo ' ("Thank You For Email")';		
+	
 }
 else
 	{
@@ -162,9 +162,3 @@ else
 <?php
 include('footer.php');
 ?>
-<script>
-$('#submitButtonID').click(function(){
- alert('Please wait while form is submitting');
- $('#formID').submit();
-});
-</script>
