@@ -1,24 +1,6 @@
 <?php
 include('header.php');
 include('config.php');
-
-
- if(isset($_POST['submit']))
-{
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-  	$message=$_POST['message'];
-	$mobile_no=$_POST['mobile_no'];
-  	$timestamp=date("Y-m-d");
-	 
-   	mysql_query("insert into `contact_us` set `name`='$name',`message`='$message',`mobile_no`='$mobile_no',`email`='$email',`timestamp`='$timestamp'");
-	
-}
-else
-	{
-		echo mysql_error();
-	}
-
 ?>
 <style>
 #team img {
@@ -138,6 +120,9 @@ else
 						</address>
 					</div>
 					<form method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
+                    	<div class="col-md-12" style="padding-bottom:10px; color:#fbb" id="msg">
+                           
+                        </div>
 							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 								<input name="name" type="text" class="form-control" id="name" placeholder="Name" required="required">
 							</div>
@@ -145,13 +130,13 @@ else
 								<input name="email" type="email" class="form-control" id="email" placeholder="Email" required="required">
 							</div>
                             <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-								<input name="mobile_no" type="number" class="form-control" id="mobile" placeholder="Mobile No" required="required">
+								<input name="mobile_no" type="text" maxlength="10" minlength="10" class="form-control allLetter" id="mobile_no" placeholder="Mobile No" required="required">
 							</div>
 							<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
 								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
 							</div>
 							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input name="submit" type="submit" class="form-control" id="submit" value="Send">
+								<input name="contact" type="button" class="form-control" id="submit_contact" value="Send">
 							</div>
 					</form>
 				</div>
@@ -162,3 +147,64 @@ else
 <?php
 include('footer.php');
 ?>
+<script>
+$('#submit_contact').on('click', function(){
+	var name=$('#name').val();
+	var email=$('#email').val();
+	var mobile_no=$('#mobile_no').val();
+	var message=$('#message').val();
+ 	if(name.length>1){
+		if(email.length>1){
+			if(mobile_no.length>=9){
+				if(message.length>1){
+					$('#msg').html(' <img src="images/loading.gif" height="28px" />  Please wait...');
+					
+					$.ajax({
+						url: "ajax_page.php?function_name=contact_us_submit&name="+name+"&email="+email+"&mobile_no="+mobile_no+"&message="+message,
+						type: "POST",
+						success: function(data)
+						{  
+							$('#name').val('');
+							$('#email').val('');
+							$('#mobile_no').val('');
+							$('#message').val('');
+							$('#msg').html('Thank you for contact with us.');
+							
+						}
+					});
+				}
+				else
+				{
+					$('#msg').html('Please provide message');
+				}
+			}
+			else
+			{
+				$('#msg').html('Please provide valid mobile no');
+			}
+		}
+		else
+		{
+			$('#msg').html('Please provide email');
+		}
+	}
+	else
+	{
+		$('#msg').html('Please provide name');
+	}
+	
+	
+});
+$('.allLetter').keyup(function(){
+		var inputtxt=  $(this).val();
+		var numbers =  /^[0-9]*\.?[0-9]*$/;
+		if(inputtxt.match(numbers))  
+		{} 
+		else  
+		{  
+			$(this).val('');
+			return false;  
+		}
+	});
+
+</script>

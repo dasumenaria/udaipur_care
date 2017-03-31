@@ -193,7 +193,6 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-12" align="center">		
              <div class="box-footer">
                   <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" >  
- 
              </div>
 		</div>
 	</div>		

@@ -31,6 +31,7 @@ if(isset($_POST['submit'])){
 	$address=$_POST['address'];
 	$admin_book_service=$_POST['admin_book_service'];
 	$admin_book_sub_service=$_POST['admin_book_sub_service'];
+	$assign_to_vendor=$_POST['assign_to_vendor'];
 	$time=$_POST['time']; 
 	$date=$_POST['date'];
 	$curnt_date=date('Y-m-d');
@@ -38,7 +39,7 @@ if(isset($_POST['submit'])){
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
  
- mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$admin_book_sub_service',`master_service_id	`='$admin_book_service',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+ mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$admin_book_sub_service',`master_service_id	`='$admin_book_service',`assign_to_vendor`='$assign_to_vendor',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
 	 }
 else
@@ -131,7 +132,7 @@ else
                    </div>
                 </div>
 				 
-				<div class="col-md-6">		
+		<div class="col-md-6">		
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Service Category</label>
               <div class="input-group">
@@ -166,7 +167,27 @@ else
                   </div>
              </div>
 		</div>
-                 <div class="form-group col-md-12">
+        <div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Select Vendor </label>
+              <div class="input-group">
+              	<select name="assign_to_vendor" class="form-control">
+                <option value="">Select...</option>
+                <?php
+					$ftx_servide=mysql_query("select `id`,`vendor_name` from `vendor` where `flag`='0'");
+					while($ftc_data=mysql_fetch_array($ftx_servide))
+					{
+						echo "<option value=".$ftc_data['id'].">".$ftc_data['vendor_name']."</option>";
+					}
+                ?>
+                </select>
+                    <div class="input-group-addon">
+                          <i class="fa fa-user"></i>
+                      </div>
+                  </div>
+             </div>
+		</div>
+                 <div class="form-group col-md-6">
                   <label for="exampleInputFile">Other Information</label>
                    <textarea name="other_info" class="form-control"></textarea>
               </div>
