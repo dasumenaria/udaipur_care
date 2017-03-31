@@ -48,8 +48,8 @@ else
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-                    	<li><a href="index.php" class="smoothScroll">HOME</a></li>
-						<li><a href="app/user_dashboard.php" class="smoothScroll">Dashboard</a></li>
+                    	 
+						<li><a href="app/user_dashboard.php" class="smoothScroll">DASHBOARD</a></li>
                        <!-- <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li>-->
  					   <li class="dropdown">
 						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
