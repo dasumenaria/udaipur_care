@@ -5,24 +5,24 @@ include("header.php");
   
  
 //--	LEAD OPEN
-$leadNew="SELECT `id` from `booking` where `master_sub_service_id` = '$SESSION_SUBSERVIDE' && `master_status` = '0'";
+$leadNew="SELECT `id` from `booking` where `assign_to_vendor` = '$SESSION_SUBSERVIDE' && `master_status` = '0'";
 $Newlead=mysql_query($leadNew);
 $lead_new=mysql_num_rows($Newlead);
 //--	LEAD OPEN
-$leadtransfer="SELECT `id` from `booking` where `master_sub_service_id` = '$SESSION_SUBSERVIDE' && `master_status` = '1'";
+$leadtransfer="SELECT `id` from `booking` where `assign_to_vendor` = '$SESSION_SUBSERVIDE' && `master_status` = '1'";
 $teanlead=mysql_query($leadtransfer);
 $lead_transfer=mysql_num_rows($teanlead);
 //--	LEAD OPEN
-$leadreject="SELECT `id` from `booking` where `master_sub_service_id` = '$SESSION_SUBSERVIDE' && `master_status` = '2'";
+$leadreject="SELECT `id` from `booking` where `assign_to_vendor` = '$SESSION_SUBSERVIDE' && `master_status` = '2'";
 $Openreject=mysql_query($leadreject);
 $lead_reject=mysql_num_rows($Openreject);
 //--	LEAD OPEN
-$leadconmpleted="SELECT `id` from `booking` where `master_sub_service_id` = '$SESSION_SUBSERVIDE' && `master_status` = '3'";
+$leadconmpleted="SELECT `id` from `booking` where `assign_to_vendor` = '$SESSION_SUBSERVIDE' && `master_status` = '3'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
  ?>
  
- <div class="content-wrapper">
+  
  <section class="content">
       <div class="row">
         <!-- /.col -->
@@ -98,7 +98,7 @@ $lead_complete=mysql_num_rows($donelead);
         </div>
       </div>
     </section>
- </div>
+ 
  <?php 
 include("footer.php");
   ?>

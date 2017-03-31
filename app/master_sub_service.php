@@ -9,11 +9,11 @@ $image_path="";
  
 if(isset($_POST['submit']))
 { 
-		$service_name=$_POST['service_name'];
+		$sub_services_name=$_POST['sub_services_name'];
 		$discription=$_POST['discription'];
 		$icon=$_POST['icon'];
  
-		 $sql="insert into `master_services` set  `service_name`='$service_name',`discription`='$discription',`icon`='$icon'";
+		 $sql="insert into `master_sub_services` set  `sub_services_name`='$sub_services_name',`discription`='$discription',`icon`='$icon'";
 		 $r=mysql_query($sql);
 	}	
 		 
@@ -21,12 +21,14 @@ if(isset($_POST['submit']))
 {
 $edit_model=$_POST['edit_model'];
 $service_name=$_POST['service_name'];
-mysql_query("update `master_services` SET `service_name`='$service_name' where `id`='$edit_model' ");
+mysql_query("update `master_sub_services` SET `service_name`='$service_name' where `id`='$edit_model' ");
 }
+
+
 else if(isset($_POST['sub_del']))
 {
   $delet_model=$_POST['delet_model'];
-   mysql_query("update `master_services` SET `flag`=1 where `id`='$delet_model'");
+   mysql_query("update `master_sub_services` SET `flag`=1 where `id`='$delet_model'");
   }
  		
  
@@ -63,9 +65,9 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		  <div class="col-md-12">
 		   
 				<div class="form-group">
-                  <label for="exampleInputFullName">Service Name</label>
+                  <label for="exampleInputFullName">Sub Service Name</label>
                   <div class="input-group">
-                  	<input type="text" name="service_name" class="form-control" id="exampleInputFullName" placeholder="Enter Service Name" required>
+                  	<input type="text" name="sub_services_name" class="form-control" id="exampleInputFullName" placeholder="Enter Service Name" required>
                     <div class="input-group-addon">
                           <i class="fa fa-user"></i>
                       </div>
@@ -87,7 +89,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-12">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Description</label>
-				 <textarea name="discription" class="form-control"></textarea>
+				 <textarea name="sub_services_discription" class="form-control"></textarea>
 			</div>
 		</div>	
 		  <div class="col-md-12" align="center">		
@@ -122,15 +124,15 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
                 <tbody>
 				<?php
-			  $r1=mysql_query("select * from 	master_services  where flag='0' order by id Desc ");							
+			  $r1=mysql_query("select * from master_sub_services  where flag='0' order by id Desc ");							
 					$i=0;
 					while($row1=mysql_fetch_array($r1))
 					{
 						$i++;
 					$id=$row1['id'];
-					$service_name=$row1['service_name'];
+					$sub_services_name=$row1['sub_services_name'];
 					 
-					$discription=$row1['discription'];
+					$sub_services_discription=$row1['sub_services_discription'];
 					$icon=$row1['icon'];
 					 
 				
@@ -152,12 +154,25 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                                             <div class="form-body">
                                             <input type="hidden" name="edit_model" value="<?php echo $id; ?>" />
                                                  <div class="row">
-												<div class="col-md-12">
+												 <div class="col-md-12">
 														
 														<div class="form-group">
 														<label for="exampleInputFullName"style="margin-left: 10px;">Service Name</label>
 														 <div class="input-group">
-														<input type="text" name="service_name" class="form-control" id="exampleInputFullName" style="margin-left:48px;width:412px;" value="<?php echo $service_name; ?>" required >
+														<input type="text" name="sub_services_name" class="form-control" id="exampleInputFullName" style="margin-left:48px;width:412px;" value="<?php echo $sub_services_name; ?>" required >
+														<div class="input-group-addon">
+														<i class="fa fa-user"></i>
+														</div>
+														</div>
+													</div>
+												</div>
+												</br></br></br>
+												<div class="col-md-12">
+														
+														<div class="form-group">
+														<label for="exampleInputFullName"style="margin-left: 10px;">Sub Service Name</label>
+														 <div class="input-group">
+														<input type="text" name="sub_services_discription" class="form-control" id="exampleInputFullName" style="margin-left:48px;width:412px;" value="<?php echo $sub_services_discription; ?>" required >
 														<div class="input-group-addon">
 														<i class="fa fa-user"></i>
 														</div>
@@ -168,7 +183,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 												  <div class="col-md-12">	
 												   <div class="form-group">
 												   <label for="exampleInputDob" style="margin-left: 10px;">Description</label>												
-													 <textarea name="discription" class="form-control" style="margin-left: 60px;width:450px;" required > <?php echo $discription; ?></textarea>
+													 <textarea name="sub_services_discription" class="form-control" style="margin-left: 60px;width:450px;" required > <?php echo $discription; ?></textarea>
 													</div>
 												</div>	
 												  </div>
