@@ -113,7 +113,7 @@ unset($_SESSION['SESSION_REGISTERID']);
        
   <!-- /.login-logo -->
   <div class="login-box-body">
-<center><img src="images/logos.png"   width="180px;"></center>
+<center><a href="index.php"><img src="images/logos.png"width="180px;"></a></center>
 
 </br>
     <form method="post">

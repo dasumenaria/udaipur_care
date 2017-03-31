@@ -3,14 +3,14 @@ include('header.php');
 include('config.php');
 ?>
 <style>
-.aclass{
+.a class{
 	
     text-decoration: none;
     color: #fff;
     padding: 1px 1px;
     background-color: #1BBC9B;
 }
-.aclass:hover {
+.a class:hover {
 	color: #fff !important;
 }
 </style>
@@ -78,13 +78,14 @@ include('config.php');
 					</div>
 				 
                <?php
- 				 $count==4;
- echo "<br/>";
+ 				 $count==3;
+				  
 					}
 				?>
-				</div>
+				
 			</div>
 		</div>
+		</br>
 		<!-- end service -->
 
 <?php

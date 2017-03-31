@@ -140,7 +140,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
                 <tr>
 				<td><?php echo $i;?></td>
-                  <td><?php echo $service_name;?></td>
+                  <td><?php echo $sub_services_name;?></td>
                     <td><a class="btn btn-circle btn-xs editbtn" style="background-color:#0CF; color:#fff" data-toggle="modal" href="#popupcat<?php echo $id ;?>"><i class="fa fa-edit"></i></a>
                           <div class="modal fade" id="popupcat<?php echo $id ;?>" tabindex="-1" aria-hidden="true" style="padding-top:35px">
                                 <div class="modal-dialog modal-md">
@@ -154,31 +154,38 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                                             <div class="form-body">
                                             <input type="hidden" name="edit_model" value="<?php echo $id; ?>" />
                                                  <div class="row">
-												 <div class="col-md-12">
-														
-														<div class="form-group">
-														<label for="exampleInputFullName"style="margin-left: 10px;">Service Name</label>
-														 <div class="input-group">
-														<input type="text" name="sub_services_name" class="form-control" id="exampleInputFullName" style="margin-left:48px;width:412px;" value="<?php echo $sub_services_name; ?>" required >
-														<div class="input-group-addon">
-														<i class="fa fa-user"></i>
-														</div>
-														</div>
-													</div>
-												</div>
-												</br></br></br>
-												<div class="col-md-12">
-														
-														<div class="form-group">
-														<label for="exampleInputFullName"style="margin-left: 10px;">Sub Service Name</label>
-														 <div class="input-group">
-														<input type="text" name="sub_services_discription" class="form-control" id="exampleInputFullName" style="margin-left:48px;width:412px;" value="<?php echo $sub_services_discription; ?>" required >
-														<div class="input-group-addon">
-														<i class="fa fa-user"></i>
-														</div>
-														</div>
-													</div>
-												</div>
+												 <div class="col-md-12">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Service Category</label>
+              <div class="input-group">
+              	<select name="admin_book_service" class="form-control suv_category">
+                <option value="">Select...</option>
+                <?php
+					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+					while($ftc_data=mysql_fetch_array($ftx_servide))
+					{
+						echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
+					}
+                ?>
+                </select>
+              
+              		
+                     
+                  </div>
+             </div>
+		</div>
+			</br></br></br>
+		<div class="col-md-12">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Sub Service</label>
+              <div class="input-group">
+                     <select name="admin_book_sub_service" class="form-control" id="suv_category_result">
+                		<option value="">Select...</option>
+                    </select>
+                     
+                  </div>
+             </div>
+		</div>
 												</br></br></br>
 												  <div class="col-md-12">	
 												   <div class="form-group">
@@ -294,4 +301,16 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			});
 		}
 	});
+	
+	 $('.suv_category').on('change', function(){
+	var service = $(this).val();  
+	$.ajax({
+			url: "../ajax_page.php?function_name=fetch_service_list&id="+service,
+			type: "POST",
+			success: function(data)
+			{   
+				  $('#suv_category_result').html(data);
+			}
+		});
+   });
 </script>
