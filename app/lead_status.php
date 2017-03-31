@@ -4,7 +4,11 @@ include("../config.php");
 include("header.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
-$status=$_GET['s'];
+@$status=$_GET['s'];
+if(empty($status))
+{
+	$status=0;
+}
 @$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
 
@@ -43,7 +47,7 @@ if(isset($_POST['transfered'])){
                     while($fetch_data=mysql_fetch_array($excute_sql))
                     {
                         $activeclass='';
-                        if($status===$fetch_data['status'])
+                        if($status==$fetch_data['status'])
                         {
                             $activeclass='btn btn-danger margin';
                         }
@@ -81,7 +85,7 @@ if(isset($_POST['transfered'])){
 						}
 						else
 						{
-							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `master_sub_service_id` = '$SESSION_SUBSERVIDE'";
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `assign_to_vendor` = '$SESSION_SUBSERVIDE'";
 						}
 						$Newlead=mysql_query($leadNew);
 						while($lead_new=mysql_fetch_array($Newlead)){

@@ -168,7 +168,7 @@ $('#submit_contact').on('click', function(){
 							$('#email').val('');
 							$('#mobile_no').val('');
 							$('#message').val('');
-							$('#msg').html('Thank you for contact with us.');
+							$('#m9sg').html('Thank you for contact with us.');
 							
 						}
 					});

@@ -41,7 +41,7 @@ $lead_complete=mysql_num_rows($donelead);
 					<div class="icon">
 					  <i class="ion ion-stats-bars"></i>
 					</div>
-					<a href="lead_status.php?s=0" class="small-box-footer">
+					<a href="user_lead.php" class="small-box-footer">
 					  More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				  </div>
@@ -56,14 +56,13 @@ $lead_complete=mysql_num_rows($donelead);
 					<div class="icon">
 					  <i class="ion ion-person-add"></i>
 					</div>
-					<a href="lead_status.php?s=2" class="small-box-footer">
+					<a href="user_lead.php" class="small-box-footer">
 					  More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				  </div>
 				</div>
 				<!---		TABS	---->
-				 
-                <!---		TABS	---->
+                 <!---		TABS	---->
 				 </div>
             </div>
           </div>
