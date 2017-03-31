@@ -33,6 +33,8 @@ $user_type=$_SESSION['SESSION_USERTYPE'];
   <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
+   <link rel="stylesheet" href="../assest/plugins/datepicker/datepicker3.css">
+	<link rel="stylesheet" href="../assest/plugins/timepicker/bootstrap-timepicker.min.css">
  <style>
  .active_color
  {

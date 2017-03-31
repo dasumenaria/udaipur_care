@@ -181,7 +181,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 <div class="form-group col-md-6">
                   <label for="exampleInputPicUpTime">Pick Up Date</label>
                   <div class="input-group">
-                      <input type="text"  name="date" class="form-control datepicker" required id="">
+                      <input type="text"  name="date" class="form-control datepickera" required id="">
                       <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                       </div>
@@ -316,7 +316,12 @@ $('.allLetter').keyup(function(){
 			return false;  
 		}
 	});
-	 
+	var date = new Date();
+	date.setDate(date.getDate()+1);//-1
+	  $('.datepickera').datepicker({
+			  autoclose: true,
+			  startDate: date
+	});
 </script>
  
 

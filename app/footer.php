@@ -28,6 +28,16 @@ Maintain and Developed by PHP Poets IT Solutions Pvt. Ltd.
 <script src=" ../assest/dist/js/demo.js"></script>
 <script src="../assest/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assest/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../assest/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../assest/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script>
+$('.datepicker').datepicker({
+	  autoclose: true
+});
+$(".timepicker").timepicker({
+  showInputs: false
+});
+</script>
 <script>
   $(function () {
     $("#example1").DataTable();

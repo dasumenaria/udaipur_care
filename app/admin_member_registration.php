@@ -133,7 +133,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                 <div class="form-group">
                   <label for="exampleInputDob">Date Of Birth</label>
                   <div class="input-group">
-                  	<input type="text" name="dob" class="form-control datepicker" placeholder="Enter Your Date Of Birth">
+                  	<input type="text" name="dob" class="form-control datepickera" placeholder="Enter Your Date Of Birth">
                     <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                       </div>
@@ -257,5 +257,9 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				}
 			});
 		}
+	});
+	$('.datepickera').datepicker({
+		  autoclose: true,
+		  endDate: '+0d'
 	});
 </script>
