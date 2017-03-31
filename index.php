@@ -12,7 +12,7 @@ include('config.php');
   	$timestamp=date("Y-m-d");
 	 
    	mysql_query("insert into `contact_us` set `name`='$name',`message`='$message',`mobile_no`='$mobile_no',`email`='$email',`timestamp`='$timestamp'");
-	
+	echo ' ("Thank You For Email")';		
 }
 else
 	{
@@ -81,32 +81,32 @@ else
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/a.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important; font-weight:bold !important;">Rotary Udaipur Mewar Service Trust Udaipur</a></label>  							
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important; font-weight:bold !important;">Rotary Udaipur Mewar Service Trust Udaipur</a></label>  							
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/b.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">&nbsp; &nbsp; &nbsp; &nbsp; District Administration, &nbsp; &nbsp;Udaipur</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important;">&nbsp; &nbsp; &nbsp; &nbsp; District Administration, &nbsp; &nbsp;Udaipur</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/c.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Rajasthan Police</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important;">Rajasthan Police</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/d.png"class="img-responsive" alt="team img" height="150px !important"> 
-							 <label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Smart City Mission</a></label>
+							 <label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important;">Smart City Mission</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/e.png"class="img-responsive" alt="team img" height="150px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">Fusion Business Solutions Pvt. Ltd.</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important;">Fusion Business Solutions Private Limited</a></label>
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/f.png"class="img-responsive" alt="team img" height="150px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:9pt !important;">PHP Poets IT Solutions Pvt. Ltd.</a></label>
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important;">PHP Poets IT Solutions Private Limited</a></label>
                           </div>
 						   
   			 </div>
@@ -162,3 +162,9 @@ else
 <?php
 include('footer.php');
 ?>
+<script>
+$('#submitButtonID').click(function(){
+ alert('Please wait while form is submitting');
+ $('#formID').submit();
+});
+</script>

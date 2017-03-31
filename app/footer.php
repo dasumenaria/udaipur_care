@@ -6,7 +6,7 @@
  
       </div>
       <strong>
-	Copyright © 2017 Udaipur Care
+Maintain and Developed by PHP Poets IT Solutions Pvt. Ltd. 
 
     </div>
     <!-- /.container -->

@@ -20,6 +20,11 @@ unset($_SESSION['SESSION_REGISTERID']);
 		$id=$row['id'];
 		
 		$usertype=$row['user_type']; 
+		$_SESSION['SESSION_ID']=$row['id'];
+			$_SESSION['SESSION_USERNAME']=$row['username'];
+			$_SESSION['SESSION_USERTYPE']=$row['user_type'];
+			$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
+			$_SESSION['SESSION_REGISTERID']=$row['register_id'];
 		//--- SMS
 		if($usertype != 0)
 		{
@@ -48,10 +53,11 @@ unset($_SESSION['SESSION_REGISTERID']);
 			echo "<meta http-equiv='refresh' content='0;url=services.php'/>";
 		}
 		else if($usertype==1){
-			echo "<meta http-equiv='refresh' content='0;url=app/verification.php'/>"; //admin_dashboard
+			 
+			echo "<meta http-equiv='refresh' content='0;url=app/admin_dashboard.php'/>"; //admin_dashboard
 		}
 		else if($usertype==2){
-			echo "<meta http-equiv='refresh' content='0;url=app/verification.php'/>"; //vendor_dashboard
+			echo "<meta http-equiv='refresh' content='0;url=app/vendor_dashboard.php'/>"; //vendor_dashboard
 		}
 	
 		ob_flush();
