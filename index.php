@@ -65,7 +65,7 @@ include('config.php');
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>
                             <img src="images/logo/a.png"class="img-responsive" alt="team img" height="50px !important"> 
-							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important; font-weight:bold !important;">Rotary Udaipur Mewar Service Trust Udaipur</a></label>  							
+							<label><a href=" " style="color:#007787;text-decoration: none !important;font-size:15px !important; font-weight:bold !important;">Rotary Club Mewar Rotary Udaipur Mewar Service Trust Udaipur</a></label>  							
                           </div>
 						  <div class="col-md-2 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
 						  </br>

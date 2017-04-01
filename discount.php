@@ -16,11 +16,11 @@ Pricing table
 .pricing {
   position: relative;
   margin-bottom: 15px;
-  border: 3px solid #eee;
+  border: 2px solid #33bacc;
 }
 
 .pricing-active {
-  border: 3px solid #36d7ac;
+  border: 2px solid #36d7ac;
   margin-top: -10px;
   box-shadow: 7px 7px rgba(54, 215, 172, 0.2);
 }
@@ -55,8 +55,8 @@ Pricing table
   font-weight: 300;
   color: #fafafa; 
   font-size: 27px;
-  background: #007787;
-  border-bottom: solid 3px #e7e0e0;
+  
+  border-bottom: solid 2px #e7e0e0;
   
 }
 
@@ -65,8 +65,8 @@ Pricing table
   padding: 5px 0;
   font-size: 32px;
   font-weight: 300;
-  background: #fbfef2;
-  border-bottom: solid 1px #f5f9e7;
+  background: #f3f3f3;
+  border-bottom: solid 2px #eee ;
 }
 
 .pricing-head-active h4 {
@@ -93,7 +93,7 @@ Pricing table
   font-size: 12px;
   padding: 7px 15px;
   border-bottom: solid 1px #f5f9e7;
-}
+}  
 
 /*Pricing Footer*/
 .pricing-footer {
@@ -128,15 +128,16 @@ Pricing table
 
 .yellow-crusta.btn {
   color: #FFFFFF;
-  background-color: #f3c200;
+  background-color:  #007787;
 }
 .yellow-crusta.btn:hover,
 .yellow-crusta.btn:focus,
 .yellow-crusta.btn:active,
 .yellow-crusta.btn.active {
     color: #FFFFFF;
-    background-color: #cfa500;
+    background-color: #2191a1;
 }
+  
 </style>
  
 <section class="content-header">
@@ -156,19 +157,20 @@ Pricing table
 		<div class="col-md-3">
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
-					<h3><span><img src="images/service_images/2.jpg" width="100%" height="150px"></span></h3>
-					<h4><i>$</i>5<i>.49</i>
+					<h3><img src="images/partner/discount/7.jpg" width="100%" height="150px"></h3>
+					<h4> 10<i>%</i>
 					<span>
-					Per Month </span>
+					On Bill</span>
 					</h4>
 				</div>
-				 
-				<div class="pricing-footer">
+				 <div class="pricing-footer">
 					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						Spicysigdi
+					</span>	
 					</p>
 					<a href="javascript:;" class="btn yellow-crusta">
-					Sign Up
+					Book Now
 					</a>
 				</div>
 			</div>
@@ -176,20 +178,104 @@ Pricing table
 		<div class="col-md-3">
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
-					<h3> 
-					<img src="images/service_images/3.jpg" width="100%" height="150px"> 
-					</h3>
-					<h4><i>$</i>5<i>.49</i>
+					<h3><img src="images/partner/discount/6.jpg" width="100%" height="150px"></h3>
+					<h4>25<i>%</i>
 					<span>
-					Per Month </span>
+					On Bill </span>
 					</h4>
 				</div>
-				 </br>
-				<div class="pricing-footer">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
-					</br>
+				 <div class="pricing-footer">
+					<p>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						Book a Surprise
+					</span>	
+					</p>
 					<a href="javascript:;" class="btn yellow-crusta">
-					Sign Up
+					Book Now
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="pricing hover-effect">
+				<div class="pricing-head">
+					<h3><img src="images/partner/discount/9.jpg" width="100%" height="150px"></h3>
+					<h4> 70<i>%</i>
+					<span>
+					Per Ticket</span>
+					</h4>
+				</div>
+				 <div class="pricing-footer">
+					<p>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						Marvel Water Park
+					</span>	
+					</p>
+					<a href="javascript:;" class="btn yellow-crusta">
+					Book Now
+					</a>
+				</div>
+			</div>
+		</div>
+		 <div class="col-md-3">
+			<div class="pricing hover-effect">
+				<div class="pricing-head">
+					<h3><img src="images/partner/discount/8.jpg" width="100%" height="150px"></h3>
+					<h4><i>$</i>40<i>%</i>
+					<span>
+					On Bill</span>
+					</h4>
+				</div>
+				 <div class="pricing-footer">
+					<p>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						Prabhat Spa Salon Institute
+					</span>	
+					</p>
+					<a href="javascript:;" class="btn yellow-crusta">
+					Book Now
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="pricing hover-effect">
+				<div class="pricing-head">
+					<h3><img src="images/partner/discount/1.jpg" width="100%" height="150px"></h3>
+					<h4> 40<i>%</i>
+					<span>
+					Per Ticket </span>
+					</h4>
+				</div>
+				 <div class="pricing-footer">
+					<p>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						 karni mata ropeway
+					</span>	 
+					</p>
+					<a href="javascript:;" class="btn yellow-crusta">
+					Book Now
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="pricing hover-effect">
+				<div class="pricing-head">
+					<h3><img src="images/partner/discount/2.jpg" width="100%" height="150px"></h3>
+					<h4> 10<i>%</i>
+					<span>
+					Per Ticket </span>
+					</h4>
+				</div>
+				 <div class="pricing-footer">
+					<p>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+						Vasudev 
+					</span>	
+					</p>
+					<a href="javascript:;" class="btn yellow-crusta">
+					Book Now
 					</a>
 				</div>
 			</div>
@@ -198,42 +284,25 @@ Pricing table
 		<div class="col-md-3">
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
-					<h3><img src="images/service_images/4.jpg" width="100%" height="150px"> </h3>
-					<h4><i>$</i>5<i>.49</i>
-					<span>
-					Per Month </span>
-					</h4>
-				</div>
-				 
-				<div class="pricing-footer">
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
-					</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Sign Up
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/service_images/5.jpg" width="100%" height="150px"> </h3>
-					<h4><i>$</i>5<i>.49</i>
-					<span>
-					Per Month </span>
+					<h3><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
+					<h4> 10<i>%</i>
+					<span style="color:black;font-size:16px;font-weight:bold;">
+					On Bill </span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna psum olor .
-					</p>
+					<p><span style="color:black;font-size:16px;font-weight:bold;">
+						Hiren X-ray clinic
+					</span></p>
 					<a href="javascript:;" class="btn yellow-crusta">
-					Sign Up
+					Book Now
 					</a>
 				</div>
 			</div>
 		</div>
+		 
+		 
+ 
 		<!--//End Pricing -->
 	</div>
 </div>
