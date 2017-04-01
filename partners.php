@@ -129,7 +129,7 @@
 			  <div class="col-md-3">
 				 <div class="form-group">
 				 
-              <center><img src="images/partner/30.png" height="100px;"></center>
+              <center><img src="images/partner/33.png" width="300px" height="150px"></center>
               </div>
 			  </div>
 			  

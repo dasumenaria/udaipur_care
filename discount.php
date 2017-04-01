@@ -142,7 +142,7 @@ Pricing table
  
 <section class="content-header">
        <center>
-      	<h2 class="wow bounce" style=" padding-top:70px; color:#707568"> <strong> 
+      	<h2 class="wow bounce" style=" padding-top:60px; color:#707568"> <strong> 
 		DISCOUNT
        </strong></h2>
        </center>
@@ -164,11 +164,7 @@ Pricing table
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						Spicysigdi
-					</span>	
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -185,11 +181,7 @@ Pricing table
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						Book a Surprise
-					</span>	
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -206,11 +198,7 @@ Pricing table
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						Marvel Water Park
-					</span>	
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -221,17 +209,13 @@ Pricing table
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
 					<h3><img src="images/partner/discount/8.jpg" width="100%" height="150px"></h3>
-					<h4><i>$</i>40<i>%</i>
+					<h4>40<i>%</i>
 					<span>
 					On Bill</span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						Prabhat Spa Salon Institute
-					</span>	
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -248,11 +232,7 @@ Pricing table
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						 karni mata ropeway
-					</span>	 
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -265,15 +245,11 @@ Pricing table
 					<h3><img src="images/partner/discount/2.jpg" width="100%" height="150px"></h3>
 					<h4> 10<i>%</i>
 					<span>
-					Per Ticket </span>
+					On Billing </span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p>
-					<span style="color:black;font-size:16px;font-weight:bold;">
-						Vasudev 
-					</span>	
-					</p>
+					<p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
@@ -285,15 +261,13 @@ Pricing table
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
 					<h3><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
-					<h4> 10<i>%</i>
+					<h4> 20<i>%</i>
 					<span>
-					On Bill </span>
+					On Billing </span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
-					<p><span style="color:black;font-size:16px;font-weight:bold;">
-						Hiren X-ray clinic
-					</span></p>
+					 <p>&nbsp;</p>
 					<a href="javascript:;" class="btn yellow-crusta">
 					Book Now
 					</a>
