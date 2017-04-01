@@ -18,7 +18,7 @@ include('config.php');
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
-    color: white;
+    color: black;
 	padding:1px 22px;
 	border-radius: 3px;
     text-align: center;
@@ -33,10 +33,10 @@ include('config.php');
 .button4 {
     background-color: white;
     color: black;
-    border: 2px solid #e7e7e7;
+    border: 2px solid #007787;
 }
 
-.button4:hover {background-color: #e7e7e7;}
+.button4:hover {background-color: #2191a1; color:white;}
  
 </style>
 		<!-- start service -->
