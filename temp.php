@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 include('app/function.php');
- $r1=mysql_query("select * from register  order by id ASC ");							
+ $r1=mysql_query("select * from register where `send`='0'  order by id ASC ");							
  	while($row1=mysql_fetch_array($r1))
 	{
  		$id=$row1['id'];
@@ -62,7 +62,10 @@ include('app/function.php');
 		$sms_sender='UDRCRE';
 		$sms=str_replace(' ', '+', '"Udaipur Care" A senior citizen helpline will be launched today at Bhartiya Lok Kala Mandal in kavi samelan, organized by Rotary Club Udaipur Mewar, passes available for SR. citizen at Choudhary offset, Guru Ram Das colony, udaipur.');
  		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
-	 exit;
+		
+		$sql="update `register` set `send`='1' where `id`='$id'";
+		 
+		mysql_query($sql);
  	
 	}
 ?>
