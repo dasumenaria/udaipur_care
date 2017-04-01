@@ -12,7 +12,7 @@
   }
  
 include("../config.php"); 
-$user_type=$_SESSION['SESSION_USERTYPE']; 
+$user_type=@$_SESSION['SESSION_USERTYPE']; 
 
 ?>
 <!DOCTYPE html>

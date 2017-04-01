@@ -9,7 +9,9 @@ include('app/function.php');
 		$email_id=$row1['email_id'];
  		$mobile_no=$row1['mobile_no'];
 		$other_mobile_no=$row1['other_mobile_no'];
-		
+		/*$mobile_no='9680747166';
+		echo $mobile_no=encode($mobile_no,'UDRENCODE'); exit;
+		/*
 		$explode_mob=explode(',' ,$mobile_no);
 		if(sizeof($explode_mob)>1){
 			$mobile_no=$explode_mob[0];
@@ -53,14 +55,14 @@ include('app/function.php');
 		$mobile_no=decode($mobile_no,'UDRENCODE');
 		$md4_password=md5($string);
  		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$id' , `date`='$date', `time`='$time' ");
-		  
+		  */
  		
-		
-		/*$working_key='A7a76ea72525fc05bbe9963267b48dd96';
-		$sms_sender='UDCARE';
-		$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
- 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');*/
-	 
+		$mobile_no=decode($mobile_no,'UDRENCODE'); 
+		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
+		$sms_sender='UDRCRE';
+		$sms=str_replace(' ', '+', '"Udaipur Care" A senior citizen helpline will be launched today at Bhartiya Lok Kala Mandal in kavi samelan, organized by Rotary Club Udaipur Mewar, passes available for SR. citizen at Choudhary offset, Guru Ram Das colony, udaipur.');
+ 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
+	 exit;
  	
 	}
 ?>
