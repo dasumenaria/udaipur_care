@@ -1,27 +1,29 @@
 <?php 
 include("header.php");
 include("config.php");
-//include("mail.php");
+include('app/function.php');
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
-  $message="";
+$message="";
   
 if(isset($_POST['submit'])){
+	
+	$name=encode($ftc_data['name'] ,'UDRENCODE');
+	$email_id=encode($ftc_data['email_id'],'UDRENCODE');
+	$mobile_no=encode($ftc_data['mobile_no'],'UDRENCODE');
+	$gender=encode($ftc_data['gender'],'UDRENCODE');
+	$address=encode($ftc_data['address'],'UDRENCODE');
+	$other_info=encode($ftc_data['other_info'],'UDRENCODE');
+	$emergency_contact_name=encode($ftc_data['emergency_contact_name'],'UDRENCODE');
+	$emergency_contact_no=encode($ftc_data['emergency_contact_no'],'UDRENCODE');
 	 
-	$name=$_POST['name'];
-	$age=$_POST['age'];
+ 	$age=$_POST['age'];
 	$landline_no=$_POST['landline_no'];
-	$email_id=$_POST['email_id'];
-	$dob1=$_POST['dob'];
+ 	$dob1=$_POST['dob'];
 	$dob=date('Y-m-d', strtotime($dob1));
-	$mobile_no=$_POST['mobile_no'];
-	$gender=$_POST['gender'];
-	$address=$_POST['address'];
-	$landmark=$_POST['landmark'];
+ 	$landmark=$_POST['landmark'];
 	$pincode_no=$_POST['pincode_no'];
-	$emergency_contact_name=$_POST['emergency_contact_name'];
-	$emergency_contact_no=$_POST['emergency_contact_no'];
-	$hobbies=$_POST['hobbies'];
+ 	$hobbies=$_POST['hobbies'];
 	$any_medical_treatment=$_POST['any_medical_treatment'];
 	$area_of_specialization=$_POST['area_of_specialization'];
 	$children=$_POST['children'];
@@ -31,34 +33,17 @@ if(isset($_POST['submit'])){
 	$spouse_dob=date('Y-m-d', strtotime($spouse_dob1));
 	$date_of_anniversary1=$_POST['date_of_anniversary'];
 	$date_of_anniversary=date('Y-m-d', strtotime($date_of_anniversary1));
-	//$routine_problem=$_POST['routine_problem'];
-	$other_info=$_POST['other_info'];
-	//$exact_timestamp=date('Y-m-d H:i:s');
-    //$curnt_date=date("Y-m-d");
-     $to=$_POST['email_id'];
-    $from='lakshitlohar7492@gmail.com';    
-    $from_name='Udaipur Care';    
-    $subject='abcd';
-    $body='Your Registration is Successfully';    
-	  if(!empty($to))
-    {
-/*smtpmailer($to, $from, $from_name, $subject, $body); */
-     }
+ 	$other_info=$_POST['other_info'];
  
    $sql="insert into `register` set  `name`='$name',`age`='$age',`landline_no`='$landline_no',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',
 `landmark`='$landmark',`pincode_no`='$pincode_no',`emergency_contact_name`='$emergency_contact_name',`emergency_contact_no`='$emergency_contact_no',`hobbies`='$hobbies',`any_medical_treatment`='$any_medical_treatment',
 `area_of_specialization`='$area_of_specialization',`children`='$children',`remark`='$remark',`spouse_name`='$spouse_name',`spouse_dob`='$spouse_dob',
 `date_of_anniversary`='$date_of_anniversary',`other_info`='$other_info',`admin_id`='$session_id'";
   $message = "Registration Add Successfully.";
-  $r=mysql_query($sql);
- 
- 	$ids=mysql_insert_id();
-
+	$r=mysql_query($sql);
+	$ids=mysql_insert_id();
 	$photo="identity_proof".$ids.".jpg";
-
-
-// move photo in  floder//
-	 
+ 	 
 
 	move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
 

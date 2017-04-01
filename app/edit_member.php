@@ -11,27 +11,24 @@ $message="";
   
 if(isset($_POST['submit'])){
 	
-	$name=encode($ftc_data['name'] ,'UDRENCODE');
-	$email_id=encode($ftc_data['email_id'],'UDRENCODE');
-	$mobile_no=encode($ftc_data['mobile_no'],'UDRENCODE');
-	$gender=encode($ftc_data['gender'],'UDRENCODE');
-	$address=encode($ftc_data['address'],'UDRENCODE');
-	$other_info=encode($ftc_data['other_info'],'UDRENCODE');
-	$emergency_contact_name=encode($ftc_data['emergency_contact_name'],'UDRENCODE');
-	$emergency_contact_no=encode($ftc_data['emergency_contact_no'],'UDRENCODE');
+	$name=encode($_POST['name'] ,'UDRENCODE');
+	$email_id=encode($_POST['email_id'],'UDRENCODE');
+	$mobile_no=encode($_POST['mobile_no'],'UDRENCODE');
+	$gender=encode($_POST['gender'],'UDRENCODE');
+	$address=encode($_POST['address'],'UDRENCODE');
+	$other_info=encode($_POST['other_info'],'UDRENCODE');
+	$emergency_contact_name=encode($_POST['emergency_contact_name'],'UDRENCODE');
+	$emergency_contact_no=encode($_POST['emergency_contact_no'],'UDRENCODE');
   	$age=$_POST['age'];
 	$landline_no=$_POST['landline_no'];
- 	$dob1=$_POST['dob'];
-	$dob=date('Y-m-d', strtotime($dob1));
- 	$gender=$_POST['gender'];
- 	$landmark=$_POST['landmark'];
+ 	$dob=$_POST['dob'];
+  	$landmark=$_POST['landmark'];
 	$pincode_no=$_POST['pincode_no'];
  	$hobbies=$_POST['hobbies'];
 	$any_medical_treatment=$_POST['any_medical_treatment'];
 	$area_of_specialization=$_POST['area_of_specialization'];
 	$children=$_POST['children'];
-	$remark=$_POST['remark'];
-	$spouse_name=$_POST['spouse_name'];
+ 	$spouse_name=$_POST['spouse_name'];
 	$spouse_dob1=$_POST['spouse_dob'];
 	$spouse_dob=date('Y-m-d', strtotime($spouse_dob1));
 	$date_of_anniversary1=$_POST['date_of_anniversary'];
@@ -41,18 +38,16 @@ if(isset($_POST['submit'])){
  
    $sql="update  `register` set  `name`='$name',`age`='$age',`landline_no`='$landline_no',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',
 `landmark`='$landmark',`pincode_no`='$pincode_no',`emergency_contact_name`='$emergency_contact_name',`emergency_contact_no`='$emergency_contact_no',`hobbies`='$hobbies',`any_medical_treatment`='$any_medical_treatment',
-`area_of_specialization`='$area_of_specialization',`children`='$children',`remark`='$remark',`spouse_name`='$spouse_name',`spouse_dob`='$spouse_dob',
+`area_of_specialization`='$area_of_specialization',`children`='$children',`spouse_name`='$spouse_name',`spouse_dob`='$spouse_dob',
 `date_of_anniversary`='$date_of_anniversary',`other_info`='$other_info'  where `id` = '$update_id'";
   $message = "Member update successfully.";
   $r=mysql_query($sql);
 	$ids=mysql_insert_id();
 	$photo="identity_proof".$ids.".jpg";
+print_r($_FILES); 
 
 
-// move photo in  floder//
-	 
-
-	move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
 
 	if($r)
 	{
@@ -122,12 +117,21 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		$other_info=decode($ftc_data['other_info'],'UDRENCODE');
 		$emergency_contact_name=decode($ftc_data['emergency_contact_name'],'UDRENCODE');
 		$emergency_contact_no=decode($ftc_data['emergency_contact_no'],'UDRENCODE');
+		$SD=$ftc_data['spouse_dob'];
+		if($SD=='0000-00-00' || $SD=='1970-01-01')
+		{$spouse_dob='';}else {$spouse_dob=date('d-m-Y',strtotime($SD));}
+		$DOA=$ftc_data['date_of_anniversary'];
+		if($DOA=='0000-00-00' || $DOA=='1970-01-01')
+		{$date_of_anniversary='';}else {$date_of_anniversary=date('d-m-Y',strtotime($DOA));}
+		$dob=$ftc_data['dob'];
+		if($dob=='')
+		{	$dob='';}else {$dob=date('d-m-Y',strtotime($dob));}
 ?>
 
     <!-- Main content -->
     <section class="content">
 		<div class="box box-primary" >
-        <form method="post"  id="contact-form" role="form">
+        <form method="post"  id="contact-form" role="form" enctype="multipart/form-data">
          <div class="box-body" style="margin-left:12px;">
 		 </br>
 		 <div class="row">
@@ -171,7 +175,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group col-md-6">
                   <label for="exampleInputDob">Date Of Birth</label>
                   <div class="input-group">
-                         <input type="date" name="dob" class="form-control datepickera" value="<?php echo $ftc_data['dob'];?>" placeholder="Enter Your Date Of Birth">
+                         <input type="text" name="dob" class="form-control datepickera" value="<?php echo $dob;?>" placeholder="Enter Your Date Of Birth">
                       <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                       </div>
@@ -277,7 +281,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-6">
 			<div class="form-group">
                   <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
-                  <input type="file" id="exampleInputFile" name="">
+                  <input type="file" id="exampleInputFile" name="identity_proof">
 			</div>
 		</div>
 		 <div class="form-group col-md-6">
@@ -292,7 +296,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">Spouse Date of Birth</label>
 					  <div class="input-group">
-							 <input class="form-control input-small datepickera"  placeholder="Spouse Date of Birth" type="text" data-date-format="dd-mm-yyyy" value="<?php echo $ftc_data['spouse_dob'];?>" name="spouse_dob"> 
+							 <input class="form-control input-small datepickera"  placeholder="Spouse Date of Birth" type="text" data-date-format="dd-mm-yyyy" value="<?php echo $spouse_dob;?>" name="spouse_dob"> 
 						  <div class="input-group-addon">
 						  <i class="fa fa-calendar"></i>
 						  </div>
@@ -301,7 +305,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			<div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">Date of Anniversary</label>
 					  <div class="input-group">
-							 <input class="form-control input-small datepickera"  value="<?php echo $ftc_data['date_of_anniversary'];?>" placeholder="Date of Anniversary" 
+							 <input class="form-control input-small datepickera"  value="<?php echo $date_of_anniversary;?>" placeholder="Date of Anniversary" 
                                             data-date-format="dd-mm-yyyy" type="text" name="date_of_anniversary">
 						  <div class="input-group-addon">
 						  <i class="fa fa-calendar"></i>
