@@ -2,6 +2,7 @@
 include('header.php');
 include('config.php');
 ?>
+
 <style>
 #team img {
     border:none !important;
@@ -9,23 +10,24 @@ include('config.php');
     padding: 5px !important; 
     transition: all 0.4s ease-in;
 }
+ 
 </style>
 		<!-- start home -->
 		<section id="home" style="text-align:right">
 		  <div class="templatemo_headerimage">
 		    <div class="flexslider" >
-		      <ul class="slides">
-              	<li>
-		        	<img src="images/slider/b.jpg" alt="Slide 1">
- 		        </li>
-		        <li>
-		        	<img src="images/slider/3.jpg"  alt="Slide 1">
+		      <ul class="slides" style="text-decoration:none;">
+              	 <li  style="text-decoration:none;">
+		        	<img src="images/slider/3.jpg"  alt="Slide">
  		        </li> 
-		     	<li>
-		        	<img src="images/slider/d.jpg" alt="Slide 2">
+				<li style="text-decoration:none;">
+		        	<img src="images/slider/b.jpg" alt="Slide">
  		        </li>
-                <li>
-		        	<img src="images/slider/e.jpg" alt="Slide 2">
+		     	<li  style="text-decoration:none;">
+		        	<img src="images/slider/d.jpg" alt="Slide">
+ 		        </li>
+                <li  style="text-decoration:none;">
+		        	<img src="images/slider/e.jpg" alt="Slide">
  		        </li>
                  
 		      </ul>
@@ -208,3 +210,4 @@ $('.allLetter').keyup(function(){
 	});
 
 </script>
+ 

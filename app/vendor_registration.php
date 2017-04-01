@@ -10,7 +10,8 @@ ini_set('max_execution_time', 100000);
  {
 	$service_name=$_POST['service_name'];
 	$discription=$_POST['discription'];
-	$sql="insert into `master_services` set `service_name`='$service_name', `discription`='$discription'";
+	 
+	 $sql="insert into `master_services` set `service_name`='$service_name', `discription`='$discription',flag=0";
  	mysql_query($sql);
  }
  
@@ -52,7 +53,7 @@ if(isset($_POST['submit'])){
 	 
 
 	move_uploaded_file($_FILES["company_logo"]["tmp_name"],"vendor/".$photo);
-	move_uploaded_file($_FILES["company_mou_certificate"]["tmp_name"],"vendor/".$photo);
+	move_uploaded_file($_FILES["company_mou_certificate"]["tmp_name"],"vendor/".$photo1);
 
 	if($r)
 	{

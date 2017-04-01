@@ -3,6 +3,16 @@ include('auth.php');
 include("../config.php");
 include("header.php");
   
+    if(isset($_POST['sub_del']))
+{
+	$delet_model=$_POST['delet_model'];
+   mysql_query("update `vendor` SET `flag`=1 where `id`='$delet_model'");
+  }
+  else
+	{
+		echo mysql_error();
+		}
+		
   
  ?>
    
@@ -35,6 +45,7 @@ include("header.php");
                   <th>Company Name</th>
 				  <th>Email Address</th>
                   <th>Mobile No.</th>
+				   <th>Action</th>
                 </tr>
                 </thead>
 
@@ -42,7 +53,7 @@ include("header.php");
 
                 <tbody>
 				<?php
-			  $r1=mysql_query("select * from vendor  order by id Desc ");							
+			  $r1=mysql_query("select * from vendor where flag=0 ");							
 					$i=0;
 					while($row1=mysql_fetch_array($r1))
 					{
@@ -64,7 +75,29 @@ include("header.php");
                   </td>
                   <td><?php echo $email_id;?></td>
                   <td> <?php echo $mobile_no;?></td>
-                 
+                 <td align="center" width="3%">
+				<a class="btn default red-stripe btn-sm"  rel="tooltip" title="Delete"  data-toggle="modal" href="#delete<?php echo $id ;?>" style="background:#FF851B;"><i class="fa fa-trash" style="color:white;"></i></a>
+            <div class="modal fade" id="delete<?php echo $id ;?>" tabindex="-1" aria-hidden="true" style="padding-top:35px">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <span class="modal-title" style="font-size:14px; font-weight:bold; color:red;text-align:left">Are you sure, you want to delete this Service?</span>
+                        </div>
+                        <div class="modal-footer">
+                        <form method="post" name="delete<?php echo $id ;?>">
+                            <input type="hidden" name="delet_model" value="<?php echo $id; ?>" />
+                            
+                            <button type="submit" name="sub_del" value="" class="btn btn-danger">Yes</button> 
+							<button type="submit" name="del" value="" class="btn btn-primary">No</button> 
+                        </form>
+                        </div>
+                    </div>
+                <!-- /.modal-content -->
+                </div>
+        <!-- /.modal-dialog -->
+            </div>
+            </td> 
                 </tr>
                 
 								<?php } ?>
