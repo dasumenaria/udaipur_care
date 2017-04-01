@@ -286,7 +286,7 @@ Pricing table
 				<div class="pricing-head">
 					<h3><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
 					<h4> 10<i>%</i>
-					<span style="color:black;font-size:16px;font-weight:bold;">
+					<span>
 					On Bill </span>
 					</h4>
 				</div>
