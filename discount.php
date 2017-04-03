@@ -56,7 +56,7 @@ Pricing table
   color: #fafafa; 
   font-size: 27px;
   
-  border-bottom: solid 2px #e7e0e0;
+ /* border-bottom: solid 2px #e7e0e0;*/
   
 }
 
@@ -128,7 +128,7 @@ Pricing table
 
 .yellow-crusta.btn {
   color: #FFFFFF;
-  background-color:  #007787;
+  background-color:  #007787; 
 }
 .yellow-crusta.btn:hover,
 .yellow-crusta.btn:focus,
@@ -258,20 +258,23 @@ Pricing table
 		</div>
 		 
 		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
-					<h4> 20<i>%</i>
-					<span>
-					On Billing </span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					 <p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
+		 	<div class="pricing hover-effect" style="background-color:#f3f3f3">
+			<div class="pricing-footer">
+					</br>  
+					<a href="discount_booking.php?id=<?php echo $id;?>" class="btn yellow-crusta" style="margin-right:65%; background-color:#007787;">
+					Book Now</a>
+					
+			 </div>
+		  
+			<div class="pricing-head" style="border-bottom:none;">
+					<h3 ><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
+					</br>
+					<span style=" color:#E24F55;">
+						<span style="font-weight: bold; font-size:16pt;"> 20%</span> DISCOUNT  ON BILLING
+					</span>
+					 <h4><i>Hiran X-Ray Clinic</i></h4>
+			</div>
+				 
 			</div>
 		</div>
 		 

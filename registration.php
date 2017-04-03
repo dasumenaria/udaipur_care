@@ -51,11 +51,12 @@ if(isset($_POST['submit']))
 		$ids=mysql_insert_id();
 		$md4_password=md5($string);
 		$mobile_no=decode($mobile_no,'UDRENCODE');
-		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$ids' , `date`='$date', `time`='$time' ");
+		$email_id=decode($email_id,'UDRENCODE');
+		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id' ,  `register_id`='$ids' , `date`='$date', `time`='$time' ");
 		
 		$photo="identity_proof".$ids.".jpg";
 		// move photo in  floder//
-		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity_proof/".$photo);
 	
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
 		
