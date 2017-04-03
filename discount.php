@@ -61,7 +61,7 @@ Pricing table
 }
 
 .pricing-head h4 {
-  color: #bac39f;
+  color: #000;
   padding: 5px 0;
   font-size: 32px;
   font-weight: 300;
@@ -160,7 +160,7 @@ Pricing table
 					<h3><img src="images/partner/discount/7.jpg" width="100%" height="150px"></h3>
 					<h4> 10<i>%</i>
 					<span>
-					On Bill</span>
+					On Billing</span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
@@ -177,7 +177,7 @@ Pricing table
 					<h3><img src="images/partner/discount/6.jpg" width="100%" height="150px"></h3>
 					<h4>25<i>%</i>
 					<span>
-					On Bill </span>
+					On Billing</span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
@@ -194,7 +194,7 @@ Pricing table
 					<h3><img src="images/partner/discount/9.jpg" width="100%" height="150px"></h3>
 					<h4> 70<i>%</i>
 					<span>
-					Per Ticket</span>
+					100 Rs.Per Ticket</span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
@@ -211,7 +211,7 @@ Pricing table
 					<h3><img src="images/partner/discount/8.jpg" width="100%" height="150px"></h3>
 					<h4>40<i>%</i>
 					<span>
-					On Bill</span>
+					On Billing</span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
@@ -226,14 +226,14 @@ Pricing table
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
 					<h3><img src="images/partner/discount/1.jpg" width="100%" height="150px"></h3>
-					<h4> 40<i>%</i>
+					<h4> 50<i>%</i>
 					<span>
 					Per Ticket </span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
