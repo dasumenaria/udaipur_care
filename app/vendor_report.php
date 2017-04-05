@@ -45,6 +45,7 @@ include("header.php");
                   <th>Company Name</th>
 				  <th>Email Address</th>
                   <th>Mobile No.</th>
+				  <th>M.O.U. Certificate</th>
 				   <th>Action</th>
                 </tr>
                 </thead>
@@ -75,6 +76,7 @@ include("header.php");
                   </td>
                   <td><?php echo $email_id;?></td>
                   <td> <?php echo $mobile_no;?></td>
+				  <td> </td>
                  <td align="center" width="3%">
 				<a class="btn default red-stripe btn-sm"  rel="tooltip" title="Delete"  data-toggle="modal" href="#delete<?php echo $id ;?>" style="background:#FF851B;"><i class="fa fa-trash" style="color:white;"></i></a>
             <div class="modal fade" id="delete<?php echo $id ;?>" tabindex="-1" aria-hidden="true" style="padding-top:35px">

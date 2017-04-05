@@ -11,6 +11,7 @@ if(isset($_POST['submit']))
 	include('app/function.php');
 	$name=$_POST['name'];
 	$mobile_no=$_POST['mobile_no'];
+        $mobile_no=encode($mobile_no,'UDRENCODE');
  	$check=mysql_query("select `id` from `register` where `mobile_no`='$mobile_no'");
 	$count=mysql_num_rows($check);
 	if($count==0)
@@ -41,7 +42,7 @@ if(isset($_POST['submit']))
 		 
 		 $name=encode($name,'UDRENCODE');
 		 $email_id=encode($email_id,'UDRENCODE');
-		 $mobile_no=encode($mobile_no,'UDRENCODE');
+		  
 		 $gender=encode($gender,'UDRENCODE');
 		 $address=encode($address,'UDRENCODE');
 		 $other_info=encode($other_info,'UDRENCODE');
