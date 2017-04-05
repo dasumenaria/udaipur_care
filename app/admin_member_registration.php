@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
 		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
 		$sms_sender='UDCARE';
 		$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
-		$mobile_no=decode($mobile_no,'UDRENCODE');
+		 
 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
 		$message = "Congratulations you are successfully registr in udaipur care portal";
 		$image_path='<img src="../images/success.svg" width="60px">';
