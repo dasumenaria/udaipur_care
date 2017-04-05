@@ -12,9 +12,26 @@ if($function_name=='mobileNo_check')
 } 
 if($function_name=='fetch_servicw_vendor_list')
 {
-	$service_id=$_GET['id'];
- 	$ftc_date=mysql_query("select `mobile_no` from `register` where `mobile_no`= '$mobile_no'");	
+	 $service_id=$_GET['id'];
+	 $updateid=$_GET['updateid'];
+	$ftc_date=mysql_query("select `id`,`vendor_id` from `service_management` where `sub_service_id`= '$service_id'");	
+echo" <input type='hidden' name='update_id'value='".$updateid."'/>";		
+echo"<select name='assign_to_vendor' class='form-control'>
+<option value=''>Select...</option>";	
+ 	while($ftc=mysql_fetch_array($ftc_date)){
+		$vendor_id=$ftc['vendor_id'];
+		$ftc_vendor_id=mysql_query("select `id`,`full_name` from `vendor` where `id`= '$vendor_id'");	
+		$fet=mysql_fetch_array($ftc_vendor_id);
+		echo $fet['full_name'];
+
+
+
+		echo "<option value=".$fet['id'].">".$fet['full_name']."</option>";
+	
+	}
+	echo"</select>";	
 }
+
 if($function_name=='fetch_service_list')
 {
 	$service_id=$_GET['id'];

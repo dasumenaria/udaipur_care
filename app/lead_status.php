@@ -30,6 +30,15 @@ if(isset($_POST['transfered'])){
 
 	
 }
+if(isset($_POST['assign'])){
+	$assign_to_vendor=$_POST['assign_to_vendor'];
+	$update_id=$_POST['update_id'];
+ 
+	mysql_query("update `booking` set `assign_to_vendor`='$assign_to_vendor' where `id`='$update_id' ");
+
+	
+}
+ 
 ?>
 
      <div class="row">
@@ -91,6 +100,7 @@ if(isset($_POST['transfered'])){
 						}
 						$Newlead=mysql_query($leadNew);
 						while($lead_new=mysql_fetch_array($Newlead)){
+						$id=$lead_new['id'];	
 						$date=$lead_new['date'];
 						if($date='0000-00-00' || $date='1970-01-01'){ $dateforview='00-00-0000';}	
 						else { $dateforview=date('d-m-y',$date);}
@@ -195,12 +205,12 @@ if(isset($_POST['transfered'])){
                                   </div>
                               
                           </td>
-						  <?php if($SESSION_USERTYPE==1)	  {?>
+						  <?php if($SESSION_USERTYPE==1) { ?>
 					 
 					
 						   <td>
                                 <div class="btn-group">
-                                  <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog"><i class="fa fa-thumbs-up"></i> Assign To</button>
+                                  <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog" updateid="<?php echo $lead_new['id']; ?>"><i class="fa fa-thumbs-up"></i> Assign To</button>
                                 </div>
                            </td>
 						<?php } ?>	  
@@ -216,18 +226,15 @@ if(isset($_POST['transfered'])){
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                                   <h4 class="modal-title">Assign Lead  </h4>
                                 </div>
-                                <div class="modal-body"  style="min-height:100px">
-                                    <div class="form-group col-md-12">
-                                     <label class="">Please Select Vendor </label>
-                                      <select>
-                                      <option value="">a</option>
-                                      <option value="">b</option>
-                                      </select>
-                                    </div>
+                                <div class="modal-body"  style="min-height:100px" >
+									<div class="form-group" id="replace_data" >
+
+									
+									 	</div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  <button type="submit" name="rejected" class="btn btn-info">Reject</button>
+                                  <button type="submit" name="assign" class="btn btn-info">Assign</button>
                                 </div>
                               </form>
                               </div>
@@ -257,13 +264,16 @@ include("footer.php");
 ?>
 <script>
 	$(".assign_data").on('click',function(){
+		 
 		var service = $(this).attr('service');	
-		$.ajax({
-			url: "../ajax_page.php?function_name=fetch_servicw_vendor_list&id="+service,
+		var id = $(this).attr('updateid');	
+		 $.ajax({
+			url: "../ajax_page.php?function_name=fetch_servicw_vendor_list&id="+service+"&updateid="+id,
 			type: "POST",
 			success: function(data)
 			{   
-				  $('.replace_data').html(data);
+			 
+				  $('#replace_data').html(data);
 				  $('.date-picker').datepicker();
 				  $('.timepicker').timepicker();
 			}

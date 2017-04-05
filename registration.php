@@ -48,23 +48,21 @@ if(isset($_POST['submit']))
 		  
  		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
 		 
-		//$r=mysql_query($sql);
+		$r=mysql_query($sql);
 		
-		//$ids=mysql_insert_id();
+		$ids=mysql_insert_id();
 		$md4_password=md5($string);
 		$mobile_no=decode($mobile_no,'UDRENCODE');
 		$email_id=decode($email_id,'UDRENCODE');
-<<<<<<< HEAD
-		//mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id' ,  `register_id`='$ids' , `date`='$date', `time`='$time' ");
-=======
+ 
 		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id',  `register_id`='$ids' , `date`='$date', `time`='$time' ");
->>>>>>> origin/master
+ 
 		
-		//$photo="identity_proof".$ids.".jpg";
+		$photo="identity_proof".$ids.".jpg";
 		// move photo in  floder//
-		//move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity_proof/".$photo);
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity_proof/".$photo);
 	
-		//$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
+		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
 		
 		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
 		$sms_sender='UDCARE';
