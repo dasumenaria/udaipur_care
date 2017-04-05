@@ -28,6 +28,7 @@ if(isset($_POST['deleted'])){
 					<th>DOB</th>
                     <th>Age</th>
  					<th>Mobile No.</th>
+					<th>Identity proof</th>
 					<th>Action</th> 
                 </tr>
                 </thead>
@@ -41,10 +42,12 @@ if(isset($_POST['deleted'])){
 						$id=$row1['id'];
 						$name=$row1['name'];
 						$dob=$row1['dob'];
+						$identity_proof=$row1['identity_proof'];
 						$email_id=$row1['email_id'];
 						$mobile_no=$row1['mobile_no'];
 						$name=decode($name,'UDRENCODE');
 						$email_id=decode($email_id,'UDRENCODE');
+					 
 						$mobile_no=decode($mobile_no,'UDRENCODE');
 						if(!empty($dob))
 						{
@@ -54,14 +57,17 @@ if(isset($_POST['deleted'])){
 							$age_year=$diff->format('%y');  
 							$month_year=$diff->format('%m'); 
 							$day_year=$diff->format('%d'); 
-						}
-					?>
+						}	
+							
+						?>
+						
                     <tr>
                         <td><?php echo $i;?></td>
                         <td><?php echo $name;?></td>
                         <td><?php echo $dob;?></td>
                         <td><?php if(!empty($dob)) {  echo $age_year.' Year and '.$month_year.' Month'; }?></td>
                          <td> <?php echo $mobile_no;?></td>
+						  <td><img src="../identity_proof/<?php echo $identity_proof;?>" width="100px" height="100px"/> </td>
                         <td>
                             <a href="edit_member.php?ati_utf_id=<?php echo $row1['id']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> </a>
                             

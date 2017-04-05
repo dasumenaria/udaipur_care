@@ -75,7 +75,9 @@ if(isset($_POST['transfered'])){
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
                           <th>Action</th>
-						  <th>Assign</th>
+						<?php if($SESSION_USERTYPE==1)	  {?>
+						<th>Assign</th>
+						<?php } ?>
                         </tr>
                         </thead>
                         <tbody>
@@ -193,12 +195,15 @@ if(isset($_POST['transfered'])){
                                   </div>
                               
                           </td>
+						  <?php if($SESSION_USERTYPE==1)	  {?>
+					 
+					
 						   <td>
                                 <div class="btn-group">
                                   <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog"><i class="fa fa-thumbs-up"></i> Assign To</button>
                                 </div>
                            </td>
-						  
+						<?php } ?>	  
                          </tr>
                        <?php } ?>
                         </tbody>

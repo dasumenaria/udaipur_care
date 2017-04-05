@@ -23,6 +23,7 @@ if(isset($_POST['submit']))
 		$gender=$_POST['gender'];
 		$address=$_POST['address'];
 		$other_info=$_POST['other_info'];
+		$aadhar_card_no=$_POST['aadhar_card_no'];
 		$to=$_POST['email_id'];
 		$date=date('Y-m-d');
 		$time=date('h:i:s A');
@@ -45,7 +46,7 @@ if(isset($_POST['submit']))
 		 $address=encode($address,'UDRENCODE');
 		 $other_info=encode($other_info,'UDRENCODE');
 		  
- 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
+ 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
 		 
 		$r=mysql_query($sql);
 		
@@ -56,7 +57,7 @@ if(isset($_POST['submit']))
 		
 		$photo="identity_proof".$ids.".jpg";
 		// move photo in  floder//
-		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity/".$photo);
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
 	
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
 		
@@ -176,7 +177,18 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                       </div>
                   </div>
  		     </div>
-		</div>		
+		</div>
+		<div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
+              <div class="input-group">
+              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" >
+                    <div class="input-group-addon">
+                          <i class="fa fa-barcode"></i>
+                      </div>
+                  </div>
+             </div>
+		</div>	
 		
 		 <div class="col-md-6">		
              <div class="form-group">
