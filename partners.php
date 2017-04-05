@@ -86,11 +86,6 @@
 			  </div>
 			  <div class="col-md-3">
               <div class="form-group">
-			  <center><img src="images/partner/12.png" height="100px;"></center>
-			 </div>
-             </div>
-			 <div class="col-md-3">
-              <div class="form-group">
 				<center><img src="images/partner/11.jpg" height="100px;"></center>
               </div>
              </div>
@@ -99,15 +94,16 @@
 			<center><img src="images/partner/10.png" height="100px;"></center>
               </div>
              </div>
-		  </div>
-		  
-		   <!--5--->
-          <div class="row">
-		  <div class="col-md-3">
+			 <div class="col-md-3">
               <div class="form-group">
 			  <center><img src="images/partner/23.jpg" height="100px;"></center>
 			 </div>
              </div>
+		  </div>
+		  
+		   <!--5--->
+          <div class="row">
+		  
              <div class="col-md-3">
 				 <div class="form-group">
 				 <p>&nbsp;</p>
