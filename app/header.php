@@ -130,7 +130,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
 				$arr_module2=mysql_fetch_array($sel_module2);
 				 $main_menu_active=$arr_module2['main_menu'];			
 				
-					$selecto3=mysql_query("select * FROM `modules` ORDER BY id");
+					$selecto3=mysql_query("select * FROM `modules` ORDER BY order_by Asc");
                       while($data=mysql_fetch_array($selecto3))
 					  {
                       $main_menu_arr[]='';

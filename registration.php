@@ -22,6 +22,8 @@ if(isset($_POST['submit']))
 		$gender=$_POST['gender'];
 		$address=$_POST['address'];
 		$other_info=$_POST['other_info'];
+		$aadhar_card_no=$_POST['aadhar_card_no'];
+		
 		$to=$_POST['email_id'];
 		$date=date('Y-m-d');
 		$time=date('h:i:s A');
@@ -44,7 +46,7 @@ if(isset($_POST['submit']))
 		 $address=encode($address,'UDRENCODE');
 		 $other_info=encode($other_info,'UDRENCODE');
 		  
- 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
+ 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
 		 
 		//$r=mysql_query($sql);
 		
@@ -52,7 +54,11 @@ if(isset($_POST['submit']))
 		$md4_password=md5($string);
 		$mobile_no=decode($mobile_no,'UDRENCODE');
 		$email_id=decode($email_id,'UDRENCODE');
+<<<<<<< HEAD
 		//mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id' ,  `register_id`='$ids' , `date`='$date', `time`='$time' ");
+=======
+		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id',  `register_id`='$ids' , `date`='$date', `time`='$time' ");
+>>>>>>> origin/master
 		
 		//$photo="identity_proof".$ids.".jpg";
 		// move photo in  floder//
@@ -180,6 +186,17 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                       </div>
                   </div>
  		     </div>
+		</div>
+		<div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
+              <div class="input-group">
+              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" >
+                    <div class="input-group-addon">
+                          <i class="fa fa-barcode"></i>
+                      </div>
+                  </div>
+             </div>
 		</div>		
 		
 		 <div class="col-md-6">		
