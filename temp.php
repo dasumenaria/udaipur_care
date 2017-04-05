@@ -1,27 +1,40 @@
 <?php
 include("config.php");
 include('app/function.php');
- $r1=mysql_query("select * from register where `send`='0'  order by id ASC limit 50 ");							
+ $r1=mysql_query("select * from reg_n");							
  	while($row1=mysql_fetch_array($r1))
 	{
- 		echo $id=$row1['id'].'<br />';
- 		$name=$row1['name'];
-		$email_id=$row1['email_id'];
- 		$mobile_no=$row1['mobile_no'];
-		$other_mobile_no=$row1['other_mobile_no'];
+ 		
+		$name=$row1['name'];
+		$address=$row1['address'];
+		$mobile_no=$row1['mobile_no'];
+		$landline_no=$row1['landline_no'];
 		
- 		if(!empty($mobile_no)){
-			$mobile_no=decode($mobile_no,'UDRENCODE'); 
-			$working_key='A7a76ea72525fc05bbe9963267b48dd96';
-			$sms_sender='UDRCRE';
-			$sms=str_replace(' ', '+', '"Udaipur Care" A senior citizen helpline will be launched today at Bhartiya Lok Kala Mandal in Kavi Samelan organized by Rotary Club Udaipur Mewar. Passes available for sr. citizen at Choudhary offset, Guru Ramdas colony, Udaipur.');
-			file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
-		}
- 		$sql="update `register` set `send`='1' where `id`='$id'";
- 		mysql_query($sql);
+		$name=encode($name,'UDRENCODE');
+		$mobile_no=encode($mobile_no,'UDRENCODE');
+		$address=encode($address,'UDRENCODE');
 		
- 	
-	}
+		$date=date('Y-m-d');
+		$time=date('h:i:s A');
+		
+		$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		$string = '';
+		for ($i = 0; $i < 6; $i++) {
+			$string .= $chars[rand(0, strlen($chars) - 1)];
+		}  
+		$charss = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		$udcare = '';
+		for ($i = 0; $i < 8; $i++) {
+			$udcare .= $charss[rand(0, strlen($charss) - 1)];
+		}   
+		
+		$sql="insert into `register` set  `name`='$name',`mobile_no`='$mobile_no',`address`='$address', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time'";
+		mysql_query($sql);
+		$ids=mysql_insert_id();
+		$md4_password=md5($string);
+		$mobile_no=decode($mobile_no,'UDRENCODE');
+		$email_id=decode($email_id,'UDRENCODE');
+		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `register_id`='$ids' , `date`='$date', `time`='$time' ");
+		
+ }
 ?>
-
-your service booked on date and time 
