@@ -138,6 +138,146 @@ Pricing table
     background-color: #2191a1;
 }
   
+  
+  
+ .wrapper {
+  margin: 50px auto;
+  width: 280px;
+  height: 370px;
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 90;
+}
+
+.ribbon-wrapper-red {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+
+.ribbon-red {
+    font: bold 15px Sans-Serif;
+    color: #fff;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #ea181e;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ea181e), to(#b90005));
+    background-image: -webkit-linear-gradient(top, #ea181e, #b90005);
+    background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green {
+    font: bold 15px Sans-Serif;
+    color: #fff;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -29px;
+    top: 15px;
+    width: 120px;
+    background-color: #8dc735;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#8dc735), to(#649a12));
+    background-image: -webkit-linear-gradient(top, #8dc735, #649a12);
+    background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-red:before,
+.ribbon-red:after{
+  content: "";
+  border-top: 3px solid #b90005;   
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-green:after,
+.ribbon-green:after{
+  content: "";
+  border-top: 3px solid #6e8900;   
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-red:before{
+  left: 0;
+}
+.ribbon-green:before{
+  right: 0;
+}
+
+.ribbon-red:after{
+  right: 0;
+}
+.ribbon-green:after{
+  left: 0;
+} 
+ 
+  }
+</style>
+<style>
+.box {
+    position: relative;
+    display: inline-block;
+    top: 20px;
+    margin-right: 20px;
+}
+.index {
+    background: none repeat scroll 0 0 #0063ff;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 15px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    
+}
 </style>
  
 <section class="content-header">
@@ -277,8 +417,43 @@ Pricing table
 				 
 			</div>
 		</div>
+		
+		<div class="col-md-3">
+		 	
+			<div class="box">
+    <img src="http://placehold.it/150x150" alt="image" />
+    <span class="index">1</span>
+</div>
+		</div>
+		<div class="col-md-3">
+		 	<div class="wrapper">
+		<div class="ribbon-wrapper-red">
+		<div class="ribbon-red">FIRSAT</div>
+		</div>
+		<div class="ribbon-wrapper-green">
+		<div class="ribbon-green">KAMPANYA</div>
+		</div>
+		</div>
+		</div>
+		<div class="col-md-3">
+		 	
+			
+		</div>
+		<div class="col-md-3">
+		 	
+			
+		</div>
+		<div class="col-md-3">
+		 	
+			
+		</div>
+		<div class="col-md-3">
+		 	
+			
+		</div>
+		  
 		 
-		 
+ 
  
 		<!--//End Pricing -->
 	</div>
