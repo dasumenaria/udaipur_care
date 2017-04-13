@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Vendor Name</label>
               <div  >
-              	<select name="vendor_id" class="form-control suv_category">
+              	<select name="vendor_id" class="form-control suv_category" required="required">
                 <option value="">Select...</option>
                 <?php
 					$vendor_name=mysql_query("select * from vendor order by id Asc");
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Service Type</label>
               <div class="">
-              	<select name="categroy_type" class="form-control suv_category">
+              	<select name="categroy_type" class="form-control suv_category"  required="required">
 				<option value="">Select...</option>
                 <option value="1">Discount</option>
 				<option value="2">Door To Door</option>
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Service Category</label>
               <div class="">
-              	<select name="service_id" class="form-control suv_category">
+              	<select name="service_id" class="form-control suv_category"  required="required">
                 <option value="">Select...</option>
                 <?php
 					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Sub Service</label>
               <div class="">
-                     <select name="sub_service_id" class="form-control" id="suv_category_result">
+                     <select name="sub_service_id" class="form-control" id="suv_category_result"  required="required">
                 		<option value="">Select...</option>
                     </select>
  

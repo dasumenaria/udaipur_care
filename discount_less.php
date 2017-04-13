@@ -154,15 +154,27 @@ Pricing table
 		 
 		 
  <div class="container content">
-	<div class="row">
+	<?php
+				$count=0;
+				$query=mysql_query("select * from `service_management` where categroy_type=1");
+				while($fetch=mysql_fetch_array($query))
+				{
+					$count++;	
+					$id=$fetch['id'];
+					$vendor_id=$fetch['vendor_id']; 
+					$r=mysql_query("select * from `vendor` where id='".$vendor_id."'");
+					$fet=mysql_fetch_array($r);
+					$id=$fet['id']; 
+			 	if($count==1 ){ echo '<div class="row">'; }
+				?>
+				 
+
 		<!-- Pricing -->
 		<div class="col-md-3">
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
-					<h3><img src="images/partner/discount/7.jpg" width="100%" height="150px"></h3>
-					<h4> 10<i>%</i>
-					<span>
-					On Billing</span>
+					<h3><img src="<?php echo $company_logo;?>" width="100%" height="150px"></h3>
+					<h4> <?php echo $discount;?><i>%</i><span><?php echo $offer;?></span>
 					</h4>
 				</div>
 				 <div class="pricing-footer">
@@ -173,109 +185,14 @@ Pricing table
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/6.jpg" width="100%" height="150px"></h3>
-					<h4>25<i>%</i>
-					<span>
-					On Billing</span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/9.jpg" width="100%" height="150px"></h3>
-					<h4> 70<i>%</i>
-					<span>
-					100 Rs.Per Ticket</span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div>
-		 <div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/8.jpg" width="100%" height="150px"></h3>
-					<h4>40<i>%</i>
-					<span>
-					On Billing</span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/1.jpg" width="100%" height="150px"></h3>
-					<h4> 50<i>%</i>
-					<span>
-					Per Ticket </span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/2.jpg" width="100%" height="150px"></h3>
-					<h4> 10<i>%</i>
-					<span>
-					On Billing </span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div>
-		 
-		 <div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><img src="images/partner/discount/3.png" width="60%" height="150px"></h3>
-					<h4> 20<i>%</i>
-					<span>
-					On Billing </span>
-					</h4>
-				</div>
-				 <div class="pricing-footer">
-					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
-					Book Now
-					</a>
-				</div>
-			</div>
-		</div> <!--//End Pricing -->
+		 <?php  
+		 if($count==4){ echo '</div></br></br>';  $count=0;}	
+		 } ?>
+	</div>
+
+
+	
+	<!--//End Pricing -->
 	</div>
 </div>
 </div>

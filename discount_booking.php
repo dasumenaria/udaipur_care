@@ -2,7 +2,7 @@
 include("authForWeb.php");
 include("config.php");
 include("header.php");
-$sub_serivice_id=$_GET['s_id'];
+$Discount_id=$_GET['d_id'];
 @$SESSION_ID=$_SESSION['SESSION_ID'];
 @$SESSION_REGISTERID=$_SESSION['SESSION_REGISTERID'];  
 
@@ -10,7 +10,7 @@ $message="";
 $image_path="";
 
 if(isset($_POST['login'])){
-	  $sub_serivice_id=$_POST['sub_serivice_id'];  
+	  $Discount_id=$_POST['Discount_id'];  
 	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
@@ -22,7 +22,7 @@ if(isset($_POST['login'])){
 		$_SESSION['SESSION_REGISTERID']=$row['register_id'];
 		$usertype=$row['user_type']; 
 		ob_start();
- 			header("location:service_booking.php?s_id=".$sub_serivice_id."");
+ 			header("location:service_booking.php?s_id=".$Discount_id."");
 		ob_flush();
 
 	} 
@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
 	 
-	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$Discount_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
 	// header('location:service_booking.php');
 // file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
