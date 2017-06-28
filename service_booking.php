@@ -52,13 +52,8 @@ if(isset($_POST['submit']))
 	 
 	 mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$sub_serivice_id',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
-	 
-	 $working_key='A7a76ea72525fc05bbe9963267b48dd96';
-		$sms_sender='UDRCRE';
-		$sms=str_replace(' ', '+', ' Thank you for Booking your service at Udaipur Care. You will receive call from vendor shortly.');
- 		file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
-		
-		
+	// header('location:service_booking.php');
+// file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
 		$message = "Congratulations your booking successfully";
 		$image_path='<img src="images/success.svg" width="60px">';
 	}

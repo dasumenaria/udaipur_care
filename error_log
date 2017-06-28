@@ -1,0 +1,369 @@
+[01-Apr-2017 17:06:07 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:06:25 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:07:14 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:08:03 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:08:08 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:09:17 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:09:21 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:09:36 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:09:37 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:09:51 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:10:13 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:10:18 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 10
+[01-Apr-2017 17:58:51 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/services.php on line 50
+[03-Apr-2017 10:26:42 asia/kolkata] PHP Notice:  Undefined variable: mobile_no in /home/wwwudaipurcare/public_html/ajax_page.php on line 16
+[04-Apr-2017 11:16:21 asia/kolkata] PHP Notice:  Undefined index: id in /home/wwwudaipurcare/public_html/service.php on line 5
+[05-Apr-2017 11:19:58 asia/kolkata] PHP Notice:  Undefined variable: email_id in /home/wwwudaipurcare/public_html/temp.php on line 61
+[05-Apr-2017 16:17:16 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:22 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:30 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:31 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:31 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:34 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:40 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:41 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:47 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:48 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:17:54 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/wwwudaipurcare/public_html/config.php on line 10
+[05-Apr-2017 16:18:57 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:00 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:03 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:04 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:06 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:07 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:07 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:07 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:24 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:19:41 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:20:11 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:20:17 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:21:32 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:22:28 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:20 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:23 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:25 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:29 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:38 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:40 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:40 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:42 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:23:45 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:24:12 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:24:20 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:24:22 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:25:05 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:27:24 asia/kolkata] PHP Warning:  mysql_connect(): Access denied for user 'wwwudaip_care'@'localhost' (using password: YES) in /home/wwwudaipurcare/public_html/config.php on line 8
+[05-Apr-2017 16:32:05 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof0.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 63
+[05-Apr-2017 16:32:05 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpPB9RxJ' to 'identity_proof/identity_proof0.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 63
+[05-Apr-2017 16:40:50 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof0.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 63
+[05-Apr-2017 16:40:50 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php0HPNMU' to 'identity_proof/identity_proof0.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 63
+[06-Apr-2017 12:00:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[06-Apr-2017 12:00:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[06-Apr-2017 12:00:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[06-Apr-2017 12:00:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[06-Apr-2017 17:22:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[06-Apr-2017 17:22:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[06-Apr-2017 17:23:33 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[06-Apr-2017 17:23:33 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[07-Apr-2017 15:33:35 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1278.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[07-Apr-2017 15:33:35 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpNrVkKS' to 'identity_proof/identity_proof1278.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[07-Apr-2017 18:14:34 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1279.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[07-Apr-2017 18:14:34 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpHErrmb' to 'identity_proof/identity_proof1279.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[07-Apr-2017 23:54:34 asia/kolkata] PHP Notice:  Undefined index: id in /home/wwwudaipurcare/public_html/service.php on line 5
+[08-Apr-2017 07:43:57 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1280.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[08-Apr-2017 07:43:57 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpgcdec4' to 'identity_proof/identity_proof1280.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[08-Apr-2017 10:09:24 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1281.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[08-Apr-2017 10:09:24 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php3JCcJ1' to 'identity_proof/identity_proof1281.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[08-Apr-2017 10:12:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[08-Apr-2017 10:12:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[08-Apr-2017 10:14:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[08-Apr-2017 10:14:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[08-Apr-2017 10:14:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[08-Apr-2017 10:14:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Apr-2017 01:36:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Apr-2017 01:36:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Apr-2017 08:14:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Apr-2017 08:14:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Apr-2017 21:40:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Apr-2017 21:40:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:00:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:00:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:00:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:00:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:02:29 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:02:29 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:03:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:03:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:03:16 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:03:16 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:03:29 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:03:29 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:04:50 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:04:50 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:04:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:04:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:07:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:07:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:07:50 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:07:50 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:00 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:00 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:07 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:07 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 12:08:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Apr-2017 12:08:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Apr-2017 16:49:09 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1284.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[10-Apr-2017 16:49:09 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpDZf05Y' to 'identity_proof/identity_proof1284.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[11-Apr-2017 03:30:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-Apr-2017 03:30:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-Apr-2017 05:21:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-Apr-2017 05:21:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-Apr-2017 06:41:38 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-Apr-2017 06:41:38 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-Apr-2017 11:59:28 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1285.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[11-Apr-2017 11:59:28 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php1NjeU0' to 'identity_proof/identity_proof1285.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[11-Apr-2017 15:55:19 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1286.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[11-Apr-2017 15:55:19 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpkNgxeC' to 'identity_proof/identity_proof1286.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[12-Apr-2017 11:26:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 11:26:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:17 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:17 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:20 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:20 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-Apr-2017 15:24:37 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-Apr-2017 15:24:37 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:55:36 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:55:36 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:57:25 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:57:25 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:57:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:57:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:57:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:57:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:57:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:57:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:57:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:57:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 15:58:26 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 15:58:26 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:00:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:00:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:00:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:00:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:01:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:01:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:02:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:02:03 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:04:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:04:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:04:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:04:27 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:06:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:06:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:08:33 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:08:33 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:09:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:09:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:10:41 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:10:41 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:11:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:11:40 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:12:13 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:12:13 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:13:15 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:13:15 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:13:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:13:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:17:57 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:17:57 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:18:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:18:28 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:23:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:23:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:26:17 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:26:17 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:29:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:29:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:29:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:29:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:31:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:31:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:32:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:32:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:33:00 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:33:00 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:33:57 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:33:57 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:34:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:34:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:36:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:36:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:37:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:37:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:37:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:37:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:38:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:38:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:39:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:39:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-Apr-2017 16:39:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-Apr-2017 16:39:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[17-Apr-2017 11:14:14 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1293.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-Apr-2017 11:14:14 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpHE9Qrl' to 'identity_proof/identity_proof1293.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-Apr-2017 16:45:51 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1294.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-Apr-2017 16:45:51 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpOFwvqQ' to 'identity_proof/identity_proof1294.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[19-Apr-2017 02:49:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[19-Apr-2017 02:49:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[21-Apr-2017 01:04:05 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[21-Apr-2017 01:04:05 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[21-Apr-2017 04:00:06 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[21-Apr-2017 04:00:06 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[22-Apr-2017 00:09:55 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[22-Apr-2017 00:09:55 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[22-Apr-2017 23:28:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[22-Apr-2017 23:28:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[24-Apr-2017 15:00:14 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[24-Apr-2017 15:00:14 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[25-Apr-2017 09:39:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[25-Apr-2017 09:39:24 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[28-Apr-2017 18:42:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[28-Apr-2017 18:42:10 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[01-May-2017 17:33:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[01-May-2017 17:33:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[03-May-2017 09:08:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[03-May-2017 09:08:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[04-May-2017 09:09:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[04-May-2017 09:09:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[04-May-2017 09:09:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[04-May-2017 09:09:49 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[08-May-2017 21:56:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[08-May-2017 21:56:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-May-2017 22:23:28 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service_booking.php on line 108
+[10-May-2017 16:42:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-May-2017 16:42:31 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-May-2017 16:43:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-May-2017 16:43:21 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-May-2017 04:46:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-May-2017 04:46:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-May-2017 11:51:20 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-May-2017 11:51:20 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-May-2017 15:34:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-May-2017 15:34:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[12-May-2017 18:11:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[12-May-2017 18:11:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-May-2017 04:07:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-May-2017 04:07:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-May-2017 05:01:43 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 39
+[15-May-2017 05:01:43 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 53
+[15-May-2017 08:51:37 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[15-May-2017 08:51:37 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[15-May-2017 18:32:27 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 39
+[15-May-2017 18:32:27 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 53
+[16-May-2017 08:21:56 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[16-May-2017 08:21:56 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[17-May-2017 13:45:10 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1298.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-May-2017 13:45:10 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpKba4EE' to 'identity_proof/identity_proof1298.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-May-2017 13:53:40 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1299.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[17-May-2017 13:53:40 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php52JHgc' to 'identity_proof/identity_proof1299.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[18-May-2017 13:20:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[18-May-2017 13:20:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[18-May-2017 13:20:46 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[18-May-2017 13:20:46 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[19-May-2017 07:20:50 Asia/Calcutta] PHP Notice:  Undefined index: identity_proof in /home/wwwudaipurcare/public_html/registration.php on line 64
+[19-May-2017 11:22:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[19-May-2017 11:22:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[19-May-2017 11:32:38 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[19-May-2017 11:32:38 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[21-May-2017 03:54:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[21-May-2017 03:54:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[21-May-2017 03:54:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[21-May-2017 03:54:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[21-May-2017 09:41:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[21-May-2017 09:41:04 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[24-May-2017 15:27:44 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 39
+[24-May-2017 15:27:44 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 53
+[24-May-2017 16:02:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[24-May-2017 16:02:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[27-May-2017 13:06:14 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service_booking.php on line 108
+[30-May-2017 20:58:18 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[30-May-2017 20:58:18 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[31-May-2017 07:12:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[31-May-2017 07:12:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[31-May-2017 22:56:32 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 39
+[31-May-2017 22:56:33 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 53
+[02-Jun-2017 03:11:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[02-Jun-2017 03:11:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[02-Jun-2017 16:43:18 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[02-Jun-2017 16:43:18 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[02-Jun-2017 16:43:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[02-Jun-2017 16:43:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[02-Jun-2017 19:18:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[02-Jun-2017 19:18:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:09:15 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:09:15 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:09:47 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:09:47 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:10:02 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:10:02 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:10:26 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:10:26 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:10:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:10:43 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:13:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:13:23 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:13:44 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:13:44 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:13:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:13:58 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:14:36 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:14:36 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[05-Jun-2017 17:14:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[05-Jun-2017 17:14:52 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Jun-2017 16:37:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Jun-2017 16:37:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Jun-2017 16:39:14 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Jun-2017 16:39:14 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[09-Jun-2017 16:39:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[09-Jun-2017 16:39:19 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[10-Jun-2017 00:08:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[10-Jun-2017 00:08:35 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[11-Jun-2017 18:09:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[11-Jun-2017 18:09:30 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[13-Jun-2017 23:28:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[13-Jun-2017 23:28:59 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[14-Jun-2017 18:34:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[14-Jun-2017 18:34:32 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[17-Jun-2017 04:18:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[17-Jun-2017 04:18:48 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[18-Jun-2017 02:33:54 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[18-Jun-2017 02:33:54 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[19-Jun-2017 13:15:49 Asia/Calcutta] PHP Warning:  move_uploaded_file(identity_proof/identity_proof1305.jpg): failed to open stream: No such file or directory in /home/wwwudaipurcare/public_html/registration.php on line 64
+[19-Jun-2017 13:15:49 Asia/Calcutta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpGDF9GW' to 'identity_proof/identity_proof1305.jpg' in /home/wwwudaipurcare/public_html/registration.php on line 64
+[19-Jun-2017 16:11:05 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 39
+[19-Jun-2017 16:11:05 asia/kolkata] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/wwwudaipurcare/public_html/service.php on line 53
+[19-Jun-2017 21:42:41 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[19-Jun-2017 21:42:41 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[23-Jun-2017 10:47:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[23-Jun-2017 10:47:08 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[25-Jun-2017 10:34:46 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[25-Jun-2017 10:34:46 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[27-Jun-2017 11:13:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[27-Jun-2017 11:13:09 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[27-Jun-2017 14:52:16 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[27-Jun-2017 14:52:16 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106
+[27-Jun-2017 19:04:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 5
+[27-Jun-2017 19:04:45 asia/kolkata] PHP Notice:  Undefined index: s_id in /home/wwwudaipurcare/public_html/service_booking.php on line 106

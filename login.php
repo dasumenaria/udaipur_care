@@ -90,11 +90,10 @@ unset($_SESSION['SESSION_REGISTERID']);
   <link rel="stylesheet" href="assest/plugins/iCheck/square/blue.css">
  
   <style>
- 
   .login-page, .register-page {
     background:url('images/login.png');
 	 background-repeat: no-repeat;
-	 background-size: cover;
+
 	.login-box-body, .register-box-body {
     background: #fffafa4d !important;
     padding: 20px;
@@ -104,8 +103,6 @@ unset($_SESSION['SESSION_REGISTERID']);
 } 
 	 
 }
- 
- 
   </style>
 </head>
 <body class="hold-transition login-page">

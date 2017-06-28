@@ -9,8 +9,6 @@ include('config.php');
     display: inline-block;
     padding: 5px !important; 
     transition: all 0.4s ease-in;
-	background-size: cover;
-
 }
  
 </style>
@@ -20,7 +18,7 @@ include('config.php');
 		    <div class="flexslider" >
 		      <ul class="slides" style="text-decoration:none;">
               	 <li  style="text-decoration:none;">
-		        	<img src="images/slider/3.jpg" alt="Slide">
+		        	<img src="images/slider/3.jpg"  alt="Slide">
  		        </li> 
 				<li style="text-decoration:none;">
 		        	<img src="images/slider/b.jpg" alt="Slide">

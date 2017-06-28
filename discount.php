@@ -167,7 +167,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="discount_booking.php?d_id=<?php echo $id;?>" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -184,7 +184,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -201,7 +201,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -218,7 +218,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -235,7 +235,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -252,7 +252,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
@@ -270,7 +270,7 @@ Pricing table
 				</div>
 				 <div class="pricing-footer">
 					<p>&nbsp;</p>
-					<a href="javascript:;" class="btn yellow-crusta">
+					<a href="service_booking.php" class="btn yellow-crusta">
 					Book Now
 					</a>
 				</div>
