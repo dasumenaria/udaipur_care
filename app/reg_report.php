@@ -3,6 +3,8 @@ include('auth.php');
 include("../config.php");
 include("header.php");
 include('function.php');
+$p=$_SESSION['SESSION_ID'];
+$session_id=$_SESSION['SESSION_ID'];
 
 if(isset($_POST['deleted'])){
 	$reason_for_delete=$_POST['reason_for_delete'];
@@ -19,10 +21,13 @@ if(isset($_POST['deleted'])){
               <h3 class="box-title"> User Report </h3>
 			</br>
             </div>
+			
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
+				<tr><td align='right' colspan='7'><button type="button" class="btn btn-default" style="background-color:gray" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b></button>
                 <tr>
+					
 					<th>S/No.</th>
 					<th>Name</th>
 					<th>DOB</th>

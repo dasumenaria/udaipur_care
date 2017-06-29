@@ -6,13 +6,13 @@ include("../config.php");
   $id=$_GET['id'];
  $filename="view_vender_excel";
 	@header("Expires: 0");
-     @header("Pragma: no-cache");
+    @header("Pragma: no-cache");
     @header("Content-type: application/vnd.ms-excel");
     @header("Content-Disposition: attachment; filename=".$filename.".xls");
     @header("Content-Description: Generated Report" ); 
 	
 ?>
-<div class="row">
+<div class="row">;
     <!-- /.col -->
         <div class="col-md-12">
         <!------		Button 	----->

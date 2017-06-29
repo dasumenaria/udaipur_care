@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
 	$date_chne=date('Y-m-d', strtotime($date));
 	$other_info=$_POST['other_info'];
  
- mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$admin_book_sub_service',`master_service_id	`='$admin_book_service',`assign_to_vendor`='$assign_to_vendor',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
+ mysql_query("insert into `booking` set `udcare_no`='$udcare_no',`master_sub_service_id`='$admin_book_sub_service',`master_service_id`='$admin_book_service',`assign_to_vendor`='$assign_to_vendor',`code`='$code',`name`='$name',`mobile_no`='$mobile_no',`email`='$email',`address`='$address',`time`='$time',`date`='$date_chne',`other_info`='$other_info',`currnt_time`='$times',`currnt_date`='$curnt_date'");
 	 
 	 }
 else
@@ -174,10 +174,10 @@ else
               	<select name="assign_to_vendor" class="form-control">
                 <option value="">Select...</option>
                 <?php
-					$ftx_servide=mysql_query("select `id`,`vendor_name` from `vendor` where `flag`='0'");
+					$ftx_servide=mysql_query("select `id`,`full_name` from `vendor` where `flag`='0'");
 					while($ftc_data=mysql_fetch_array($ftx_servide))
 					{
-						echo "<option value=".$ftc_data['id'].">".$ftc_data['vendor_name']."</option>";
+						echo "<option value=".$ftc_data['id'].">".$ftc_data['full_name']."</option>";
 					}
                 ?>
                 </select>
