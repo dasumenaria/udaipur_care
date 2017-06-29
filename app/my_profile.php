@@ -84,7 +84,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputFullName">Your Name</label>
                   <div class="input-group">
-                  	<input type="text" name="service_name" class="form-control" id="exampleInputFullName" placeholder="Enter Service Name" required  value="<?php echo $name;?>">
+                  	<input type="text" name="service_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Name" required  value="<?php echo $name;?>">
                     <div class="input-group-addon">
                           <i class="fa fa-user"></i>
                       </div>
@@ -96,7 +96,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputFullName">Your Email </label>
                   <div class="input-group">
-                  	<input type="text" name="icon" class="form-control" id="exampleInputFullName" placeholder="Enter Icon class Name" value="<?php echo $email_id;?>" required>
+                  	<input type="text" name="icon" class="form-control" id="exampleInputFullName" placeholder="Enter Email" value="<?php echo $email_id;?>" required>
                     <div class="input-group-addon">
                           <i class="fa  fa-envelope-o"></i>
                       </div> 
@@ -108,7 +108,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputFullName">Your Mobile No.</label>
                   <div class="input-group">
-                  	<input type="text" name="icon" class="form-control" id="exampleInputFullName" placeholder="Enter Icon class Name" value="<?php echo $mobile_no;?>" required>
+                  	<input type="text" name="icon" class="form-control" id="exampleInputFullName" placeholder="Enter Mobile No" value="<?php echo $mobile_no;?>" required>
                     <div class="input-group-addon">
                           <i class="fa fa-mobile"></i>
                       </div> 

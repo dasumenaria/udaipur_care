@@ -9,7 +9,7 @@ if(empty($status))
 {
 	$status=0;
 }
-@$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
+@$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE']; 
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
 
 if(isset($_POST['completed'])){
@@ -92,11 +92,11 @@ if(isset($_POST['assign'])){
                         <tbody>
                         <?php
 						if($SESSION_USERTYPE==1){
-							 $leadNew="SELECT * from `booking` where `master_status` = '$status'";
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status' ";
 						}
 						else
 						{
-							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `assign_to_vendor` = '$SESSION_SUBSERVIDE'";
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `assign_to_vendor` = '$SESSION_SUBSERVICE'";
 						}
 						$Newlead=mysql_query($leadNew);
 						while($lead_new=mysql_fetch_array($Newlead)){

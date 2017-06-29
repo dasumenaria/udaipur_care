@@ -3,21 +3,21 @@ include('auth.php');
 include("../config.php");
 include("header.php");
   
- 
+ @$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE'];
 //--	LEAD OPEN
-$leadNew="SELECT `id` from `booking` where `master_status` = '0'";
+$leadNew="SELECT `id` from `booking` where `master_status` = '0' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $Newlead=mysql_query($leadNew);
 $lead_new=mysql_num_rows($Newlead);
 //--	LEAD OPEN
-$leadtransfer="SELECT `id` from `booking` where  `master_status` = '1'";
+$leadtransfer="SELECT `id` from `booking` where  `master_status` = '1' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $teanlead=mysql_query($leadtransfer);
 $lead_transfer=mysql_num_rows($teanlead);
 //--	LEAD OPEN
-$leadreject="SELECT `id` from `booking` where  `master_status` = '2'";
+$leadreject="SELECT `id` from `booking` where  `master_status` = '2' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $Openreject=mysql_query($leadreject);
 $lead_reject=mysql_num_rows($Openreject);
 //--	LEAD OPEN
-$leadconmpleted="SELECT `id` from `booking` where  `master_status` = '3'";
+$leadconmpleted="SELECT `id` from `booking` where  `master_status` = '3' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead); 
  ?>
