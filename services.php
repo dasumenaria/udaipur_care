@@ -45,7 +45,7 @@ include('config.php');
             
             <?php
 				$count=0;
-				$sql="select `id`,`service_name`,`discription`,`icon` from master_services where flag=0";
+				$sql="select * from master_services where flag=0";
 				$fet=mysql_query($sql);
 				while($result=mysql_fetch_array($fet))
 				{ 
@@ -54,6 +54,7 @@ include('config.php');
 					$service_name=$result['service_name'];
 					$discription=$result['discription'];
 					$icon=$result['icon'];
+					$master_service_image=$result['master_service_image'];
 					   
 				
 				if($count==1 ){ echo '<div class="row">'; }?>
@@ -65,6 +66,7 @@ include('config.php');
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading"><?php echo $service_name; ?></h3>
+								<img src="<?php echo $master_service_image;?>" width="100%" height="180px">
 								<p><?php echo $discription; ?></p>
 							</div>
 						</div>

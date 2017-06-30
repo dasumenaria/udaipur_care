@@ -159,6 +159,7 @@ $('#submit_contact').on('click', function(){
 		if(email.length>1){
 			if(mobile_no.length>=9){
 				if(message.length>1){
+					
 					$('#msg').html(' <img src="images/loading.gif" height="28px" />  Please wait...');
 					
 					$.ajax({
@@ -170,7 +171,7 @@ $('#submit_contact').on('click', function(){
 							$('#email').val('');
 							$('#mobile_no').val('');
 							$('#message').val('');
-							$('#m9sg').html('Thank you for contact with us.');
+							$('#msg').html('Thank you for contact with us.');
 							
 						}
 					});

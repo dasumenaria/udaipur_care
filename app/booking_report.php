@@ -13,8 +13,8 @@ include("header.php");
 				<h3 class="box-title">Booking Report</h3>
 			</div>
 			<!------		Button 	----->
-			<div class="box col-md-12">
-				<div class="box col-md-6" align="center">
+			<div class="col-md-12" align="center">
+				
 					<h3>Service Category</h3>
 					<div class="input-group">
 						<select name="admin_book_service" class="form-control select2me" id="suv_category">
@@ -28,7 +28,7 @@ include("header.php");
 							?>
 						</select>
 					</div>
-				</div>
+				
 					<!-- /.box-header -->
 				<div class="box-body" id="data">
 					

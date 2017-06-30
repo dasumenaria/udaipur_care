@@ -70,7 +70,7 @@ a {
 							  <div style=""><img src="images/service_images/<?php echo $service_images;?>" width="80%" height="180px"></div>
                                 <h4 class="title"><?php echo $sub_services_name; ?> </h4>
 								<div class="more">
-                                    <a href="service_booking.php?s_id=<?php echo $id;?>" title="Title Link" style="font-size:10pt;font-weight:bold;">
+									<a href="service_booking.php?s_id=<?php echo $id;?>" title="Title Link" style="font-size:10pt;font-weight:bold;">
                                     Book Now <i class="fa fa-arrow-circle-o-right "></i>
                                     </a>
                                 </div>

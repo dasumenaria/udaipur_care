@@ -65,7 +65,7 @@ else
 						<li><a href="discount.php" class="smoothScroll">DISCOUNT</a></li>
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
 						<li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
-						<li><a href="index.php#contact" class="smoothScroll">CONTACT</a></li>
+						<li><a href="contactus.php" class="smoothScroll">CONTACT</a></li>
 						<li><?php echo $log_path; ?></li>
 					</ul>
 				</div>
