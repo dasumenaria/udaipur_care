@@ -66,7 +66,7 @@ include('config.php');
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading"><?php echo $service_name; ?></h3>
-								<img src="<?php echo $master_service_image;?>" width="100%" height="180px">
+								<!---- <img src="<?php echo $master_service_image;?>" width="100%" height="180px"> ---->
 								<p><?php echo $discription; ?></p>
 							</div>
 						</div>
