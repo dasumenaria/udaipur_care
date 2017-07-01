@@ -1,15 +1,18 @@
+
 <footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-sm-7">
-						<p>Maintain and Developed by PHP Poets IT Solutions Pvt. Ltd. </p>
-					</div>
-					<div class="col-md-4 col-sm-5">
-						
-					</div>
+	
+		<div class="container" id="footer">
+			<div class="row">
+				<div class="col-md-8 col-sm-7">
+					<p>Maintain and Developed by PHP Poets IT Solutions Pvt. Ltd. </p>
+				</div>
+				<div class="col-md-4 col-sm-5">
+					
 				</div>
 			</div>
-		</footer>
+		</div>
+	
+</footer>
 		<!-- end footer -->
 
 

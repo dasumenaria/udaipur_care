@@ -532,6 +532,7 @@ p
 /* start footer */
 footer
     {
+        margin-top:auto;
         padding-top: 40px;
         padding-bottom: 20px;
 		background-color:#f8f8f8;
@@ -544,6 +545,10 @@ footer .social-icon
     {
         top: 0px;
     }
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
 /* end footer */
 
 .too-icon {

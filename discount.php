@@ -145,18 +145,18 @@ Pricing table
 <section class="content-header">
        <center>
       	<h2 class="wow bounce" style=" padding-top:60px; color:#707568"> <strong> 
-		DISCOUNT
+		DISCOUNT AVAILABLE AT
        </strong></h2>
        </center>
 	   </section>
  
-   	<div id="service" style="padding: 22px 61px;">
+  <div id="service" style="padding: 22px 61px; " class="footer_fix">
 		 
 		 
- <div class="container content">
-	<div class="row">
+  <!---	<div class="container content">
+	<div class="row">-->
 		<!-- Pricing -->
-		<div class="col-md-3">
+		<!---<div class="col-md-3">
 			<div class="pricing hover-effect">
 				<div class="pricing-head">
 					<h3><img src="images/partner/discount/7.jpg" width="100%" height="150px"></h3>
@@ -276,8 +276,8 @@ Pricing table
 				</div>
 			</div>
 		</div> <!--//End Pricing -->
-	</div>
-</div>
+	<!---</div>
+</div>--->
 </div>
      
 		 

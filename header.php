@@ -1,3 +1,10 @@
+<style>
+.footer_fix {
+  min-height:580px;
+}
+
+</style>
+
 <?php
 include('authForWeb.php');
  @$SESSION_ID=$_SESSION['SESSION_ID'];
