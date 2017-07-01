@@ -1,5 +1,5 @@
 <?php  
-include("config.php");
+include("config.php");  
 include('app/function.php');
  $r1=mysql_query("select * from register where `send`='0'  order by id ASC limit 100 ");							
  	while($row1=mysql_fetch_array($r1))
