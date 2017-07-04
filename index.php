@@ -9,6 +9,8 @@ include('config.php');
     display: inline-block;
     padding: 5px !important; 
     transition: all 0.4s ease-in;
+	background-size: cover;
+
 }
  
 </style>
@@ -18,7 +20,7 @@ include('config.php');
 		    <div class="flexslider" >
 		      <ul class="slides" style="text-decoration:none;">
               	 <li  style="text-decoration:none;">
-		        	<img src="images/slider/3.jpg"  alt="Slide">
+		        	<img src="images/slider/3.jpg" alt="Slide">
  		        </li> 
 				<li style="text-decoration:none;">
 		        	<img src="images/slider/b.jpg" alt="Slide">
@@ -121,24 +123,25 @@ include('config.php');
 							<p><i class="fa fa-envelope-o too-icon"></i> &nbsp; helpline@udaipurcare.com</p>
 						</address>
 					</div>
-					<form method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
-                    	<div class="col-md-12" style="padding-bottom:10px; color:#fbb" id="msg">
+					<form method="post" name="registration" class="col-md-6 col-sm-4" id="contact-form" role="form" >
+					<h3>Contact Us</h3>
+                    	<div class="col-md-12" style="padding-bottom:10px; " id="msg">
                            
                         </div>
 							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="name" type="text" class="form-control" id="name" placeholder="Name" required="required">
+								<input name="name" onkeyup="Validatename(this.value);" type="text" class="form-control" id="name"  placeholder="Name">
 							</div>
 							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="email" type="email" class="form-control" id="email" placeholder="Email" required="required">
+								<input name="email" onblur="ValidateEmail(this.value);" type="email" class="form-control" id="email" placeholder="Email">
 							</div>
                             <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-								<input name="mobile_no" type="text" maxlength="10" minlength="10" class="form-control allLetter" id="mobile_no" placeholder="Mobile No" required="required">
+								<input name="mobileno" onchange="phonenumber(this.value);" type="text" maxlength="10" minlength="10" class="form-control" id="mobileno"  placeholder="Mobile No">
 							</div>
 							<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
 								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
 							</div>
 							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input name="contact" type="button" class="form-control" id="submit_contact" value="Send">
+								<input  type="button" class="form-control " id="submit_contact" value="Send">
 							</div>
 					</form>
 				</div>
@@ -146,14 +149,13 @@ include('config.php');
 		</div>
 		<!-- end contact -->
 		 
-<?php
-include('footer.php');
-?>
+<script src="js/jquery.js"></script>
 <script>
+$( document ).ready(function() {
 $('#submit_contact').on('click', function(){
 	var name=$('#name').val();
 	var email=$('#email').val();
-	var mobile_no=$('#mobile_no').val();
+	var mobile_no=$('#mobileno').val();
 	var message=$('#message').val();
  	if(name.length>1){
 		if(email.length>1){
@@ -196,19 +198,58 @@ $('#submit_contact').on('click', function(){
 		$('#msg').html('Please provide name');
 	}
 	
-	
+});	
 });
-$('.allLetter').keyup(function(){
-		var inputtxt=  $(this).val();
-		var numbers =  /^[0-9]*\.?[0-9]*$/;
-		if(inputtxt.match(numbers))  
-		{} 
-		else  
-		{  
-			$(this).val('');
-			return false;  
-		}
-	});
+
+function Validatename(name)  
+{   
+	var name1 = /^[a-zA-Z\s-, ]+$/;  
+	if(name.match(name1))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert('Name must have alphabet characters only');
+	  $('#name').val('');
+	return false;  
+	}  
+}  
+
+
+function ValidateEmail(email)  
+{  
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+	if(email.match(mailformat))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert("You have entered an invalid email address!");
+	 $('#email').val('');
+	return false;  
+	}  
+}  
+
+
+function phonenumber(mobileno)  
+{  
+	var nofromat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+	if(mobileno.match(nofromat))  
+	{  
+	return true;  
+	}  
+	else  
+	{ 
+	alert("You have entered an invalid mobile no! at least 10 digit");  
+	 $('#mobileno').val('');
+	return false;  
+	}  
+}
+
 
 </script>
- 
+ <?php
+include('footer.php');
+?>

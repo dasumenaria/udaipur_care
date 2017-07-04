@@ -28,7 +28,7 @@ include('config.php');
 								<input name="email" onblur="ValidateEmail(this.value);" type="email" class="form-control" id="email" placeholder="Email">
 							</div>
                             <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-								<input name="mobileno" onblur="phonenumber(this.value);" type="text" maxlength="10" minlength="10" class="form-control" id="mobileno"  placeholder="Mobile No">
+								<input name="mobileno" onchange="phonenumber(this.value);" type="text" maxlength="10" minlength="10" class="form-control" id="mobileno"  placeholder="Mobile No">
 							</div>
 							<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
 								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
@@ -42,9 +42,7 @@ include('config.php');
 		</div>
 		<!-- end contact -->
 		 
-<?php
-include('footer.php');
-?>
+
 <script src="js/jquery.js"></script>
 <script>
 $( document ).ready(function() {
@@ -137,7 +135,8 @@ function phonenumber(mobileno)
 	return true;  
 	}  
 	else  
-	{  
+	{ 
+	
 	alert("You have entered an invalid mobile no! at least 10 digit");  
 	 $('#mobileno').val('');
 	return false;  
@@ -146,3 +145,6 @@ function phonenumber(mobileno)
 
 
 </script>
+<?php
+include('footer.php');
+?>
