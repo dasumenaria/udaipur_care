@@ -5,21 +5,14 @@ include("../config.php");
 
 
  $id=$_GET['id'];
- $filename="view_vender_excel";
+ $filename="view_member_excel";
 	@header("Expires: 0");
     @header("Pragma: no-cache");
     @header("Content-type: application/vnd.ms-excel");
     @header("Content-Disposition: attachment; filename=".$filename.".xls");
     @header("Content-Description: Generated Report" );
  ?>
-<div class="row">
-    <div class="col-md-12">
-        <div class="box col-md-12" style="background:white;">
-			<div class="box-header">
-				<h3 class="box-title"> User Report </h3>
-				</br>
-			</div>
-            <div class="box-body">
+
 				<table border="1">
 				<thead>
                 <tr>
@@ -156,12 +149,4 @@ include("../config.php");
               <?php } ?>
                 </tbody>
                 </table>
-			</div>
-			<!-- /.box-body -->
-		</div>
-    </div>
-       <!-- /.box-body -->
-</div>
- <?php 
-include("footer.php");
-  ?>
+			
