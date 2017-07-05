@@ -5,12 +5,12 @@ include("../config.php");
 
 
  $id=$_GET['id'];
- $filename="view_member_excel";
+ /* $filename="view_member_excel";
 	@header("Expires: 0");
     @header("Pragma: no-cache");
     @header("Content-type: application/vnd.ms-excel");
     @header("Content-Disposition: attachment; filename=".$filename.".xls");
-    @header("Content-Description: Generated Report" );
+    @header("Content-Description: Generated Report" ); */
  ?>
 
 				<table border="1">
