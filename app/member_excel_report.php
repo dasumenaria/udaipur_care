@@ -121,6 +121,7 @@ include("../config.php");
                         <td><?php echo $name;?></td>
                         <td><?php echo $dob;?></td>
                         <td><?php if(!empty($dob)) {  echo $age_year.' Year and '.$month_year.' Month'; }?></td>
+						<td> <?php echo $email_id;?></td>
 						<td> <?php echo $mobile_no;?></td>
 						<td><img src="../identity_proof/<?php echo $identity_proof;?>" width="100px" height="100px"/> </td>
 						<td> <?php echo $age;?></td>  
