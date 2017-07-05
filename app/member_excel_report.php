@@ -5,12 +5,12 @@ include("../config.php");
 
 
  $id=$_GET['id'];
- /* $filename="view_member_excel";
+   $filename="view_member_excel";
 	@header("Expires: 0");
     @header("Pragma: no-cache");
     @header("Content-type: application/vnd.ms-excel");
     @header("Content-Disposition: attachment; filename=".$filename.".xls");
-    @header("Content-Description: Generated Report" ); */
+    @header("Content-Description: Generated Report" );    
  ?>
 
 				<table border="1">
@@ -19,10 +19,10 @@ include("../config.php");
 					<th>S/No.</th>
 					<th>Name</th>
 					<th>DOB</th>
-                    <th>Identity proof</th>
+					<th>Age</th>
+					<th>Identity proof</th>
 					<th>Email Id</th>
 					<th>Mobile No.</th>
-					<th>Age</th>
 					<th>Gender</th> 
 					<th>Land Line</th> 
 					<th>Other Mobile No</th> 
@@ -98,7 +98,13 @@ include("../config.php");
 						
 						$name=decode($name,'UDRENCODE');
 						$email_id=decode($email_id,'UDRENCODE');
-						$mobile_no=decode($mobile_no,'UDRENCODE');
+						$mobile_no=decode($mobile_no,'UDRENCODE'); 
+						$gender=decode($gender,'UDRENCODE'); 
+						$address=decode($address,'UDRENCODE'); 
+						$other_info=decode($other_info,'UDRENCODE'); 
+						$emergency_contact_name=decode($emergency_contact_name,'UDRENCODE'); 
+						$emergency_contact_no=decode($emergency_contact_no,'UDRENCODE'); 
+						 
 						if(!empty($dob))
 						{
 							$dateOfBirth = date('d-m-Y',strtotime($dob));
@@ -110,14 +116,14 @@ include("../config.php");
 						}	
 					?>
 					<tr>
-                        <td><?php echo $i;?></td>
-                        <td><?php echo $name;?></td>
-                        <td><?php echo $dob;?></td>
-                        <td><?php if(!empty($dob)) {  echo $age_year.' Year and '.$month_year.' Month'; }?></td>
+						<td><?php echo $i;?></td>
+						<td><?php echo $name;?></td>
+						<td><?php echo $dob;?></td>
+
+						<td> <?php echo $age;?></td>
+						<td><img src="../identity_proof/<?php echo $identity_proof; ?>" width="100px" height="100px"/> </td>						
 						<td> <?php echo $email_id;?></td>
 						<td> <?php echo $mobile_no;?></td>
-						<td><img src="../identity_proof/<?php echo $identity_proof;?>" width="100px" height="100px"/> </td>
-						<td> <?php echo $age;?></td>  
 						<td> <?php echo $gender;?></td>  
 						<td> <?php echo $landline_no;?></td>  
 						<td> <?php echo $other_mobile_no;?></td>  

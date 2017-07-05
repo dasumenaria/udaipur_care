@@ -25,7 +25,7 @@ if(isset($_POST['deleted'])){
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-				<tr><td align='right' colspan='7'><a type="button" class="btn btn-default" style="background-color:gray" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b></a>
+				<tr><td align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
                 <tr>
 					
 					<th>S/No.</th>

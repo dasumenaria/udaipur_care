@@ -30,7 +30,7 @@ else
             <div class="box-body">
 				<table id="example1" class="table table-bordered table-striped">
                 <thead>
-					<tr><td align='right' colspan='7'><button type="button" style="background-color:gray" class="btn blue-madison" href="vendor_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b></button>
+					<tr><td align='right' colspan='7'><a  class="btn btn-success" href="vendor_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
 					<tr>
 						 <th>S/no.</th>
 					  <th>Name</th>
