@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
  
 
 
-		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity/".$photo);
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
 
 	if($r)
 	{

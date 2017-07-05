@@ -102,9 +102,9 @@ if(isset($_POST['assign'])){
 						while($lead_new=mysql_fetch_array($Newlead)){
 						$id=$lead_new['id'];	
 						$date=$lead_new['date'];
-						if($date='0000-00-00' || $date='1970-01-01'){ $dateforview='00-00-0000';}	
-						else { $dateforview=date('d-m-y',$date);}
-						
+						if($date=='0000-00-00' || $date=='1970-01-01'){ $dateforview='00-00-0000';}	
+						else { $dateforview=date('d-m-Y',strtotime($date));}
+						//echo $dateforview;
 						$sub_service=$lead_new['master_sub_service_id'];
 						$sql=mysql_query("select `sub_services_name` from `master_sub_services` where `id`='$sub_service'");
 						$ftc=mysql_fetch_array($sql);
@@ -144,7 +144,7 @@ if(isset($_POST['assign'])){
                                          	<div class="form-group col-md-12">
                                              <label class="">Remarks(any)</label>
                                              <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
-                                             <textarea name="reason_for_complete" class="form-control" cols="70" style="resize:none;" ></textarea>
+                                             <textarea name="reason_for_complete" class="form-control"style="width:100%" ></textarea>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -168,7 +168,7 @@ if(isset($_POST['assign'])){
                                          	<div class="form-group col-md-12">
                                              <label class="">Reason for Transfer</label>
                                              <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
-                                             <textarea name="reason_for_transfer" class="form-control" cols="70" style="resize:none;" required></textarea>
+                                             <textarea name="reason_for_transfer" class="form-control"  style="width:100%" required></textarea>
                                             </div>
                                          </div>
                                         <div class="modal-footer">
@@ -192,7 +192,7 @@ if(isset($_POST['assign'])){
                                          	<div class="form-group col-md-12">
                                              <label class="">Reason for Rejection</label>
                                              <input type="hidden" name="update_id" value="<?php echo $lead_new['id']; ?>" />
-                                             <textarea name="reason_for_rejection" class="form-control" cols="70" style="resize:none;" required></textarea>
+                                             <textarea name="reason_for_rejection" class="form-control" style="width:100%"  required></textarea>
                                             </div>
                                         </div>
                                         <div class="modal-footer">

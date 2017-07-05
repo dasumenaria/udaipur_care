@@ -54,7 +54,7 @@ include('config.php');
 					$service_name=$result['service_name'];
 					$discription=$result['discription'];
 					$icon=$result['icon'];
-					$master_service_image=$result['master_service_image'];
+				//	$master_service_image=$result['master_service_image'];
 					   
 				
 				if($count==1 ){ echo '<div class="row">'; }?>
@@ -86,6 +86,7 @@ include('config.php');
 				?>
 				
 			</div>
+		</div>
 		</div>
 		</br>
 		<!-- end service -->

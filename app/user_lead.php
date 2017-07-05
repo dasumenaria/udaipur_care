@@ -60,8 +60,8 @@ if(empty($status))
 						$Newlead=mysql_query($leadNew);
 						while($lead_new=mysql_fetch_array($Newlead)){
 						$date=$lead_new['date'];
-						if($date='0000-00-00' || $date='1970-01-01'){ $dateforview='00-00-0000';}	
-						else { $dateforview=date('d-m-y',$date);}
+						if($date=='0000-00-00' || $date=='1970-01-01'){ $dateforview='00-00-0000';}	
+						else { $dateforview=date('d-m-Y',strtotime($date));}
 						$master_status=$lead_new['master_status'];
 						if($master_status==0){
 							$recod='<span class="label label-sm label-warning">In-Process</span>';
