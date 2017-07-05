@@ -4,7 +4,7 @@ include('auth.php');
 include("../config.php");
 include("header.php");
   
- echo @$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE'];
+ @$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE'];
 //--	LEAD OPEN
 $leadNew="SELECT `id` from `booking` where `master_status` = '0' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $Newlead=mysql_query($leadNew);
