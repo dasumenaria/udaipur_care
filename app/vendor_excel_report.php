@@ -12,17 +12,7 @@ include("../config.php");
     @header("Content-Description: Generated Report" ); 
 	
 ?>
-<div class="row">;
-    <!-- /.col -->
-        <div class="col-md-12">
-        <!------		Button 	----->
-            <div class="box col-md-12" style="background:white;">
-            <!-- /.box-header -->
-                <div class="box-header">
-				  <h3 class="box-title"> User Report </h3>
-				</div>
-            <!-- /.box-header -->
-            <div class="box-body">
+
 				<table border="1">
                 <thead>
 					<tr>
@@ -91,10 +81,3 @@ include("../config.php");
                 <?php } ?>
                 </tbody>
             </table>
-			</div>
-            <!-- /.box-body -->
-        </div>
-    </div>
-    <!-- /.box-body -->
-</div>
-
