@@ -115,7 +115,7 @@ unset($_SESSION['SESSION_REGISTERID']);
   <div class="login-box-body">
 <center><a href="index.php"><img src="images/logos.png"width="180px;"></a></center>
 
-</br>
+</br><div id="login-form">
     <form method="post">
       <div class="form-group has-feedback">
          <input type="text" name="username" class="form-control" placeholder="Mobile No " required="required">
@@ -132,7 +132,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 	  </div>
       <div class="row">
 		<div class="col-xs-8">
-			<a href="#">Forgot Password</a>
+			<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
@@ -140,10 +140,27 @@ unset($_SESSION['SESSION_REGISTERID']);
         </div>
         <!-- /.col -->
       </div>
+	   </form>
+	   </div>
+	  <div style="display:none" id="forgot-div">
+      <form class="forget-form"  method="post" >
+		<h3>Forget Password ?</h3>
+		<p>
+			 Enter your Mobile No below to reset your password.
+		</p>
+		<div class="form-group">
+			<input class="form-control" type="text" id="mobileno" autocomplete="off" placeholder="Mobile No" name="mobileno"/>
+			<span id="message" style="color:#F43737"></span>
+		</div>
+		<div class="form-actions">
+			<button type="button" class="forgot_submit" >Submit</button>
+		</div>
+	</form>
+	</div>
 	  <div class="form-group">
 	  <span>Don't have an account? <a href="registration.php" class="text-center"> Register now</a></span>
 	  </div>
-    </form>
+   
 
      
     <!-- /.social-auth-links -->
@@ -152,11 +169,9 @@ unset($_SESSION['SESSION_REGISTERID']);
   </div>
   <!-- /.login-box-body -->
 </div>
-<!-- /.login-box -->
 
 <!-- jQuery 2.2.3 -->
 <script src="assest/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
 <script src="assest/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="assest/plugins/iCheck/icheck.min.js"></script>
@@ -167,7 +182,42 @@ unset($_SESSION['SESSION_REGISTERID']);
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
+	
+	
   });
+  $(document).ready(function(){
+		$('#forget-password').click(function(){
+		
+		$('#login-form').hide();
+		$('#forgot-div').show();
+	});
+	});
+	
+	$('.forgot_submit').on('click', function(){
+		var mobileno = $("#mobileno").val();
+		if(mobileno.length > 0 ){
+			$.ajax({
+
+				url: "ajax_page.php?function_name=smsgenerate&mobileno="+mobileno,
+				type: "POST",
+				success: function(data)
+				{  alert(data);
+					if(data == 'success')
+					{
+						$('#forgot-div').html('Your password reset successfully');
+					}
+					else{
+						$('#forgot-div').html('Please Register Your Mobile No');
+					}					 
+				}
+			});
+		}
+		else{
+			$('#message').html('Provide Your Mobile No');
+		}
+		
+	});
+ 
 </script>
 </body>
 </html>

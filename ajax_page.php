@@ -3,6 +3,7 @@
 include("config.php");
 include("app/function.php");
 $function_name=$_GET['function_name'];
+
 if($function_name=='mobileNo_check')
 {
 	$mobile_no=$_GET['mobile'];
@@ -40,6 +41,35 @@ if($function_name=='fetch_service_list')
 	while($ftc=mysql_fetch_array($ftc_date)){
 		echo "<option value=".$ftc['id'].">".$ftc['sub_services_name']."</option>";
 	}
+}
+if($function_name=='smsgenerate')
+{
+						$mobile_no=$_GET['mobileno'];
+						
+						 $usercheck=mysql_query("select `username` from `login` where `username`='$mobile_no'");
+						$check=mysql_num_rows($usercheck);
+						if($check>0)
+						{
+							$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
+							$string = '';
+							for ($i = 0; $i < 6; $i++) {
+							 $string .= $chars[rand(0, strlen($chars) - 1)];
+							} 
+							
+							$md4_password=md5($string);
+							
+							mysql_query("update `login` set `password`='$md4_password' where `username`='$mobile_no' ");
+							 $working_key='A7a76ea72525fc05bbe9963267b48dd96';
+							$sms_sender='UDCARE';
+							$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
+							file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
+							echo "Your password reset successfully";
+						}
+						else
+						{
+							echo "Your mobile no not registered";
+						}
+						
 }
 if($function_name=='contact_us_submit')
 {
