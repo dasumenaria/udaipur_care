@@ -213,7 +213,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 					else
 						{
 						
-						$('#forgot-div').html("Your mobile no not registered");
+						$('#forgot-div').html('<div style="color:#F43737">Your mobile no not registered</div>');
 					}					 
 				}
 			});
