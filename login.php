@@ -207,13 +207,13 @@ unset($_SESSION['SESSION_REGISTERID']);
 				{  
 					if(data==1)
 					{
-						$('#forgot-div').html('<div style="color:#63F588">Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
+						$('#forgot-div').html('<div style="color:#63F588; font-weight:800px; font-size:18px">Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
 						
 					}
 					else
 						{
 						
-						$('#forgot-div').html('<div style="color:#F43737">Your mobile no not registered</div>');
+						$('#forgot-div').html('<div style="color:#F43737; font-weight:800px; font-size:18px">Your mobile no not registered</div>');
 					}					 
 				}
 			});
