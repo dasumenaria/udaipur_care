@@ -207,7 +207,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 				{  
 					if(data==1)
 					{
-						$('#forgot-div').html('<div>Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
+						$('#forgot-div').html('<div style="color:#A9FAA9">Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
 						
 					}
 					else
