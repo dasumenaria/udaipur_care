@@ -146,7 +146,7 @@ unset($_SESSION['SESSION_REGISTERID']);
       <form class="forget-form"  method="post" >
 		<h3>Forget Password ?</h3>
 		<p>
-			 Enter your Mobile No below to reset your password.
+			 Enter your Mobile No.
 		</p>
 		<div class="form-group">
 			<input class="form-control" type="text" id="mobileno" autocomplete="off" placeholder="Mobile No" name="mobileno"/>
@@ -159,7 +159,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 	</form>
 	</div>
 	
-	  <div class="form-group">
+	  <div class="form-group" style="margin-top:20px">
 	  <span>Don't have an account? <a href="registration.php" class="text-center"> Register now</a></span>
 	  </div>
    
@@ -207,13 +207,13 @@ unset($_SESSION['SESSION_REGISTERID']);
 				{  
 					if(data==1)
 					{
-						$('#forgot-div').html('<div style="color:#63F588; font-weight:800px; font-size:18px">Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
+						$('#forgot-div').html('<div style="color:rgba(0, 99, 26, 0.72); font-weight:800px; text-align:center; font-size:18px">Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
 						
 					}
 					else
 						{
 						
-						$('#forgot-div').html('<div style="color:#F43737; font-weight:800px; font-size:18px">Your mobile no not registered</div>');
+						$('#forgot-div').html('<div style="color:#F43737; font-weight:800px; text-align:center; font-size:18px">Your mobile no not registered</div>');
 					}					 
 				}
 			});
