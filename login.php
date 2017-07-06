@@ -153,10 +153,12 @@ unset($_SESSION['SESSION_REGISTERID']);
 			<span id="message" style="color:#F43737"></span>
 		</div>
 		<div class="form-actions">
-			<button type="button" class="forgot_submit" >Submit</button>
+			<button type="button" class="forgot_submit" id="submit">Submit</button>
 		</div>
+		
 	</form>
 	</div>
+	
 	  <div class="form-group">
 	  <span>Don't have an account? <a href="registration.php" class="text-center"> Register now</a></span>
 	  </div>
@@ -191,6 +193,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 		$('#login-form').hide();
 		$('#forgot-div').show();
 	});
+	
 	});
 	
 	$('.forgot_submit').on('click', function(){
@@ -201,13 +204,16 @@ unset($_SESSION['SESSION_REGISTERID']);
 				url: "ajax_page.php?function_name=smsgenerate&mobileno="+mobileno,
 				type: "POST",
 				success: function(data)
-				{  alert(data);
-					if(data == 'success')
+				{  
+					if(data==1)
 					{
-						$('#forgot-div').html('Your password reset successfully');
+						$('#forgot-div').html('<div>Your password reset successfully</div><div align="center"><a class="btn btn-success" href="login.php">Sign In</a></div>');
+						
 					}
-					else{
-						$('#forgot-div').html('Please Register Your Mobile No');
+					else
+						{
+						
+						$('#forgot-div').html("Your mobile no not registered");
 					}					 
 				}
 			});
