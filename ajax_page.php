@@ -62,7 +62,7 @@ if($function_name=='smsgenerate')
 							 $working_key='A7a76ea72525fc05bbe9963267b48dd96';
 							$sms_sender='UDCARE';
 							$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
-							//file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
+							file_get_contents('http://alerts.sinfini.com/api/web2sms.php?workingkey='.$working_key.'&sender='.$sms_sender.'&to='.$mobile_no.'&message='.$sms.'');
 							echo 1;
 						}
 						else
