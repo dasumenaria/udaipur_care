@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 	$address=$_POST['address'];
 	$logo=$_POST['logo'];
 	$aadhar_card_no=$_POST['aadhar_card_no'];
-		
+		echo "insert into `partner` set  `full_name`='$full_name',`email`='$email',`mobile_no`='$mobile_no',`logo`='$logo',`address`='$address',`aadhar_card_no`='$aadhar_card_no'"; exit;
 		$sql="insert into `partner` set  `full_name`='$full_name',`email`='$email',`mobile_no`='$mobile_no',`logo`='$logo',`address`='$address',`aadhar_card_no`='$aadhar_card_no'";
 		 
 		$r=mysql_query($sql);
