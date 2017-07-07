@@ -5,6 +5,7 @@ include("header.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 @$status=$_GET['s'];
+//print_r(@$status); exit;
 if(empty($status))
 {
 	$status=0;
@@ -16,6 +17,7 @@ if(isset($_POST['completed'])){
 	$reason_for_complete=$_POST['reason_for_complete'];
 	$update_id=$_POST['update_id'];
 	mysql_query("update `booking` set `reason_for_complete`='$reason_for_complete',`master_status`='3' where `id`='$update_id' ");
+	
 }
 if(isset($_POST['rejected'])){
 	$reason_for_rejection=$_POST['reason_for_rejection'];
@@ -83,8 +85,9 @@ if(isset($_POST['assign'])){
  						  <th>Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
+						  <?php if(@$status !=3){ ?>
                           <th>Action</th>
-						<?php if($SESSION_USERTYPE==1)	  {?>
+						  <?php } if($SESSION_USERTYPE==1 && @$status !=3)	  {?>
 						<th>Assign</th>
 						<?php } ?>
                         </tr>
@@ -108,6 +111,7 @@ if(isset($_POST['assign'])){
 						$sub_service=$lead_new['master_sub_service_id'];
 						$sql=mysql_query("select `sub_services_name` from `master_sub_services` where `id`='$sub_service'");
 						$ftc=mysql_fetch_array($sql);
+						
 						?>
                         <tr>
                           <td><?php echo $lead_new['udcare_no']; ?></td>
@@ -117,8 +121,8 @@ if(isset($_POST['assign'])){
                           <td><?php echo $dateforview; ?></td>
                           <td><?php echo $lead_new['time']; ?></td>
                           <td>
-                          	 
-                                <div class="btn-group">
+                          	 <?php if(@$status !=3){ ?>
+                                <div class="btn-group action">
                                   <button type="button" class="btn btn-success">Action</button>
                                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
                                     <span class="caret"></span>
@@ -132,7 +136,8 @@ if(isset($_POST['assign'])){
                                     <li><a data-toggle="modal" data-target="#complete<?php echo $lead_new['udcare_no']; ?>">Complete</a></li>
                                   </ul>
                                 </div>
-                                <div class="modal fade" id="complete<?php echo $lead_new['udcare_no']; ?>" role="dialog">
+							 <?php } ?>
+                                <div class="modal fade complete" id="complete<?php echo $lead_new['udcare_no']; ?>" role="dialog">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                       <form method="post">
@@ -205,11 +210,11 @@ if(isset($_POST['assign'])){
                                   </div>
                               
                           </td>
-						  <?php if($SESSION_USERTYPE==1) { ?>
+						  <?php if($SESSION_USERTYPE==1 && @$status !=3) { ?>
 					 
 					
 						   <td>
-                                <div class="btn-group">
+                                <div class="btn-group assign">
                                   <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog" updateid="<?php echo $lead_new['id']; ?>"><i class="fa fa-thumbs-up"></i> Assign To</button>
                                 </div>
                            </td>
@@ -279,4 +284,5 @@ include("footer.php");
 			}
 		});
 	});
+	
 </script>
