@@ -20,15 +20,17 @@ if(isset($_POST['submit'])){
 	$update_id=$_POST['update_id'];
  
    $sql="update  `master_partner` set  `full_name`='$name',`email`='$email',`mobile_no`='$mobile_no',`address`='$address',
-`adhar_card_no`='$adhar_card_no',`company_logo`='$company_logo' where `id` = '$update_id'";
+`adhar_card_no`='$adhar_card_no' where `id` = '$update_id'";
   $message = "Partner update successfully.";
   $r=mysql_query($sql);
 	//$ids=mysql_insert_id();
 	$photo1="company_logo".$update_id.".jpg";
-    move_uploaded_file($_FILES["photo"]["tmp_name"],"../images/company_partner/".$photo1);
+    move_uploaded_file($_FILES["company_logo"]["tmp_name"],"../images/company_partner/".$photo1);
 	if($r)
 	{
-		$r=mysql_query("update master_partner set company_logo='$photo' where id='$update_id'");
+		
+		
+		$r=mysql_query("update master_partner set company_logo='$photo1' where id='$update_id'");
  
 	 }
 
@@ -66,7 +68,6 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		$email=$ftc_data['email'];
 		$mobile_no=$ftc_data['mobile_no'];
 		$address=$ftc_data['address'];
-		$company_logo=$ftc_data['company_logo'];
 		$adhar_card_no=$ftc_data['adhar_card_no'];
 		
 ?>
@@ -74,7 +75,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <!-- Main content -->
     <section class="content">
 		<div class="box box-primary" >
-        <form method="post"  id="contact-form" role="form" action="master_partner_view.php" enctype="multipart/form-data">
+        <form method="post"  id="contact-form" role="form"  enctype="multipart/form-data">
          <div class="box-body" style="margin-left:12px;">
 		 </br>
 		 <div class="row">
@@ -115,7 +116,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			 <div class="col-md-6">
 			<div class="form-group">
                   <label for="exampleInputFile">Company Logo</label>
-                  <input type="file" id="exampleInputFile" name="company_logo" value="<?php echo $company_logo;?>">
+                  <input type="file" id="exampleInputFile" name="company_logo" >
 			</div>
 		</div>
 			<div class="col-md-6">		
