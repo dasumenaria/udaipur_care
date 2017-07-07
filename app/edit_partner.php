@@ -75,7 +75,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <!-- Main content -->
     <section class="content">
 		<div class="box box-primary" >
-        <form method="post"  id="contact-form" role="form"  enctype="multipart/form-data">
+        <form method="post"  id="contact-form" role="form" enctype="multipart/form-data">
          <div class="box-body" style="margin-left:12px;">
 		 </br>
 		 <div class="row">
@@ -123,7 +123,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				 <div class="form-group">
 				  <label for="exampleInputAnyMedicalTreatment">Adhar Card No.</label>
 				  <div class="input-group">
-						<input name="adhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" value="<?php echo $adhar_card_no;?>" required="required">
+						<input name="adhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="12" minlength="12" value="<?php echo $adhar_card_no;?>" required="required">
 						<div class="input-group-addon">
 							  <i class="fa fa-barcode"></i>
 						  </div>
