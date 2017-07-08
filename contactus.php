@@ -11,7 +11,7 @@ include('config.php');
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
 						<address>
 							<h3>Visit Office</h3>
-							<p><i class="fa fa-map-marker too-icon"></i>&nbsp; Rotary Udaipur Mewar Service Trust 11-12,GuruvRamdas Colony Opposite M.B. College Udaipur-313001(Raj.) </p>
+							<p><i class="fa fa-map-marker too-icon"></i>&nbsp; Rotary Udaipur Mewar Service Trust 11-12,Guru Ramdas Colony Opposite M.B. College Udaipur-313001(Raj.) </p>
 							<p><i class="fa fa-phone too-icon"></i> &nbsp;0294-2490491, 2490492</p>
 							<p><i class="fa fa-envelope-o too-icon"></i> &nbsp; helpline@udaipurcare.com</p>
 						</address>

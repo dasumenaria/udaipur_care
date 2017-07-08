@@ -41,7 +41,7 @@ include('config.php');
         <div id="teams" style="padding-top:30px; padding-bottom:30px">
 			<div class="container text-center">
 				<div class="row col-md-12">
-                <h3>"WE BELIVE THAT IT IS OUR MORAL OBLIGATION TO LOOK AFTER OUR ELDERS & IT IS OUR DUTY TO PROVIDE THEM BEST CARE POSSIBLE." </h3>
+                <h3>"WE BELEIVE THAT IT IS OUR MORAL OBLIGATION TO LOOK AFTER OUR ELDERS & IT'S OUR DUTY TO PROVIDE THEM BEST CARE POSSIBLE." </h3>
                 </div>
             </div>
         </div> 
@@ -53,7 +53,7 @@ include('config.php');
 				<div class="row">
                  <div class="col-md-12 col-sm-12" style="margin-top: -30px;">
 						<h2 class="wow bounce"> <strong>About us</strong></h2>
- 						<p style="font-size:16px">"Udaipur Care" is a mission initiated by District Administration Udaipur and supported by various organizations mainly Rotary Udaipur Mewar Service Trust, Fusion Business Solutions Pvt. Ltd. and PHP Poets IT Solutions Pvt. Ltd. We established a "Senior Citizen Helpline" in Udaipur for welfare of senior citizens of Udaipur. This helpline enables senior citizens to reach out for help & assistance for making their day-to day lives safe & comfortable.</p>
+ 						<p style="font-size:16px">"Udaipur Care" is a mission initiated by District Administration Udaipur and supported by various organizations mainly Rotary Udaipur Mewar Service Trust, Fusion Business Solutions Pvt. Ltd. and PHP Poets IT Solutions Pvt. Ltd. We established a "Senior Citizen Helpline" in Udaipur for welfare of senior citizens of Udaipur. This helpline enables senior citizens to reach out for help & assistance for making their day to day lives safe & comfortable.</p>
 		<p  style="font-size:12pt;">'Udaipur Care" provides various medical and non-medical personal care services to senior citizens at their door step on discounted/subsidized rates in reasonable time. Our aim is to ensure that senior citizens remain safe with comfort. We are committed to serve them through trusted information and reliable services so that they can feel safe, confident, valued and can live with dignity.</p> 
 					</div>
 					 
@@ -109,7 +109,7 @@ include('config.php');
 				<div class="row">
 					<div class="col-md-3 col-sm-4 wow fadeInLeft" data-wow-delay="0.6s">
 						<h2><strong>Udaipur Care</strong></h2>
-						<p>We belive that it is our moral oblaigation to look after our Elders & It is our duty to proovide them best care possible.</p>
+						<p>We beleive that it is our moral obligation to look after our Elders & It's our duty to provide them best care possible.</p>
 						<ul class="social-icon">
 							<li><a href="#" class="fa fa-facebook"></a></li>
 							<li><a href="#" class="fa fa-twitter"></a></li>
@@ -119,7 +119,7 @@ include('config.php');
 					<div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
 						<address>
 							<h3>Visit Office</h3>
-							<p><i class="fa fa-map-marker too-icon"></i>&nbsp; Rotary Udaipur Mewar Service Trust 11-12,GuruvRamdas Colony Opposite M.B. College Udaipur-313001(Raj.) </p>
+							<p><i class="fa fa-map-marker too-icon"></i>&nbsp; Rotary Udaipur Mewar Service Trust 11-12,Guru Ramdas Colony Opposite M.B. College Udaipur-313001(Raj.) </p>
 							<p><i class="fa fa-phone too-icon"></i> &nbsp;0294-2490491, 2490492</p>
 							<p><i class="fa fa-envelope-o too-icon"></i> &nbsp; helpline@udaipurcare.com</p>
 						</address>

@@ -58,14 +58,14 @@ else
                     	 
 						<li><a href="app/user_dashboard.php" class="smoothScroll">DASHBOARD</a></li>
                        <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li> 
- 					  <li class="dropdown">
+ 					  <!--<li class="dropdown">
 						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 							 <li><a href="services.php" style="line-height: 21px !important;" > Door To Door</a></li>
 							<li class="divider"></li>
 							<li><a href="discount.php" style="line-height: 21px !important;" >Discount</a></li>
 							</ul>
-						</li> 
+						</li> -->
 
  
 						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
