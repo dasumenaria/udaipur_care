@@ -94,5 +94,26 @@ if($function_name=='contact_us_submit')
 		echo "success";
 }
 
+if($function_name=='partner_submit')
+{
+	require_once("mail.php");	
+	$name=$_GET['name'];
+	$email=$_GET['email'];
+	$mobile_no=$_GET['mobile_no'];
+	//--- EMAIL
+	 	$to = 'helpline@udaipurcare.com'; //helpline@udaipurcare.com
+ 		$msg='New enquiry is sumbitted. <br><br> 
+			<strong>Name : </strong>'.$name.'<br>
+			<strong>Email : </strong>'.$email.'<br>
+			<strong>Mobile No. : </strong>'.$mobile_no.'<br>
+			Thanks <br><strong> Udaipur Care.</strong>';
+		$from="helpline.udaipurcare@gmail.com";
+		$from_name="Udaipur Care";
+		$subject="Contact us";
+		smtpmailer($to, $from, $from_name, $subject, $is_gmail = true);
+        mysql_query("insert into `master_partner` set `name`='$name',`mobile_no`='$mobile_no',`email`='$email'");
+		echo "success";
+}
+
 
  ?>

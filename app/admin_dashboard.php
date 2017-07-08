@@ -78,7 +78,7 @@ $lead_complete=mysql_num_rows($donelead);
 				  </div>
 				</div>
                 <!---		TABS	---->
-				<div class="col-lg-3 col-xs-6">
+				<div class="col-lg-3 col-xs-6" id="complete">
 				  <div class="small-box bg-green">
 					<div class="inner">
 					  <h3> <?php echo $lead_complete; ?> </h3>

@@ -1,6 +1,7 @@
 <?php
 include('header.php');
 include('config.php');
+
 ?>
 
 <style>
@@ -210,7 +211,8 @@ function Validatename(name)
 	}  
 	else  
 	{  
-	alert('Name must have alphabet characters only');
+	
+	$('#msg').html('Name must have alphabet characters only');
 	  $('#name').val('');
 	return false;  
 	}  
@@ -225,8 +227,8 @@ function ValidateEmail(email)
 	return true;  
 	}  
 	else  
-	{  
-	alert("You have entered an invalid email address!");
+	{
+	$('#msg').html('You have entered an invalid email address!');
 	 $('#email').val('');
 	return false;  
 	}  
@@ -242,7 +244,7 @@ function phonenumber(mobileno)
 	}  
 	else  
 	{ 
-	alert("You have entered an invalid mobile no! at least 10 digit");  
+	$('#msg').html('You have entered an invalid mobile no! at least 10 digit');
 	 $('#mobileno').val('');
 	return false;  
 	}  
