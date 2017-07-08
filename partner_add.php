@@ -1,8 +1,7 @@
 <?php 
 include("header.php");
 include("config.php");
-date_default_timezone_set('Asia/Calcutta');
-ini_set('max_execution_time', 100000); 
+ 
 $message="";
 $image_path="";
  
@@ -24,11 +23,9 @@ if(isset($_POST['submit']))
 		$address=$_POST['address'];
 		$other_info=$_POST['other_info'];
 		$aadhar_card_no=$_POST['aadhar_card_no'];
-		
 		$to=$_POST['email_id'];
 		$date=date('Y-m-d');
 		$time=date('h:i:s A');
-		
 		$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
 		$string = '';
 		for ($i = 0; $i < 6; $i++) {
@@ -39,32 +36,23 @@ if(isset($_POST['submit']))
 		for ($i = 0; $i < 8; $i++) {
 			$udcare .= $charss[rand(0, strlen($charss) - 1)];
 		}   
-		 
-		 $name=encode($name,'UDRENCODE');
-		 $email_id=encode($email_id,'UDRENCODE');
+		$name=encode($name,'UDRENCODE');
+		$email_id=encode($email_id,'UDRENCODE');
 		  
-		 $gender=encode($gender,'UDRENCODE');
-		 $address=encode($address,'UDRENCODE');
-		 $other_info=encode($other_info,'UDRENCODE');
-		  
- 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
-		 
+		$gender=encode($gender,'UDRENCODE');
+		$address=encode($address,'UDRENCODE');
+		$other_info=encode($other_info,'UDRENCODE');
+		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
 		$r=mysql_query($sql);
-		
 		$ids=mysql_insert_id();
 		$md4_password=md5($string);
 		$mobile_no=decode($mobile_no,'UDRENCODE');
 		$email_id=decode($email_id,'UDRENCODE');
- 
 		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id',  `register_id`='$ids' , `date`='$date', `time`='$time' ");
- 
-		
 		$photo="identity_proof".$ids.".jpg";
 		// move photo in  floder//
 		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"identity_proof/".$photo);
-	
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
-		
 		$working_key='A7a76ea72525fc05bbe9963267b48dd96';
 		$sms_sender='UDCARE';
 		$sms=str_replace(' ', '+', 'Welcome to Udaipur Care your one time password is '.$string);
@@ -118,7 +106,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 
 		 <div class="col-md-6">
 				<div class="form-group">
-                  <label for="exampleInputFullName">Full Name</label>
+                  <label >Full Name</label>
                   <div class="input-group">
                   	<input type="text" name="full_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
                     <div class="input-group-addon">
@@ -129,7 +117,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">		
                 <div class="form-group">
-                  <label for="exampleInputmobile_no">Mobile No.</label>
+                  <label >Mobile No.</label>
                   <div class="input-group">
                   	<input type="text" name="mobile_no" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
                     <div class="input-group-addon">
@@ -140,7 +128,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 			<div class="col-md-6">		
                 <div class="form-group">
-                  <label for="exampleInputmobile_no">Company Name</label>
+                  <label >Company Name</label>
                   <div class="input-group">
                   	<input type="text" name="company_name" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Company Name" required>
                     <div class="input-group-addon">
@@ -151,7 +139,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>		
 		<div class="col-md-6">	
 				<div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label >Email address</label>
                   <div class="input-group">
                   	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter Email Address" >
                     <div class="input-group-addon">
@@ -162,7 +150,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>	
 		 <div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Company Registration No.</label>
+              <label >Company Registration No.</label>
               <div class="input-group">
               		<input name="company_reg_no" type="text" class="form-control" placeholder="Enter Your Company Registration No.">
                     <div class="input-group-addon">
@@ -173,13 +161,13 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>	
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Address</label>
+				 <label >Company Address</label>
 				 <textarea name="company_address" class="form-control" placeholder="Enter Company Address"></textarea>
 			</div>
 		</div>	
 		<div class="col-md-6">
 			<div class="form-group">
-                  <label for="exampleInputFile">Company Logo</label>
+                  <label>Company Logo</label>
                   <div class="input-group">
                   	<input type="file" class="form-control" id="company_logo" name="company_logo">
                     <div class="input-group-addon">
@@ -190,7 +178,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-                  <label for="exampleInputFile">Company MOU Certificate</label>
+                  <label>Company MOU Certificate</label>
                   <div class="input-group">
                   	<input type="file" class="form-control" id="company_mou_certificate" name="company_mou_certificate">
                     <div class="input-group-addon">
@@ -201,32 +189,32 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Service</label>
+				 <label >Company Service</label>
 				 <input type="text" name="company_service" class="form-control" placeholder="Enter Company Service">
 			</div>
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Sub Service</label>
+				 <label >Company Sub Service</label>
 				 <input type="text" name="company_sub_service" class="form-control" placeholder="Enter Company Sub Service">
 			</div>
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Service Description</label>
+				 <label >Company Service Description</label>
 				 <textarea name="company_service_description" class="form-control" placeholder="Enter Company Service Description"></textarea>
 			</div>
 		</div>
 		
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Sub Service Description</label>
+				 <label>Company Sub Service Description</label>
 				 <textarea name="company_sub_service_description" class="form-control" placeholder="Enter Company Sub Service Description"></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Service Price</label>
+              <label >Service Price</label>
               <div class="input-group">
               		<input name="service_price" type="text" class="form-control" placeholder="Enter Your Service Price">
                     <div class="input-group-addon">
@@ -237,7 +225,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Discount</label>
+              <label>Discount</label>
               <div class="input-group">
               		<input name="discount" type="text" class="form-control" placeholder="Enter Discount">
                     <div class="input-group-addon">
@@ -248,7 +236,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>	
 		<div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
+              <label>Aadhar Card No.</label>
               <div class="input-group">
               		<input name="adhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="12" minlength="12" >
                     <div class="input-group-addon">
@@ -259,7 +247,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>		
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Offer</label>
+				 <label >Company Offer</label>
 				 <textarea name="offer" class="form-control" placeholder="Enter Company Offer"></textarea>
 			</div>
 		</div>
@@ -332,8 +320,5 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			});
 		}
 	});
-	$('.datepickera').datepicker({
-		  autoclose: true,
-		  endDate: '+0d'
-	});
+	
 </script>
