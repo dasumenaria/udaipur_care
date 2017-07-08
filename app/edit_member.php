@@ -24,7 +24,6 @@ if(isset($_POST['submit'])){
  	$dob=$_POST['dob'];
   	$landmark=$_POST['landmark'];
 	$aadhar_card_no=$_POST['aadhar_card_no'];
-	
 	$pincode_no=$_POST['pincode_no'];
  	$hobbies=$_POST['hobbies'];
 	$any_medical_treatment=$_POST['any_medical_treatment'];
@@ -37,21 +36,26 @@ if(isset($_POST['submit'])){
 	$date_of_anniversary=date('Y-m-d', strtotime($date_of_anniversary1));
  	$other_info=$_POST['other_info'];
 	$update_id=$_POST['update_id'];
+
  
    $sql="update  `register` set  `name`='$name',`age`='$age',`landline_no`='$landline_no',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',
 `landmark`='$landmark',`pincode_no`='$pincode_no',`emergency_contact_name`='$emergency_contact_name',`emergency_contact_no`='$emergency_contact_no',`hobbies`='$hobbies',`any_medical_treatment`='$any_medical_treatment',
 `area_of_specialization`='$area_of_specialization',`children`='$children',`spouse_name`='$spouse_name',`spouse_dob`='$spouse_dob',
 `date_of_anniversary`='$date_of_anniversary',`other_info`='$other_info',`aadhar_card_no`='$aadhar_card_no'  where `id` = '$update_id'";
   $message = "Member update successfully.";
+  
   $r=mysql_query($sql);
 	$ids=mysql_insert_id();
-	$photo="identity_proof".$update_id.".jpg";
-	move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
+	$photo="identity_proof".$ids.".jpg";
+		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
+
 	if($r)
 	{
-		$r=mysql_query("update register set identity_proof='$photo' where id='$update_id'");
+		echo"update register set identity_proof='$photo' where id='$ids'";
+		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
  
 	 }
+
 	else
 	{
 		echo mysql_error();
@@ -207,7 +211,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			<div class="form-group col-md-6">
                   <label for="exampleInputmobile_no">LandMark</label>
                   <div class="input-group">
-                         <input type="text" name="landmark" class="form-control" id="exampleInputmobile_no" value="<?php echo $ftc_data['landmark'];?>" placeholder="Enter Your Landmark.">
+                         <input type="text" name="landmark" class="form-control" id="exampleInputmobile_no" value="<?php echo $ftc_data['landmark'];?>" placeholder="Enter Your Mobile No.">
                       <div class="input-group-addon">
                       <i class="fa  fa-map-marker"></i>
                       </div>
@@ -252,7 +256,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			 <div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">Any Medical Treatment</label>
 					  <div class="input-group">
-							 <input name="any_medical_treatment" type="text" class="form-control" id="name" value="<?php echo $ftc_data['any_medical_treatment'];?>" placeholder="Any Medical Treatment">
+							 <input name="any_medical_treatment" type="text" class="form-control" id="name" required="required" value="<?php echo $ftc_data['any_medical_treatment'];?>" placeholder="Any Medical Treatment">
 						  <div class="input-group-addon">
 						  <i class="fa fa-stethoscope"></i>
 						  </div>
@@ -261,7 +265,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			 <div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">Area of Specialization</label>
 					  <div class="input-group">
-							 <input name="area_of_specialization" type="text" class="form-control" id="name" value="<?php echo $ftc_data['area_of_specialization'];?>" placeholder="Area of Specialization">
+							 <input name="area_of_specialization" type="text" class="form-control" id="name" required="required" value="<?php echo $ftc_data['area_of_specialization'];?>" placeholder="Area of Specialization">
 						  <div class="input-group-addon">
 						  <i class="fa fa-briefcase"></i>
 						  </div>
@@ -270,7 +274,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			 <div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">How many children do you have ?</label>
 					  <div class="input-group">
-							 <input name="children" type="text" class="form-control" id="name" value="<?php echo $ftc_data['children'];?>" placeholder="How many children do you have ?">
+							 <input name="children" type="text" class="form-control" id="name" required="required" value="<?php echo $ftc_data['children'];?>" placeholder="How many children do you have ?">
 						  <div class="input-group-addon">
 						  <i class="fa fa-group "></i>
 						  </div>
@@ -280,14 +284,14 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-6">
 			<div class="form-group">
                   <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
-                  <input type="file" id="exampleInputFile" name="identity_proof">
+                  <input type="file" class="form-control" name="identity_proof">
 			</div>
 		</div>
 		<div class="col-md-6">		
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
               <div class="input-group">
-              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="12" minlength="12" value="<?php echo $aadhar_card_no;?>" required="required">
+              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" value="<?php echo $aadhar_card_no;?>" required="required">
                     <div class="input-group-addon">
                           <i class="fa fa-barcode"></i>
                       </div>
@@ -297,7 +301,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="form-group col-md-6">
 					  <label for="exampleInputAnyMedicalTreatment">Spouse Name</label>
 					  <div class="input-group">
-							 <input name="spouse_name" type="text" class="form-control" id="name" value="<?php echo $ftc_data['spouse_name'];?>" placeholder="Spouse Name">
+							 <input name="spouse_name" type="text" class="form-control" id="name" value="<?php echo $ftc_data['spouse_name'];?>" required="required" placeholder="Spouse Name">
 						  <div class="input-group-addon">
 						  <i class="fa fa-transgender-alt"></i>
 						  </div>
@@ -325,7 +329,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			<div class="form-group col-md-6">
                   <label for="exampleInputAnyMedicalTreatment">Other Details (if any):</label>
                   <div class="input-group">
-                          <input name="other_info" type="text" class="form-control" id="name" value="<?php echo $ftc_data['other_info'];?>" placeholder="Daily Routine problem you face">
+                          <input name="other_info" type="text" class="form-control" id="name" value="<?php echo $ftc_data['other_info'];?>" required="required" placeholder="Daily Routine problem you face">
                       <div class="input-group-addon">
                       <i class="fa fa-question"></i>
                       </div>
