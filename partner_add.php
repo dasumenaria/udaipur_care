@@ -226,6 +226,17 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		</div>
 		<div class="col-md-6">		
              <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Service Price</label>
+              <div class="input-group">
+              		<input name="service_price" type="text" class="form-control" placeholder="Enter Your Service Price">
+                    <div class="input-group-addon">
+                          <i class="fa fa-barcode"></i>
+                      </div>
+                  </div>
+             </div>
+		</div>
+		<div class="col-md-6">		
+             <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Discount</label>
               <div class="input-group">
               		<input name="discount" type="text" class="form-control" placeholder="Enter Discount">
@@ -252,17 +263,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				 <textarea name="offer" class="form-control" placeholder="Enter Company Offer"></textarea>
 			</div>
 		</div>
-		<div class="col-md-6">		
-             <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Service Price</label>
-              <div class="input-group">
-              		<input name="service_price" type="text" class="form-control" placeholder="Enter Your Service Price">
-                    <div class="input-group-addon">
-                          <i class="fa fa-barcode"></i>
-                      </div>
-                  </div>
-             </div>
-		</div>
+		
 		<div class="col-md-12" align="center">		
              <div class="box-footer">
                   <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" >  
