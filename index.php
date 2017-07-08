@@ -126,7 +126,7 @@ include('config.php');
 					</div>
 					<form method="post" name="registration" class="col-md-6 col-sm-4" id="contact-form" role="form" >
 					<h3>Contact Us</h3>
-                    	<div class="col-md-12" style="padding-bottom:10px; " id="msg">
+                    	<div class="col-md-12 other_click" style="padding-bottom:10px; " id="msg">
                            
                         </div>
 							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
@@ -151,6 +151,7 @@ include('config.php');
 		<!-- end contact -->
 		 
 <script src="js/jquery.js"></script>
+<script>
 <script>
 $( document ).ready(function() {
 $('#submit_contact').on('click', function(){
@@ -200,6 +201,9 @@ $('#submit_contact').on('click', function(){
 	}
 	
 });	
+
+
+
 });
 
 function Validatename(name)  
@@ -210,11 +214,13 @@ function Validatename(name)
 	return true;  
 	}  
 	else  
-	{  
-	
+	{  if(empty(name)){
+		 $('#msg').hide();
+		}
+		else{
 	$('#msg').html('Name must have alphabet characters only');
 	  $('#name').val('');
-	return false;  
+	return false;  }
 	}  
 }  
 
@@ -224,7 +230,8 @@ function ValidateEmail(email)
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
 	if(email.match(mailformat))  
 	{  
-	return true;  
+	return true; 
+		
 	}  
 	else  
 	{

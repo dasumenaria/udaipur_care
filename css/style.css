@@ -532,7 +532,7 @@ p
 /* start footer */
 footer
     {
-        margin-top:auto;
+        margin-top:fixed;
         padding-top: 40px;
         padding-bottom: 20px;
 		background-color:#f8f8f8;

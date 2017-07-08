@@ -99,7 +99,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-		Registration 
+		Add New Partner
 		</h1>
      </section>
 
@@ -107,7 +107,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     <section class="content">
 		<div class="box box-primary" >
 		<center>
-		<h4>Registration Form</h4>
+		<h4>New Partner Form</h4>
 		<hr>
 		 </center>
 		
@@ -120,7 +120,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputFullName">Full Name</label>
                   <div class="input-group">
-                  	<input type="text" name="name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
+                  	<input type="text" name="full_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
                     <div class="input-group-addon">
                           <i class="fa fa-user"></i>
                       </div>
@@ -137,20 +137,18 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                       </div>
                   </div>
                 </div>
-		</div>		
-		<div class="col-md-6">		
+		</div>
+			<div class="col-md-6">		
                 <div class="form-group">
-                  <label for="exampleInputDob">Date Of Birth</label>
+                  <label for="exampleInputmobile_no">Company Name</label>
                   <div class="input-group">
-                  	<input type="text" name="dob" class="form-control datepickera" placeholder="Enter Your Date Of Birth">
+                  	<input type="text" name="company_name" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Company Name" required>
                     <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
+                          <i class="fa fa-user"></i>
                       </div>
                   </div>
                 </div>
-		</div>
-		 
-		 
+		</div>		
 		<div class="col-md-6">	
 				<div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
@@ -162,24 +160,39 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
                   </div>
                 </div>
 		</div>	
-		 <div class="col-md-6">	
-         <label for="exampleInputDob">Gender &nbsp;</label>	
-			<div class="form-group">
-                 <input type="radio"  name="gender" class="minimal" value="male" checked> &nbsp; Male 
-                <input type="radio"   name="gender" class="minimal" value="female"> &nbsp; Female
-            </div>
-		</div>
+		 <div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Company Registration No.</label>
+              <div class="input-group">
+              		<input name="company_reg_no" type="text" class="form-control" placeholder="Enter Your Company Registration No.">
+                    <div class="input-group-addon">
+                          <i class="fa fa-barcode"></i>
+                      </div>
+                  </div>
+             </div>
+		</div>	
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Address</label>
-				 <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
+				 <label for="exampleInputDob">Company Address</label>
+				 <textarea name="company_address" class="form-control" placeholder="Enter Company Address"></textarea>
 			</div>
 		</div>	
 		<div class="col-md-6">
 			<div class="form-group">
-                  <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
+                  <label for="exampleInputFile">Company Logo</label>
                   <div class="input-group">
-                  	<input type="file" class="form-control" id="exampleInputFile" name="identity_proof">
+                  	<input type="file" class="form-control" id="company_logo" name="company_logo">
+                    <div class="input-group-addon">
+                          <i class="fa fa-upload"></i>
+                      </div>
+                  </div>
+ 		     </div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+                  <label for="exampleInputFile">Company MOU Certificate</label>
+                  <div class="input-group">
+                  	<input type="file" class="form-control" id="company_mou_certificate" name="company_mou_certificate">
                     <div class="input-group-addon">
                           <i class="fa fa-upload"></i>
                       </div>
@@ -187,29 +200,69 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
  		     </div>
 		</div>
 		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Service</label>
+				 <input type="text" name="company_service" class="form-control" placeholder="Enter Company Service">
+			</div>
+		</div>
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Sub Service</label>
+				 <input type="text" name="company_sub_service" class="form-control" placeholder="Enter Company Sub Service">
+			</div>
+		</div>
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Service Description</label>
+				 <textarea name="company_service_description" class="form-control" placeholder="Enter Company Service Description"></textarea>
+			</div>
+		</div>
+		
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Sub Service Description</label>
+				 <textarea name="company_sub_service_description" class="form-control" placeholder="Enter Company Sub Service Description"></textarea>
+			</div>
+		</div>
+		<div class="col-md-6">		
+             <div class="form-group">
+              <label for="exampleInputAnyMedicalTreatment">Discount</label>
+              <div class="input-group">
+              		<input name="discount" type="text" class="form-control" placeholder="Enter Discount">
+                    <div class="input-group-addon">
+                          <i class="fa fa-barcode"></i>
+                      </div>
+                  </div>
+             </div>
+		</div>	
+		<div class="col-md-6">		
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
               <div class="input-group">
-              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" >
+              		<input name="adhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="12" minlength="12" >
                     <div class="input-group-addon">
                           <i class="fa fa-barcode"></i>
                       </div>
                   </div>
              </div>
 		</div>		
-		
-		 <div class="col-md-6">		
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Offer</label>
+				 <textarea name="offer" class="form-control" placeholder="Enter Company Offer"></textarea>
+			</div>
+		</div>
+		<div class="col-md-6">		
              <div class="form-group">
-              <label for="exampleInputAnyMedicalTreatment">Other Details (if any):</label>
+              <label for="exampleInputAnyMedicalTreatment">Service Price</label>
               <div class="input-group">
-              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine Problem You Face">
+              		<input name="service_price" type="text" class="form-control" placeholder="Enter Your Service Price">
                     <div class="input-group-addon">
-                          <i class="fa fa-book"></i>
+                          <i class="fa fa-barcode"></i>
                       </div>
                   </div>
              </div>
 		</div>
- 
 		<div class="col-md-12" align="center">		
              <div class="box-footer">
                   <input name="submit" type="submit" class="btn btn-primary" id="submit" value="Register" >  
