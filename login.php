@@ -146,7 +146,7 @@ unset($_SESSION['SESSION_REGISTERID']);
       <form class="forget-form"  method="post" >
 		<h3>Forget Password ?</h3>
 		<p>
-			 Enter your Mobile No below to reset your password.
+			 Enter your Mobile No. below to reset your password.
 		</p>
 		<div class="form-group">
 			<input class="form-control" type="text" id="mobileno" autocomplete="off" placeholder="Mobile No" name="mobileno"/>

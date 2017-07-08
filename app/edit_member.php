@@ -24,7 +24,6 @@ if(isset($_POST['submit'])){
  	$dob=$_POST['dob'];
   	$landmark=$_POST['landmark'];
 	$aadhar_card_no=$_POST['aadhar_card_no'];
-	
 	$pincode_no=$_POST['pincode_no'];
  	$hobbies=$_POST['hobbies'];
 	$any_medical_treatment=$_POST['any_medical_treatment'];
@@ -37,22 +36,22 @@ if(isset($_POST['submit'])){
 	$date_of_anniversary=date('Y-m-d', strtotime($date_of_anniversary1));
  	$other_info=$_POST['other_info'];
 	$update_id=$_POST['update_id'];
+
  
    $sql="update  `register` set  `name`='$name',`age`='$age',`landline_no`='$landline_no',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',
 `landmark`='$landmark',`pincode_no`='$pincode_no',`emergency_contact_name`='$emergency_contact_name',`emergency_contact_no`='$emergency_contact_no',`hobbies`='$hobbies',`any_medical_treatment`='$any_medical_treatment',
 `area_of_specialization`='$area_of_specialization',`children`='$children',`spouse_name`='$spouse_name',`spouse_dob`='$spouse_dob',
 `date_of_anniversary`='$date_of_anniversary',`other_info`='$other_info',`aadhar_card_no`='$aadhar_card_no'  where `id` = '$update_id'";
   $message = "Member update successfully.";
+  
   $r=mysql_query($sql);
 	$ids=mysql_insert_id();
 	$photo="identity_proof".$ids.".jpg";
- 
-
-
 		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
 
 	if($r)
 	{
+		echo"update register set identity_proof='$photo' where id='$ids'";
 		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
  
 	 }
@@ -285,7 +284,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		 <div class="col-md-6">
 			<div class="form-group">
                   <label for="exampleInputFile">Identity proof like : Aadhar card / Pan card /Driving Licence. etc</label>
-                  <input type="file" id="exampleInputFile" name="identity_proof">
+                  <input type="file" class="form-control" name="identity_proof">
 			</div>
 		</div>
 		<div class="col-md-6">		
