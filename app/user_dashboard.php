@@ -17,14 +17,13 @@ $lead_transfer=mysql_num_rows($teanlead);
 $leadreject="SELECT `id` from `booking` where  `master_status` = '2' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $Openreject=mysql_query($leadreject);
 $lead_reject=mysql_num_rows($Openreject);
-//--	LEAD OPEN
-$leadreject="SELECT `id` from `temp_patner`";
-$Openreject=mysql_query($leadreject);
-$lead_reject=mysql_num_rows($Openreject);
+
 //--	LEAD OPEN
 $leadconmpleted="SELECT `id` from `booking` where  `master_status` = '3' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead); 
+
+
  ?>
  
   
@@ -66,20 +65,7 @@ $lead_complete=mysql_num_rows($donelead);
 					</a>
 				  </div>
 				</div>
-				<div class="col-lg-3 col-xs-6">
-				  <div class="small-box bg-green">
-					<div class="inner">
-					  <h3><?php echo $lead_partner; ?></h3>
-					  <p>Partner Registration</p>
-					</div>
-					<div class="icon">
-					  <i class="ion ion-person-add"></i>
-					</div>
-					<a href="partner_lead.php" class="small-box-footer">
-					  More info <i class="fa fa-arrow-circle-right"></i>
-					</a>
-				  </div>
-				</div>
+				
 				<!---		TABS	---->
                  <!---		TABS	---->
 				 </div>
