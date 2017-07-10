@@ -4,19 +4,16 @@ include("../config.php");
 include("header.php");
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
-@$status=$_GET['s'];
-if(empty($status))
-{
-	$status=0;
-}
-@$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE'];
-@$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
- 
+
+
+
+
   if(isset($_POST['sub_del']))
 {
 	$delet_model=$_POST['delet_model'];
 	mysql_query("update `temp_patner` SET `flag`=1 where `id`='$delet_model'");
 }
+
 ?>
 
      <div class="row">
@@ -74,13 +71,15 @@ if(empty($status))
                           <td><?php echo $discount; ?></td>
                           <td><?php echo $offer; ?></td>
                          <td align="center" width="3%">
+						 
+							
 						<a class="btn default red-stripe btn-sm"  rel="tooltip" title="Delete"  data-toggle="modal" href="#delete<?php echo $id ;?>" style="background:#FF851B;"><i class="fa fa-trash" style="color:white;"></i></a>
 					<div class="modal fade" id="delete<?php echo $id ;?>" tabindex="-1" aria-hidden="true" style="padding-top:35px">
 						<div class="modal-dialog modal-md">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-									<span class="modal-title" style="font-size:14px; font-weight:bold; color:red;text-align:left">Are you sure, you want to delete this Service?</span>
+									<span class="modal-title" style="font-size:14px; font-weight:bold; color:red;text-align:left">Are you sure, you want to delete this Request?</span>
 								</div>
 								<div class="modal-footer">
 									<form method="post" name="delete<?php echo $id ;?>">
@@ -93,12 +92,41 @@ if(empty($status))
 							<!-- /.modal-content -->
 						</div>
 					<!-- /.modal-dialog -->
-					</div>
+						 </div>
+					</td>
+					<td>
+						<td>
+                                <div class="btn-group assign">
+                                  <button type="button" class="btn btn-warning assign_data"  service="<?php echo $id; ?>" data-toggle="modal" data-target="#assign_dailog" updateid="<?php echo $id; ?>"><i class="fa fa-thumbs-up"></i> Approved</button>
+                                </div>
+                           </td>
 					</td>
                           </tr>
                           <?php }?>
                         </tbody>
                       </table>
+					   <div class="modal fade" id="assign_dailog" role="dialog">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                              <form method="post">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Approved Lead  </h4>
+                                </div>
+                                <div class="modal-body"  style="min-height:100px" >
+									<div class="form-group" id="replace_data" >
+
+									
+									</div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="submit" name="assign" class="btn btn-info">Approved</button>
+                                </div>
+                              </form>
+                              </div>
+                            </div>
+                          </div>
                       
                       
                     </div>

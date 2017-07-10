@@ -51,6 +51,7 @@ if(isset($_POST['assign'])){
                 </div>
                <!------		Button 	----->
                 <div class="col-md-12" align="right">
+				<a type="button" class="btn btn-danger blue" id="lead_button" href="partner_lead.php"> <i class="fa fa-book"> </i> Partner Leads</a>
 					<?php
                     
                     $sql='select `status`,`status_name` from `status_master` ';

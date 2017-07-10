@@ -63,7 +63,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <!--<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"  style='size:auto'>-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"  style='size:auto'>
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
