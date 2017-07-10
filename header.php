@@ -71,7 +71,13 @@ else
 						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
 						<li><a href="discount.php" class="smoothScroll">DISCOUNT</a></li>
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
-						<li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
+						<li class="dropdown"><a href="" class="smoothScroll" data-toggle="dropdown">REGISTER</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="registration.php" style="line-height: 21px !important;" >Member Registration</a></li>
+								<li class="divider"></li>
+								<li><a href="partner_add.php" style="line-height: 21px !important;" >Partner Registration</a></li>
+							</ul>
+						</li>
 						<li><a href="contactus.php" class="smoothScroll">CONTACT</a></li>
 						<li><?php echo $log_path; ?></li>
 					</ul>
