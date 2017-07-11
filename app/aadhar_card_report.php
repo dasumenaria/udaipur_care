@@ -1,3 +1,4 @@
+
 <?php
 include('auth.php'); 
 include("../config.php");
@@ -11,7 +12,17 @@ if(isset($_POST['deleted'])){
 	$update_id=$_POST['update_id'];
 	mysql_query("update `register` set `reason_for_delete`='$reason_for_delete',`flag`='1' where `id`='$update_id' ");
 }  
+
+// search box
+if(isset($_POST['submit'])){
+	$search1=$_POST['search'];
+	$sql=mysql_query("select name from register where name LIKE '%search%' && flag=0");
+	while ($row=mysql_fetch_array($sql)){
+	$name=$row['name'];
+} }
  ?>
+ 
+ 
  
  <section class="content">
       <div class="row">
@@ -23,10 +34,40 @@ if(isset($_POST['deleted'])){
             </div>
 			
             <div class="box-body">
+				
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-				<tr><td align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
-                <tr>
+					
+				<tr>
+					<td align='right' colspan='8'><a class="btn btn-success" href="aadhar_card_report_excel.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a></tr>
+				<tr>
+					
+					<td></td>
+					<td><div class="row">
+							<div class="col-md-6 col-sm-12">
+							<div class="dataTables_length" id="sample_1_length"><select id="users" class="form-control  users select2me"><option>--select--</option>
+					
+								<?php $sql=mysql_query("select id,name from register where flag=0 && aadhar_card_no!='' ");
+								while ($row=mysql_fetch_array($sql))
+								{	
+									$id=$row['id'];
+									$name=$row['name'];
+									$name=decode($name,'UDRENCODE');
+								?>
+										
+										<option value="<?php echo $id;?>"><?php echo $name; ?></option>
+								<?php } ?>
+						</select></div></div></div></td>
+					
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+                </tr>
+			
+				<tr>
 					
 					<th>S/No.</th>
 					<th>Name</th>
@@ -38,25 +79,25 @@ if(isset($_POST['deleted'])){
 					<th>Action</th> 
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="data">
 				<?php
 				
-					$r1=mysql_query("select * from register where `aadhar_card_no`!=''&& `flag` order by id Desc ");							
+					$r1=mysql_query("select * from register where id='$id' order by id Desc ");							
 					$i=0;
 				
 					while($row1=mysql_fetch_array($r1))
 					{
-						$i++;
-						$id=$row1['id'];
+						$i++;						
 						$name=$row1['name'];
 						$dob=$row1['dob'];
 						$identity_proof=$row1['identity_proof'];
 						$email_id=$row1['email_id'];
 						$mobile_no=$row1['mobile_no'];
-						$aadhar_card_no1=$row1['aadhar_card_no'];
-						$aadhar_card_no=decode($aadhar_card_no1,'UDRENCODE');
+						$aadhar_card_no=$row1['aadhar_card_no'];
+						
 						$name=decode($name,'UDRENCODE');
 						$email_id=decode($email_id,'UDRENCODE');
+						
 						
 					 
 						
@@ -65,9 +106,7 @@ if(isset($_POST['deleted'])){
 							$dateOfBirth = date('d-m-Y',strtotime($dob));
 							$today = date("Y-m-d");
 							$diff = date_diff(date_create($dateOfBirth), date_create($today));
-							$age_year=$diff->format('%y');  
-							$month_year=$diff->format('%m'); 
-							$day_year=$diff->format('%d'); 
+							$age_year=$diff->format('%y'); 
 						}	
 							
 						?>
@@ -76,7 +115,7 @@ if(isset($_POST['deleted'])){
                         <td><?php echo $i;?></td>
                         <td><?php echo $name;?></td>
                         <td><?php echo $dob;?></td>
-                        <td><?php if(!empty($dob)) {  echo $age_year.' Year and '.$month_year.' Month'; }?></td>
+                        <td><?php if(!empty($dob)) {  echo $age_year; }?></td>
                          <td> <?php echo $mobile_no;?></td>
                          <td> <?php echo $aadhar_card_no;?></td>
 						  <td><img src="../identity_proof/<?php echo $identity_proof;?>" width="100px" height="100px"/> </td>
@@ -126,6 +165,21 @@ if(isset($_POST['deleted'])){
       <!-- /.row -->
     </section>
  </div>
+ <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){    
+        $("#users").die().live("change",function(){
+			
+	    var stdn_name=$("#users").val();
+		 
+	  	$.ajax({
+			url: "#?std_name="+stdn_name,
+			}).done(function(response) {
+		   $("#data").html(""+response+"");
+			});
+});
+});
+</script>
  <?php 
 include("footer.php");
   ?>
