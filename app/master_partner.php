@@ -18,8 +18,8 @@ if(isset($_POST['submit']))
 		$ids=mysql_insert_id();
 		$photo="company_logo".$ids.".jpg";
 		move_uploaded_file($_FILES["company_logo"]["tmp_name"],"../images/company_partner/".$photo);
-	
-		$r=mysql_query("insert into `master_partner` set company_logo='$photo' where id='$ids'");	
+		
+		$r=mysql_query("update `master_partner` set company_logo='$photo' where id='$ids'");	
 	
 }
 
@@ -95,7 +95,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 						<div class="form-group">
 							<label>logo</label>
 							<div class="input-group">
-								<input type="file" class="form-control" name="company_logo">
+								<input type="file" class="form-control" name="company_logo" required>
 								<div class="input-group-addon">
 									<i class="fa fa-upload"></i>
 								</div>

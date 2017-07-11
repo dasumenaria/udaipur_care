@@ -155,7 +155,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <div class="input-group">
-                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
+                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter Email Address" >
                     <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
                       </div>
@@ -172,7 +172,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Address</label>
-				 <textarea name="address" class="form-control"></textarea>
+				 <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
 			</div>
 		</div>	
 		<div class="col-md-6">
@@ -202,7 +202,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Other Details (if any):</label>
               <div class="input-group">
-              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine problem you face">
+              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine Problem You Face">
                     <div class="input-group-addon">
                           <i class="fa fa-book"></i>
                       </div>

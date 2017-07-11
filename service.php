@@ -46,7 +46,7 @@ a {
 	   </section>
  <br/><br/>
     <!-- Main content -->
-<div class="content-wrapper" style="min-height:580px">            
+<div class="content-wrapper" style="min-height:580px" class="footer_fix">            
  		 <?php
 				$count=0;
 				$query=mysql_query("select * from `master_sub_services` where `services_id`='$service_id' and flag=0 ");

@@ -20,6 +20,11 @@ $lead_reject=mysql_num_rows($Openreject);
 $leadconmpleted="SELECT `id` from `booking` where  `master_status` = '3'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead);
+//--	LEAD partner
+
+$leadpartner="SELECT * from `temp_patner` ";
+$donepartner=mysql_query($leadpartner);
+$lead_partner=mysql_num_rows($donepartner); 
  ?>
  
  
@@ -88,6 +93,20 @@ $lead_complete=mysql_num_rows($donelead);
 					  <i class="ion ion-stats-bars"></i>
 					</div>
 					<a href="lead_status.php?s=3" class="small-box-footer">
+					  More info <i class="fa fa-arrow-circle-right"></i>
+					</a>
+				  </div>
+				</div>
+				<div class="col-lg-3 col-xs-6">
+				  <div class="small-box bg-green">
+					<div class="inner">
+					  <h3><?php echo $lead_partner; ?></h3>
+					  <p>Partner Registration</p>
+					</div>
+					<div class="icon">
+					  <i class="ion ion-person-add"></i>
+					</div>
+					<a href="partner_lead.php" class="small-box-footer">
 					  More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				  </div>

@@ -17,10 +17,13 @@ $lead_transfer=mysql_num_rows($teanlead);
 $leadreject="SELECT `id` from `booking` where  `master_status` = '2' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $Openreject=mysql_query($leadreject);
 $lead_reject=mysql_num_rows($Openreject);
+
 //--	LEAD OPEN
 $leadconmpleted="SELECT `id` from `booking` where  `master_status` = '3' && `master_sub_service_id`='$SESSION_SUBSERVICE'";
 $donelead=mysql_query($leadconmpleted);
 $lead_complete=mysql_num_rows($donelead); 
+
+
  ?>
  
   
@@ -62,6 +65,7 @@ $lead_complete=mysql_num_rows($donelead);
 					</a>
 				  </div>
 				</div>
+				
 				<!---		TABS	---->
                  <!---		TABS	---->
 				 </div>
