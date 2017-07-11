@@ -20,6 +20,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Udaipur Care</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -35,6 +36,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
   <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
    <link rel="stylesheet" href="../assest/plugins/datepicker/datepicker3.css">
 	<link rel="stylesheet" href="../assest/plugins/timepicker/bootstrap-timepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/plugins/select2/select2.css"/>
  <style>
  .active_color
  {
@@ -194,7 +196,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
        </ul>
     </section>
   </aside>
-
+<script type="text/javascript" src="../assets/plugins/select2/select2.min.js"></script>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content -->
