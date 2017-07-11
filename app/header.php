@@ -189,11 +189,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
 					  }
 					  
 					  ?>   
-         
-         
-         
-         
-       </ul>
+         </ul>
     </section>
   </aside>
 <script type="text/javascript" src="../assets/plugins/select2/select2.min.js"></script>

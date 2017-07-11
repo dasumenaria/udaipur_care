@@ -58,26 +58,20 @@ else
                     	 
 						<li><a href="app/user_dashboard.php" class="smoothScroll">DASHBOARD</a></li>
                        <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li> 
- 					  <li class="dropdown">
-						<a href="" class="smoothScroll" style="display:none" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
+ 					  <!--<li class="dropdown">
+						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 							 <li><a href="services.php" style="line-height: 21px !important;" > Door To Door</a></li>
 							<li class="divider"></li>
 							<li><a href="discount.php" style="line-height: 21px !important;" >Discount</a></li>
 							</ul>
-						</li> 
+						</li> -->
 
  
 						<li><a href="services.php" class="smoothScroll">SERVICES</a></li>
 						<li><a href="discount.php" class="smoothScroll">DISCOUNT</a></li>
  						<li><a href="partners.php" class="smoothScroll">PARTNERS</a></li>
-						<li class="dropdown"><a href="" class="smoothScroll" data-toggle="dropdown">REGISTER</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="registration.php" style="line-height: 21px !important;" >Member Registration</a></li>
-								<li class="divider"></li>
-								<li><a href="partner_add.php" style="line-height: 21px !important;" >Partner Registration</a></li>
-							</ul>
-						</li>
+						<li><a href="registration.php" class="smoothScroll">REGISTER</a></li>
 						<li><a href="contactus.php" class="smoothScroll">CONTACT</a></li>
 						<li><?php echo $log_path; ?></li>
 					</ul>
