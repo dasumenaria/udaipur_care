@@ -25,7 +25,7 @@ if(isset($_POST['deleted'])){
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-				<tr><td align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
+				<tr><td align='right' colspan='8'><a class="btn btn-success" href="aadhar_card_report_excel.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
                 <tr>
 					
 					<th>S/No.</th>
@@ -41,7 +41,7 @@ if(isset($_POST['deleted'])){
                 <tbody>
 				<?php
 				
-					$r1=mysql_query("select * from register where `aadhar_card_no`!=''&& `flag` order by id Desc ");							
+					$r1=mysql_query("select * from register where `aadhar_card_no`!=''&& `flag`=0 order by id Desc ");							
 					$i=0;
 				
 					while($row1=mysql_fetch_array($r1))
@@ -53,8 +53,8 @@ if(isset($_POST['deleted'])){
 						$identity_proof=$row1['identity_proof'];
 						$email_id=$row1['email_id'];
 						$mobile_no=$row1['mobile_no'];
-						$aadhar_card_no1=$row1['aadhar_card_no'];
-						$aadhar_card_no=decode($aadhar_card_no1,'UDRENCODE');
+						$aadhar_card_no=$row1['aadhar_card_no'];
+						
 						$name=decode($name,'UDRENCODE');
 						$email_id=decode($email_id,'UDRENCODE');
 						
@@ -65,9 +65,7 @@ if(isset($_POST['deleted'])){
 							$dateOfBirth = date('d-m-Y',strtotime($dob));
 							$today = date("Y-m-d");
 							$diff = date_diff(date_create($dateOfBirth), date_create($today));
-							$age_year=$diff->format('%y');  
-							$month_year=$diff->format('%m'); 
-							$day_year=$diff->format('%d'); 
+							$age_year=$diff->format('%y'); 
 						}	
 							
 						?>
@@ -76,7 +74,7 @@ if(isset($_POST['deleted'])){
                         <td><?php echo $i;?></td>
                         <td><?php echo $name;?></td>
                         <td><?php echo $dob;?></td>
-                        <td><?php if(!empty($dob)) {  echo $age_year.' Year and '.$month_year.' Month'; }?></td>
+                        <td><?php if(!empty($dob)) {  echo $age_year; }?></td>
                          <td> <?php echo $mobile_no;?></td>
                          <td> <?php echo $aadhar_card_no;?></td>
 						  <td><img src="../identity_proof/<?php echo $identity_proof;?>" width="100px" height="100px"/> </td>
