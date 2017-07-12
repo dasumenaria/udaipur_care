@@ -1,8 +1,11 @@
 <?php
 include('auth.php'); 
 include("../config.php");
-$user=$_SESSION['category'];
-$view_u=$_GET['view_u'];
+$from = $_GET['from'];
+     $from_date=date('Y-m-d',strtotime($from));
+     
+ $to = $_GET['to'];
+     $to_date=date('Y-m-d',strtotime($to));
 $p=$_SESSION['SESSION_ID'];
 @$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
@@ -28,7 +31,7 @@ $p=$_SESSION['SESSION_ID'];
 	<tbody>
 		<?php
 			
-			$Newlead=mysql_query("SELECT * from `booking` where  flag='0' order by id ASC LIMIT 0,$view_u");
+			$Newlead=mysql_query("SELECT * from `booking` where date between '$from_date' and '$to_date' AND flag='0' order by id Desc");
 			$i=0;
 			while($lead_new=mysql_fetch_array($Newlead))
 			{

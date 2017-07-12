@@ -15,7 +15,21 @@ include("header.php");
 			<!------		Button 	----->
 			<div class="row">
 			<div class="col-md-12">
-			<div class="col-md-6 col-sm-12"><h3>Records</h3>
+			
+			<div class="col-md-6" ><h3>Search By Date</h3>
+                                <div class="form-group col-md-8 ">
+									<div class="input-group date-picker input-daterange" data-date-format="mm/dd/yyyy">
+										<input type="text" class="form-control datepicker" placeholder="From Date" name="from" id="from">
+										<span class="input-group-addon">
+										to </span>
+										<input type="text" class="form-control datepicker"  placeholder="To Date" name="to" id="to">
+										
+									</div>
+									
+								</div>
+							<div class="col-md-2"><button class="btn btn-red" id="go">GO</button></div>
+							</div>
+			<div class="col-md-3 "><h3>Records</h3>
 							<div class="dataTables_length" id="sample_1_length">
 							<select name="sample_1_length" aria-controls="sample_1" style="width:161px "class="form-control select2me find_records" id="find_records">
                                 <option value="10">Select</option>
@@ -31,7 +45,7 @@ include("header.php");
                                 <option value="2000">2000</option>
                                 <option value="3000">3000</option>
 							</select> </div></div>
-					<div class="col-md-6" >
+					<div class="col-md-3" >
 					<h3>Service Category</h3>
 					<div class="input-group">
 						<select name="admin_book_service" class="form-control select2me" id="suv_category">
@@ -61,7 +75,25 @@ include("header.php");
 	<!-- /.row -->
 </div>
 <script src="../assest/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script>
+ 
+$(document).ready(function(){
+	
+ $("#go").click(function(){
+	 
+var from = $("#from").val();
+		var to = $("#to").val();
+		
+		$.ajax({
+			url: "date_vise_vendor_report.php?from="+from+"&to="+to+"",
+				}).done(function(response) {
+		   $("#data").html(""+response+"");
+			});
+		});
 
+});
+
+</script>
 <script>
 $(document).ready(function(){    
         $(".find_records").on("change",function(){
