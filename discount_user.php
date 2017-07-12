@@ -141,35 +141,51 @@ include('config.php');
 		<div id="service">
 			
 <section id="labels">
-  <div class="container">
-	<div class="row">
-		<div class="col-sm-12 col-md-12">
-			
-			<div class="col-md-8 col-sm-8">
-				<div class="row" style="height:20%">
+  <div class="container" >
+	<div class="row" >
+		<div class="col-sm-12 col-md-12" >
+		
+			<div class="col-sm-8 col-md-8" style="border:1px">
+			  <div style=" opacity: 0.6; filter: alpha(opacity=60);">
+				<div class="row" style="height:18%">
+				<div class="col-md-12 col-sm-12" >
 					<div class="col-md-4 col-sm-4">
-						<h3>Company Logo</h3>
+						<img src="images/logo/6.png" style="height:80%; width:80%">
 					</div>
 					<div class="col-md-8 col-sm-8">
-						<h3>Company Name</h3>
+						<h1>
+							Php Poets It Solution pvt.ltd.
+						</h1>
 					</div>
+					
+				</div></div>
+			 
+			 
+				<div class="row" style="height:20%">
+					<div class="col-md-12 col-sm-12 " >
+						<h5><b>Service Description:</b>
+							<p> We Provide all services here for development and repairing 
+							</p>
+						</h5>
+					</div>
+					
 				</div>
 				<div class="row" style="height:20%">
-					<div class="col-md-4 col-sm-4">
-						<h5>Service Description:</h5>
+					<div class="col-md-12 col-sm-12 " >
+						<h5><b>Service Description:</b>
+							<p> We Provide all services here for development and repairing 
+							</p>
+						</h5>
 					</div>
 					
 				</div>
-				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<h4>Why We Choose Udaipur Care Service ?</h4>
-					</div>
-					
-				</div>
+			  </div>
 			</div>
-			<div class="col-sm-4 col-md-4">
-			  <div class="dl">
-				<div class="brand">
+			
+			
+			<div class="col-sm-4 col-md-4" style="border:1px">
+			  <div class="dl" style="box-shadow: 5px 5px 5px #CFCDCD;" >
+				<div class="brand" >
 					<h2>
 						mango
 					</h2>
