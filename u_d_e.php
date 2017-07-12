@@ -38,7 +38,6 @@ include('config.php');
 	position:absolute;
 	z-index:1 !important;
 	min-width:100%;
-	min-height:100%;
 }
 .well {
     opacity:0.90
@@ -195,126 +194,40 @@ section {
      <p class="title" style="color:black;font-weight:bold;margin-top:10px;" >Our Services</p>
 	 	<h4>Choose from our wide range of services</h4>
 		</br>
-	  <div class="row">
+	 
 	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<div class="container-fluid">
-	<div class="row">
-	<div class="col-md-3 col-sm-4">
+
+	
+	<?php
+				$count=0;
+				$query=mysql_query("select * from `master_services` where flag=0 ");
+				while($fetch=mysql_fetch_array($query))
+				{
+					$count++;		
+					$id=$fetch['id'];
+					$service_name=$fetch['service_name'];
+					$icon=$fetch['icon'];
+					
+				if($count==1 ){ echo '<div class="row form-group">'; }
+				
+				?>
+	<div class="col-md-3">
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-medkit" style="color:#5a454599;"> </i></center>
+            <center><i class="<?php echo $icon; ?>" style="color:#5a454599;"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title" >
-           <center> <h4>Medical
+           <center> <h4><?php echo $service_name; ?>
              </h4></center>
           </div>
           
         </a>
       </div>
 	</div>
-	<div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-             <center><i class="fa fa-cutlery" style="color:#5a454599;"> </i></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4> Food and Diet
-            <div class="pull-right badge" id="WrInformation"></div></h4>
-          </div>
-         
-        </a>
-      </div>
-	</div>
-	<div class="col-md-3 col-sm-4">
-	<div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-home" style="color:#5a454599;"></i></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>Repair and Maintenance
-             
-          </div>
-        </a>
-      </div>
-      </div>
-	  <div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-             <center><img src="images/service/wash.png" style="color:#5a454599;height:70px"></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>Laundry
-            <div class="pull-right badge" id="WrGridSystem"></div></h4>
-          </div>
-          
-        </a>
-      </div>
-	</div>
-	
-    <div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-           <center><img src="images/service/garden.png" style="color:#000;height:70px"></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>Gardening 
-            <div class="pull-right badge" id="WrControls"></div></h4>
-          </div>
-        </a>
-      </div>
-</div>
+	 <?php  if($count==4){ echo '</div>';  $count=0;}
+		 } ?>
 
-	
-	
-	<div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-            <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-           <center><i class="fa fa-cut" style="color:#5a454599;"> </i></center> 
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>Hair and Salon 
-            <div class="pull-right badge" id="WrNavigation"></div></h4>
-          </div>
-          
-        </a>
-      </div>
-	</div>
-	<div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-         <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-briefcase" style="color:#5a454599;"></i></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>
-			Shoe Repair and Washing
-            <div class="pull-right badge" id="WrThemesIcons"></div></h4>
-          </div>
-        </a>
-      </div>
-	</div>
-	<div class="col-md-3 col-sm-4">
-      <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class = "fa fa-motorcycle "style="color:#5a454599;"></i></center>
-          </div>
-          <div class="wrimagecard-topimage_title">
-            <h4>Vehicle Services and Maintenance
-            <div class="pull-right badge" id="WrControls"></div></h4>
-          </div>
-        </a>
-      </div>
-</div>
- </div>
-</div>
-	</div>
 	
 	</div>
 	</div>

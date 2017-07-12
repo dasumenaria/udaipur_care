@@ -36,7 +36,7 @@ if(isset($_POST['assign'])){
 	$assign_to_vendor=$_POST['assign_to_vendor'];
 	$update_id=$_POST['update_id'];
  
-	mysql_query("update `booking` set `assign_to_vendor`='$assign_to_vendor' where `id`='$update_id' ");
+	mysql_query("update `booking` set `assign_to_vendor`='$assign_to_vendor',`master_status`='4' where `id`='$update_id' ");
 
 	
 }
@@ -52,6 +52,7 @@ if(isset($_POST['assign'])){
                <!------		Button 	----->
                 <div class="col-md-12" align="right">
 				<a type="button" class="btn btn-danger blue" id="lead_button" href="partner_lead.php"> <i class="fa fa-book"> </i> Partner Leads</a>
+				
 					<?php
                     
                     $sql='select `status`,`status_name` from `status_master` ';
@@ -211,7 +212,11 @@ if(isset($_POST['assign'])){
                                   </div>
                               
                           </td>
-						  <?php if($SESSION_USERTYPE==1 && @$status !=3) { ?>
+						  <?php if($SESSION_USERTYPE==1 && @$status ==4) { ?>
+						  <td>
+								 <td><?php echo $assign_to_vendor; ?></td>
+						  </td><?php } ?>
+						  <?php if($SESSION_USERTYPE==1 && @$status !=3 && @$status !=4) { ?>
 					 
 					
 						   <td>
