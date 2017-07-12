@@ -9,27 +9,26 @@ $image_path="";
 if(isset($_POST['submit']))
 { 
 	include('app/function.php');
-	$name=$_POST['name'];
+	 $name=$_POST['name'];
+	
 	$mobile_no=$_POST['mobile_no'];
-        $mobile_no=encode($mobile_no,'UDRENCODE');
+	
+     $mobile_no=encode($mobile_no,'UDRENCODE');
+	
  	$check=mysql_query("select `id` from `register` where `mobile_no`='$mobile_no'");
 	$count=mysql_num_rows($check);
 	if($count==0)
 	{
-		$dob1=$_POST['dob'];
-		if(!empty($dob1)) { $dob=date('Y-m-d', strtotime($dob1));}
-		else { $dob='0000-00-00'; }
- 		$email_id=$_POST['email_id'];
-		$gender=$_POST['gender'];
-		$address=$_POST['address'];
-		$other_info=$_POST['other_info'];
-		$aadhar_card_no=$_POST['aadhar_card_no'];
-		
-		$to=$_POST['email_id'];
-		$date=date('Y-m-d');
-		$time=date('h:i:s A');
-		
-		$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	$dob=$_POST['dob'];
+	$email_id=$_POST['email_id'];
+	$gender=$_POST['gender'];
+	$address=$_POST['address'];
+	$other_info=$_POST['other_info'];
+	$aadhar_card_no=$_POST['aadhar_card_no'];
+	$to=$_POST['email_id'];
+	$date=date('Y-m-d');
+	$time=date('h:i:s A');
+	$chars = "0123456789";//ABCDEFGHIJKLMNOPQRSTUVWXYZ
 		$string = '';
 		for ($i = 0; $i < 6; $i++) {
 			$string .= $chars[rand(0, strlen($chars) - 1)];
@@ -39,24 +38,22 @@ if(isset($_POST['submit']))
 		for ($i = 0; $i < 8; $i++) {
 			$udcare .= $charss[rand(0, strlen($charss) - 1)];
 		}   
-		 
-		 $name=encode($name,'UDRENCODE');
-		 $email_id=encode($email_id,'UDRENCODE');
-		  
-		 $gender=encode($gender,'UDRENCODE');
-		 $address=encode($address,'UDRENCODE');
-		 $other_info=encode($other_info,'UDRENCODE');
-		  
- 		$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'";
-		 
-		$r=mysql_query($sql);
-		
-		$ids=mysql_insert_id();
-		$md4_password=md5($string);
-		$mobile_no=decode($mobile_no,'UDRENCODE');
-		$email_id=decode($email_id,'UDRENCODE');
- 
-		mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id',  `register_id`='$ids' , `date`='$date', `time`='$time' ");
+	
+	$name=encode($name,'UDRENCODE');
+	$email_id=encode($email_id,'UDRENCODE');echo "</br>";
+	$aadhar_card_no=encode($aadhar_card_no,'UDRENCODE');echo "</br>"; 
+	$gender=encode($gender,'UDRENCODE');echo "</br>";
+	$address=encode($address,'UDRENCODE');echo "</br>";
+	$other_info=encode($other_info,'UDRENCODE');echo "</br>";
+			 
+	$sql="insert into `register` set  `name`='$name',`email_id`='$email_id',`dob`='$dob',`mobile_no`='$mobile_no',`gender`='$gender',`address`='$address',`other_info`='$other_info', `date`='$date', `udcare_no`='$udcare', `unique_code`='$string', `time`='$time',`aadhar_card_no`='$aadhar_card_no'"; 
+	$r=mysql_query($sql);
+	$ids=mysql_insert_id();
+	$md4_password=md5($string);
+	$mobile_no=decode($mobile_no,'UDRENCODE');
+	$email_id=decode($email_id,'UDRENCODE');
+	
+	mysql_query("insert into `login` set `username`='$mobile_no' , `password`='$md4_password' , `email_id`='$email_id',  `register_id`='$ids' , `date`='$date', `time`='$time' ");
  
 		
 		$photo="identity_proof".$ids.".jpg";
@@ -155,7 +152,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 				<div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <div class="input-group">
-                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter Email Address" >
+                  	<input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
                     <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
                       </div>
@@ -172,7 +169,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Address</label>
-				 <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
+				 <textarea name="address" class="form-control"></textarea>
 			</div>
 		</div>	
 		<div class="col-md-6">
@@ -202,7 +199,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Other Details (if any):</label>
               <div class="input-group">
-              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine Problem You Face">
+              		<input name="other_info" type="text" class="form-control" id="name" placeholder="Daily Routine problem you face">
                     <div class="input-group-addon">
                           <i class="fa fa-book"></i>
                       </div>

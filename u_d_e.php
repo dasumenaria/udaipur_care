@@ -124,14 +124,8 @@ section {
     text-align: center;
     margin-bottom: 30px;
 }
-
-/*-------------------------------*/
-/*    Carousel Fade Transition   */
-/*-------------------------------*/
-
-#fade-quote-carousel.carousel {
-  padding-bottom: 60px;
-}
+ ---------------------------*/
+ 
 #fade-quote-carousel.carousel .carousel-inner .item {
   opacity: 0;
   -webkit-transition-property: opacity;
@@ -143,21 +137,17 @@ section {
   -webkit-transition-property: opacity;
       -ms-transition-property: opacity;
           transition-property: opacity;
-}
-#fade-quote-carousel.carousel .carousel-indicators {
-  bottom: 10px;
-}
+} 
 #fade-quote-carousel.carousel .carousel-indicators > li {
   background-color: #e84a64;
   border: none;
 }
 #fade-quote-carousel blockquote {
     text-align: center;
-    border: none;
+ 
 }
 #fade-quote-carousel .profile-circle {
-    width: 100px;
-    height: 100px;
+   
     margin: 0 auto;
     border-radius: 100px;
 }
@@ -213,7 +203,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-medkit" style="color:#000"> </i></center>
+            <center><i class="fa fa-medkit" style="color:#5a454599;"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title" >
            <center> <h4>Medical
@@ -227,7 +217,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-             <center><i class="fa fa-cutlery" style="color:#000"> </i></center>
+             <center><i class="fa fa-cutlery" style="color:#5a454599;"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4> Food and Diet
@@ -241,7 +231,7 @@ section {
 	<div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-home" style="color:#000"></i></center>
+            <center><i class="fa fa-home" style="color:#5a454599;"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Repair and Maintenance
@@ -254,7 +244,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-             <center><img src="images/service/	wash.png" style="color:#000;height:70px"></center>
+             <center><img src="images/service/wash.png" style="color:#5a454599;height:70px"></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Laundry
@@ -285,7 +275,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
             <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-           <center><i class="fa fa-cut" style="color:#000"> </i></center> 
+           <center><i class="fa fa-cut" style="color:#5a454599;"> </i></center> 
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Hair and Salon 
@@ -299,7 +289,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class="fa fa-briefcase" style="color:#000"></i></center>
+            <center><i class="fa fa-briefcase" style="color:#5a454599;"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>
@@ -313,7 +303,7 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
-            <center><i class = "fa fa-motorcycle " style="color:#000"></i></center>
+            <center><i class = "fa fa-motorcycle "style="color:#5a454599;"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Vehicle Services and Maintenance
@@ -354,11 +344,11 @@ section {
       <p><strong>20%</strong></br>Gardening</p>
     </li>
     <li style="text-align: left;">
-      <p><i class="fa fa-cut fa-3x"></i></p>
-      <p><strong>40%</strong></br>Hair and Salon</p>
-    </li>
-    <li style="text-align: left;">
-      <p><i class="fa fa-cutlery fa-3x"></i></p>
+		  <p><i class="fa fa-cut fa-3x"></i></p>
+		  <p><strong>40%</strong></br>Hair and Salon</p>
+		</li>
+		<li style="text-align: left;">
+		  <p><i class="fa fa-cutlery fa-3x"></i></p>
       <p><strong>10%</strong></br>Food and Diet</p>
     </li>
   </ul>
@@ -369,9 +359,11 @@ section {
 				</div>
 			</div>
 		</div> 
-
-<section id="carousel" style="background:green;">    				
-	 
+<div class="col-md-12 col-sm-12" style="margin-top:10px;">
+						<center><h2 class="wow bounce"> <strong>Testimonial</strong></h2></center>
+						</div>
+<section id="carousel" style=" height: 400px !important;">    				
+ 
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
                 <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
@@ -385,6 +377,7 @@ section {
 				    	<blockquote>
 				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
 				    	</blockquote>	
+						<center><h5 class="wow bounce"> <strong>Testimonial: lakshit</strong></h5></center>
 				    </div>
 				    
 				    <div class="active item">
@@ -392,6 +385,7 @@ section {
 				    	<blockquote>
 				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
 				    	</blockquote>
+						<center><h5 class="wow bounce"> <strong>Testimonial: dsu menaria</strong></h5></center>
 				    </div>
                     
                      
@@ -401,13 +395,16 @@ section {
 		</div>
 	 
 </section>
-</br>
-		<!-- end service -->
-<div id="foot" style="margin-top:280px;">
+ 
+		</div>
+ 
+
+ 		<!-- end service -->
+
 <?php
 include('footer.php');
 ?>
-</div>
+
 	<script>
     $('#myCarousel').carousel({
         pause: 'none'

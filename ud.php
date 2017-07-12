@@ -73,7 +73,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
 }
 </style>		
-		<div class="container">
+	 
 	<div class="row">
         <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
