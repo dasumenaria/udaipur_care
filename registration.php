@@ -190,7 +190,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Aadhar Card No.</label>
               <div class="input-group">
-              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="16" minlength="16" >
+              		<input name="aadhar_card_no" type="text" class="form-control" placeholder="Enter Your Aadhar Card No" maxlength="12" minlength="12" >
                     <div class="input-group-addon">
                           <i class="fa fa-barcode"></i>
                       </div>

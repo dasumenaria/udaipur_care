@@ -80,7 +80,7 @@ $(document).ready(function(){
 	    var view_u=$(".find_records option:selected").val();
 		
 	  	$.ajax({
-			url: "ajax_view_vendor.php?view_u="+view_u,
+			url: "ajax_view_aadhar.php?view_u="+view_u,
 			}).done(function(response) {
 		   $("#data").html(""+response+"");
 			});
