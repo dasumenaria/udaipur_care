@@ -2,6 +2,7 @@
 include('auth.php'); 
 include("../config.php");
 include("header.php");
+include('function.php');
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 @$status=$_GET['s'];
@@ -104,21 +105,31 @@ if(isset($_POST['assign'])){
 							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `assign_to_vendor` = '$SESSION_SUBSERVICE'";
 						}
 						$Newlead=mysql_query($leadNew);
+						
+						
 						while($lead_new=mysql_fetch_array($Newlead)){
 						$id=$lead_new['id'];	
 						$date=$lead_new['date'];
 						if($date=='0000-00-00' || $date=='1970-01-01'){ $dateforview='00-00-0000';}	
 						else { $dateforview=date('d-m-Y',strtotime($date));}
 						//echo $dateforview;
+						$udcare_no=$lead_new['udcare_no'];
+							$udcare_no=decode($udcare_no,'UDRENCODE');
+						$mobile_no=$lead_new['mobile_no']; 
+						//$mobile_no=decode($mobile_no,'UDRENCODE');
+						$assign_to_vendor=$lead_new['assign_to_vendor']; 
+						$vendor_name=mysql_query("select `full_name` from vendor where `id`='$assign_to_vendor'");
+						$fetch_name=mysql_fetch_array($vendor_name);
+						$full_name=$fetch_name['full_name'];
 						$sub_service=$lead_new['master_sub_service_id'];
 						$sql=mysql_query("select `sub_services_name` from `master_sub_services` where `id`='$sub_service'");
 						$ftc=mysql_fetch_array($sql);
 						
 						?>
                         <tr>
-                          <td><?php echo $lead_new['udcare_no']; ?></td>
+                          <td><?php echo  $udcare_no; ?></td>
 						  <td><?php echo $lead_new['name']; ?></td>
- 						  <td><?php echo $lead_new['mobile_no']; ?></td>
+ 						  <td><?php echo $mobile_no; ?></td>
 						  <td><?php echo $ftc['sub_services_name']; ?></td>
                           <td><?php echo $dateforview; ?></td>
                           <td><?php echo $lead_new['time']; ?></td>
@@ -214,7 +225,7 @@ if(isset($_POST['assign'])){
                           </td>
 						  <?php if($SESSION_USERTYPE==1 && @$status ==4) { ?>
 						  <td>
-								 <td><?php echo $assign_to_vendor; ?></td>
+								 <?php echo $full_name; ?>
 						  </td><?php } ?>
 						  <?php if($SESSION_USERTYPE==1 && @$status !=3 && @$status !=4) { ?>
 					 
