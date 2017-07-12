@@ -46,6 +46,12 @@ include('config.php');
         margin-bottom: 20px;
     }
 }
+
+
+
+
+
+
 </style>		
 		<div id="service">
 	 <div class="container">
