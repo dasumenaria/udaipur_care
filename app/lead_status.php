@@ -113,8 +113,6 @@ if(isset($_POST['assign'])){
 						if($date=='0000-00-00' || $date=='1970-01-01'){ $dateforview='00-00-0000';}	
 						else { $dateforview=date('d-m-Y',strtotime($date));}
 						//echo $dateforview;
-						$udcare_no=$lead_new['udcare_no'];
-							$udcare_no=decode($udcare_no,'UDRENCODE');
 						$mobile_no=$lead_new['mobile_no']; 
 						//$mobile_no=decode($mobile_no,'UDRENCODE');
 						$assign_to_vendor=$lead_new['assign_to_vendor']; 
@@ -127,7 +125,7 @@ if(isset($_POST['assign'])){
 						
 						?>
                         <tr>
-                          <td><?php echo  $udcare_no; ?></td>
+                          <td><?php echo  $lead_new['udcare_no'];?></td>
 						  <td><?php echo $lead_new['name']; ?></td>
  						  <td><?php echo $mobile_no; ?></td>
 						  <td><?php echo $ftc['sub_services_name']; ?></td>
