@@ -96,10 +96,10 @@ include('config.php');
                 </div>
             </div>
         </div>
-
-		</br></br></br>
-		
-		<div class="col-md-4">
+	</div>	
+	</br></br></br>
+	 <div class="row">
+         <div class="col-md-4">
             <div class="serviceBox">
                 <div class="service-icon">
                     <i class="fa fa-globe"></i>
@@ -138,7 +138,7 @@ include('config.php');
                 </div>
             </div>
         </div>
-    </div>
+	</div>
 </div>
             </div>
         </div>
