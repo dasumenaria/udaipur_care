@@ -137,101 +137,46 @@ include('config.php');
     
  </style>
  
-		<!-- start service -->
-		<div id="service">
-			
-<section id="labels">
-  <div class="container" >
-	<div class="row" >
-		<div class="col-sm-12 col-md-12" >
-		
-			<div class="col-sm-8 col-md-8" style="border:1px">
-			  <div style=" opacity: 0.6; filter: alpha(opacity=60);">
-				<div class="row" style="height:18%">
-				<div class="col-md-12 col-sm-12" >
-					<div class="col-md-4 col-sm-4">
-						<img src="images/logo/6.png" style="height:80%; width:80%">
-					</div>
-					<div class="col-md-8 col-sm-8">
-						<h1>
-							Php Poets It Solution pvt.ltd.
-						</h1>
-					</div>
-					
-				</div></div>
-			 
-			 
-				<div class="row" style="height:20%">
-					<div class="col-md-12 col-sm-12 " >
-						<h5><b>Service Description:</b>
-							<p> We Provide all services here for development and repairing 
-							</p>
-						</h5>
-					</div>
-					
-				</div>
-				<div class="row" style="height:20%">
-					<div class="col-md-12 col-sm-12 " >
-						<h5><b>Service Description:</b>
-							<p> We Provide all services here for development and repairing 
-							</p>
-						</h5>
-					</div>
-					
-				</div>
-			  </div>
-			</div>
-			
-			
-			<div class="col-sm-4 col-md-4" style="border:1px">
-			  <div class="dl" style="box-shadow: 5px 5px 5px #CFCDCD;" >
-				<div class="brand" >
-					<h2>
-						mango
-					</h2>
-				</div>
-				<div class="discount alizarin">
-					30%
-					<div class="type">
-						off
-					</div>
-				</div>
-				<div class="descr">
-					<strong>
-						Mei mucius gloriatur reprimique mollis*. 
-					</strong> 
-					Ad sonet perfecto antiopam mei, denique molestie ne has. 
-				</div>
-				<div class="ends">
-					<small>
-						* Conditions and restrictions apply.
-					</small>
-				</div>
-				<div class="coupon midnight-blue">
-					<a data-toggle="collapse" href="#code-1" class="open-code">Get a code</a>
-					<div id="code-1" class="collapse code">
-						LV5MAY14
-					</div>
-				</div>
-			  </div>
-			</div>
-			
-		</div>
-		</div>
-       
+<section style="background-image:url(veliacleaningservices.com/wp-content/uploads/2016/04/Office-cleanning.jpg);">
+<div class="row">
+	<div class="col-md-8">
+	d
 	</div>
-  </div>
-</section>
-
+	 <div class="col-md-3">
+          <div class="dl">
+            <div class="brand">
+                <h2>
+                    mango
+                </h2>
             </div>
+            <div class="discount alizarin">
+                30%
+                <div class="type">
+                    off
+                </div>
+            </div>
+            <div class="descr">
+                <strong>
+                    Mei mucius gloriatur reprimique mollis*. 
+                </strong> 
+                Ad sonet perfecto antiopam mei, denique molestie ne has. 
+            </div>
+            <div class="ends">
+                <small>
+                    * Conditions and restrictions apply.
+                </small>
+            </div>
+            <div class="coupon midnight-blue">
+                <a data-toggle="collapse" href="#code-1" class="open-code">Get a code</a>
+                <div id="code-1" class="collapse code">
+                    LV5MAY14
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
-
 </div>
-
-		</div>
-		</br>
-		<!-- end service -->
+</section>
+	 
 
 <?php
 include('footer.php');
