@@ -14,8 +14,8 @@ $session_id=$_SESSION['SESSION_ID'];
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-info">
-			<div class="box-header with-border">
-				<h3 class="box-title">Member Reg report</h3>
+			<div class="box-header with-border" style="background-color:#3c8dbc; color:#FFF">
+				<h3 class="box-title">Member report</h3>
 			</div>
 			<!------		Button 	----->
 			
@@ -55,7 +55,7 @@ $session_id=$_SESSION['SESSION_ID'];
 								</select> </div>
 							</div>
 						<div class="col-md-3" >
-							<h3>Member Reg report</h3>
+							<h3>Member</h3>
 							<select class="form-control select2me" id="suv_category">
 								<option value="">Select...</option>
 								<?php
