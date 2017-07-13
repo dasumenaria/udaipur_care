@@ -12,34 +12,58 @@ if(empty($status))
 	$status=0;
 }
 @$SESSION_SUBSERVICE=$_SESSION['SESSION_SUBSERVICE']; 
+@$SESSION_VENDORID=$_SESSION['SESSION_VENDORID']; 
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
 
+if($SESSION_USERTYPE==1){
+ $status=$status;	
+}
+else
+{ $lead_status=$status;
+}
 if(isset($_POST['completed'])){
 	$reason_for_complete=$_POST['reason_for_complete'];
 	$update_id=$_POST['update_id'];
-	mysql_query("update `booking` set `reason_for_complete`='$reason_for_complete',`master_status`='3' where `id`='$update_id' ");
+	
+	if(@$SESSION_USERTYPE==1)
+	{
+		mysql_query("update `booking` set `reason_for_complete`='$reason_for_complete',`master_status`='3' where `id`='$update_id' ");
+	}
+	else
+	{
+		mysql_query("update `booking` set `reason_for_complete`='$reason_for_complete',`vendor_master_status`='3',`master_status`='3' where `id`='$update_id' ");
+	}
 	
 }
 if(isset($_POST['rejected'])){
 	$reason_for_rejection=$_POST['reason_for_rejection'];
 	$update_id=$_POST['update_id'];
-	mysql_query("update `booking` set `reason_for_rejection`='$reason_for_rejection',`master_status`='2' where `id`='$update_id' ");
-	
+	if(@$SESSION_USERTYPE==1)
+	{
+		mysql_query("update `booking` set `reason_for_rejection`='$reason_for_rejection',`master_status`='2' where `id`='$update_id' ");
+	}
+	else
+	{
+		mysql_query("update `booking` set `reason_for_rejection`='$reason_for_rejection',`vendor_master_status`='2',`master_status`='2' where `id`='$update_id' ");
+	}	
 }
 if(isset($_POST['transfered'])){
 	$reason_for_transfer=$_POST['reason_for_transfer'];
 	$update_id=$_POST['update_id'];
-	mysql_query("update `booking` set `reason_for_transfer`='$reason_for_transfer',`master_status`='1' where `id`='$update_id' ");
-
-	
+	if(@$SESSION_USERTYPE==1)
+	{
+		mysql_query("update `booking` set `reason_for_transfer`='$reason_for_transfer',`master_status`='1' where `id`='$update_id' ");
+	}
+	else
+	{
+		mysql_query("update `booking` set `reason_for_transfer`='$reason_for_transfer',`vendor_master_status`='1',`master_status`='1' where `id`='$update_id' ");
+	}
 }
 if(isset($_POST['assign'])){
 	$assign_to_vendor=$_POST['assign_to_vendor'];
 	$update_id=$_POST['update_id'];
  
 	mysql_query("update `booking` set `assign_to_vendor`='$assign_to_vendor',`master_status`='4' where `id`='$update_id' ");
-
-	
 }
  
 ?>
@@ -52,8 +76,8 @@ if(isset($_POST['assign'])){
                 </div>
                <!------		Button 	----->
                 <div class="col-md-12" align="right">
-				 <?php if(@$status ==1){ ?>
-				<a type="button" class="btn btn-danger blue" id="lead_button" href="partner_lead.php"> <i class="fa fa-book"> </i> Partner Leads</a>
+				 <?php if(@$SESSION_USERTYPE==1){ ?>
+						<a class="btn btn-warning" id="lead_button" href="partner_lead.php"> <i class="fa fa-book"> </i> Partner Leads</a>
 				 <?php } ?>
 					<?php
                     
@@ -71,28 +95,37 @@ if(isset($_POST['assign'])){
                             
                             $activeclass='btn btn-primary margin';		
                         }
-                        echo '	
-                                <a class="'.$activeclass.'" href="lead_status.php?s='.$fetch_data['status'].'"><i class="fa fa-book"> </i> '.$fetch_data['status_name'].'</a>
-                            '; 
-                    } ?>
+				if(@$fetch_data['status'] !=4)	{
+				echo '<a class="'.$activeclass.'" href="lead_status.php?s='.$fetch_data['status'].'"><i class="fa fa-book"> </i> '.$fetch_data['status_name'].'</a>'; 
+				} 
+				else if(@$fetch_data['status'] == 4 && @$SESSION_USERTYPE==1)
+				{echo '<a class="'.$activeclass.'" href="lead_status.php?s='.$fetch_data['status'].'"><i class="fa fa-book"> </i> '.$fetch_data['status_name'].'</a>';}
+			
+			}
+			?>
                 </div>
                 <div class="box col-md-12">
                      
                     <!-- /.box-header -->
                     <div class="box-body">
-                      <table id="example1" class="table table-bordered table-striped">
+                      <table id="example1"  class="table table-bordered table-striped">
                         <thead>
                         <tr>
 						  <th>UdCare No</th>
                           <th>Name</th>
-                           <th>Mobile No</th>
+                          <th>Mobile No</th>
  						  <th>Service Type</th>
                           <th>Pickup date</th>
                           <th>Pickup Time</th>
-						  <?php if(@$status !=3){ ?>
+						  <?php if($status == 0){ ?>
                           <th>Action</th>
-						  <?php } if($SESSION_USERTYPE==1 && @$status !=3)	  {?>
-						<th>Assign</th>
+						  <?php }
+						  else if($SESSION_USERTYPE==1 && @$status == 4)   
+						  {
+							echo "<th>Status</th>";  
+						  }
+						  if($SESSION_USERTYPE == 1 && @$status != 3 ){?>
+						  <th>Assign</th>
 						<?php } ?>
                         </tr>
                         </thead>
@@ -103,19 +136,16 @@ if(isset($_POST['assign'])){
 						}
 						else
 						{
-							 $leadNew="SELECT * from `booking` where `master_status` = '$status' && `assign_to_vendor` = '$SESSION_SUBSERVICE'";
-						}
+							 $leadNew="SELECT * from `booking` where `vendor_master_status` = '$status' && `assign_to_vendor` = '$SESSION_VENDORID'";
+ 						}
 						$Newlead=mysql_query($leadNew);
-						
 						
 						while($lead_new=mysql_fetch_array($Newlead)){
 						$id=$lead_new['id'];	
 						$date=$lead_new['date'];
 						if($date=='0000-00-00' || $date=='1970-01-01'){ $dateforview='00-00-0000';}	
-						else { $dateforview=date('d-m-Y',strtotime($date));}
-						//echo $dateforview;
-						$mobile_no=$lead_new['mobile_no']; 
-						//$mobile_no=decode($mobile_no,'UDRENCODE');
+						else { $dateforview=date('d-m-Y',strtotime($date));} 
+						$mobile_no=$lead_new['mobile_no'];  
 						$assign_to_vendor=$lead_new['assign_to_vendor']; 
 						$vendor_name=mysql_query("select `full_name` from vendor where `id`='$assign_to_vendor'");
 						$fetch_name=mysql_fetch_array($vendor_name);
@@ -123,20 +153,33 @@ if(isset($_POST['assign'])){
 						$sub_service=$lead_new['master_sub_service_id'];
 						$sql=mysql_query("select `sub_services_name` from `master_sub_services` where `id`='$sub_service'");
 						$ftc=mysql_fetch_array($sql);
+						$vendor_master_status=$lead_new['vendor_master_status'];
+						
+						$sql1="select `status`,`status_name` from `status_master` where `status` = '".$vendor_master_status." '";
+						
+						$excute_sql1=mysql_query($sql1);
+						$fetch_data1=mysql_fetch_array($excute_sql1);						
+                        $status_name=$fetch_data1['status_name'];
+						  
 						
 						?>
                         <tr>
-                          <td><?php echo  $lead_new['udcare_no'];?></td>
-						  <td><?php echo $lead_new['name']; ?></td>
+                          <td><?php echo $lead_new['udcare_no'];?></td>
+						  <td><?php echo ucwords($lead_new['name']); ?></td>
  						  <td><?php echo $mobile_no; ?></td>
-						  <td><?php echo $ftc['sub_services_name']; ?></td>
+						  <td><?php echo ucwords($ftc['sub_services_name']); ?></td>
                           <td><?php echo $dateforview; ?></td>
                           <td><?php echo $lead_new['time']; ?></td>
+                          <?php if($SESSION_USERTYPE==1 && @$status == 4) { ?>
+						  <td><strong><?php echo ucwords($status_name); ?></strong></td>
+						  <?php } ?>
+                          <?php if($status == 0){ ?>
                           <td>
-                          	 <?php if(@$status !=3){ ?>
+                          
+                          	 
                                 <div class="btn-group action">
-                                  <button type="button" class="btn btn-success">Action</button>
-                                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                   
+                                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> Action
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                   </button>
@@ -148,7 +191,7 @@ if(isset($_POST['assign'])){
                                     <li><a data-toggle="modal" data-target="#complete<?php echo $lead_new['udcare_no']; ?>">Complete</a></li>
                                   </ul>
                                 </div>
-							 <?php } ?>
+							 
                                 <div class="modal fade complete" id="complete<?php echo $lead_new['udcare_no']; ?>" role="dialog">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
@@ -222,13 +265,11 @@ if(isset($_POST['assign'])){
                                   </div>
                               
                           </td>
-						  <?php if($SESSION_USERTYPE==1 && @$status ==4) { ?>
-						  <td>
-								 <?php echo $full_name; ?>
-						  </td><?php } ?>
-						  <?php if($SESSION_USERTYPE==1 && @$status !=3 && @$status !=4) { ?>
-					 
-					
+                          <?php } ?>
+						  <?php if($SESSION_USERTYPE==1 && @$status == 4) { ?>
+						  <td><strong><?php echo ucwords($full_name); ?></strong></td>
+						  <?php } ?>
+						  <?php if($SESSION_USERTYPE==1 && (@$status !=3 && @$status !=4)) { ?>
 						   <td>
                                 <div class="btn-group assign">
                                   <button type="button" class="btn btn-warning assign_data"  service="<?php echo $lead_new['master_sub_service_id']; ?>" data-toggle="modal" data-target="#assign_dailog" updateid="<?php echo $lead_new['id']; ?>"><i class="fa fa-thumbs-up"></i> Assign To</button>

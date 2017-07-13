@@ -10,21 +10,22 @@ unset($_SESSION['SESSION_USERTYPE']);
 unset($_SESSION['SESSION_USERNAME']);
 unset($_SESSION['SESSION_SUBSERVICE']);
 unset($_SESSION['SESSION_REGISTERID']);
+unset($_SESSION['SESSION_VENDORID']);
 
  if(isset($_POST['submit'])) {
 	
-	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
+	$result=mysql_query("select `id`,`username`,`user_type`,`master_sub_services`,`register_id`,`vendor_id` from `login` where `username`='".$_POST['username']."' and `password`='".md5($_POST['password'])."'");
 	if(mysql_num_rows($result)>0)
 	{
 		$row= mysql_fetch_array($result);
 		$id=$row['id'];
-		
-		$usertype=$row['user_type']; 
+ 		$usertype=$row['user_type']; 
 		$_SESSION['SESSION_ID']=$row['id'];
 			$_SESSION['SESSION_USERNAME']=$row['username'];
 			$_SESSION['SESSION_USERTYPE']=$row['user_type'];
 			$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
 			$_SESSION['SESSION_REGISTERID']=$row['register_id'];
+			$_SESSION['SESSION_VENDORID']=$row['vendor_id'];
 		//--- SMS
 		if($usertype != 0)
 		{
@@ -49,6 +50,7 @@ unset($_SESSION['SESSION_REGISTERID']);
 			$_SESSION['SESSION_USERTYPE']=$row['user_type'];
 			$_SESSION['SESSION_SUBSERVICE']=$row['master_sub_services'];
 			$_SESSION['SESSION_REGISTERID']=$row['register_id'];
+			$_SESSION['SESSION_VENDORID']=$row['vendor_id'];
 			
 			echo "<meta http-equiv='refresh' content='0;url=services.php'/>";
 		}
