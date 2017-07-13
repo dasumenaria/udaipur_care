@@ -1,7 +1,6 @@
 <?php
 include('auth.php'); 
 include("../config.php");
-$user=$_SESSION['category'];
 $view_u=$_GET['view_u'];
 $p=$_SESSION['SESSION_ID'];
 @$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
@@ -28,7 +27,7 @@ $p=$_SESSION['SESSION_ID'];
 	<tbody>
 		<?php
 			
-			$Newlead=mysql_query("SELECT * from `booking` where  flag='0' order by id ASC LIMIT 0,$view_u");
+			$Newlead=mysql_query("SELECT * from `booking` where  flag='0' order by id ASC LIMIT $view_u");
 			$i=0;
 			while($lead_new=mysql_fetch_array($Newlead))
 			{

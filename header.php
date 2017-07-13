@@ -74,9 +74,9 @@ else
 						<li class="dropdown">
 						<a href="" class="smoothScroll" data-toggle="dropdown">REGISTER<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-							 <li><a href="registration.php" style="line-height: 21px !important;" >Registration</a></li>
+							 <li><a href="registration.php" style="line-height: 21px !important;" >Member Registration</a></li>
 							<li class="divider"></li>
-							<li><a href="partner_add.php" style="line-height: 21px !important;" >Member Registration</a></li>
+							<li><a href="partner_add.php" style="line-height: 21px !important;" >Partner Registration</a></li>
 							</ul>
 						
 						</li>

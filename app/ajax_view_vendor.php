@@ -1,7 +1,6 @@
 <?php
 include('auth.php'); 
 include("../config.php");
-$user=$_SESSION['category'];
 $view_u=$_GET['view_u'];
 $p=$_SESSION['SESSION_ID'];
 $session_id=$_SESSION['SESSION_ID'];
