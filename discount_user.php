@@ -137,13 +137,49 @@ include('config.php');
     
  </style>
  
-<section style="background-image:url(veliacleaningservices.com/wp-content/uploads/2016/04/Office-cleanning.jpg);">
+<section style="background-image:url(images/12.jpg);background-repeat: no-repeat;">
 <div class="row">
-	<div class="col-md-8">
-	d
+	<div class="col-md-8" >
+			<div class ="col-md-12">
+				<br/><br/> 
+				<center><h2 style="font-size:50px;"><i class="fa fa-instagram "></i>&nbsp; Book a Cleaning Service Today</h2></center>
+				</br>
+				<center><h4>Book highly experienced in-house professionals & get your pest control service done, Instantly.</h4></center>
+			</div>
+			<div class="col-md-6">
+			</br></br>
+			 <center><h3 style="font-size:35px;">Why choose Services?</h3></center>
+			 
+ 
+			</div>
+			<div class="col-md-6">
+			</br>
+				<div style="width:350px;height:250px;">
+					<img src="images/partner/10.png" style="width:350px;height:180px;">
+				</div>
+			</div>
+			<div class="col-md-6">
+			<center><h4><i class="fa fa-check-square "></i> &nbsp;Book a Cleaning Service Today</h4></center>
+			</div>
+			<div class="col-md-6">
+				<center><h4 ><i class="fa fa-check-square "></i> &nbsp; Book a Cleaning Service Today</h4></center>
+			</div>
+			<div class="col-md-6">
+				<center><h4 ><i class="fa fa-check-square "></i> &nbsp; Book a Cleaning Service Today</h4></center>
+			</div>
+			<div class="col-md-6">
+				<center><h4 ><i class="fa fa-check-square "></i>&nbsp; Book a Cleaning Service Today</h4></center>
+			</div>
+			<div class ="col-md-12">
+				</br>
+				<center><h4><i class="fa fa-user"></i>&nbsp; Thank You For Visit Udaipur Care</h4></center>
+			</div>
+			
+			
 	</div>
 	 <div class="col-md-3">
-          <div class="dl">
+	 </br></br></br>
+          <div class="dl" style="box-shadow:1px 4px 12px #302828;">
             <div class="brand">
                 <h2>
                     mango
