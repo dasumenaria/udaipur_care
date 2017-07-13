@@ -6,7 +6,6 @@ include('function.php');
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
 @$status=$_GET['s'];
-//print_r(@$status); exit;
 if(empty($status))
 {
 	$status=0;
@@ -15,12 +14,6 @@ if(empty($status))
 @$SESSION_VENDORID=$_SESSION['SESSION_VENDORID']; 
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
 
-if($SESSION_USERTYPE==1){
- $status=$status;	
-}
-else
-{ $lead_status=$status;
-}
 if(isset($_POST['completed'])){
 	$reason_for_complete=$_POST['reason_for_complete'];
 	$update_id=$_POST['update_id'];
@@ -108,7 +101,7 @@ if(isset($_POST['assign'])){
                      
                     <!-- /.box-header -->
                     <div class="box-body">
-                      <table id="example1"  class="table table-bordered table-striped">
+                      <table  class="table table-bordered table-striped">
                         <thead>
                         <tr>
 						  <th>UdCare No</th>
@@ -131,12 +124,18 @@ if(isset($_POST['assign'])){
                         </thead>
                         <tbody>
                         <?php
+						//- Paginatoion
+						$num_rec_per_page=10;
+						if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
+						$start_from = ($page-1) * $num_rec_per_page; 
+						
+						
 						if($SESSION_USERTYPE==1){
-							 $leadNew="SELECT * from `booking` where `master_status` = '$status' ";
+							 $leadNew="SELECT * from `booking` where `master_status` = '$status'  LIMIT $start_from, $num_rec_per_page";
 						}
 						else
 						{
-							 $leadNew="SELECT * from `booking` where `vendor_master_status` = '$status' && `assign_to_vendor` = '$SESSION_VENDORID'";
+							 $leadNew="SELECT * from `booking` where `vendor_master_status` = '$status' && `assign_to_vendor` = '$SESSION_VENDORID' LIMIT $start_from, $num_rec_per_page";
  						}
 						$Newlead=mysql_query($leadNew);
 						
@@ -280,6 +279,23 @@ if(isset($_POST['assign'])){
                        <?php } ?>
                         </tbody>
                       </table>
+                      <?php 
+					   
+	$totalqry=mysql_query('select * from `booking` where `master_status` = '.$status.'');
+	$total_records = mysql_num_rows($totalqry);  //count number of records
+	$total_pages = ceil($total_records / $num_rec_per_page); 
+	
+	echo "<div align='right'><ul class='pagination'><li>
+	<a href='lead_status.php?s=".$status."&page=1' > ".' < '."</a> "; // Goto 1st page  
+	
+	for ($i=1; $i<=$total_pages; $i++) { 
+	?>
+    	<a <?php if($i==$page){ echo 'style="background-color:#337ab7; color:#FFF"'; } ?> href='lead_status.php?s=<?php echo $status."&page=".$i; ?>'><?php echo $i; ?> </a>
+	<?php 
+	}; 
+	echo "<a href='lead_status.php?s=".$status."&page=$total_pages'>".' > '."</a> </li></ul> </div>"; // Goto last page
+						?>
+                      
                       <div class="modal fade" id="assign_dailog" role="dialog">
                             <div class="modal-dialog">
                               <div class="modal-content">
