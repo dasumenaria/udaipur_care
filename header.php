@@ -15,6 +15,18 @@ else
 {
 	$log_path='<a href="login.php" >LOGIN</a>';
 }
+ @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; //$seccion_usertype = $_SESSION['SESSION_USERTYPE']; exit;
+  @$user_name=$_SESSION['SESSION_USERNAME'];
+  if($SESSION_USERTYPE==0){
+	  $dashboard='app/user_dashboard.php';
+  }
+  if($SESSION_USERTYPE==1){
+	  $dashboard='app/admin_dashboard.php';
+  }
+  if($SESSION_USERTYPE==2){
+	  $dashboard='app/vendor_dashboard.php';
+  }
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +68,7 @@ else
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
                     	 
-						<li><a href="app/user_dashboard.php" class="smoothScroll">DASHBOARD</a></li>
+						<li><a href="<?php echo $dashboard;?>" class="smoothScroll">DASHBOARD</a></li>
                        <li><a href="index.php#about" class="smoothScroll">ABOUT US</a></li> 
  					  <!--<li class="dropdown">
 						<a href="" class="smoothScroll" data-toggle="dropdown">SERVICES<span class="caret"></span></a>

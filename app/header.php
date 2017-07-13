@@ -58,7 +58,7 @@ $user_type=@$_SESSION['SESSION_USERTYPE'];
 
   <header class="main-header" style="background-color:#FFF !important">
     <!-- Logo -->
-    <a href="<?php echo $dashboard; ?>" class="logo">
+    <a href="../index.php" class="logo">
        <img src="../images/logos.png" width="180px;" height="49px"    alt="logo">
        
     </a>

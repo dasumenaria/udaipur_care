@@ -42,7 +42,7 @@ $lead_partner=mysql_num_rows($donepartner);
 				  <div class="small-box bg-aqua">
 					<div class="inner">
 					  <h3> <?php echo $lead_new; ?> </h3>
-					  <p>New Leads</p>
+					  <p><strong>New Leads</strong></p>
 					</div>
 					<div class="icon">
 					  <i class="ion ion-stats-bars"></i>
@@ -57,7 +57,7 @@ $lead_partner=mysql_num_rows($donepartner);
 				  <div class="small-box bg-red">
 					<div class="inner">
 					  <h3><?php echo $lead_reject; ?></h3>
-					  <p>Leads Rejects</p>
+					  <p><strong>Leads Rejects</strong></p>
 					</div>
 					<div class="icon">
 					  <i class="ion ion-person-add"></i>
@@ -72,7 +72,7 @@ $lead_partner=mysql_num_rows($donepartner);
 				  <div class="small-box bg-yellow">
 					<div class="inner">
 					  <h3><?php echo $lead_transfer; ?></h3>
-					  <p>Leads Transfer</p>
+					  <p><strong>Leads Transfer</strong></p>
 					</div>
 					<div class="icon">
 					  <i class="ion ion-pie-graph"></i>
@@ -87,7 +87,7 @@ $lead_partner=mysql_num_rows($donepartner);
 				  <div class="small-box bg-green">
 					<div class="inner">
 					  <h3> <?php echo $lead_complete; ?> </h3>
-					  <p>Completed Leads</p>
+					  <p><strong>Completed Leads</strong></p>
 					</div>
 					<div class="icon">
 					  <i class="ion ion-stats-bars"></i>
@@ -101,7 +101,7 @@ $lead_partner=mysql_num_rows($donepartner);
 				  <div class="small-box bg-green">
 					<div class="inner">
 					  <h3><?php echo $lead_partner; ?></h3>
-					  <p>Partner Registration</p>
+					  <p><strong>Partner Registration</strong></p>
 					</div>
 					<div class="icon">
 					  <i class="ion ion-person-add"></i>
