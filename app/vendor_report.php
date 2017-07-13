@@ -14,7 +14,7 @@ $session_id=$_SESSION['SESSION_ID'];
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-info">
-			<div class="box-header with-border">
+			<div class="box-header with-border" style="background-color:#3c8dbc; color:#FFF">
 				<h3 class="box-title">Vendor Report</h3>
 			</div>
 			<!------		Button 	----->

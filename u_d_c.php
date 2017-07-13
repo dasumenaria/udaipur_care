@@ -63,9 +63,9 @@ include('config.php');
                     <i class="fa fa-globe"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Web Development</h3>
+                    <h3>Spicysigdi</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus vitae dui efficitur facilisis non vitae metus. Phasellus.
+                       <>
                     </p>
                 </div>
             </div>

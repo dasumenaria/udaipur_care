@@ -18,16 +18,7 @@ if(isset($_POST['deleted'])){
 }  
  ?>
  
- <section class="content">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="box col-md-12" style="background:white;">
-            <div class="box-header">
-              <h3 class="box-title"> User Report </h3>
-			</br>
-            </div>
-			
-            <div class="box-body">
+ 
 				<div align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a></div><br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -112,16 +103,4 @@ if(isset($_POST['deleted'])){
                 </tbody>
                  
               </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-                    </div>
-                    <!-- /.box-body -->
-                  </div>
-                  <!-- /.box -->
-                 
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
- </div>
+            
