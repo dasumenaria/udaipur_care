@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 	$sql=("insert into `master_partner` set  `full_name`='$full_name',`email`='$email',`mobile_no`='$mobile_no',`address`='$address',`adhar_card_no`='$adhar_card_no'");
 	$r=mysql_query($sql);
 		$ids=mysql_insert_id();
-		$photo="company_logo".$ids.".jpg";
+		$photo="company_logo".$ids.".png";
 		move_uploaded_file($_FILES["company_logo"]["tmp_name"],"../images/company_partner/".$photo);
 		
 		$r=mysql_query("update `master_partner` set company_logo='$photo' where id='$ids'");	

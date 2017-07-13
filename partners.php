@@ -7,7 +7,7 @@
 		<div class="box-body" style="background:white; margin-left:12px;">
 			 <!--1--->
 			<?php
-				$r=mysql_query("select company_logo from `master_partner` where `flag`='0'");
+				$r=mysql_query("select company_logo from `vendor` where `flag`='0'");
 				
 				$i=0;
 				while($row=mysql_fetch_array($r))
@@ -18,7 +18,7 @@
 			?>
 			<div class="col-md-3">
 				<div class="form-group">
-					<center><img src="images/company_partner/<?php echo $company_logo; ?>" width="200px" height="200px"></center>
+					<center><img src="vendor/<?php echo $company_logo; ?>" width="200px" height="200px"></center>
 				</div>
 			</div>
 			<?php } ?>
