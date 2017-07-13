@@ -45,14 +45,13 @@ if(isset($_POST['submit'])){
   $message = "Member update successfully.";
   
   $r=mysql_query($sql);
-	$ids=mysql_insert_id();
-	$photo="identity_proof".$ids.".jpg";
+	$photo="identity_proof".$update_id.".jpg";
 		move_uploaded_file($_FILES["identity_proof"]["tmp_name"],"../identity_proof/".$photo);
 
 	if($r)
 	{
-		echo"update register set identity_proof='$photo' where id='$ids'";
-		$r=mysql_query("update register set identity_proof='$photo' where id='$ids'");
+		
+		$r=mysql_query("update register set identity_proof='$photo' where id='$update_id'");
  
 	 }
 
@@ -211,7 +210,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 			<div class="form-group col-md-6">
                   <label for="exampleInputmobile_no">LandMark</label>
                   <div class="input-group">
-                         <input type="text" name="landmark" class="form-control" id="exampleInputmobile_no" value="<?php echo $ftc_data['landmark'];?>" placeholder="Enter Your Mobile No.">
+                         <input type="text" name="landmark" class="form-control" id="exampleInputmobile_no" value="<?php echo $ftc_data['landmark'];?>" placeholder="Enter Your Landmark">
                       <div class="input-group-addon">
                       <i class="fa  fa-map-marker"></i>
                       </div>

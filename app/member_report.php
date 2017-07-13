@@ -40,6 +40,7 @@ if(isset($_POST['deleted'])){
                 </thead>
                 <tbody>
 				<?php
+				
 			  $r1=mysql_query("select * from register where `id`='$pon' ");							
 					$i=0;
 					while($row1=mysql_fetch_array($r1))
