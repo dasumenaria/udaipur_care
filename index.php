@@ -124,7 +124,7 @@ include('config.php');
 							<p><i class="fa fa-envelope-o too-icon"></i> &nbsp; helpline@udaipurcare.com</p>
 						</address>
 					</div>
-					<form method="post" name="registration" class="col-md-6 col-sm-4" id="contact-form" role="form" >
+					<form method="post" name="registration" class="col-md-6 col-sm-4" role="form" >
 					<h3>Contact Us</h3>
                     	<div class="col-md-12 other_click" style="padding-bottom:10px; " id="msg">
                            
@@ -142,7 +142,7 @@ include('config.php');
 								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
 							</div>
 							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input  type="button" class="form-control " id="submit_contact" value="Send">
+								<input  type="button" class="form-control" style="cursor:pointer" id="submit_contact" value="Send">
 							</div>
 					</form>
 				</div>
@@ -152,9 +152,9 @@ include('config.php');
 		 
 <script src="js/jquery.js"></script>
 <script>
-<script>
 $( document ).ready(function() {
 $('#submit_contact').on('click', function(){
+ 
 	var name=$('#name').val();
 	var email=$('#email').val();
 	var mobile_no=$('#mobileno').val();
@@ -176,7 +176,6 @@ $('#submit_contact').on('click', function(){
 							$('#mobile_no').val('');
 							$('#message').val('');
 							$('#msg').html('Thank you for contact with us.');
-							
 						}
 					});
 				}
