@@ -19,7 +19,9 @@ if(isset($_POST['deleted'])){
  ?>
  
  
-				<div align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a></div><br>
+				<div align='right' colspan='7'><a class="btn btn-success" href="member_excel_report.php?id=<?php echo $p; ?>"><b>Download Excel</b>&nbsp; &nbsp;<i class="fa fa-cloud-download "></i></a>
+                <a class="btn btn-warning" href="member_card.php?from=<?php echo $from_date; ?>&to=<?php echo $to_date?>"><b>Print Member Card</b>&nbsp; &nbsp;<i class="fa fa-print "></i></a>
+                </div><br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
 				
