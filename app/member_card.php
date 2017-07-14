@@ -1,7 +1,7 @@
 <?php 
 include('auth.php'); 
 include("../config.php");
-//include("header.php");
+// include("header.php");
 
 include('function.php');
 $from = $_GET['from'];
@@ -13,6 +13,18 @@ $p=$_SESSION['SESSION_ID'];
 $session_id=$_SESSION['SESSION_ID'];
 
 ?>
+    <link rel="stylesheet" href="../assest/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../assest/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../assest/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../assest/plugins/datatables/dataTables.bootstrap.css"> 
+    <link rel="stylesheet" href="../assest/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../assest/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/select2/select2.css"/>
 <style>
 .col-md-4 {
 	background-image:url(../images/member_card.png) !important;
@@ -50,8 +62,13 @@ $session_id=$_SESSION['SESSION_ID'];
 </style>
  
             <div class="row" align="center">
-            
-                <div class="col-md-4" align="right">
+            <?php
+			 $r1=mysql_query("select * from register where date between '$from_date' and '$to_date' AND flag='0' order by id Desc");							
+					$i=0;
+					while($row1=mysql_fetch_array($r1))
+					{?>
+			
+                <div class="col-md-4">
                  	<div class="col-md-6" style="float:right">
                     	<table width="100%" >
                         <tr>
@@ -73,7 +90,7 @@ $session_id=$_SESSION['SESSION_ID'];
                     	</table>     
                     </div>
                 </div> 
-                 
+              <?php } ?>   
 			</div>	 
 		</div>
 		<!-- /.col -->
