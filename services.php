@@ -1,97 +1,248 @@
 <?php
 include('header.php');
 include('config.php');
-?>
+
+?> 
 <style>
-.a class{
-	
-    text-decoration: none;
-    color: #fff;
-    padding: 1px 1px;
-    background-color: #1BBC9B;
-}
-.a class:hover {
-	color: #fff !important;
-}
-</style>
-<style>
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: black;
-	padding:1px 22px;
-	border-radius: 3px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
  
-.button4 {
-    background-color: white;
-    color: black;
-    border: 2px solid #007787;
+.title{ color:white; font-size:40px; }
+.wrimagecard{	
+	margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.wrimagecard .fa{
+	position: relative;
+    font-size: 70px;
+}
+.wrimagecard-topimage_header{
+padding: 20px;
+}
+a.wrimagecard:hover, .wrimagecard-topimage:hover {
+    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+}
+.wrimagecard-topimage a {
+    width: 100%;
+   
+    display: block;
+}
+.wrimagecard-topimage_title {
+  height: 50px;  
+}
+.wrimagecard-topimage a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #525c65;
+    transition: color 0.3s ease;
 }
 
-.button4:hover {background-color: #2191a1; color:white;}
+/* */  
+
+.contact .fa:before {
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.contact li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 1em;
+  text-align: center;
+}
+
+.contact p {
+  text-align: center;
+}
+
+.contact {
+  display: inline-block;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.cont {
+  text-align: center;
+}
+
  
-</style>
-		<!-- start service -->
-		<div id="service">
-			<div class="container">
-            
-            <?php
-				$count=0;
-				$sql="select * from master_services where flag=0";
-				$fet=mysql_query($sql);
-				while($result=mysql_fetch_array($fet))
-				{ 
-					$count++; 
-                	$id=$result['id'];
-					$service_name=$result['service_name'];
-					$discription=$result['discription'];
-					$icon=$result['icon'];
-				//	$master_service_image=$result['master_service_image'];
-					   
-				
-				if($count==1 ){ echo '<div class="row">'; }?>
-				
-					<div class="col-md-4 col-sm-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
-								<i class="<?php echo $icon; ?>"></i>
-							</div>
-							<div class="media-body wow fadeIn">
-								<h3 class="media-heading"><?php echo $service_name; ?></h3>
-								<!---- <img src="<?php echo $master_service_image;?>" width="100%" height="180px"> ---->
-								<p><?php echo $discription; ?></p>
-							</div>
-						</div>
-                        <div align="center" class="col-md-12" data-wow-delay="0.1s">
-                        	<div style="width:45%">
-                            <a href="service.php?id=<?php echo $id;?>" class="button button4" style="text-decoration:none; padding: 10px;">
-							More Services
-                            </a>
-                            </div>
-                        </div>
-					</div>
-				 
-               <?php
- 				 $count==3;
-				  
-					}
-				?>
-				
-			</div>
-		</div>
-		</div>
+
+section {
+    padding-top: 100px;
+    
+}
+
+.quote {
+    color: rgba(0,0,0,.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+ ---------------------------*/
+ 
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+} 
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #e84a64;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+ 
+}
+#fade-quote-carousel .profile-circle {
+   
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+</style>  
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<div id="service" style="margin-top:10px;">
+	<div class="row">
+	<div class="container">
+     <p class="title" style="color:black;font-weight:bold;margin-top:10px;" >Our Services</p>
+	 	<h4>Choose from our wide range of services</h4>
 		</br>
-		<!-- end service -->
+	 
+	  
+
+	
+	<?php
+				$count=0;
+				$query=mysql_query("select * from `vendor` where flag=0 ");
+				while($fetch=mysql_fetch_array($query))
+				{
+					$count++;		
+					$id=$fetch['id'];
+					$company_service=$fetch['company_service'];
+					$service_icon=$fetch['service_icon'];
+					
+				if($count==1 ){ echo '<div class="row form-group">'; }
+				
+				?>
+	<div class="col-md-3">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="#">
+          <div class="wrimagecard-topimage_header" style="background-color:#fff">
+            <center><i class="<?php echo $service_icon; ?>" style="color:#5a454599;"> </i></center>
+			<hr></hr>
+          </div>
+          <div class="wrimagecard-topimage_title" >
+				<center><h4><a href="discount_user.php?id=<?php echo $id;?>" style="font-size:25px;"><?php echo $company_service; ?></a></h4></center>
+          </div>
+          
+        </a>
+      </div>
+	</div>
+	 <?php  if($count==4){ echo '</div>';  $count=0;}
+		 } ?>
+
+	
+	</div>
+	</div>
+</div> 
+<div id="about">
+			<div class="container">
+				<div class="row">
+                 <div class="col-md-12 col-sm-12" style="margin-top: -30px;">
+						<center><h2 class="wow bounce"> <strong>What We Offer</strong></h2></center>
+						<div class="cont">
+  <ul class="contact">
+     
+   <li style="text-align: left;">
+      <p><i class="fa fa-tree fa-3x"></i></p>
+      <p><strong>20%</strong></br>Gardening</p>
+    </li>
+    <li style="text-align: left;">
+      <p><i class="fa fa-cut fa-3x"></i></p>
+      <p><strong>40%</strong></br>Hair and Salon</p>
+    </li>
+    <li style="text-align: left;">
+      <p><i class="fa fa-cutlery fa-3x"></i></p>
+      <p><strong>10%</strong></br>Food and Diet</p>
+    </li>
+	<li style="text-align: left;">
+      <p><i class="fa fa-tree fa-3x"></i></p>
+      <p><strong>20%</strong></br>Gardening</p>
+    </li>
+    <li style="text-align: left;">
+		  <p><i class="fa fa-cut fa-3x"></i></p>
+		  <p><strong>40%</strong></br>Hair and Salon</p>
+		</li>
+		<li style="text-align: left;">
+		  <p><i class="fa fa-cutlery fa-3x"></i></p>
+      <p><strong>10%</strong></br>Food and Diet</p>
+    </li>
+  </ul>
+</div>
+						<p  style="font-size:12pt;"></p> 
+					</div>
+					 
+				</div>
+			</div>
+		</div> 
+<div class="col-md-12 col-sm-12" style="margin-top:10px;">
+						<center><h2 class="wow bounce"> <strong>Testimonial</strong></h2></center>
+						</div>
+<section id="carousel" style=" height: 400px !important;">    				
+ 
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+                <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+				<div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+				  <!-- Carousel indicators -->
+                   
+				  <!-- Carousel items -->
+				  <div class="carousel-inner">
+				    <div class="item">
+                        <div class="profile-circle" style="background-color: rgba(0,0,0,.2);"></div>
+				    	<blockquote>
+				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+				    	</blockquote>	
+						<center><h5 class="wow bounce"> <strong>Testimonial: lakshit</strong></h5></center>
+				    </div>
+				    
+				    <div class="active item">
+                        <div class="profile-circle" style="background-color: rgba(145,169,216,.2);"></div>
+				    	<blockquote>
+				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+				    	</blockquote>
+						<center><h5 class="wow bounce"> <strong>Testimonial: dsu menaria</strong></h5></center>
+				    </div>
+                    
+                     
+				  </div>
+				</div>
+			</div>							
+		</div>
+	 
+</section>
+ 
+		</div>
+ 
+
+ 		<!-- end service -->
 
 <?php
 include('footer.php');
 ?>
-	
+
+	<script>
+    $('#myCarousel').carousel({
+        pause: 'none'
+	})
+</script>

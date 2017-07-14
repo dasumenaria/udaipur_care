@@ -18,9 +18,7 @@ $session_id=$_SESSION['SESSION_ID'];
 				<h3 class="box-title">Member report</h3>
 			</div>
 			<!------		Button 	----->
-			
-				
-					
+ 					
 					<div class="input-group">
 						<div class="row">
 							<div class="col-md-12">
