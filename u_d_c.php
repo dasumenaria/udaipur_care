@@ -140,11 +140,159 @@ Pricing table
   
    
 </style> 
+  <style>
+#team img {
+    border:none !important;
+    display: inline-block;
+    padding: 5px !important; 
+    transition: all 0.4s ease-in;
+	background-size: cover;
+
+}
   
+#background-carousel{
+	position:absolute;
+	width:100%;
+	height:400px;
+	z-index:-1;
+}
+.carousel,
+.carousel-inner {
+	width:100%;
+	height:100%;
+	z-index:0;
+	overflow:hidden;
+}
+.item {
+	width:100%;
+	height:100%;
+	background-position:center center;
+	background-size:cover;
+	z-index:0;
+}
+ 
+#content-wrapper {
+	position:absolute;
+	z-index:1 !important;
+	min-width:100%;
+}
+.well {
+    opacity:0.90
+
+}
+
+.title{ color:white; font-size:40px; }
+.wrimagecard{	
+	margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.wrimagecard .fa{
+	position: relative;
+    font-size: 70px;
+}
+.wrimagecard-topimage_header{
+padding: 20px;
+}
+a.wrimagecard:hover, .wrimagecard-topimage:hover {
+    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+}
+.wrimagecard-topimage a {
+    width: 100%;
+   
+    display: block;
+}
+.wrimagecard-topimage_title {
+    padding: 20px 24px;
+    height: 80px;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+.wrimagecard-topimage a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #525c65;
+    transition: color 0.3s ease;
+}
+
+/* */  
+
+.contact .fa:before {
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.contact li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 1em;
+  text-align: center;
+}
+
+.contact p {
+  text-align: center;
+}
+
+.contact {
+  display: inline-block;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.cont {
+  text-align: center;
+}
+
+ 
+
+section {
+    padding-top: 100px;
+    
+}
+
+.quote {
+    color: rgba(0,0,0,.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+ ---------------------------*/
+ 
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+} 
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #e84a64;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+ 
+}
+#fade-quote-carousel .profile-circle {
+   
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+</style>  
  
 <section class="content-header">
        <center>
-      	<h2 class="wow bounce" style=" padding-top:60px; color:#707568"> <strong> 
+      	<h2 class="wow bounce" style=" color:#707568"> <strong> 
 		DISCOUNT 
        </strong></h2>
        </center>
@@ -163,7 +311,7 @@ Pricing table
 					  
 				</div>
 				 <div class="pricing-footer">
-					<p>For Discount Click here <span class="label label-sm label-warning"  ><a href="service_booking.php" style="font-size:12px;color:white;text-decoration:none;">
+					<p style="font-size:12px">For Discount Click here <span class="label label-sm label-warning"  ><a href="service_booking.php" style="font-size:12px;color:white;text-decoration:none;">
 						Get Coupan
 					</a><i class="fa fa-share " style="height:10px"></i></span>
 					</p>
@@ -171,9 +319,11 @@ Pricing table
 				</div>
 			</div>
 		</div>
+		</div>
 	 	  
 	 </div>
 </div> 
+  
 </div>
      
 		 

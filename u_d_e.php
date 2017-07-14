@@ -214,7 +214,7 @@ section {
 	<div class="col-md-3">
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:#f5f5f5">
+          <div class="wrimagecard-topimage_header" style="background-color:#fff">
             <center><i class="<?php echo $icon; ?>" style="color:#5a454599;"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title" >
