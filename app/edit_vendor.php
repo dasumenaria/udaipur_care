@@ -27,9 +27,9 @@ if(isset($_POST['submit'])){
 	$current_date=date('Y-m-d ');
 	$offer=$_POST['offer'];
 	$service_price=$_POST['service_price'];
-	$update_id=$_POST['update_id'];
+	
  
-   $sql="update  `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price' where `id` = '$update_id'";
+   $sql="update `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price' where `id` = '$update_id'";
   $message = "Partner update successfully.";
   $r=mysql_query($sql);
 	//$ids=mysql_insert_id();
@@ -237,13 +237,13 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Service Description</label>
-				 <textarea name="company_service_discription" value="<?php echo $company_service_discription; ?>" class="form-control"></textarea>
+				 <textarea name="company_service_discription" class="form-control"><?php echo $company_service_discription; ?></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Service Sub Description</label>
-				 <textarea name="company_sub_service_discription" value="<?php echo $company_sub_service_discription; ?>" class="form-control"></textarea>
+				 <textarea name="company_sub_service_discription" class="form-control"><?php echo $company_sub_service_discription; ?></textarea>
 			</div>
 		</div>
 		 
@@ -263,7 +263,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Company Address</label>
-				 <textarea name="company_address" value="<?php echo $company_address; ?>" class="form-control"></textarea>
+				 <textarea name="company_address"  class="form-control"><?php echo $company_address; ?></textarea>
 			</div>
 		</div>
 		 <div class="col-md-6">		

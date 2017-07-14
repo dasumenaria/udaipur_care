@@ -37,11 +37,12 @@ if(isset($_POST['submit'])){
 	$company_service=$_POST['company_service'];
 	$company_service_discription=$_POST['company_service_discription'];
 	$company_sub_service=$_POST['company_sub_service'];
+	$company_sub_service_discription=$_POST['company_sub_service_discription'];
 	$discount=$_POST['discount'];
 	$current_date=date('Y-m-d ');
 	$offer=$_POST['offer'];
 	$service_price=$_POST['service_price'];
-   $sql="insert into `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price'";
+   $sql="insert into `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price'";
  
   $r=mysql_query($sql);
  
@@ -54,8 +55,8 @@ if(isset($_POST['submit'])){
 // move photo in  floder//
 	 
 
-	move_uploaded_file($_FILES["company_logo"]["tmp_name"],"vendor/".$photo);
-	move_uploaded_file($_FILES["company_mou_certificate"]["tmp_name"],"vendor/".$photo1);
+	move_uploaded_file($_FILES["company_logo"]["tmp_name"],"../images/vendor/".$photo);
+	move_uploaded_file($_FILES["company_mou_certificate"]["tmp_name"],"../images/mou_image/".$photo1);
 
 	if($r)
 	{
@@ -219,6 +220,12 @@ if(isset($_POST['submit'])){
 			<div class="form-group">
 				 <label for="exampleInputDob">Service Description</label>
 				 <textarea name="company_service_discription" class="form-control"></textarea>
+			</div>
+		</div>
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Service Sub Description</label>
+				 <textarea name="company_sub_service_discription" class="form-control"></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">		
