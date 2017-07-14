@@ -22,7 +22,7 @@ ini_set('max_execution_time', 100000);
 	$discription=$_POST['discription'];
 	$sql="insert into `master_sub_services` set `sub_services_name`='$sub_services_name' , `services_id`='$services_id' , `discription`='$discription'";
 	mysql_query($sql);
-}
+} 
   
 if(isset($_POST['submit'])){
 	 
