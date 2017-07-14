@@ -32,10 +32,7 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
     display: block;
 }
 .wrimagecard-topimage_title {
-    padding: 20px 24px;
-    height: 80px;
-    padding-bottom: 0.75rem;
-    position: relative;
+  height: 50px;  
 }
 .wrimagecard-topimage a {
     border-bottom: none;
@@ -113,6 +110,7 @@ section {
 }
 
 </style>  
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <div id="service" style="margin-top:10px;">
 	<div class="row">
 	<div class="container">
@@ -120,18 +118,18 @@ section {
 	 	<h4>Choose from our wide range of services</h4>
 		</br>
 	 
-	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	  
 
 	
 	<?php
 				$count=0;
-				$query=mysql_query("select * from `master_services` where flag=0 ");
+				$query=mysql_query("select * from `vendor` where flag=0 ");
 				while($fetch=mysql_fetch_array($query))
 				{
 					$count++;		
 					$id=$fetch['id'];
-					$service_name=$fetch['service_name'];
-					$icon=$fetch['icon'];
+					$company_service=$fetch['company_service'];
+					$service_icon=$fetch['service_icon'];
 					
 				if($count==1 ){ echo '<div class="row form-group">'; }
 				
@@ -140,13 +138,11 @@ section {
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#fff">
-            <center><i class="<?php echo $icon; ?>" style="color:#5a454599;"> </i></center>
+            <center><i class="<?php echo $service_icon; ?>" style="color:#5a454599;"> </i></center>
 			<hr></hr>
           </div>
           <div class="wrimagecard-topimage_title" >
-	
-           <center><h4><a href="discount_user.php?id=<?php echo $id;?>"><?php echo $service_name; ?></a>
-             </h4></center>
+				<center><h4><a href="discount_user.php?id=<?php echo $id;?>" style="font-size:25px;"><?php echo $company_service; ?></a></h4></center>
           </div>
           
         </a>

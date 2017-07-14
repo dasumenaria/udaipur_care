@@ -136,49 +136,56 @@ include('config.php');
     color: #f1c40f;
     background: #f0f0f0;
 }
+
     
  </style>
  
 <section style="background-image:url(images/12.jpg);background-repeat: no-repeat;">
 <div class="row">
+<?php  
+$query=mysql_query("select * from `vendor` where id='".$service_name_id."' && flag='0'");
+$fetch=mysql_fetch_array($query);
+	$id=$fetch['id'];
+	$company_name=$fetch['company_name'];
+	$company_address=$fetch['company_address'];
+	$service_icon=$fetch['service_icon'];
+	 
+					
+
+?>
 	<div class="col-md-8" >
 			<div class ="col-md-12">
 				<br/><br/> 
-				<center><h2 style="font-size:50px;"><i class="fa fa-instagram "></i>&nbsp; Book a Cleaning Service Today</h2></center>
+					<center><h2 style="font-size:50px;"><i class="<?php echo $service_icon; ?>"></i>&nbsp;<?php echo $company_name ?></h2></center>
 				</br>
-				<center><h4>Book highly experienced in-house professionals & get your pest control service done, Instantly.</h4></center>
+				<center><h4><?php echo $company_address; ?></h4></center>
 			</div>
 			<div class="col-md-6">
 			</br></br>
-			 <center><h3 style="font-size:35px;">Why choose Services?</h3></center>
-			 
- 
-			</div>
-			<div class="col-md-6">
-			</br>
-				<div style="width:350px;height:250px;">
-					<img src="images/partner/10.png" style="width:350px;height:180px;">
-				</div>
-			</div>
-			<div class="col-md-6">
-			<center><h4><i class="fa fa-check-square "></i> &nbsp;Book a Cleaning Service Today</h4></center>
-			</div>
-			<div class="col-md-6">
-				<center><h4 ><i class="fa fa-check-square "></i> &nbsp; Book a Cleaning Service Today</h4></center>
-			</div>
-			<div class="col-md-6">
-				<center><h4 ><i class="fa fa-check-square "></i> &nbsp; Book a Cleaning Service Today</h4></center>
-			</div>
-			<div class="col-md-6">
-				<center><h4 ><i class="fa fa-check-square "></i>&nbsp; Book a Cleaning Service Today</h4></center>
-			</div>
-			<div class ="col-md-12">
-				</br>
-				<center><h4><i class="fa fa-user"></i>&nbsp; Thank You For Visit Udaipur Care</h4></center>
-			</div>
-			
-			
-	</div>
+			 <center><h3 style="font-size:35px;">Our Services</h3></center>
+			 </div>
+			<div class="col-md-12">
+					 
+
+					<div class="col-md-3">
+					<div class="wrimagecard wrimagecard-topimage" style="border-radius:25px;">
+					<a href="#">
+					<div class="wrimagecard-topimage_header" style="background-color:#fff;border-radius:25px;">
+
+					<image src="images/service_images/2.jpg" width="170px" height="140px"style="border-radius:25px;" >
+					<hr></hr>
+					</div>
+					<div class="wrimagecard-topimage_title" >
+					<center><span style="font-size:20px;font-weight:bold;padding:50px;">Medical<span>
+					</center>
+					</br>
+					</div>
+
+					</a>
+					</div>
+					</div>
+					</div>
+	 	</div>
 	 <div class="col-md-3">
 	 </br></br></br>
           <div class="dl" style="box-shadow:1px 4px 12px #302828;">
