@@ -97,7 +97,7 @@ var from = $("#from").val();
 		var to = $("#to").val();
 		
 		$.ajax({
-			url: "date_vise_vendor_report.php?from="+from+"&to="+to+"",
+			url: "view_vendor_report.php?from="+from+"&to="+to+"",
 				}).done(function(response) {
 		   $("#data").html(""+response+"");
 			});
@@ -113,7 +113,7 @@ $(document).ready(function(){
 	    var view_u=$(".find_records option:selected").val();
 		
 	  	$.ajax({
-			url: "ajax_view_vendor.php?view_u="+view_u,
+			url: "view_vendor_report.php?view_u="+view_u,
 			}).done(function(response) {
 		   $("#data").html(""+response+"");
 			});

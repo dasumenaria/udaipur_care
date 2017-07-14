@@ -4,7 +4,6 @@ include('auth.php');
 include("../config.php");
 include('function.php');
 
-$user=$_SESSION['category'];
 $view_u=$_GET['view_u'];
 @$SESSION_SUBSERVIDE=$_SESSION['SESSION_SUBSERVICE'];
 @$SESSION_USERTYPE=$_SESSION['SESSION_USERTYPE']; 
@@ -36,7 +35,7 @@ if(isset($_POST['deleted'])){
 				
 					if($SESSION_USERTYPE==1)
 			{
-				$leadNew="SELECT * from `register` where aadhar_card_no!='' order by id ASC LIMIT 0,$view_u"";
+				$leadNew="SELECT * from `register` where aadhar_card_no!='' order by id ASC LIMIT 0,$view_u";
 			}
 			$i=1;
 			$Newlead=mysql_query($leadNew);

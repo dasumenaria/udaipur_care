@@ -3,19 +3,52 @@ include('auth.php');
 include("../config.php");
 
 include('function.php');
+$view_u=$_GET['view_u'];
+$from = $_GET['from'];
+     $from_date=date('Y-m-d',strtotime($from));
+     
+ $to = $_GET['to'];
+     $to_date=date('Y-m-d',strtotime($to));
 $pon=$_GET['pon'];
 $p=$_SESSION['SESSION_ID'];
 $session_id=$_SESSION['SESSION_ID'];
+
+
+
+$qury='';
+	if(!empty($view_u) && !empty($from) && !empty($to) && empty($pon))
+{
+	$qury="`view_u` = '$view_u' && `from` = '$from' && `to` = '$to'";
+}
+ 	if(empty($class_id) && !empty($from) && !empty($to) && empty($pon))
+{
+	$qury="`from` = '$from' && `to` = '$to'";
+}
+ 	if(empty($class_id) && !empty($from) && !empty($to) && !empty($pon))
+{
+	$qury="`pon` = '$pon' && `from` = '$from' && `to` = '$to'";
+}
+	
+if(!empty($class_id) && !empty($from) && !empty($to) && !empty($pon))
+{
+	$qury="`class_id` = '$class_id' && `pon` = '$pon' && `from` = '$from' && `to` = '$to'";
+}
+
+
+
+
+
+
+
+
+
+
 if(isset($_POST['sub_del']))
 {
 	$delet_model=$_POST['delet_model'];
 	mysql_query("update `vendor` SET `flag`=1 where `id`='$delet_model'");
 }
-else
-	{
-		echo mysql_error();
-	}
-	
+
 ?>
 
             <div class="box-body">
@@ -35,7 +68,9 @@ else
                 </thead>
 				<tbody>
 				<?php
-					$r1=mysql_query("select * from vendor where `id`='$pon' ");							
+			
+				
+					$r1=mysql_query("select * from vendor where ".$qury." && flag=0 ");							
 					$i=0;
 					while($row1=mysql_fetch_array($r1))
 					{
