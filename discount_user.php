@@ -1,6 +1,8 @@
 <?php
 include('header.php');
 include('config.php');
+ $service_name_id=$_GET['id'];
+ 
 ?>
  <style>
  section {

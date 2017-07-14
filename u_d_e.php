@@ -4,46 +4,7 @@ include('config.php');
 
 ?> 
 <style>
-#team img {
-    border:none !important;
-    display: inline-block;
-    padding: 5px !important; 
-    transition: all 0.4s ease-in;
-	background-size: cover;
-
-}
-  
-#background-carousel{
-	position:absolute;
-	width:100%;
-	height:400px;
-	z-index:-1;
-}
-.carousel,
-.carousel-inner {
-	width:100%;
-	height:100%;
-	z-index:0;
-	overflow:hidden;
-}
-.item {
-	width:100%;
-	height:100%;
-	background-position:center center;
-	background-size:cover;
-	z-index:0;
-}
  
-#content-wrapper {
-	position:absolute;
-	z-index:1 !important;
-	min-width:100%;
-}
-.well {
-    opacity:0.90
-
-}
-
 .title{ color:white; font-size:40px; }
 .wrimagecard{	
 	margin-top: 0;
@@ -152,43 +113,7 @@ section {
 }
 
 </style>  
-<section id="home" style="text-align:right">
-	<div id="background-carousel">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="item active" style="background-image:url(https://understandsolar.com/wp-content/uploads/2016/12/Tesla-powerwall-II-1024x520.jpg)"></div>
-				<div class="item" style="background-image:url(http://lorempixel.com/1200/800/food/1/)"></div>
-				<div class="item" style="background-image:url(https://www.loyservice.com/wp-content/uploads/2015/03/b1.jpg)"></div>  
-			</div>
-		</div>
-	</div>
-	<div id="content-wrapper">
-		<div class="container">
-			<div class="page-header"><p class="title">Let us help</p></div>
-			  <!--div class="">
-				 
-					<div class="row">
-						<div class="col-md-5">
-							<select name="name" class="form-control" style="  height:60px">
-								<option value='	1'>1</option>
-								<option value='	1'>2</option>
-								<option value='	1'>3</option>
-							</select>
-						</div>
-						<div class="col-md-5">
-							<select name="name" class="form-control" style=" height:60px">
-								<option value='	1'>1</option>
-								<option value='	1'>2</option>
-								<option value='	1'>3</option>
-							</select>
-						</div>
-					</div>
-				 
-			</div-->
-		</div>
-	</div>		
-</section>
-<div id="service" style="margin-top:350px;">
+<div id="service" style="margin-top:10px;">
 	<div class="row">
 	<div class="container">
      <p class="title" style="color:black;font-weight:bold;margin-top:10px;" >Our Services</p>
@@ -216,9 +141,11 @@ section {
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:#fff">
             <center><i class="<?php echo $icon; ?>" style="color:#5a454599;"> </i></center>
+			<hr></hr>
           </div>
           <div class="wrimagecard-topimage_title" >
-           <center> <h4><?php echo $service_name; ?>
+	
+           <center><h4><a href="discount_user.php?id=<?php echo $id;?>"><?php echo $service_name; ?></a>
              </h4></center>
           </div>
           
