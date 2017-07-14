@@ -1,31 +1,16 @@
- <?php 
- include("auth.php");
+<?php 
+include("auth.php");
 include("header.php");
 include("../config.php");
+ include('function.php');
 //include("mail.php");
+$update_id=$_GET['ati_utf_id'];
 date_default_timezone_set('Asia/Calcutta');
 ini_set('max_execution_time', 100000);
-  $message="";
- if(isset($_POST['add_service']))
- {
-	$service_name=$_POST['service_name'];
-	$discription=$_POST['discription'];
-	 
-	 $sql="insert into `master_services` set `service_name`='$service_name', `discription`='$discription',flag=0";
- 	mysql_query($sql);
- }
- 
- if(isset($_POST['add_sub_service']))
- {
-	$services_id=$_POST['company_service'];
-	$sub_services_name=$_POST['sub_service_name'];
-	$discription=$_POST['discription'];
-	$sql="insert into `master_sub_services` set `sub_services_name`='$sub_services_name' , `services_id`='$services_id' , `discription`='$discription'";
-	mysql_query($sql);
-}
+$message="";
   
 if(isset($_POST['submit'])){
-	 
+	
 	$full_name=$_POST['full_name'];
 	$mobile_no=$_POST['mobile_no'];
 	$landline_no=$_POST['landline_no'];
@@ -37,29 +22,26 @@ if(isset($_POST['submit'])){
 	$company_service=$_POST['company_service'];
 	$company_service_discription=$_POST['company_service_discription'];
 	$company_sub_service=$_POST['company_sub_service'];
+	$company_sub_service_discription=$_POST['company_sub_service_discription'];
 	$discount=$_POST['discount'];
 	$current_date=date('Y-m-d ');
 	$offer=$_POST['offer'];
 	$service_price=$_POST['service_price'];
-   $sql="insert into `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price'";
+	$update_id=$_POST['update_id'];
  
+   $sql="update  `vendor` set `full_name`='$full_name', `mobile_no`='$mobile_no',`landline_no`='$landline_no',`email_id`='$email_id',`aadhar_card_no`='$aadhar_card_no',`company_name`='$company_name',`company_reg_no`='$company_reg_no',`company_address`='$company_address',`company_service`='$company_service',`company_service_discription`='$company_service_discription',`company_sub_service`='$company_sub_service',`company_sub_service_discription`='$company_sub_service_discription',`discount`='$discount',`offer`='$offer',`vendor_reg_date_get`='$current_date',`service_price`='$service_price' where `id` = '$update_id'";
+  $message = "Partner update successfully.";
   $r=mysql_query($sql);
- 
- 	$ids=mysql_insert_id();
-
-	$photo="company_logo".$ids.".jpg";
-	$photo1="company_mou_certificate".$ids.".jpg";
-
-
-// move photo in  floder//
-	 
-
+	//$ids=mysql_insert_id();
+	$photo="company_logo".$update_id.".jpg";
+	$photo1="company_mou_certificate".$update_id.".jpg";
 	move_uploaded_file($_FILES["company_logo"]["tmp_name"],"vendor/".$photo);
 	move_uploaded_file($_FILES["company_mou_certificate"]["tmp_name"],"vendor/".$photo1);
-
 	if($r)
 	{
-		$r=mysql_query("update vendor set `company_logo`='$photo',`company_mou_certificate`='$photo1' where id='$ids'");
+		
+		
+		$r=mysql_query("update vendor set `company_logo`='$photo',`company_mou_certificate`='$photo1' where id='$update_id'");
  
 	 }
 
@@ -69,16 +51,52 @@ if(isset($_POST['submit'])){
 		}
 		
 }
-	
-	
-	
-
 ?>
- 
-  
+<style>
+.box.box-primary {
+    border-top-color: #3c8dbc;
+}
+.box {
+position: relative;
+border-radius: 3px;
+background: #ffffff;
+border-top: 3px solid #d2d6de;
+margin-bottom: 20px;
+width: 100%;
+box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+</style>
+     <!-- Content Header (Page header) -->
+    <section class="content-header">
+      	<h1>
+		Edit Partner
+		</h1>
+     </section>
+<?php 
+	$ftc=mysql_query("select * from `vendor` where `id` = '$update_id'"); 
+		$ftc_data=mysql_fetch_array($ftc);
+		
+		$full_name=$ftc_data['full_name'];
+		$mobile_no=$ftc_data['mobile_no'];
+		$landline_no=$ftc_data['landline_no'];
+		$email_id=$ftc_data['email_id'];
+		$aadhar_card_no=$ftc_data['aadhar_card_no'];
+		$company_name=$ftc_data['company_name'];
+		$company_reg_no=$ftc_data['company_reg_no'];
+		$company_address=$ftc_data['company_address'];
+		$company_service=$ftc_data['company_service'];
+		$company_service_discription=$ftc_data['company_service_discription'];
+		$company_sub_service_discription=$ftc_data['company_sub_service_discription'];
+		$company_sub_service=$ftc_data['company_sub_service'];
+		$discount=$ftc_data['discount'];
+		$current_date=date('Y-m-d ');
+		$offer=$ftc_data['offer'];
+		$service_price=$ftc_data['service_price'];
+		
+?>
 
- 
- <section class="content">
+    <!-- Main content -->
+    <section class="content">
       <div class="row">
  
         <div class="col-md-12">
@@ -93,7 +111,7 @@ if(isset($_POST['submit'])){
             <div class="form-group">
               <label for="exampleInputFullName">Full Name</label>
               <div class="input-group">
-                <input type="text" name="full_name" class="form-control" id="exampleInputFullName" placeholder="Enter Your Full Name" required>
+                <input type="text" name="full_name" class="form-control" id="exampleInputFullName" value="<?php echo $full_name; ?>" placeholder="Enter Your Full Name" required>
                 <div class="input-group-addon">
                       <i class="fa fa-user"></i>
                   </div>
@@ -104,7 +122,7 @@ if(isset($_POST['submit'])){
             <div class="form-group">
               <label for="exampleInputmobile_no">Mobile No.</label>
               <div class="input-group">
-                <input type="text" name="mobile_no" class="form-control allLetter checkMobile"  maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
+                <input type="text" name="mobile_no" class="form-control allLetter checkMobile" value="<?php echo $mobile_no; ?>" maxlength="10" minlength="10" placeholder="Enter Your Mobile No." required>
                 <div class="input-group-addon">
                       <i class="fa fa-mobile"></i>
                   </div>
@@ -115,7 +133,7 @@ if(isset($_POST['submit'])){
             <div class="form-group">
               <label for="exampleInputmobile_no">Landline No.</label>
               <div class="input-group">
-                <input type="text" name="landline_no" class="form-control "  maxlength="12"  placeholder="Enter Your Landline No.">
+                <input type="text" name="landline_no" class="form-control "  maxlength="12" value="<?php echo $landline_no; ?>" placeholder="Enter Your Landline No.">
                 <div class="input-group-addon">
                       <i class="fa fa-mobile"></i>
                   </div>
@@ -126,7 +144,7 @@ if(isset($_POST['submit'])){
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <div class="input-group">
-                <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" placeholder="Enter email Address" >
+                <input type="email" name="email_id" class="form-control" id="exampleInputEmail1" value="<?php echo $email_id; ?>" placeholder="Enter email Address" >
                 <div class="input-group-addon">
                       <i class="fa fa-envelope"></i>
                   </div>
@@ -137,7 +155,7 @@ if(isset($_POST['submit'])){
             <div class="form-group">
               <label for="exampleInputmobile_no">Aadhar Card No</label>
               <div class="input-group">
-                <input type="text" name="aadhar_card_no" class="form-control "  maxlength="12"  placeholder="Enter Your Aadhar Card No." required>
+                <input type="text" name="aadhar_card_no" class="form-control "  maxlength="12" value="<?php echo $aadhar_card_no; ?>" placeholder="Enter Your Aadhar Card No." required>
                 <div class="input-group-addon">
                       <i class="fa fa-mobile"></i>
                   </div>
@@ -148,7 +166,7 @@ if(isset($_POST['submit'])){
 				<div class="form-group">
                   <label for="exampleInputEmail1">Company Name</label>
                   <div class="input-group">
-                  	<input type="text" name="company_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Name" >
+                  	<input type="text" name="company_name" class="form-control" id="exampleInputEmail1" value="<?php echo $company_name; ?>" placeholder="Enter Company Name" >
                     <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
                       </div>
@@ -159,7 +177,7 @@ if(isset($_POST['submit'])){
 				<div class="form-group">
                   <label for="exampleInputEmail1">Company Registration No.</label>
                   <div class="input-group">
-                  	<input type="text" name="company_reg_no" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Registration No." >
+                  	<input type="text" name="company_reg_no" class="form-control" id="exampleInputEmail1" value="<?php echo $company_reg_no; ?>" placeholder="Enter Company Registration No." >
                     <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
                       </div>
@@ -173,7 +191,7 @@ if(isset($_POST['submit'])){
 			<div class="form-group">
                   <label for="exampleInputFile">Company Logo</label>
                   <div class="input-group">
-                  	<input type="file" class="form-control" id="exampleInputFile" name="company_logo">
+                  	<input type="file" class="form-control" id="exampleInputFile" value="<?php echo $company_logo; ?>" name="company_logo">
                     <div class="input-group-addon">
                           <i class="fa fa-upload"></i>
                       </div>
@@ -184,10 +202,10 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Service Category</label>
               <div class="input-group">
-              	<select name="company_service" class="form-control suv_category">
+              	<select name="company_service" value="<?php echo $service_name; ?>" class="form-control suv_category">
                 <option value="">Select...</option>
                 <?php
-					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where `flag`='0'");
+					$ftx_servide=mysql_query("select `id`,`service_name` from `master_services` where id='$company_service'");
 					while($ftc_data=mysql_fetch_array($ftx_servide))
 					{
 						echo "<option value=".$ftc_data['id'].">".$ftc_data['service_name']."</option>";
@@ -206,8 +224,9 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Sub Service</label>
               <div class="input-group">
-                     <select name="company_sub_service" class="form-control" id="suv_category_result">
+                     <select name="company_sub_service" value="<?php echo $company_sub_service;?>" class="form-control" id="suv_category_result">
                 		<option value="">Select...</option>
+						
                     </select>
                     <div class="input-group-addon" style="background-color:#c7c6c6; cursor:pointer" data-toggle="modal" data-target="#sub_service_dailog">
                           <i class="fa fa-plus"></i>
@@ -218,13 +237,13 @@ if(isset($_POST['submit'])){
 		<div class="col-md-6">		
 			<div class="form-group">
 				 <label for="exampleInputDob">Service Description</label>
-				 <textarea name="company_service_discription" class="form-control"></textarea>
+				 <textarea name="company_service_discription" value="<?php echo $company_service_discription; ?>" class="form-control"></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">		
 			<div class="form-group">
-				 <label for="exampleInputDob">Company Address</label>
-				 <textarea name="company_address" class="form-control"></textarea>
+				 <label for="exampleInputDob">Service Sub Description</label>
+				 <textarea name="company_sub_service_discription" value="<?php echo $company_sub_service_discription; ?>" class="form-control"></textarea>
 			</div>
 		</div>
 		 
@@ -233,7 +252,7 @@ if(isset($_POST['submit'])){
 			<div class="form-group">
                   <label for="exampleInputFile">Company MOU Certificate</label>
                   <div class="input-group">
-                  	<input type="file" class="form-control" id="exampleInputFile" name="company_mou_certificate">
+                  	<input type="file" class="form-control" id="exampleInputFile" value="<?php echo $company_mou_certificate; ?>" name="company_mou_certificate">
                     <div class="input-group-addon">
                           <i class="fa fa-upload"></i>
                       </div>
@@ -241,12 +260,17 @@ if(isset($_POST['submit'])){
  		     </div>
 		</div>	
 					
-		
+		<div class="col-md-6">		
+			<div class="form-group">
+				 <label for="exampleInputDob">Company Address</label>
+				 <textarea name="company_address" value="<?php echo $company_address; ?>" class="form-control"></textarea>
+			</div>
+		</div>
 		 <div class="col-md-6">		
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Service Price</label>
               <div class="input-group">
-              		<input name="service_price" type="text" class="form-control" id="name" placeholder="Enter Service Price">
+              		<input name="service_price" type="text" class="form-control" value="<?php echo $service_price; ?>" id="name" placeholder="Enter Service Price">
                     <div class="input-group-addon">
                           <i class="fa fa-book"></i>
                       </div>
@@ -257,7 +281,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Discount On Service</label>
               <div class="input-group">
-              		<input name="discount" type="text" class="form-control" id="name" placeholder="Enter How many Discount On Service">
+              		<input name="discount" type="text" class="form-control" id="name" value="<?php echo $discount; ?>" placeholder="Enter How many Discount On Service">
                     <div class="input-group-addon">
                           <i class="fa fa-book"></i>
                       </div>
@@ -268,7 +292,7 @@ if(isset($_POST['submit'])){
              <div class="form-group">
               <label for="exampleInputAnyMedicalTreatment">Offer</label>
               <div class="input-group">
-              		<input name="offer" type="text" class="form-control" id="name" placeholder="Enter Offer">
+              		<input name="offer" type="text" class="form-control" id="name" value="<?php echo $offer; ?>" placeholder="Enter Offer">
                     <div class="input-group-addon">
                           <i class="fa fa-book"></i>
                       </div>
