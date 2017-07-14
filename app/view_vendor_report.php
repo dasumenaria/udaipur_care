@@ -16,24 +16,35 @@ $session_id=$_SESSION['SESSION_ID'];
 
 
 $qury='';
-	if(!empty($view_u) && !empty($from) && !empty($to) && empty($pon))
+	if(!empty($view_u)  && empty($to) && empty($pon))
 {
-	$qury="`view_u` = '$view_u' && `from` = '$from' && `to` = '$to'";
+	$qury="`full_name` = '$view_u'";
 }
- 	if(empty($class_id) && !empty($from) && !empty($to) && empty($pon))
+	if(empty($view_u)  && !empty($to) && empty($pon))
 {
 	$qury="`from` = '$from' && `to` = '$to'";
 }
- 	if(empty($class_id) && !empty($from) && !empty($to) && !empty($pon))
+	if(empty($view_u)  && empty($to) && !empty($pon))
+{
+	$qury="`full_name` = '$view_u' && `from` = '$from' && `to` = '$to'";
+}
+	if(!empty($view_u)  && !empty($to) && empty($pon))
+{
+	$qury="`full_name` = '$view_u' && `from` = '$from' && `to` = '$to'";
+}
+	if(empty($view_u)  && !empty($to) && !empty($pon))
 {
 	$qury="`pon` = '$pon' && `from` = '$from' && `to` = '$to'";
 }
-	
-if(!empty($class_id) && !empty($from) && !empty($to) && !empty($pon))
+ 	if(!empty($view_u)  && empty($to) && !empty($pon))
 {
-	$qury="`class_id` = '$class_id' && `pon` = '$pon' && `from` = '$from' && `to` = '$to'";
+	$qury="`full_name` = '$view_u' && `pon` = '$pon'";
 }
-
+	if(!empty($view_u)  && !empty($to) && !empty($pon))
+{
+	$qury="`full_name` = '$view_u' && `pon` = '$pon' && `from` = '$from' && `to` = '$to'";
+}
+echo $qury;
 
 
 
